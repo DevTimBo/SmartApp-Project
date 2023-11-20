@@ -2,7 +2,11 @@
 __pycache__/
 *.py[cod]
 *$py.class
+#Idea
 *.idea
+# Dataset
+data/lines
+data/lines.txt
 # C extensions
 *.so
 
