@@ -1,4 +1,20 @@
 import load_data
+from utils.configs import ModelConfig
+import json
+
+config_path = "./utils/configs.json"
+model_config = ModelConfig(config_path)
+
+# Zugriff auf Modellparameter
+model_config.print_model_params()
+model_config.print_training_params()
+
+model_params = model_config.get_model_params()
+input_shape = model_params.get("input_shape")
+
+print("Input:{}".format(input_shape))
+exit()
+
 
 load_data.read_data()
 load_data.split_data()
