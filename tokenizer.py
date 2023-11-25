@@ -2,6 +2,7 @@ from keras.layers import StringLookup
 import tensorflow as tf
 import load_data
 import preprocess
+import numpy as np
 AUTOTUNE = tf.data.AUTOTUNE
 max_len = load_data.max_len
 padding_token = 99
@@ -27,9 +28,12 @@ def process_images_labels(image_path, label):
     return {"image": image, "label": label}
 
 
-def prepare_dataset(image_paths, labels):
-    dataset = tf.data.Dataset.from_tensor_slices((image_paths, labels)).map(
-        process_images_labels, num_parallel_calls=AUTOTUNE
-    )
-    return dataset.batch(batch_size).cache().prefetch(AUTOTUNE)
+def prepare_data(image_paths, labels):
+    processed_data = [process_images_labels(image_path, label) for image_path, label in zip(image_paths, labels)]
+
+    # Separate the processed data into x_train and y_train
+    x_train = np.array([item['image'] for item in processed_data])
+    y_train = np.array([item['label'] for item in processed_data])
+
+    return x_train, y_train
 

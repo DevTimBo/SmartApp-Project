@@ -1,6 +1,4 @@
-# Imports
-from keras.layers import StringLookup
-from tensorflow import keras
+
 
 import matplotlib.pyplot as plt
 import tensorflow as tf
