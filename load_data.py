@@ -85,14 +85,16 @@ def create_train_and_test_data():
 
 
 max_len = 0
-
+characters = set()
 train_labels_cleaned = 0
+
+
 def get_vocabulary_length_and_clean_labels():
     # Find maximum length and the size of the vocabulary in the training data.
     global train_labels_cleaned
     global train_labels
     train_labels_cleaned_intern = []
-    characters = set()
+    global characters
     global max_len
 
     for label in train_labels:
