@@ -13,8 +13,6 @@ base_path = "data"
 lines_list = []
 
 
-
-
 def read_data():
     global lines_list
     # Read the file with UTF-8 encoding

@@ -8,5 +8,14 @@
         "epochs": 10,
         "batch_size": 32,
         "learning_rate": 0.001
+    },
+    "image_params": {
+        "height": 256,
+        "width": 32
+    },
+    "path_params": {
+        "bade": "data",
+        "annotation_line": "lines.txt",
+        "annotation_word": "words.txt"
     }
 }
