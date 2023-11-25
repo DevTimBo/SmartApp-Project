@@ -77,7 +77,7 @@ train_img_paths, train_labels, test_img_paths, test_labels = 0, 0, 0 ,0
 def create_train_and_test_data():
     global train_img_paths, train_labels, test_img_paths, test_labels
     global test_samples, train_samples
-    test_samples, train_samples = split_data()
+    train_samples, test_samples = split_data()
     train_img_paths, train_labels = get_image_paths_and_labels(train_samples)
     test_img_paths, test_labels = get_image_paths_and_labels(test_samples)
 

@@ -42,5 +42,5 @@ def show_image_w_path(image_path):
 
 show_image(x_train[1])
 show_image_w_path(x_train_img_paths[1])
-
+print(x_train.shape)
 
