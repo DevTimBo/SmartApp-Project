@@ -40,7 +40,35 @@ def show_image_w_path(image_path):
         cv.destroyAllWindows()  # Close the window
 
 
-show_image(x_train[1])
-show_image_w_path(x_train_img_paths[1])
-print(x_train.shape)
+num_classes = len(load_data.characters)
+from keras.models import Sequential
+from keras.layers import Conv2D, LSTM, Dense, MaxPooling2D, Reshape
+
+# Define the input shape for images
+image_shape = (512, 32, 1)
+
+# Define the model
+model = Sequential()
+
+# Add a Conv2D layer before LSTM layers
+model.add(Conv2D(32, kernel_size=(3, 3), activation='relu', input_shape=image_shape))
+model.add(MaxPooling2D(pool_size=(2, 2)))
+
+# Reshape the output of Conv2D layer to fit LSTM input
+model.add(Reshape((-1, 32 * 128)))
+
+# Encoder
+model.add(LSTM(256, return_sequences=True))
+
+# Decoder
+model.add(LSTM(256, return_sequences=True))
+
+# Output layer
+model.add(Dense(num_classes, activation='softmax'))
+
+# Compile the model
+model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+
+# Print the model summary
+model.summary()
 

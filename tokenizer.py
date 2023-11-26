@@ -27,7 +27,11 @@ def process_images_labels(image_path, label):
     label = vectorize_label(label)
     return {"image": image, "label": label}
 
-
+def prepare_dataset(image_paths, labels):
+    dataset = tf.data.Dataset.from_tensor_slices((image_paths, labels)).map(
+        process_images_labels, num_parallel_calls=AUTOTUNE
+    )
+    return dataset.batch(batch_size).cache().prefetch(AUTOTUNE)
 def prepare_data(image_paths, labels):
     processed_data = [process_images_labels(image_path, label) for image_path, label in zip(image_paths, labels)]
 
