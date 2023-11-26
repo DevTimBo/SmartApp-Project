@@ -1,0 +1,21 @@
+{
+    "model_params": {
+        "input_shape": [128, 128, 1],
+        "conv_filters": 32,
+        "dense_units": 128
+    },
+    "training_params": {
+        "epochs": 10,
+        "batch_size": 32,
+        "learning_rate": 0.001
+    },
+    "image_params": {
+        "height": 256,
+        "width": 32
+    },
+    "path_params": {
+        "bade": "data",
+        "annotation_line": "lines.txt",
+        "annotation_word": "words.txt"
+    }
+}
