@@ -6,6 +6,8 @@ __pycache__/
 *.idea
 # Dataset
 data/lines
+# Plots
+test_results
 # C extensions
 *.so
 
