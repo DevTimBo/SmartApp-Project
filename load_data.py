@@ -1,6 +1,4 @@
-# Imports
-from keras.layers import StringLookup
-from tensorflow import keras
+
 
 import matplotlib.pyplot as plt
 import tensorflow as tf
@@ -79,20 +77,22 @@ train_img_paths, train_labels, test_img_paths, test_labels = 0, 0, 0 ,0
 def create_train_and_test_data():
     global train_img_paths, train_labels, test_img_paths, test_labels
     global test_samples, train_samples
-    test_samples, train_samples = split_data()
+    train_samples, test_samples = split_data()
     train_img_paths, train_labels = get_image_paths_and_labels(train_samples)
     test_img_paths, test_labels = get_image_paths_and_labels(test_samples)
 
 
 max_len = 0
-
+characters = set()
 train_labels_cleaned = 0
+
+
 def get_vocabulary_length_and_clean_labels():
     # Find maximum length and the size of the vocabulary in the training data.
     global train_labels_cleaned
     global train_labels
     train_labels_cleaned_intern = []
-    characters = set()
+    global characters
     global max_len
 
     for label in train_labels:
