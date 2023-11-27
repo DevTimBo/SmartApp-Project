@@ -3,11 +3,11 @@ import tensorflow as tf
 import load_data
 import preprocess
 import numpy as np
+
 AUTOTUNE = tf.data.AUTOTUNE
 max_len = load_data.max_len
 padding_token = 99
 batch_size = 64
-
 
 # Mapping characters to integers.
 char_to_num = StringLookup(vocabulary=list(load_data.characters), mask_token=None)
