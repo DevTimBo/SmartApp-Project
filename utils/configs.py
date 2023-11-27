@@ -1,6 +1,6 @@
 import json
 
-class ModelConfig:
+class Config:
     def __init__(self, config_path):
         self.config_path = config_path
         self._load_config()
