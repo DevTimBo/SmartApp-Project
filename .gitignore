@@ -10,6 +10,7 @@ data/lines
 test_results
 # Model
 arch
+best_model.h5
 # C extensions
 *.so
 
