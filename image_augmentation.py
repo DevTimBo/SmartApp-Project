@@ -1,13 +1,13 @@
 from keras.preprocessing import image
 import numpy as np
 from keras.utils import to_categorical
-#Deprecated
+#Deprecated - use to test augmentations
 
 def init_image_generator(sample_image):#, sample_label):
     datagen = image.ImageDataGenerator(
-        rotation_range=0.2,
-        shear_range=0.5,
-        zoom_range=0.05,
+        rotation_range=0.1,
+        shear_range=1,
+        zoom_range=0..05,
         rescale=1./255
     )
 
