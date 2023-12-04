@@ -35,8 +35,8 @@ class CustomImageGenerator(Sequence):
         self.num_samples = len(image_paths)
         
         self.image_data_generator = ImageDataGenerator(
-            rotation_range=0.2,
-            shear_range=0.5,
+            rotation_range=0.1,
+            shear_range=0.1,
             zoom_range=0.1, # Adjust for stretching
             #brightness_range=[0.6, 1.3],
             #width_shift_range=0.05,
@@ -49,7 +49,7 @@ class CustomImageGenerator(Sequence):
 
     def __len__(self):
         return int(np.ceil(self.num_samples / self.batch_size))
-    
+    '''
     # This one is for merging datasets:
     def __getitem__(self, index):
         start_index = index * self.batch_size
@@ -69,6 +69,7 @@ class CustomImageGenerator(Sequence):
     
         return {'image': augmented_image_paths, 'label': batch_labels}, np.array(batch_labels)
     '''
+    
     # The following works for training with augmented data or for plots:
     def __getitem__(self, index):
         start_index = index * self.batch_size
@@ -86,7 +87,7 @@ class CustomImageGenerator(Sequence):
         augmented_images = np.array(augmented_images)
 
         return {'image': augmented_images, 'label': padded_labels}, np.array(padded_labels)
-    '''
+    
 
 def merge_datasets(custom_generator, dataset):
     #for round in range(rounds): #Loop if we want to make and merge more than 1 augmented dataset
