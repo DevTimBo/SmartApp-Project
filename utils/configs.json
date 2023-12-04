@@ -1,6 +1,6 @@
 {
     "model": {
-        "name": "modelXY",
+        "name": "model32",
         "width": 512,
         "height": 32,
         "save": "True"
