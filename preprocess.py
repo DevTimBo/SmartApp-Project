@@ -1,8 +1,8 @@
 import tensorflow as tf
 
 
-image_width = 512
-image_height = 32
+image_width = 1024  # Default 512
+image_height = 32   # Default 32
 
 
 def preprocess_image(image_path, img_size=(image_width, image_height)):

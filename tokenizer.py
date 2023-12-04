@@ -7,7 +7,7 @@ import numpy as np
 AUTOTUNE = tf.data.AUTOTUNE
 max_len = load_data.max_len
 padding_token = 99
-batch_size = 64
+batch_size = 128 # Default 32
 
 # Mapping characters to integers.
 char_to_num = StringLookup(vocabulary=list(load_data.characters), mask_token=None)
@@ -32,6 +32,8 @@ def prepare_dataset(image_paths, labels):
         process_images_labels, num_parallel_calls=AUTOTUNE
     )
     return dataset.batch(batch_size).cache().prefetch(AUTOTUNE)
+
+
 def prepare_data(image_paths, labels):
     processed_data = [process_images_labels(image_path, label) for image_path, label in zip(image_paths, labels)]
 
