@@ -6,14 +6,17 @@ import numpy as np
 
 AUTOTUNE = tf.data.AUTOTUNE
 max_len = load_data.max_len
-padding_token = 99
-batch_size = 128 # Default 32
 
 # Mapping characters to integers.
 char_to_num = StringLookup(vocabulary=list(load_data.characters), mask_token=None)
 
 # Mapping integers back to original characters.
 num_to_char = StringLookup(vocabulary=char_to_num.get_vocabulary(), mask_token=None, invert=True)
+
+img_size = (512, 32)  # default gets overwritten by config
+batch_size = 64  # default gets overwritten by config
+padding_token = 99
+
 
 def vectorize_label(label):
     label = char_to_num(tf.strings.unicode_split(label, input_encoding="UTF-8"))
@@ -22,12 +25,18 @@ def vectorize_label(label):
     label = tf.pad(label, paddings=[[0, pad_amount]], constant_values=padding_token)
     return label
 
+
 def process_images_labels(image_path, label):
-    image = preprocess.preprocess_image(image_path)
+    image = preprocess.preprocess_image(image_path, img_size)
     label = vectorize_label(label)
     return {"image": image, "label": label}
 
-def prepare_dataset(image_paths, labels):
+
+def prepare_dataset(image_paths, labels, img_size_config, batch_size_new):
+    global img_size
+    img_size = img_size_config
+    global batch_size
+    batch_size = batch_size_new
     dataset = tf.data.Dataset.from_tensor_slices((image_paths, labels)).map(
         process_images_labels, num_parallel_calls=AUTOTUNE
     )
@@ -42,4 +51,3 @@ def prepare_data(image_paths, labels):
     y_train = np.array([item['label'] for item in processed_data])
 
     return x_train, y_train
-

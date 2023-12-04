@@ -8,6 +8,8 @@ __pycache__/
 data/lines
 # Plots
 test_results
+# Models
+models
 # Model
 arch
 best_model.h5

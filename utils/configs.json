@@ -1,23 +1,17 @@
 {
-    "model_params": {
-        "input_shape": [128, 128, 1],
-        "conv_filters": 32,
-        "dense_units": 128
+    "model": {
+        "name": "modelXY",
+        "width": 512,
+        "height": 32,
+        "save": "True"
     },
-    "training_params": {
-        "epochs": 5,
-        "batch_size": 64,
-        "learning_rate": 0.001
+    "training": {
+        "epochs": 2,
+        "save_history": "True",
+        "batch_size": 64
     },
-    "image_params": {
-        "height": 512,
-        "width": 32,
-        "padding": 99
-    },
-    "path_params": {
-        "dataset": "data",
-        "save_plot": "test_reults",
-        "annotation_line": "lines.txt",
-        "annotation_word": "words.txt"
+    "directory": {
+        "model_dir": "models",
+        "test_dir": "test_results"
     }
 }
