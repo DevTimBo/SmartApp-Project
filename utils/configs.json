@@ -1,17 +1,19 @@
 {
     "model": {
-        "name": "model32",
-        "width": 512,
-        "height": 32,
+        "name": "model_9v3_with_augmentationlayer",
+        "width": 1024,
+        "height": 64,
         "save": "True"
     },
     "training": {
-        "epochs": 2,
+        "epochs": 100,
         "save_history": "True",
-        "batch_size": 64
+        "batch_size": 32,
+        "tf_seed": 42
     },
     "directory": {
         "model_dir": "models",
-        "test_dir": "test_results"
+        "test_dir": "test_results",
+        "data_base_path": "data"
     }
 }

@@ -7,7 +7,7 @@ tf.random.set_seed(42)
 
 characters = set()
 max_len = 0
-base_path = "data"
+base_path = "data"  # gets overwritten by config
 base_image_path = os.path.join(base_path, "lines")
 
 
@@ -87,7 +87,9 @@ def clean_labels(labels):
 data = read_data()
 train_samples, test_samples, validation_samples = split_data(data)
 
-def print_samples():
+def print_samples(new_base_path):
+    global base_path
+    base_path = new_base_path
     print(f"Total train samples: {len(train_samples)}")
     print(f"Total validation samples: {len(validation_samples)}")
     print(f"Total test samples: {len(test_samples)}")

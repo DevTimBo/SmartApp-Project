@@ -673,13 +673,20 @@ def build_model9v2(img_img_width, img_img_height, char):
     return model
 
 # GOAT
+data_augmentation = keras.Sequential(
+    [
+        tf.keras.layers.RandomBrightness(0.5, value_range=(0, 1), seed=42),
+        tf.keras.layers.RandomContrast(0.5, seed=42)
+    ]
+)
 def build_model9v3(img_width, img_height, char):
     input_img = keras.Input(shape=(img_width, img_height, 1), name="image")
     labels = keras.layers.Input(name="label", shape=(None,))
     # Top 3 Netze nehmen und:
         # random initialization mit random seeds
-        # 
-    x = keras.layers.Conv2D(48, (3, 3), activation="relu", kernel_initializer="he_normal", padding="same", name="Conv1")(input_img)
+        #
+    x = data_augmentation(input_img)
+    x = keras.layers.Conv2D(48, (3, 3), activation="relu", kernel_initializer="he_normal", padding="same", name="Conv1")(x)
     x = keras.layers.Conv2D(96, (3, 3), activation="relu", kernel_initializer="he_normal", padding="same", name="Conv2")(x)
     x = keras.layers.MaxPooling2D((2, 2), name="pool1")(x)
     x = keras.layers.Conv2D(48, (3, 3), activation="relu", kernel_initializer="he_normal", padding="same", name="Conv3")(x)
