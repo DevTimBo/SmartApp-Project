@@ -11,7 +11,8 @@ class CustomImageGenerator(Sequence):
         self.image_width = image_width
         self.image_height = image_height
         self.num_samples = len(image_paths)
-        
+
+        # Values have been optimized within reason, if processing too slow, then take some augmentations out
         self.image_data_generator = ImageDataGenerator(
             rotation_range=0.5,
             shear_range=1,
@@ -20,13 +21,11 @@ class CustomImageGenerator(Sequence):
             height_shift_range=0.005,
             rescale=1./255, 
             fill_mode='nearest',
-            
         )
 
     def __len__(self):
         return int(np.ceil(self.num_samples / self.batch_size))
-    
-    # The following works for training with augmented data or for plots:
+
     def __getitem__(self, index):
         start_index = index * self.batch_size
         end_index = (index + 1) * self.batch_size
