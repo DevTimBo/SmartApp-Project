@@ -52,20 +52,22 @@ def prepare_data(image_paths, labels):
 
     return x_train, y_train
 
-def prepare_augmented_dataset(image_paths, labels):
+def prepare_augmented_dataset(image_paths, labels, batch_size_new):
+    #Prepare Dataset
     dataset = tf.data.Dataset.from_tensor_slices((image_paths, labels)).map(
         lambda x, y: (process_images_labels(x, y)["image"], process_images_labels(x, y)["label"]),
         num_parallel_calls=AUTOTUNE
     )
 
     data_augmentation = tf.keras.Sequential([
-        tf.keras.layers.RandomContrast(1, seed=42),
-        tf.keras.layers.RandomBrightness(1, value_range=(0, 1), seed=42)
+        tf.keras.layers.RandomContrast(0.5, seed=42),
+        tf.keras.layers.RandomBrightness(0.5, value_range=(0, 1), seed=42)
     ])
+    #Apply Augmentation
     dataset = dataset.map(lambda x, y: (data_augmentation(x, training=True), y), num_parallel_calls=AUTOTUNE)
 
     # Separate image and label
     dataset = dataset.map(lambda x, y: {"image": x, "label": y}, num_parallel_calls=AUTOTUNE)
 
-    return dataset.batch(batch_size).cache().prefetch(AUTOTUNE)
+    return dataset.batch(batch_size_new).cache().prefetch(AUTOTUNE)
 
