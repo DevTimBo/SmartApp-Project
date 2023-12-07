@@ -1,15 +1,16 @@
 {
     "model": {
-        "name": "model_9v3_with_augmentationlayer",
-        "width": 1024,
+        "name": "model9v3",
+        "width": 1024, 
         "height": 64,
-        "save": "True"
+        "save": "False"
     },
     "training": {
-        "epochs": 100,
+        "epochs": 200,
         "save_history": "True",
-        "batch_size": 32,
-        "tf_seed": 42
+        "batch_size": 48,
+        "tf_seed": 42,
+        "learning_rate": 0.001
     },
     "directory": {
         "model_dir": "models",

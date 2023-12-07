@@ -703,16 +703,142 @@ def build_model9v2(img_img_width, img_img_height, char):
     return model
 
 # GOAT
+def build_model9v3(img_width, img_height, char):
+    input_img = keras.Input(shape=(img_width, img_height, 1), name="image")
+    labels = keras.layers.Input(name="label", shape=(None,))
+    
+    x = keras.layers.Conv2D(48, (3, 3), activation="relu", kernel_initializer="he_normal", padding="same", name="Conv1")(input_img)
+    x = keras.layers.Conv2D(96, (3, 3), activation="relu", kernel_initializer="he_normal", padding="same", name="Conv2")(x)
+    x = keras.layers.MaxPooling2D((2, 2), name="pool1")(x)
+    x = keras.layers.Conv2D(48, (3, 3), activation="relu", kernel_initializer="he_normal", padding="same", name="Conv3")(x)
+    x = keras.layers.Conv2D(96, (3, 3), activation="relu", kernel_initializer="he_normal", padding="same", name="Conv4")(x)
+    x = keras.layers.MaxPooling2D((2, 2), name="pool2")(x)
+    x = keras.layers.Dropout(0.5)(x) # from 0.2 to 0.5 
+    
+    new_shape = ((img_width // 4), (img_height // 4) * 96)
+    x = keras.layers.Reshape(target_shape=new_shape, name="reshape")(x)
+    x = keras.layers.Dense(128, activation="relu", name="dense1")(x)
+    x = keras.layers.Dropout(0.2)(x)
+                                
+    x = keras.layers.Bidirectional(keras.layers.LSTM(256, return_sequences=True, dropout=0.25))(x)
+    x = keras.layers.Bidirectional(keras.layers.LSTM(128, return_sequences=True, dropout=0.25))(x)
+
+    x = keras.layers.Dense(char + 2, activation="softmax", name="dense2")(x)
+
+    output = CTCLayer(name="ctc_loss")(labels, x)
+
+    model = keras.models.Model(inputs=[input_img, labels], outputs=output, name="handwriting_recognizer")
+    
+
+    opt = keras.optimizers.Adam(learning_rate=0.001)
+    model.compile(optimizer=opt)
+    
+    return model
+
+def build_model9v3_random(img_width, img_height, char, lr_value):
+    input_img = keras.Input(shape=(img_width, img_height, 1), name="image")
+    labels = keras.layers.Input(name="label", shape=(None,))
+    
+    x = keras.layers.Conv2D(48, (3, 3), activation="relu", kernel_initializer="he_normal", padding="same", name="Conv1")(input_img)
+    x = keras.layers.Conv2D(96, (3, 3), activation="relu", kernel_initializer="he_normal", padding="same", name="Conv2")(x)
+    x = keras.layers.MaxPooling2D((2, 2), name="pool1")(x)
+    x = keras.layers.Conv2D(48, (3, 3), activation="relu", kernel_initializer="he_normal", padding="same", name="Conv3")(x)
+    x = keras.layers.Conv2D(96, (3, 3), activation="relu", kernel_initializer="he_normal", padding="same", name="Conv4")(x)
+    x = keras.layers.MaxPooling2D((2, 2), name="pool2")(x)
+    x = keras.layers.Dropout(0.5)(x) # from 0.2 to 0.5 
+    
+    new_shape = ((img_width // 4), (img_height // 4) * 96)
+    x = keras.layers.Reshape(target_shape=new_shape, name="reshape")(x)
+    x = keras.layers.Dense(128, activation="relu", name="dense1")(x)
+    x = keras.layers.Dropout(0.2)(x)
+                                
+    x = keras.layers.Bidirectional(keras.layers.LSTM(256, return_sequences=True, dropout=0.25))(x)
+    x = keras.layers.Bidirectional(keras.layers.LSTM(128, return_sequences=True, dropout=0.25))(x)
+
+    x = keras.layers.Dense(char + 2, activation="softmax", name="dense2")(x)
+
+    output = CTCLayer(name="ctc_loss")(labels, x)
+
+    model = keras.models.Model(inputs=[input_img, labels], outputs=output, name="handwriting_recognizer")
+    
+
+    opt = keras.optimizers.Adam(learning_rate=lr_value)
+    model.compile(optimizer=opt)
+    
+    return model
+
+def build_model9v3_random(img_width, img_height, char, lr_value):
+    input_img = keras.Input(shape=(img_width, img_height, 1), name="image")
+    labels = keras.layers.Input(name="label", shape=(None,))
+    
+    x = keras.layers.Conv2D(48, (3, 3), activation="relu", kernel_initializer="he_normal", padding="same", name="Conv1")(input_img)
+    x = keras.layers.Conv2D(96, (3, 3), activation="relu", kernel_initializer="he_normal", padding="same", name="Conv2")(x)
+    x = keras.layers.MaxPooling2D((2, 2), name="pool1")(x)
+    x = keras.layers.Conv2D(48, (3, 3), activation="relu", kernel_initializer="he_normal", padding="same", name="Conv3")(x)
+    x = keras.layers.Conv2D(96, (3, 3), activation="relu", kernel_initializer="he_normal", padding="same", name="Conv4")(x)
+    x = keras.layers.MaxPooling2D((2, 2), name="pool2")(x)
+    x = keras.layers.Dropout(0.5)(x) # from 0.2 to 0.5 
+    
+    new_shape = ((img_width // 4), (img_height // 4) * 96)
+    x = keras.layers.Reshape(target_shape=new_shape, name="reshape")(x)
+    x = keras.layers.Dense(128, activation="relu", name="dense1")(x)
+    x = keras.layers.Dropout(0.2)(x)
+                                
+    x = keras.layers.Bidirectional(keras.layers.LSTM(256, return_sequences=True, dropout=0.25))(x)
+    x = keras.layers.Bidirectional(keras.layers.LSTM(128, return_sequences=True, dropout=0.25))(x)
+
+    x = keras.layers.Dense(char + 2, activation="softmax", name="dense2")(x)
+
+    output = CTCLayer(name="ctc_loss")(labels, x)
+
+    model = keras.models.Model(inputs=[input_img, labels], outputs=output, name="handwriting_recognizer")
+    
+
+    opt = keras.optimizers.Adam(learning_rate=lr_value)
+    model.compile(optimizer=opt)
+    
+    return model
+
+def build_model4v2_random(img_width, img_height, char, lr_value):
+    input_img = keras.Input(shape=(img_width, img_height, 1), name="image")
+    labels = keras.layers.Input(name="label", shape=(None,))
+    
+    
+    x = keras.layers.Conv2D(32, (3, 3), activation="relu", kernel_initializer="he_normal", padding="same", name="Conv1")(input_img)
+    x = keras.layers.MaxPooling2D((2, 2), name="pool1")(x)
+    x = keras.layers.Conv2D(64, (3, 3), activation="relu", kernel_initializer="he_normal", padding="same", name="Conv2")(x)
+    x = keras.layers.Conv2D(128, (3, 3), activation="relu", kernel_initializer="he_normal", padding="same", name="Conv3")(x)
+
+    new_shape = ((img_width // 2), (img_height // 2) * 128)
+    x = keras.layers.Reshape(target_shape=new_shape, name="reshape")(x)
+    x = keras.layers.Dense(128, activation="relu", name="dense1")(x)
+    x = keras.layers.Dropout(0.2)(x)
+                                
+    x = keras.layers.Bidirectional(keras.layers.LSTM(256, return_sequences=True, dropout=0.25))(x)
+    x = keras.layers.Bidirectional(keras.layers.LSTM(128, return_sequences=True, dropout=0.25))(x)
+
+    x = keras.layers.Dense(char + 2, activation="softmax", name="dense2")(x)
+
+    output = CTCLayer(name="ctc_loss")(labels, x)
+
+    model = keras.models.Model(inputs=[input_img, labels], outputs=output, name="handwriting_recognizer")
+    opt = keras.optimizers.Adam(learning_rate=lr_value)
+    model.compile(optimizer=opt)
+    
+    return model
+
 data_augmentation = keras.Sequential(
     [
         tf.keras.layers.RandomBrightness(0.5, value_range=(0, 1), seed=42),
         tf.keras.layers.RandomContrast(0.5, seed=42)
     ]
 )
-def build_model9v3(img_width, img_height, char):
+def build_model9v3v1A1(img_width, img_height, char):
     input_img = keras.Input(shape=(img_width, img_height, 1), name="image")
     labels = keras.layers.Input(name="label", shape=(None,))
+    
     x = data_augmentation(input_img)
+    
     x = keras.layers.Conv2D(48, (3, 3), activation="relu", kernel_initializer="he_normal", padding="same", name="Conv1")(x)
     x = keras.layers.Conv2D(96, (3, 3), activation="relu", kernel_initializer="he_normal", padding="same", name="Conv2")(x)
     x = keras.layers.MaxPooling2D((2, 2), name="pool1")(x)
@@ -741,6 +867,7 @@ def build_model9v3(img_width, img_height, char):
     
     return model
 
+
 img_augmentation = Sequential(
     [
         layers.RandomRotation(factor=0.15),
@@ -750,7 +877,7 @@ img_augmentation = Sequential(
     name="img_augmentation",
 )
     
-def build_model9v3A(img_width, img_height, char, learning_rate_value, seed=None):
+def build_model9v3v1A2(img_width, img_height, char, learning_rate_value, seed=None):
     if seed is not None:
         np.random.seed(seed)
         keras.backend.clear_session()
@@ -789,7 +916,7 @@ def build_model9v3A(img_width, img_height, char, learning_rate_value, seed=None)
     
     return model
 
-# GOAT
+
 def build_modelTest(img_width, img_height, char):
     input_img = keras.Input(shape=(img_width, img_height, 1), name="image")
     labels = keras.layers.Input(name="label", shape=(None,))
