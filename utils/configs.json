@@ -10,7 +10,8 @@
         "save_history": "True",
         "batch_size": 48,
         "tf_seed": 42,
-        "learning_rate": 0.001
+        "learning_rate": 0.001,
+        "patience": 20 
     },
     "directory": {
         "model_dir": "models",
