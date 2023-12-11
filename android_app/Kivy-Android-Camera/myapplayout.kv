@@ -1,0 +1,17 @@
+<MyLayout>    
+    label_cnn: label_cnn
+    BoxLayout:
+        orientation: 'vertical'
+        size: root.width, root.height
+
+        AndroidCamera:
+            fit_mode: 'contain'
+            play: True
+
+        Label:
+            id: label_cnn
+            text: "-"
+        
+        Button:
+            text: "scan"
+            on_press: root.tensorflow_lite_object_detection()
