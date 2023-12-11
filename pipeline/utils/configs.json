@@ -1,0 +1,11 @@
+{
+    "handwriting": {
+        "width": 512,
+        "height": 32,
+        "char_num": 79
+    },
+    "bounding_box": {
+        "width": 4000,
+        "height": 2000
+    }
+}
