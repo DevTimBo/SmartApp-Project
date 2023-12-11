@@ -4,7 +4,7 @@ from tensorflow import keras
 # Utility functions
 from utils.configs import ModelConfig
 
-config_path = "./utils/configs.json"
+config_path = "utils/configs.json"
 model_config = ModelConfig(config_path)
 image_params = model_config.get_image_params()
 
