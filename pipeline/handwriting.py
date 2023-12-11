@@ -10,7 +10,6 @@ config = Config.Config(config_path)
 # Model Parameter
 handwriting_img_w = config.get_handwriting_parameter()["width"]
 handwriting_img_h = config.get_handwriting_parameter()["height"]
-char_num = config.get_handwriting_parameter()["char_num"]
 
 
 class CTCLayer(keras.layers.Layer):
