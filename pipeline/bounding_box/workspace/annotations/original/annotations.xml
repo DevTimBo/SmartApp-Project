@@ -1,0 +1,2609 @@
+<annotations>
+  <version>1.1</version>
+  <meta>
+    <task>
+      <id>392041</id>
+      <name>resized_smartapp</name>
+      <size>17</size>
+      <mode>annotation</mode>
+      <overlap>0</overlap>
+      <bugtracker />
+      <created>2023-11-27 15:12:49.482446+00:00</created>
+      <updated>2023-12-02 09:05:35.778158+00:00</updated>
+      <subset>Train</subset>
+      <start_frame>0</start_frame>
+      <stop_frame>16</stop_frame>
+      <frame_filter />
+      <segments>
+        <segment>
+          <id>431835</id>
+          <start>0</start>
+          <stop>16</stop>
+          <url>https://app.cvat.ai/api/jobs/431431</url>
+        </segment>
+      </segments>
+      <owner>
+        <username>st62587</username>
+        <email>st62587@students.tsi.lv</email>
+      </owner>
+      <assignee />
+      <labels>
+        <label>
+          <name>Ausbildung</name>
+          <color>#24b353</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>Ausbildung_Staette</name>
+          <color>#3df53d</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Staette</name>
+              <mutable>False</mutable>
+              <input_type>text</input_type>
+              <default_value />
+              <values />
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Ausbildung_Klasse</name>
+          <color>#3df53d</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Klasse</name>
+              <mutable>False</mutable>
+              <input_type>text</input_type>
+              <default_value />
+              <values />
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Ausbilung_Abschluss</name>
+          <color>#3df53d</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Abschluss</name>
+              <mutable>False</mutable>
+              <input_type>text</input_type>
+              <default_value />
+              <values />
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Ausbildung_Vollzeit</name>
+          <color>#3df53d</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Vollzeit</name>
+              <mutable>False</mutable>
+              <input_type>checkbox</input_type>
+              <default_value>false</default_value>
+              <values>false</values>
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Ausbildung_Teilzeit</name>
+          <color>#3df53d</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>Ausbildung_Antrag_gestellt_ja</name>
+          <color>#3df53d</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Antrag_gestellt_ja</name>
+              <mutable>False</mutable>
+              <input_type>checkbox</input_type>
+              <default_value>false</default_value>
+              <values>false</values>
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Ausbildung_Antrag_gestellt_nein</name>
+          <color>#3df53d</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Antrag_gestellt_nein</name>
+              <mutable>False</mutable>
+              <input_type>checkbox</input_type>
+              <default_value>false</default_value>
+              <values>false</values>
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Ausbildung_Amt</name>
+          <color>#3df53d</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Amt</name>
+              <mutable>False</mutable>
+              <input_type>text</input_type>
+              <default_value />
+              <values />
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Ausbildung_Foerderungsnummer</name>
+          <color>#3df53d</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Foerderungsnummer</name>
+              <mutable>False</mutable>
+              <input_type>number</input_type>
+              <default_value>1</default_value>
+              <values>1
+999999999999999
+1</values>
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Person</name>
+          <color>#b83df5</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>Person_Name</name>
+          <color>#fa32b7</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Name</name>
+              <mutable>False</mutable>
+              <input_type>text</input_type>
+              <default_value />
+              <values />
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Person_Vorname</name>
+          <color>#fa32b7</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Vorname</name>
+              <mutable>False</mutable>
+              <input_type>text</input_type>
+              <default_value />
+              <values />
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Person_Geburtsname</name>
+          <color>#fa32b7</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Geburtsname</name>
+              <mutable>False</mutable>
+              <input_type>text</input_type>
+              <default_value />
+              <values />
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Person_Geburtsort</name>
+          <color>#fa32b7</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Geburtsort</name>
+              <mutable>False</mutable>
+              <input_type>text</input_type>
+              <default_value />
+              <values />
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Person_weiblich</name>
+          <color>#fa32b7</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>weiblich</name>
+              <mutable>False</mutable>
+              <input_type>text</input_type>
+              <default_value />
+              <values />
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Person_maennlich</name>
+          <color>#fa32b7</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>maennlich</name>
+              <mutable>False</mutable>
+              <input_type>text</input_type>
+              <default_value />
+              <values />
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Person_divers</name>
+          <color>#fa32b7</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>Person_Geburtsdatum</name>
+          <color>#fa32b7</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Geburtsdatum</name>
+              <mutable>False</mutable>
+              <input_type>number</input_type>
+              <default_value>1</default_value>
+              <values>1
+99999999
+1</values>
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Person_Familienstand</name>
+          <color>#fa32b7</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Familienstand</name>
+              <mutable>False</mutable>
+              <input_type>number</input_type>
+              <default_value>1</default_value>
+              <values>1
+5
+1</values>
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Person_Familienstand_seit</name>
+          <color>#fa32b7</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Familienstand_seit</name>
+              <mutable>False</mutable>
+              <input_type>number</input_type>
+              <default_value>1</default_value>
+              <values>1
+99999999
+1</values>
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Person_Stattsangeh&#246;rigkeit_eigene</name>
+          <color>#fa32b7</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>eigene</name>
+              <mutable>False</mutable>
+              <input_type>text</input_type>
+              <default_value />
+              <values />
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Person_Stattsangeh&#246;rigkeit_Ehegatte</name>
+          <color>#fa32b7</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Ehegatte</name>
+              <mutable>False</mutable>
+              <input_type>text</input_type>
+              <default_value />
+              <values />
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Person_Kinder</name>
+          <color>#fa32b7</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Kinder</name>
+              <mutable>False</mutable>
+              <input_type>checkbox</input_type>
+              <default_value>false</default_value>
+              <values>false</values>
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Wohnsitz</name>
+          <color>#2a7dd1</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>Wohnsitz_Strasse</name>
+          <color>#33ddff</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Strasse</name>
+              <mutable>False</mutable>
+              <input_type>text</input_type>
+              <default_value />
+              <values />
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Wohnsitz_Hausnummer</name>
+          <color>#33ddff</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Hausnummer</name>
+              <mutable>False</mutable>
+              <input_type>text</input_type>
+              <default_value />
+              <values />
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Wohnsitz_Adresszusatz</name>
+          <color>#33ddff</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Adresszusatz</name>
+              <mutable>False</mutable>
+              <input_type>text</input_type>
+              <default_value />
+              <values />
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Wohnsitz_Land</name>
+          <color>#33ddff</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Land</name>
+              <mutable>False</mutable>
+              <input_type>text</input_type>
+              <default_value />
+              <values />
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Wohnsitz_Postleitzahl</name>
+          <color>#33ddff</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Postleitzahl</name>
+              <mutable>False</mutable>
+              <input_type>number</input_type>
+              <default_value>1</default_value>
+              <values>1
+99999
+1</values>
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Wohnsitz_Ort</name>
+          <color>#33ddff</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Ort</name>
+              <mutable>False</mutable>
+              <input_type>text</input_type>
+              <default_value />
+              <values />
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Wohnsitz_waehrend_Ausbildung</name>
+          <color>#f59331</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>Wohnsitz_waehrend_Ausbildung_Strasse</name>
+          <color>#fafa37</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Strasse</name>
+              <mutable>False</mutable>
+              <input_type>text</input_type>
+              <default_value />
+              <values />
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Wohnsitz_waehrend_Ausbildung_Hausnummer</name>
+          <color>#fafa37</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Hausnummer</name>
+              <mutable>False</mutable>
+              <input_type>text</input_type>
+              <default_value />
+              <values />
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Wohnsitz_waehrend_Ausbildung_Adresszusatz</name>
+          <color>#fafa37</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Adresszusatz</name>
+              <mutable>False</mutable>
+              <input_type>text</input_type>
+              <default_value />
+              <values />
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Wohnsitz_waehrend_Ausbildung_Land</name>
+          <color>#fafa37</color>
+          <type>any</type>
+          <attributes>
+          </attributes>
+        </label>
+        <label>
+          <name>Wohnsitz_waehrend_Ausbildung_Postleitzahl</name>
+          <color>#fafa37</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Postleitzahl</name>
+              <mutable>False</mutable>
+              <input_type>text</input_type>
+              <default_value />
+              <values />
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Wohnsitz_waehrend_Ausbildung_Ort</name>
+          <color>#fafa37</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>Ort</name>
+              <mutable>False</mutable>
+              <input_type>text</input_type>
+              <default_value />
+              <values />
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Wohnsitz_waehrend_Ausbildung_elternwohnung_ja</name>
+          <color>#fafa37</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>ja</name>
+              <mutable>False</mutable>
+              <input_type>checkbox</input_type>
+              <default_value>false</default_value>
+              <values>false</values>
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Wohnsitz_waehrend_Ausbildung_elternwohnung_nein</name>
+          <color>#fafa37</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>nein</name>
+              <mutable>False</mutable>
+              <input_type>checkbox</input_type>
+              <default_value>false</default_value>
+              <values>false</values>
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Wohnsitz_waehrend_Ausbildung_elternmiete</name>
+          <color>#fafa37</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>ja</name>
+              <mutable>False</mutable>
+              <input_type>checkbox</input_type>
+              <default_value>false</default_value>
+              <values>false</values>
+            </attribute>
+          </attributes>
+        </label>
+        <label>
+          <name>Wohnsitz_waehrend_Ausbildung_elternmiete_nein</name>
+          <color>#fafa37</color>
+          <type>any</type>
+          <attributes>
+            <attribute>
+              <name>nein</name>
+              <mutable>False</mutable>
+              <input_type>checkbox</input_type>
+              <default_value>false</default_value>
+              <values>false</values>
+            </attribute>
+          </attributes>
+        </label>
+      </labels>
+    </task>
+    <dumped>2023-12-02 09:06:53.979107+00:00</dumped>
+  </meta>
+  <image id="0" name="000000000001.jpeg" width="768" height="1366">
+    <box label="Ausbildung" source="manual" occluded="0" xtl="39.37" ytl="366.56" xbr="520.76" ybr="671.08" z_order="0">
+    </box>
+    <box label="Ausbildung_Staette" source="manual" occluded="0" xtl="45.75" ytl="429.50" xbr="505.30" ybr="470.80" z_order="0">
+      <attribute name="Staette" />
+    </box>
+    <box label="Ausbildung_Klasse" source="manual" occluded="0" xtl="44.68" ytl="472.77" xbr="504.23" ybr="514.07" z_order="0">
+      <attribute name="Klasse" />
+    </box>
+    <box label="Ausbildung_Klasse" source="manual" occluded="0" xtl="43.86" ytl="518.93" xbr="503.40" ybr="560.23" z_order="0">
+      <attribute name="Klasse" />
+    </box>
+    <box label="Person" source="manual" occluded="0" xtl="30.05" ytl="669.42" xbr="522.10" ybr="966.12" z_order="0">
+    </box>
+    <box label="Person_Name" source="manual" occluded="0" xtl="45.19" ytl="703.01" xbr="503.34" ybr="747.21" z_order="0">
+      <attribute name="Name" />
+    </box>
+    <box label="Person_Vorname" source="manual" occluded="0" xtl="42.64" ytl="749.76" xbr="269.59" ybr="791.41" z_order="0">
+      <attribute name="Vorname" />
+    </box>
+    <box label="Person_Geburtsname" source="manual" occluded="0" xtl="273.84" ytl="751.46" xbr="505.04" ybr="791.41" z_order="0">
+      <attribute name="Geburtsname" />
+    </box>
+    <box label="Person_Geburtsort" source="manual" occluded="0" xtl="45.19" ytl="794.81" xbr="268.74" ybr="835.61" z_order="0">
+      <attribute name="Geburtsort" />
+    </box>
+    <box label="Person_weiblich" source="manual" occluded="0" xtl="277.24" ytl="811.81" xbr="296.79" ybr="834.76" z_order="0">
+      <attribute name="weiblich" />
+    </box>
+    <box label="Person_maennlich" source="manual" occluded="0" xtl="356.29" ytl="812.66" xbr="375.84" ybr="835.61" z_order="0">
+      <attribute name="maennlich" />
+    </box>
+    <box label="Person_divers" source="manual" occluded="0" xtl="427.69" ytl="811.81" xbr="448.09" ybr="834.76" z_order="0">
+    </box>
+    <box label="Person_Geburtsdatum" source="manual" occluded="0" xtl="45.19" ytl="839.01" xbr="173.54" ybr="883.21" z_order="0">
+      <attribute name="Geburtsdatum">1</attribute>
+    </box>
+    <box label="Person_Familienstand" source="manual" occluded="0" xtl="172.69" ytl="838.16" xbr="269.59" ybr="884.91" z_order="0">
+      <attribute name="Familienstand">1</attribute>
+    </box>
+    <box label="Person_Familienstand_seit" source="manual" occluded="0" xtl="379.24" ytl="842.41" xbr="505.04" ybr="885.76" z_order="0">
+      <attribute name="Familienstand_seit">1</attribute>
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_eigene" source="manual" occluded="0" xtl="43.49" ytl="892.56" xbr="271.29" ybr="934.21" z_order="0">
+      <attribute name="eigene" />
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_Ehegatte" source="manual" occluded="0" xtl="276.39" ytl="890.86" xbr="506.74" ybr="935.91" z_order="0">
+      <attribute name="Ehegatte" />
+    </box>
+    <box label="Person_Kinder" source="manual" occluded="0" xtl="401.34" ytl="934.21" xbr="419.19" ybr="956.31" z_order="0">
+      <attribute name="Kinder">false</attribute>
+    </box>
+    <box label="Wohnsitz" source="manual" occluded="0" xtl="35.15" ytl="961.66" xbr="521.54" ybr="1101.55" z_order="0">
+    </box>
+    <box label="Wohnsitz_Strasse" source="manual" occluded="0" xtl="41.64" ytl="998.85" xbr="283.07" ybr="1044.30" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_Hausnummer" source="manual" occluded="0" xtl="276.51" ytl="997.66" xbr="358.03" ybr="1044.30" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="355.02" ytl="997.07" xbr="506.19" ybr="1044.30" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="42.23" ytl="1044.89" xbr="94.17" ybr="1088.57" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Postleitzahl" source="manual" occluded="0" xtl="91.75" ytl="1044.30" xbr="172.09" ybr="1088.57" z_order="0">
+      <attribute name="Postleitzahl">1</attribute>
+    </box>
+    <box label="Wohnsitz_Ort" source="manual" occluded="0" xtl="166.13" ytl="1044.89" xbr="505.01" ybr="1089.75" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung" source="manual" occluded="0" xtl="35.61" ytl="1091.96" xbr="517.99" ybr="1309.42" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Strasse" source="manual" occluded="0" xtl="40.56" ytl="1213.79" xbr="280.69" ybr="1255.58" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Hausnummer" source="manual" occluded="0" xtl="276.04" ytl="1213.20" xbr="356.79" ybr="1255.05" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Adresszusatz" source="manual" occluded="0" xtl="353.51" ytl="1213.20" xbr="499.85" ybr="1255.46" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Land" source="manual" occluded="0" xtl="40.19" ytl="1261.64" xbr="92.34" ybr="1303.01" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Postleitzahl" source="manual" occluded="0" xtl="89.33" ytl="1260.66" xbr="170.06" ybr="1301.04" z_order="0">
+      <attribute name="Postleitzahl" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Ort" source="manual" occluded="0" xtl="166.07" ytl="1260.66" xbr="500.62" ybr="1302.52" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="400.76" ytl="1144.62" xbr="420.44" ybr="1165.28" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="449.94" ytl="1145.09" xbr="469.62" ybr="1165.75" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="400.75" ytl="1174.12" xbr="420.42" ybr="1194.78" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="451.91" ytl="1174.61" xbr="471.58" ybr="1195.27" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_ja" source="manual" occluded="0" xtl="401.90" ytl="593.92" xbr="421.45" ybr="615.17" z_order="0">
+      <attribute name="Antrag_gestellt_ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_nein" source="manual" occluded="0" xtl="449.51" ytl="595.62" xbr="469.91" ybr="616.87" z_order="0">
+      <attribute name="Antrag_gestellt_nein">false</attribute>
+    </box>
+    <box label="Ausbildung_Vollzeit" source="manual" occluded="0" xtl="401.90" ytl="567.57" xbr="421.45" ybr="590.52" z_order="0">
+      <attribute name="Vollzeit">false</attribute>
+    </box>
+    <box label="Ausbildung_Teilzeit" source="manual" occluded="0" xtl="450.36" ytl="569.27" xbr="470.76" ybr="590.52" z_order="0">
+    </box>
+    <box label="Ausbildung_Amt" source="manual" occluded="0" xtl="44.90" ytl="621.12" xbr="269.30" ybr="662.77" z_order="0">
+      <attribute name="Amt" />
+    </box>
+    <box label="Ausbildung_Foerderungsnummer" source="manual" occluded="0" xtl="274.32" ytl="620.19" xbr="503.91" ybr="666.17" z_order="0">
+      <attribute name="Foerderungsnummer">1</attribute>
+    </box>
+  </image>
+  <image id="1" name="000000000002.jpeg" width="768" height="1366">
+    <box label="Person" source="manual" occluded="0" xtl="30.05" ytl="669.42" xbr="522.10" ybr="966.12" z_order="0">
+    </box>
+    <box label="Person_Name" source="manual" occluded="0" xtl="51.31" ytl="706.07" xbr="509.46" ybr="750.27" z_order="0">
+      <attribute name="Name" />
+    </box>
+    <box label="Person_Vorname" source="manual" occluded="0" xtl="47.73" ytl="752.82" xbr="274.69" ybr="794.47" z_order="0">
+      <attribute name="Vorname" />
+    </box>
+    <box label="Person_Geburtsname" source="manual" occluded="0" xtl="277.92" ytl="750.44" xbr="509.12" ybr="790.39" z_order="0">
+      <attribute name="Geburtsname" />
+    </box>
+    <box label="Person_Geburtsort" source="manual" occluded="0" xtl="52.33" ytl="797.87" xbr="275.88" ybr="838.67" z_order="0">
+      <attribute name="Geburtsort" />
+    </box>
+    <box label="Person_weiblich" source="manual" occluded="0" xtl="282.34" ytl="813.85" xbr="302.90" ybr="836.80" z_order="0">
+      <attribute name="weiblich" />
+    </box>
+    <box label="Person_maennlich" source="manual" occluded="0" xtl="361.39" ytl="814.70" xbr="380.94" ybr="837.65" z_order="0">
+      <attribute name="maennlich" />
+    </box>
+    <box label="Person_divers" source="manual" occluded="0" xtl="432.79" ytl="811.81" xbr="453.19" ybr="834.76" z_order="0">
+    </box>
+    <box label="Person_Geburtsdatum" source="manual" occluded="0" xtl="49.27" ytl="843.09" xbr="177.62" ybr="887.29" z_order="0">
+      <attribute name="Geburtsdatum">1</attribute>
+    </box>
+    <box label="Person_Familienstand" source="manual" occluded="0" xtl="178.81" ytl="842.24" xbr="275.71" ybr="888.99" z_order="0">
+      <attribute name="Familienstand">1</attribute>
+    </box>
+    <box label="Person_Familienstand_seit" source="manual" occluded="0" xtl="383.43" ytl="843.08" xbr="514.50" ybr="884.31" z_order="0">
+      <attribute name="Familienstand_seit">1</attribute>
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_eigene" source="manual" occluded="0" xtl="50.57" ytl="895.39" xbr="278.37" ybr="937.04" z_order="0">
+      <attribute name="eigene" />
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_Ehegatte" source="manual" occluded="0" xtl="282.76" ytl="894.40" xbr="513.12" ybr="939.45" z_order="0">
+      <attribute name="Ehegatte" />
+    </box>
+    <box label="Person_Kinder" source="manual" occluded="0" xtl="406.30" ytl="937.04" xbr="424.15" ybr="959.15" z_order="0">
+      <attribute name="Kinder">false</attribute>
+    </box>
+    <box label="Wohnsitz" source="manual" occluded="0" xtl="35.15" ytl="961.66" xbr="521.54" ybr="1101.55" z_order="0">
+    </box>
+    <box label="Wohnsitz_Strasse" source="manual" occluded="0" xtl="54.74" ytl="999.60" xbr="285.40" ybr="1047.49" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_Hausnummer" source="manual" occluded="0" xtl="285.01" ytl="1000.68" xbr="361.57" ybr="1045.02" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="360.69" ytl="1000.78" xbr="507.40" ybr="1045.71" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="55.03" ytl="1050.02" xbr="108.50" ybr="1093.30" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Postleitzahl" source="manual" occluded="0" xtl="106.78" ytl="1049.00" xbr="182.87" ybr="1094.20" z_order="0">
+      <attribute name="Postleitzahl">1</attribute>
+    </box>
+    <box label="Wohnsitz_Ort" source="manual" occluded="0" xtl="182.70" ytl="1049.80" xbr="512.40" ybr="1093.26" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung" source="manual" occluded="0" xtl="35.61" ytl="1091.96" xbr="517.99" ybr="1309.42" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Strasse" source="manual" occluded="0" xtl="55.20" ytl="1216.22" xbr="287.40" ybr="1261.90" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Hausnummer" source="manual" occluded="0" xtl="286.71" ytl="1216.71" xbr="363.33" ybr="1261.00" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Adresszusatz" source="manual" occluded="0" xtl="359.94" ytl="1216.29" xbr="510.20" ybr="1257.82" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Land" source="manual" occluded="0" xtl="55.80" ytl="1261.05" xbr="104.40" ybr="1306.00" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Postleitzahl" source="manual" occluded="0" xtl="103.50" ytl="1260.90" xbr="179.30" ybr="1303.40" z_order="0">
+      <attribute name="Postleitzahl" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Ort" source="manual" occluded="0" xtl="176.70" ytl="1261.84" xbr="511.24" ybr="1303.70" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="406.78" ytl="1145.39" xbr="426.45" ybr="1166.05" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="455.61" ytl="1145.87" xbr="475.29" ybr="1166.53" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="407.18" ytl="1173.74" xbr="426.85" ybr="1194.40" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="455.35" ytl="1174.76" xbr="475.03" ybr="1195.42" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_ja" source="manual" occluded="0" xtl="404.27" ytl="593.92" xbr="423.82" ybr="615.17" z_order="0">
+      <attribute name="Antrag_gestellt_ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_nein" source="manual" occluded="0" xtl="451.63" ytl="595.62" xbr="472.03" ybr="616.87" z_order="0">
+      <attribute name="Antrag_gestellt_nein">false</attribute>
+    </box>
+    <box label="Ausbildung_Vollzeit" source="manual" occluded="0" xtl="404.27" ytl="567.57" xbr="423.82" ybr="590.52" z_order="0">
+      <attribute name="Vollzeit">false</attribute>
+    </box>
+    <box label="Ausbildung_Teilzeit" source="manual" occluded="0" xtl="452.48" ytl="569.51" xbr="472.88" ybr="590.76" z_order="0">
+    </box>
+    <box label="Ausbildung_Amt" source="manual" occluded="0" xtl="48.91" ytl="621.59" xbr="273.32" ybr="663.24" z_order="0">
+      <attribute name="Amt" />
+    </box>
+    <box label="Ausbildung_Foerderungsnummer" source="manual" occluded="0" xtl="277.15" ytl="619.95" xbr="506.74" ybr="665.94" z_order="0">
+      <attribute name="Foerderungsnummer">1</attribute>
+    </box>
+    <box label="Ausbildung_Staette" source="manual" occluded="0" xtl="54.73" ytl="425.61" xbr="511.54" ybr="471.14" z_order="0">
+      <attribute name="Staette" />
+    </box>
+    <box label="Ausbildung_Klasse" source="manual" occluded="0" xtl="53.27" ytl="477.02" xbr="511.54" ybr="519.61" z_order="0">
+      <attribute name="Klasse" />
+    </box>
+    <box label="Ausbilung_Abschluss" source="manual" occluded="0" xtl="51.80" ytl="519.61" xbr="511.54" ybr="565.15" z_order="0">
+      <attribute name="Abschluss" />
+    </box>
+  </image>
+  <image id="2" name="000000000003.jpeg" width="768" height="1366">
+    <box label="Person" source="manual" occluded="0" xtl="30.05" ytl="669.42" xbr="522.10" ybr="966.12" z_order="0">
+    </box>
+    <box label="Person_Name" source="manual" occluded="0" xtl="43.53" ytl="699.11" xbr="507.12" ybr="746.79" rotation="359.70" z_order="0">
+      <attribute name="Name" />
+    </box>
+    <box label="Person_Vorname" source="manual" occluded="0" xtl="44.41" ytl="748.32" xbr="270.00" ybr="792.60" z_order="0">
+      <attribute name="Vorname" />
+    </box>
+    <box label="Person_Geburtsname" source="manual" occluded="0" xtl="277.68" ytl="750.44" xbr="505.30" ybr="793.50" z_order="0">
+      <attribute name="Geburtsname" />
+    </box>
+    <box label="Person_Geburtsort" source="manual" occluded="0" xtl="44.53" ytl="796.50" xbr="268.80" ybr="837.95" z_order="0">
+      <attribute name="Geburtsort" />
+    </box>
+    <box label="Person_weiblich" source="manual" occluded="0" xtl="276.91" ytl="812.20" xbr="297.47" ybr="835.15" z_order="0">
+      <attribute name="weiblich" />
+    </box>
+    <box label="Person_maennlich" source="manual" occluded="0" xtl="355.25" ytl="811.63" xbr="374.80" ybr="834.58" z_order="0">
+      <attribute name="maennlich" />
+    </box>
+    <box label="Person_divers" source="manual" occluded="0" xtl="427.36" ytl="810.87" xbr="447.76" ybr="833.82" z_order="0">
+    </box>
+    <box label="Person_Geburtsdatum" source="manual" occluded="0" xtl="43.36" ytl="841.67" xbr="172.20" ybr="883.99" z_order="0">
+      <attribute name="Geburtsdatum">1</attribute>
+    </box>
+    <box label="Person_Familienstand" source="manual" occluded="0" xtl="171.02" ytl="842.00" xbr="268.86" ybr="885.45" z_order="0">
+      <attribute name="Familienstand">1</attribute>
+    </box>
+    <box label="Person_Familienstand_seit" source="manual" occluded="0" xtl="375.89" ytl="842.86" xbr="506.60" ybr="886.90" z_order="0">
+      <attribute name="Familienstand_seit">1</attribute>
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_eigene" source="manual" occluded="0" xtl="44.19" ytl="894.92" xbr="269.40" ybr="934.45" z_order="0">
+      <attribute name="eigene" />
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_Ehegatte" source="manual" occluded="0" xtl="278.51" ytl="893.69" xbr="504.90" ybr="934.48" z_order="0">
+      <attribute name="Ehegatte" />
+    </box>
+    <box label="Person_Kinder" source="manual" occluded="0" xtl="401.10" ytl="935.16" xbr="418.72" ybr="956.56" z_order="0">
+      <attribute name="Kinder">false</attribute>
+    </box>
+    <box label="Wohnsitz" source="manual" occluded="0" xtl="35.15" ytl="961.66" xbr="521.54" ybr="1101.55" z_order="0">
+    </box>
+    <box label="Wohnsitz_Strasse" source="manual" occluded="0" xtl="43.76" ytl="1001.95" xbr="279.60" ybr="1046.67" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_Hausnummer" source="manual" occluded="0" xtl="277.34" ytl="1002.51" xbr="355.40" ybr="1044.55" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="353.25" ytl="1002.36" xbr="504.10" ybr="1045.00" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="42.60" ytl="1050.08" xbr="95.23" ybr="1091.13" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Postleitzahl" source="manual" occluded="0" xtl="89.60" ytl="1048.61" xbr="170.31" ybr="1090.91" z_order="0">
+      <attribute name="Postleitzahl">1</attribute>
+    </box>
+    <box label="Wohnsitz_Ort" source="manual" occluded="0" xtl="168.21" ytl="1048.40" xbr="502.40" ybr="1089.48" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung" source="manual" occluded="0" xtl="35.61" ytl="1091.96" xbr="517.99" ybr="1309.42" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Strasse" source="manual" occluded="0" xtl="39.89" ytl="1215.61" xbr="279.82" ybr="1258.61" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Hausnummer" source="manual" occluded="0" xtl="277.64" ytl="1213.76" xbr="357.80" ybr="1256.67" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Adresszusatz" source="manual" occluded="0" xtl="350.71" ytl="1214.67" xbr="499.70" ybr="1255.47" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Land" source="manual" occluded="0" xtl="40.40" ytl="1263.41" xbr="92.72" ybr="1305.97" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Postleitzahl" source="manual" occluded="0" xtl="90.50" ytl="1263.18" xbr="170.52" ybr="1304.98" z_order="0">
+      <attribute name="Postleitzahl" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Ort" source="manual" occluded="0" xtl="168.20" ytl="1262.62" xbr="501.98" ybr="1304.49" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="400.44" ytl="1143.95" xbr="420.12" ybr="1164.61" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="450.38" ytl="1145.61" xbr="470.05" ybr="1166.27" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="400.12" ytl="1174.65" xbr="419.79" ybr="1195.31" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="449.48" ytl="1173.33" xbr="469.16" ybr="1193.99" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_ja" source="manual" occluded="0" xtl="406.63" ytl="593.92" xbr="426.18" ybr="615.17" z_order="0">
+      <attribute name="Antrag_gestellt_ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_nein" source="manual" occluded="0" xtl="453.75" ytl="595.62" xbr="474.16" ybr="616.87" z_order="0">
+      <attribute name="Antrag_gestellt_nein">false</attribute>
+    </box>
+    <box label="Ausbildung_Vollzeit" source="manual" occluded="0" xtl="406.63" ytl="567.57" xbr="426.18" ybr="590.52" z_order="0">
+      <attribute name="Vollzeit">false</attribute>
+    </box>
+    <box label="Ausbildung_Teilzeit" source="manual" occluded="0" xtl="454.60" ytl="569.74" xbr="475.00" ybr="590.99" z_order="0">
+    </box>
+    <box label="Ausbildung_Amt" source="manual" occluded="0" xtl="52.93" ytl="622.07" xbr="277.33" ybr="663.72" z_order="0">
+      <attribute name="Amt" />
+    </box>
+    <box label="Ausbildung_Foerderungsnummer" source="manual" occluded="0" xtl="279.98" ytl="619.71" xbr="509.57" ybr="665.70" z_order="0">
+      <attribute name="Foerderungsnummer">1</attribute>
+    </box>
+    <box label="Ausbildung_Staette" source="manual" occluded="0" xtl="54.73" ytl="425.61" xbr="511.54" ybr="471.14" z_order="0">
+      <attribute name="Staette" />
+    </box>
+    <box label="Ausbildung_Klasse" source="manual" occluded="0" xtl="53.27" ytl="477.02" xbr="511.54" ybr="519.61" z_order="0">
+      <attribute name="Klasse" />
+    </box>
+    <box label="Ausbilung_Abschluss" source="manual" occluded="0" xtl="51.80" ytl="519.61" xbr="511.54" ybr="565.15" z_order="0">
+      <attribute name="Abschluss" />
+    </box>
+  </image>
+  <image id="3" name="000000000004.jpeg" width="768" height="1366">
+    <box label="Person" source="manual" occluded="0" xtl="30.05" ytl="669.42" xbr="522.10" ybr="966.12" z_order="0">
+    </box>
+    <box label="Person_Name" source="manual" occluded="0" xtl="55.97" ytl="700.52" xbr="518.55" ybr="751.30" rotation="359.40" z_order="0">
+      <attribute name="Name" />
+    </box>
+    <box label="Person_Vorname" source="manual" occluded="0" xtl="57.74" ytl="750.55" xbr="276.60" ybr="792.10" z_order="0">
+      <attribute name="Vorname" />
+    </box>
+    <box label="Person_Geburtsname" source="manual" occluded="0" xtl="283.47" ytl="749.38" xbr="511.10" ybr="794.80" z_order="0">
+      <attribute name="Geburtsname" />
+    </box>
+    <box label="Person_Geburtsort" source="manual" occluded="0" xtl="56.57" ytl="795.41" xbr="280.10" ybr="837.90" z_order="0">
+      <attribute name="Geburtsort" />
+    </box>
+    <box label="Person_weiblich" source="manual" occluded="0" xtl="284.23" ytl="812.31" xbr="304.79" ybr="835.26" z_order="0">
+      <attribute name="weiblich" />
+    </box>
+    <box label="Person_maennlich" source="manual" occluded="0" xtl="363.28" ytl="812.10" xbr="382.83" ybr="835.05" z_order="0">
+      <attribute name="maennlich" />
+    </box>
+    <box label="Person_divers" source="manual" occluded="0" xtl="433.62" ytl="813.46" xbr="454.02" ybr="836.41" z_order="0">
+    </box>
+    <box label="Person_Geburtsdatum" source="manual" occluded="0" xtl="54.46" ytl="843.09" xbr="182.70" ybr="883.53" z_order="0">
+      <attribute name="Geburtsdatum">1</attribute>
+    </box>
+    <box label="Person_Familienstand" source="manual" occluded="0" xtl="183.41" ytl="843.54" xbr="275.80" ybr="884.40" z_order="0">
+      <attribute name="Familienstand">1</attribute>
+    </box>
+    <box label="Person_Familienstand_seit" source="manual" occluded="0" xtl="384.30" ytl="843.70" xbr="510.70" ybr="888.80" z_order="0">
+      <attribute name="Familienstand_seit">1</attribute>
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_eigene" source="manual" occluded="0" xtl="56.24" ytl="895.87" xbr="278.50" ybr="936.10" z_order="0">
+      <attribute name="eigene" />
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_Ehegatte" source="manual" occluded="0" xtl="285.60" ytl="896.17" xbr="509.70" ybr="936.20" z_order="0">
+      <attribute name="Ehegatte" />
+    </box>
+    <box label="Person_Kinder" source="manual" occluded="0" xtl="408.66" ytl="937.52" xbr="426.03" ybr="958.23" z_order="0">
+      <attribute name="Kinder">false</attribute>
+    </box>
+    <box label="Wohnsitz" source="manual" occluded="0" xtl="35.15" ytl="961.66" xbr="521.54" ybr="1101.55" z_order="0">
+    </box>
+    <box label="Wohnsitz_Strasse" source="manual" occluded="0" xtl="55.22" ytl="1001.34" xbr="290.40" ybr="1044.70" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_Hausnummer" source="manual" occluded="0" xtl="285.90" ytl="1003.75" xbr="365.20" ybr="1043.50" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="360.28" ytl="1002.76" xbr="510.50" ybr="1043.12" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="54.69" ytl="1048.66" xbr="105.50" ybr="1091.00" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Postleitzahl" source="manual" occluded="0" xtl="102.20" ytl="1050.00" xbr="183.10" ybr="1092.30" z_order="0">
+      <attribute name="Postleitzahl">1</attribute>
+    </box>
+    <box label="Wohnsitz_Ort" source="manual" occluded="0" xtl="178.50" ytl="1049.95" xbr="508.30" ybr="1091.00" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung" source="manual" occluded="0" xtl="35.61" ytl="1091.96" xbr="517.99" ybr="1309.42" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Strasse" source="manual" occluded="0" xtl="54.40" ytl="1214.99" xbr="291.70" ybr="1257.10" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Hausnummer" source="manual" occluded="0" xtl="284.51" ytl="1214.66" xbr="365.00" ybr="1256.17" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Adresszusatz" source="manual" occluded="0" xtl="361.56" ytl="1212.75" xbr="503.00" ybr="1256.40" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Land" source="manual" occluded="0" xtl="54.46" ytl="1260.76" xbr="105.50" ybr="1305.10" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Postleitzahl" source="manual" occluded="0" xtl="100.54" ytl="1261.62" xbr="181.50" ybr="1304.50" z_order="0">
+      <attribute name="Postleitzahl" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Ort" source="manual" occluded="0" xtl="178.60" ytl="1262.82" xbr="509.24" ybr="1304.68" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="406.80" ytl="1143.10" xbr="426.47" ybr="1169.69" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="456.06" ytl="1144.17" xbr="475.74" ybr="1166.60" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="408.99" ytl="1175.27" xbr="428.67" ybr="1195.93" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="455.42" ytl="1173.08" xbr="475.09" ybr="1193.74" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_ja" source="manual" occluded="0" xtl="408.99" ytl="593.92" xbr="428.54" ybr="615.17" z_order="0">
+      <attribute name="Antrag_gestellt_ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_nein" source="manual" occluded="0" xtl="455.88" ytl="595.62" xbr="476.28" ybr="616.87" z_order="0">
+      <attribute name="Antrag_gestellt_nein">false</attribute>
+    </box>
+    <box label="Ausbildung_Vollzeit" source="manual" occluded="0" xtl="408.99" ytl="567.57" xbr="428.54" ybr="590.52" z_order="0">
+      <attribute name="Vollzeit">false</attribute>
+    </box>
+    <box label="Ausbildung_Teilzeit" source="manual" occluded="0" xtl="456.73" ytl="569.98" xbr="477.13" ybr="591.23" z_order="0">
+    </box>
+    <box label="Ausbildung_Amt" source="manual" occluded="0" xtl="56.94" ytl="622.54" xbr="281.35" ybr="664.19" z_order="0">
+      <attribute name="Amt" />
+    </box>
+    <box label="Ausbildung_Foerderungsnummer" source="manual" occluded="0" xtl="282.82" ytl="619.48" xbr="512.41" ybr="665.46" z_order="0">
+      <attribute name="Foerderungsnummer">1</attribute>
+    </box>
+    <box label="Ausbildung_Staette" source="manual" occluded="0" xtl="54.73" ytl="425.61" xbr="511.54" ybr="471.14" z_order="0">
+      <attribute name="Staette" />
+    </box>
+    <box label="Ausbildung_Klasse" source="manual" occluded="0" xtl="53.27" ytl="477.02" xbr="511.54" ybr="519.61" z_order="0">
+      <attribute name="Klasse" />
+    </box>
+    <box label="Ausbilung_Abschluss" source="manual" occluded="0" xtl="51.80" ytl="519.61" xbr="511.54" ybr="565.15" z_order="0">
+      <attribute name="Abschluss" />
+    </box>
+  </image>
+  <image id="4" name="000000000005.jpeg" width="768" height="1366">
+    <box label="Person" source="manual" occluded="0" xtl="30.05" ytl="669.42" xbr="522.10" ybr="966.12" z_order="0">
+    </box>
+    <box label="Person_Name" source="manual" occluded="0" xtl="110.81" ytl="664.27" xbr="457.80" ybr="697.10" rotation="359.10" z_order="0">
+      <attribute name="Name" />
+    </box>
+    <box label="Person_Vorname" source="manual" occluded="0" xtl="107.90" ytl="703.20" xbr="281.80" ybr="737.80" z_order="0">
+      <attribute name="Vorname" />
+    </box>
+    <box label="Person_Geburtsname" source="manual" occluded="0" xtl="283.58" ytl="701.56" xbr="457.40" ybr="738.00" z_order="0">
+      <attribute name="Geburtsname" />
+    </box>
+    <box label="Person_Geburtsort" source="manual" occluded="0" xtl="109.70" ytl="740.49" xbr="280.13" ybr="777.00" z_order="0">
+      <attribute name="Geburtsort" />
+    </box>
+    <box label="Person_weiblich" source="manual" occluded="0" xtl="283.05" ytl="751.52" xbr="303.61" ybr="774.47" z_order="0">
+      <attribute name="weiblich" />
+    </box>
+    <box label="Person_maennlich" source="manual" occluded="0" xtl="342.97" ytl="750.24" xbr="362.52" ybr="773.19" z_order="0">
+      <attribute name="maennlich" />
+    </box>
+    <box label="Person_divers" source="manual" occluded="0" xtl="397.37" ytl="749.48" xbr="417.77" ybr="772.43" z_order="0">
+    </box>
+    <box label="Person_Geburtsdatum" source="manual" occluded="0" xtl="112.31" ytl="779.34" xbr="206.00" ybr="817.90" z_order="0">
+      <attribute name="Geburtsdatum">1</attribute>
+    </box>
+    <box label="Person_Familienstand" source="manual" occluded="0" xtl="361.56" ytl="775.66" xbr="461.30" ybr="812.50" z_order="0">
+      <attribute name="Familienstand">1</attribute>
+    </box>
+    <box label="Person_Familienstand_seit" source="manual" occluded="0" xtl="209.95" ytl="776.53" xbr="278.30" ybr="811.40" z_order="0">
+      <attribute name="Familienstand_seit">1</attribute>
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_eigene" source="manual" occluded="0" xtl="112.20" ytl="821.73" xbr="279.10" ybr="857.00" z_order="0">
+      <attribute name="eigene" />
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_Ehegatte" source="manual" occluded="0" xtl="282.76" ytl="822.15" xbr="460.70" ybr="854.40" z_order="0">
+      <attribute name="Ehegatte" />
+    </box>
+    <box label="Person_Kinder" source="manual" occluded="0" xtl="377.97" ytl="854.88" xbr="395.10" ybr="874.90" z_order="0">
+      <attribute name="Kinder">false</attribute>
+    </box>
+    <box label="Wohnsitz" source="manual" occluded="0" xtl="35.15" ytl="961.66" xbr="521.54" ybr="1101.55" z_order="0">
+    </box>
+    <box label="Wohnsitz_Strasse" source="manual" occluded="0" xtl="113.89" ytl="911.01" xbr="289.40" ybr="949.40" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_Hausnummer" source="manual" occluded="0" xtl="285.01" ytl="910.54" xbr="346.70" ybr="948.00" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="343.69" ytl="909.90" xbr="460.20" ybr="947.96" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="108.11" ytl="952.80" xbr="146.60" ybr="989.40" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Postleitzahl" source="manual" occluded="0" xtl="142.05" ytl="952.21" xbr="205.40" ybr="988.70" z_order="0">
+      <attribute name="Postleitzahl">1</attribute>
+    </box>
+    <box label="Wohnsitz_Ort" source="manual" occluded="0" xtl="202.96" ytl="949.97" xbr="461.10" ybr="986.30" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung" source="manual" occluded="0" xtl="35.61" ytl="1091.96" xbr="517.99" ybr="1309.42" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Strasse" source="manual" occluded="0" xtl="106.68" ytl="1093.96" xbr="289.50" ybr="1131.60" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Hausnummer" source="manual" occluded="0" xtl="284.30" ytl="1092.78" xbr="348.50" ybr="1132.90" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Adresszusatz" source="manual" occluded="0" xtl="346.43" ytl="1092.78" xbr="459.10" ybr="1132.10" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Land" source="manual" occluded="0" xtl="105.12" ytl="1135.32" xbr="145.50" ybr="1173.10" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Postleitzahl" source="manual" occluded="0" xtl="142.46" ytl="1134.93" xbr="204.30" ybr="1175.31" z_order="0">
+      <attribute name="Postleitzahl" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Ort" source="manual" occluded="0" xtl="200.90" ytl="1133.15" xbr="462.20" ybr="1175.02" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="378.92" ytl="1031.28" xbr="398.60" ybr="1051.94" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="416.88" ytl="1031.76" xbr="436.56" ybr="1052.42" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="378.91" ytl="1057.83" xbr="398.59" ybr="1078.49" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="416.49" ytl="1057.14" xbr="436.17" ybr="1077.80" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_ja" source="manual" occluded="0" xtl="377.11" ytl="570.31" xbr="394.30" ybr="588.00" z_order="0">
+      <attribute name="Antrag_gestellt_ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_nein" source="manual" occluded="0" xtl="415.15" ytl="569.65" xbr="430.80" ybr="586.80" z_order="0">
+      <attribute name="Antrag_gestellt_nein">false</attribute>
+    </box>
+    <box label="Ausbildung_Vollzeit" source="manual" occluded="0" xtl="378.88" ytl="550.45" xbr="394.86" ybr="568.67" z_order="0">
+      <attribute name="Vollzeit">false</attribute>
+    </box>
+    <box label="Ausbildung_Teilzeit" source="manual" occluded="0" xtl="413.64" ytl="547.55" xbr="430.50" ybr="567.00" z_order="0">
+    </box>
+    <box label="Ausbildung_Amt" source="manual" occluded="0" xtl="110.63" ytl="597.72" xbr="278.98" ybr="631.72" rotation="358.40" z_order="0">
+      <attribute name="Amt" />
+    </box>
+    <box label="Ausbildung_Foerderungsnummer" source="manual" occluded="0" xtl="283.41" ytl="594.69" xbr="455.10" ybr="630.10" z_order="0">
+      <attribute name="Foerderungsnummer">1</attribute>
+    </box>
+    <box label="Ausbildung_Staette" source="manual" occluded="0" xtl="54.73" ytl="425.61" xbr="511.54" ybr="471.14" z_order="0">
+      <attribute name="Staette" />
+    </box>
+    <box label="Ausbildung_Klasse" source="manual" occluded="0" xtl="53.27" ytl="477.02" xbr="511.54" ybr="519.61" z_order="0">
+      <attribute name="Klasse" />
+    </box>
+    <box label="Ausbilung_Abschluss" source="manual" occluded="0" xtl="51.80" ytl="519.61" xbr="511.54" ybr="565.15" z_order="0">
+      <attribute name="Abschluss" />
+    </box>
+  </image>
+  <image id="5" name="000000000006.jpeg" width="768" height="1366">
+    <box label="Person" source="manual" occluded="0" xtl="30.05" ytl="669.42" xbr="522.10" ybr="966.12" z_order="0">
+    </box>
+    <box label="Person_Name" source="manual" occluded="0" xtl="64.13" ytl="699.72" xbr="497.38" ybr="743.12" rotation="359.10" z_order="0">
+      <attribute name="Name" />
+    </box>
+    <box label="Person_Vorname" source="manual" occluded="0" xtl="63.98" ytl="742.87" xbr="276.80" ybr="787.40" z_order="0">
+      <attribute name="Vorname" />
+    </box>
+    <box label="Person_Geburtsname" source="manual" occluded="0" xtl="281.46" ytl="741.94" xbr="497.10" ybr="786.20" z_order="0">
+      <attribute name="Geburtsname" />
+    </box>
+    <box label="Person_Geburtsort" source="manual" occluded="0" xtl="61.53" ytl="790.10" xbr="278.70" ybr="832.25" z_order="0">
+      <attribute name="Geburtsort" />
+    </box>
+    <box label="Person_weiblich" source="manual" occluded="0" xtl="285.88" ytl="809.60" xbr="306.44" ybr="832.55" z_order="0">
+      <attribute name="weiblich" />
+    </box>
+    <box label="Person_maennlich" source="manual" occluded="0" xtl="363.51" ytl="810.45" xbr="383.06" ybr="833.40" z_order="0">
+      <attribute name="maennlich" />
+    </box>
+    <box label="Person_divers" source="manual" occluded="0" xtl="432.79" ytl="808.98" xbr="453.19" ybr="831.93" z_order="0">
+    </box>
+    <box label="Person_Geburtsdatum" source="manual" occluded="0" xtl="64.14" ytl="839.55" xbr="189.00" ybr="885.20" z_order="0">
+      <attribute name="Geburtsdatum">1</attribute>
+    </box>
+    <box label="Person_Familienstand" source="manual" occluded="0" xtl="384.23" ytl="840.12" xbr="509.50" ybr="884.00" z_order="0">
+      <attribute name="Familienstand">1</attribute>
+    </box>
+    <box label="Person_Familienstand_seit" source="manual" occluded="0" xtl="186.57" ytl="839.58" xbr="276.90" ybr="885.10" z_order="0">
+      <attribute name="Familienstand_seit">1</attribute>
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_eigene" source="manual" occluded="0" xtl="66.15" ytl="893.27" xbr="278.40" ybr="932.10" z_order="0">
+      <attribute name="eigene" />
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_Ehegatte" source="manual" occluded="0" xtl="288.43" ytl="894.40" xbr="506.00" ybr="933.00" z_order="0">
+      <attribute name="Ehegatte" />
+    </box>
+    <box label="Person_Kinder" source="manual" occluded="0" xtl="407.01" ytl="934.21" xbr="424.14" ybr="954.23" z_order="0">
+      <attribute name="Kinder">false</attribute>
+    </box>
+    <box label="Wohnsitz" source="manual" occluded="0" xtl="35.15" ytl="961.66" xbr="521.54" ybr="1101.55" z_order="0">
+    </box>
+    <box label="Wohnsitz_Strasse" source="manual" occluded="0" xtl="62.04" ytl="1001.96" xbr="291.90" ybr="1048.00" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_Hausnummer" source="manual" occluded="0" xtl="288.41" ytl="1001.49" xbr="367.10" ybr="1045.80" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="361.54" ytl="1000.85" xbr="518.90" ybr="1045.70" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="63.91" ytl="1045.45" xbr="114.30" ybr="1091.40" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Postleitzahl" source="manual" occluded="0" xtl="109.75" ytl="1047.41" xbr="188.40" ybr="1091.60" z_order="0">
+      <attribute name="Postleitzahl">1</attribute>
+    </box>
+    <box label="Wohnsitz_Ort" source="manual" occluded="0" xtl="180.86" ytl="1046.87" xbr="517.20" ybr="1091.70" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung" source="manual" occluded="0" xtl="35.61" ytl="1091.96" xbr="517.99" ybr="1309.42" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Strasse" source="manual" occluded="0" xtl="58.51" ytl="1214.40" xbr="290.20" ybr="1254.85" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Hausnummer" source="manual" occluded="0" xtl="287.84" ytl="1213.90" xbr="366.90" ybr="1256.90" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Adresszusatz" source="manual" occluded="0" xtl="359.89" ytl="1215.32" xbr="508.00" ybr="1262.40" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Land" source="manual" occluded="0" xtl="61.21" ytl="1258.57" xbr="112.20" ybr="1306.30" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Postleitzahl" source="manual" occluded="0" xtl="107.75" ytl="1258.18" xbr="188.70" ybr="1309.20" z_order="0">
+      <attribute name="Postleitzahl" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Ort" source="manual" occluded="0" xtl="178.94" ytl="1262.07" xbr="505.40" ybr="1309.60" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="405.84" ytl="1143.91" xbr="425.51" ybr="1164.57" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="454.43" ytl="1143.68" xbr="474.10" ybr="1164.34" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="407.24" ytl="1174.00" xbr="426.92" ybr="1194.66" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="453.32" ytl="1174.02" xbr="473.00" ybr="1194.68" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_ja" source="manual" occluded="0" xtl="408.40" ytl="590.38" xbr="427.40" ybr="612.20" z_order="0">
+      <attribute name="Antrag_gestellt_ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_nein" source="manual" occluded="0" xtl="455.29" ytl="590.31" xbr="475.10" ybr="612.20" z_order="0">
+      <attribute name="Antrag_gestellt_nein">false</attribute>
+    </box>
+    <box label="Ausbildung_Vollzeit" source="manual" occluded="0" xtl="407.81" ytl="565.80" xbr="426.70" ybr="587.00" z_order="0">
+      <attribute name="Vollzeit">false</attribute>
+    </box>
+    <box label="Ausbildung_Teilzeit" source="manual" occluded="0" xtl="454.96" ytl="565.26" xbr="476.00" ybr="587.70" z_order="0">
+    </box>
+    <box label="Ausbildung_Amt" source="manual" occluded="0" xtl="66.75" ytl="618.75" xbr="283.48" ybr="661.13" rotation="0.30" z_order="0">
+      <attribute name="Amt" />
+    </box>
+    <box label="Ausbildung_Foerderungsnummer" source="manual" occluded="0" xtl="285.77" ytl="618.89" xbr="504.70" ybr="662.00" z_order="0">
+      <attribute name="Foerderungsnummer">1</attribute>
+    </box>
+    <box label="Ausbildung_Staette" source="manual" occluded="0" xtl="54.73" ytl="425.61" xbr="511.54" ybr="471.14" z_order="0">
+      <attribute name="Staette" />
+    </box>
+    <box label="Ausbildung_Klasse" source="manual" occluded="0" xtl="53.27" ytl="477.02" xbr="511.54" ybr="519.61" z_order="0">
+      <attribute name="Klasse" />
+    </box>
+    <box label="Ausbilung_Abschluss" source="manual" occluded="0" xtl="51.80" ytl="519.61" xbr="511.54" ybr="565.15" z_order="0">
+      <attribute name="Abschluss" />
+    </box>
+  </image>
+  <image id="6" name="000000000007.jpeg" width="768" height="1366">
+    <box label="Person" source="manual" occluded="0" xtl="30.05" ytl="669.42" xbr="522.10" ybr="966.12" z_order="0">
+    </box>
+    <box label="Person_Name" source="manual" occluded="0" xtl="64.13" ytl="699.72" xbr="497.38" ybr="743.12" rotation="359.10" z_order="0">
+      <attribute name="Name" />
+    </box>
+    <box label="Person_Vorname" source="manual" occluded="0" xtl="63.98" ytl="742.87" xbr="276.80" ybr="787.40" z_order="0">
+      <attribute name="Vorname" />
+    </box>
+    <box label="Person_Geburtsname" source="manual" occluded="0" xtl="281.46" ytl="741.94" xbr="497.10" ybr="786.20" z_order="0">
+      <attribute name="Geburtsname" />
+    </box>
+    <box label="Person_Geburtsort" source="manual" occluded="0" xtl="61.53" ytl="790.10" xbr="278.70" ybr="832.25" z_order="0">
+      <attribute name="Geburtsort" />
+    </box>
+    <box label="Person_weiblich" source="manual" occluded="0" xtl="285.88" ytl="809.60" xbr="306.44" ybr="832.55" z_order="0">
+      <attribute name="weiblich" />
+    </box>
+    <box label="Person_maennlich" source="manual" occluded="0" xtl="363.51" ytl="810.45" xbr="383.06" ybr="833.40" z_order="0">
+      <attribute name="maennlich" />
+    </box>
+    <box label="Person_divers" source="manual" occluded="0" xtl="432.79" ytl="808.98" xbr="453.19" ybr="831.93" z_order="0">
+    </box>
+    <box label="Person_Geburtsdatum" source="manual" occluded="0" xtl="64.14" ytl="839.55" xbr="189.00" ybr="885.20" z_order="0">
+      <attribute name="Geburtsdatum">1</attribute>
+    </box>
+    <box label="Person_Familienstand" source="manual" occluded="0" xtl="384.23" ytl="840.12" xbr="509.50" ybr="884.00" z_order="0">
+      <attribute name="Familienstand">1</attribute>
+    </box>
+    <box label="Person_Familienstand_seit" source="manual" occluded="0" xtl="186.57" ytl="839.58" xbr="276.90" ybr="885.10" z_order="0">
+      <attribute name="Familienstand_seit">1</attribute>
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_eigene" source="manual" occluded="0" xtl="66.15" ytl="893.27" xbr="278.40" ybr="932.10" z_order="0">
+      <attribute name="eigene" />
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_Ehegatte" source="manual" occluded="0" xtl="288.43" ytl="894.40" xbr="506.00" ybr="933.00" z_order="0">
+      <attribute name="Ehegatte" />
+    </box>
+    <box label="Person_Kinder" source="manual" occluded="0" xtl="407.01" ytl="934.21" xbr="424.14" ybr="954.23" z_order="0">
+      <attribute name="Kinder">false</attribute>
+    </box>
+    <box label="Wohnsitz" source="manual" occluded="0" xtl="35.15" ytl="961.66" xbr="521.54" ybr="1101.55" z_order="0">
+    </box>
+    <box label="Wohnsitz_Strasse" source="manual" occluded="0" xtl="62.04" ytl="1001.96" xbr="291.90" ybr="1048.00" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_Hausnummer" source="manual" occluded="0" xtl="288.41" ytl="1001.49" xbr="367.10" ybr="1045.80" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="361.54" ytl="1000.85" xbr="518.90" ybr="1045.70" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="63.91" ytl="1045.45" xbr="114.30" ybr="1091.40" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Postleitzahl" source="manual" occluded="0" xtl="109.75" ytl="1047.41" xbr="188.40" ybr="1091.60" z_order="0">
+      <attribute name="Postleitzahl">1</attribute>
+    </box>
+    <box label="Wohnsitz_Ort" source="manual" occluded="0" xtl="180.86" ytl="1046.87" xbr="517.20" ybr="1091.70" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung" source="manual" occluded="0" xtl="35.61" ytl="1091.96" xbr="517.99" ybr="1309.42" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Strasse" source="manual" occluded="0" xtl="58.51" ytl="1214.40" xbr="290.20" ybr="1254.85" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Hausnummer" source="manual" occluded="0" xtl="287.84" ytl="1213.90" xbr="366.90" ybr="1256.90" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Adresszusatz" source="manual" occluded="0" xtl="359.89" ytl="1215.32" xbr="508.00" ybr="1262.40" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Land" source="manual" occluded="0" xtl="61.21" ytl="1258.57" xbr="112.20" ybr="1306.30" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Postleitzahl" source="manual" occluded="0" xtl="107.75" ytl="1258.18" xbr="188.70" ybr="1309.20" z_order="0">
+      <attribute name="Postleitzahl" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Ort" source="manual" occluded="0" xtl="178.94" ytl="1262.07" xbr="505.40" ybr="1309.60" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="405.84" ytl="1143.91" xbr="425.51" ybr="1164.57" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="454.43" ytl="1143.68" xbr="474.10" ybr="1164.34" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="407.24" ytl="1174.00" xbr="426.92" ybr="1194.66" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="453.32" ytl="1174.02" xbr="473.00" ybr="1194.68" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_ja" source="manual" occluded="0" xtl="408.40" ytl="590.38" xbr="427.40" ybr="612.20" z_order="0">
+      <attribute name="Antrag_gestellt_ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_nein" source="manual" occluded="0" xtl="455.29" ytl="590.31" xbr="475.10" ybr="612.20" z_order="0">
+      <attribute name="Antrag_gestellt_nein">false</attribute>
+    </box>
+    <box label="Ausbildung_Vollzeit" source="manual" occluded="0" xtl="407.81" ytl="565.80" xbr="426.70" ybr="587.00" z_order="0">
+      <attribute name="Vollzeit">false</attribute>
+    </box>
+    <box label="Ausbildung_Teilzeit" source="manual" occluded="0" xtl="454.96" ytl="565.26" xbr="476.00" ybr="587.70" z_order="0">
+    </box>
+    <box label="Ausbildung_Amt" source="manual" occluded="0" xtl="66.75" ytl="618.75" xbr="283.48" ybr="661.13" rotation="0.30" z_order="0">
+      <attribute name="Amt" />
+    </box>
+    <box label="Ausbildung_Foerderungsnummer" source="manual" occluded="0" xtl="285.77" ytl="618.89" xbr="504.70" ybr="662.00" z_order="0">
+      <attribute name="Foerderungsnummer">1</attribute>
+    </box>
+    <box label="Ausbildung_Staette" source="manual" occluded="0" xtl="54.73" ytl="425.61" xbr="511.54" ybr="471.14" z_order="0">
+      <attribute name="Staette" />
+    </box>
+    <box label="Ausbildung_Klasse" source="manual" occluded="0" xtl="53.27" ytl="477.02" xbr="511.54" ybr="519.61" z_order="0">
+      <attribute name="Klasse" />
+    </box>
+    <box label="Ausbilung_Abschluss" source="manual" occluded="0" xtl="51.80" ytl="519.61" xbr="511.54" ybr="565.15" z_order="0">
+      <attribute name="Abschluss" />
+    </box>
+  </image>
+  <image id="7" name="000000000008.jpeg" width="768" height="1366">
+    <box label="Person" source="manual" occluded="0" xtl="30.05" ytl="669.42" xbr="522.10" ybr="966.12" z_order="0">
+    </box>
+    <box label="Person_Name" source="manual" occluded="0" xtl="64.13" ytl="699.72" xbr="497.38" ybr="743.12" rotation="359.10" z_order="0">
+      <attribute name="Name" />
+    </box>
+    <box label="Person_Vorname" source="manual" occluded="0" xtl="63.98" ytl="742.87" xbr="276.80" ybr="787.40" z_order="0">
+      <attribute name="Vorname" />
+    </box>
+    <box label="Person_Geburtsname" source="manual" occluded="0" xtl="281.46" ytl="741.94" xbr="497.10" ybr="786.20" z_order="0">
+      <attribute name="Geburtsname" />
+    </box>
+    <box label="Person_Geburtsort" source="manual" occluded="0" xtl="61.53" ytl="790.10" xbr="278.70" ybr="832.25" z_order="0">
+      <attribute name="Geburtsort" />
+    </box>
+    <box label="Person_weiblich" source="manual" occluded="0" xtl="285.88" ytl="809.60" xbr="306.44" ybr="832.55" z_order="0">
+      <attribute name="weiblich" />
+    </box>
+    <box label="Person_maennlich" source="manual" occluded="0" xtl="363.51" ytl="810.45" xbr="383.06" ybr="833.40" z_order="0">
+      <attribute name="maennlich" />
+    </box>
+    <box label="Person_divers" source="manual" occluded="0" xtl="432.79" ytl="808.98" xbr="453.19" ybr="831.93" z_order="0">
+    </box>
+    <box label="Person_Geburtsdatum" source="manual" occluded="0" xtl="64.14" ytl="839.55" xbr="189.00" ybr="885.20" z_order="0">
+      <attribute name="Geburtsdatum">1</attribute>
+    </box>
+    <box label="Person_Familienstand" source="manual" occluded="0" xtl="384.23" ytl="840.12" xbr="509.50" ybr="884.00" z_order="0">
+      <attribute name="Familienstand">1</attribute>
+    </box>
+    <box label="Person_Familienstand_seit" source="manual" occluded="0" xtl="186.57" ytl="839.58" xbr="276.90" ybr="885.10" z_order="0">
+      <attribute name="Familienstand_seit">1</attribute>
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_eigene" source="manual" occluded="0" xtl="66.15" ytl="893.27" xbr="278.40" ybr="932.10" z_order="0">
+      <attribute name="eigene" />
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_Ehegatte" source="manual" occluded="0" xtl="288.43" ytl="894.40" xbr="506.00" ybr="933.00" z_order="0">
+      <attribute name="Ehegatte" />
+    </box>
+    <box label="Person_Kinder" source="manual" occluded="0" xtl="407.01" ytl="934.21" xbr="424.14" ybr="954.23" z_order="0">
+      <attribute name="Kinder">false</attribute>
+    </box>
+    <box label="Wohnsitz" source="manual" occluded="0" xtl="35.15" ytl="961.66" xbr="521.54" ybr="1101.55" z_order="0">
+    </box>
+    <box label="Wohnsitz_Strasse" source="manual" occluded="0" xtl="62.04" ytl="1001.96" xbr="291.90" ybr="1048.00" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_Hausnummer" source="manual" occluded="0" xtl="288.41" ytl="1001.49" xbr="367.10" ybr="1045.80" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="361.54" ytl="1000.85" xbr="518.90" ybr="1045.70" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="63.91" ytl="1045.45" xbr="114.30" ybr="1091.40" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Postleitzahl" source="manual" occluded="0" xtl="109.75" ytl="1047.41" xbr="188.40" ybr="1091.60" z_order="0">
+      <attribute name="Postleitzahl">1</attribute>
+    </box>
+    <box label="Wohnsitz_Ort" source="manual" occluded="0" xtl="180.86" ytl="1046.87" xbr="517.20" ybr="1091.70" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung" source="manual" occluded="0" xtl="35.61" ytl="1091.96" xbr="517.99" ybr="1309.42" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Strasse" source="manual" occluded="0" xtl="58.51" ytl="1214.40" xbr="290.20" ybr="1254.85" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Hausnummer" source="manual" occluded="0" xtl="287.84" ytl="1213.90" xbr="366.90" ybr="1256.90" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Adresszusatz" source="manual" occluded="0" xtl="359.89" ytl="1215.32" xbr="508.00" ybr="1262.40" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Land" source="manual" occluded="0" xtl="61.21" ytl="1258.57" xbr="112.20" ybr="1306.30" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Postleitzahl" source="manual" occluded="0" xtl="107.75" ytl="1258.18" xbr="188.70" ybr="1309.20" z_order="0">
+      <attribute name="Postleitzahl" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Ort" source="manual" occluded="0" xtl="178.94" ytl="1262.07" xbr="505.40" ybr="1309.60" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="405.84" ytl="1143.91" xbr="425.51" ybr="1164.57" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="454.43" ytl="1143.68" xbr="474.10" ybr="1164.34" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="407.24" ytl="1174.00" xbr="426.92" ybr="1194.66" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="453.32" ytl="1174.02" xbr="473.00" ybr="1194.68" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_ja" source="manual" occluded="0" xtl="408.40" ytl="590.38" xbr="427.40" ybr="612.20" z_order="0">
+      <attribute name="Antrag_gestellt_ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_nein" source="manual" occluded="0" xtl="455.29" ytl="590.31" xbr="475.10" ybr="612.20" z_order="0">
+      <attribute name="Antrag_gestellt_nein">false</attribute>
+    </box>
+    <box label="Ausbildung_Vollzeit" source="manual" occluded="0" xtl="407.81" ytl="565.80" xbr="426.70" ybr="587.00" z_order="0">
+      <attribute name="Vollzeit">false</attribute>
+    </box>
+    <box label="Ausbildung_Teilzeit" source="manual" occluded="0" xtl="454.96" ytl="565.26" xbr="476.00" ybr="587.70" z_order="0">
+    </box>
+    <box label="Ausbildung_Amt" source="manual" occluded="0" xtl="66.75" ytl="618.75" xbr="283.48" ybr="661.13" rotation="0.30" z_order="0">
+      <attribute name="Amt" />
+    </box>
+    <box label="Ausbildung_Foerderungsnummer" source="manual" occluded="0" xtl="285.77" ytl="618.89" xbr="504.70" ybr="662.00" z_order="0">
+      <attribute name="Foerderungsnummer">1</attribute>
+    </box>
+    <box label="Ausbildung_Staette" source="manual" occluded="0" xtl="54.73" ytl="425.61" xbr="511.54" ybr="471.14" z_order="0">
+      <attribute name="Staette" />
+    </box>
+    <box label="Ausbildung_Klasse" source="manual" occluded="0" xtl="53.27" ytl="477.02" xbr="511.54" ybr="519.61" z_order="0">
+      <attribute name="Klasse" />
+    </box>
+    <box label="Ausbilung_Abschluss" source="manual" occluded="0" xtl="51.80" ytl="519.61" xbr="511.54" ybr="565.15" z_order="0">
+      <attribute name="Abschluss" />
+    </box>
+  </image>
+  <image id="8" name="000000000009.jpeg" width="768" height="1366">
+    <box label="Person" source="manual" occluded="0" xtl="30.05" ytl="669.42" xbr="522.10" ybr="966.12" z_order="0">
+    </box>
+    <box label="Person_Name" source="manual" occluded="0" xtl="64.13" ytl="699.72" xbr="497.38" ybr="743.12" rotation="359.10" z_order="0">
+      <attribute name="Name" />
+    </box>
+    <box label="Person_Vorname" source="manual" occluded="0" xtl="63.98" ytl="742.87" xbr="276.80" ybr="787.40" z_order="0">
+      <attribute name="Vorname" />
+    </box>
+    <box label="Person_Geburtsname" source="manual" occluded="0" xtl="281.46" ytl="741.94" xbr="497.10" ybr="786.20" z_order="0">
+      <attribute name="Geburtsname" />
+    </box>
+    <box label="Person_Geburtsort" source="manual" occluded="0" xtl="61.53" ytl="790.10" xbr="278.70" ybr="832.25" z_order="0">
+      <attribute name="Geburtsort" />
+    </box>
+    <box label="Person_weiblich" source="manual" occluded="0" xtl="285.88" ytl="809.60" xbr="306.44" ybr="832.55" z_order="0">
+      <attribute name="weiblich" />
+    </box>
+    <box label="Person_maennlich" source="manual" occluded="0" xtl="363.51" ytl="810.45" xbr="383.06" ybr="833.40" z_order="0">
+      <attribute name="maennlich" />
+    </box>
+    <box label="Person_divers" source="manual" occluded="0" xtl="432.79" ytl="808.98" xbr="453.19" ybr="831.93" z_order="0">
+    </box>
+    <box label="Person_Geburtsdatum" source="manual" occluded="0" xtl="64.14" ytl="839.55" xbr="189.00" ybr="885.20" z_order="0">
+      <attribute name="Geburtsdatum">1</attribute>
+    </box>
+    <box label="Person_Familienstand" source="manual" occluded="0" xtl="384.23" ytl="840.12" xbr="509.50" ybr="884.00" z_order="0">
+      <attribute name="Familienstand">1</attribute>
+    </box>
+    <box label="Person_Familienstand_seit" source="manual" occluded="0" xtl="186.57" ytl="839.58" xbr="276.90" ybr="885.10" z_order="0">
+      <attribute name="Familienstand_seit">1</attribute>
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_eigene" source="manual" occluded="0" xtl="66.15" ytl="893.27" xbr="278.40" ybr="932.10" z_order="0">
+      <attribute name="eigene" />
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_Ehegatte" source="manual" occluded="0" xtl="288.43" ytl="894.40" xbr="506.00" ybr="933.00" z_order="0">
+      <attribute name="Ehegatte" />
+    </box>
+    <box label="Person_Kinder" source="manual" occluded="0" xtl="407.01" ytl="934.21" xbr="424.14" ybr="954.23" z_order="0">
+      <attribute name="Kinder">false</attribute>
+    </box>
+    <box label="Wohnsitz" source="manual" occluded="0" xtl="35.15" ytl="961.66" xbr="521.54" ybr="1101.55" z_order="0">
+    </box>
+    <box label="Wohnsitz_Strasse" source="manual" occluded="0" xtl="62.04" ytl="1001.96" xbr="291.90" ybr="1048.00" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_Hausnummer" source="manual" occluded="0" xtl="288.41" ytl="1001.49" xbr="367.10" ybr="1045.80" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="361.54" ytl="1000.85" xbr="518.90" ybr="1045.70" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="63.91" ytl="1045.45" xbr="114.30" ybr="1091.40" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Postleitzahl" source="manual" occluded="0" xtl="109.75" ytl="1047.41" xbr="188.40" ybr="1091.60" z_order="0">
+      <attribute name="Postleitzahl">1</attribute>
+    </box>
+    <box label="Wohnsitz_Ort" source="manual" occluded="0" xtl="180.86" ytl="1046.87" xbr="517.20" ybr="1091.70" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung" source="manual" occluded="0" xtl="35.61" ytl="1091.96" xbr="517.99" ybr="1309.42" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Strasse" source="manual" occluded="0" xtl="58.51" ytl="1214.40" xbr="290.20" ybr="1254.85" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Hausnummer" source="manual" occluded="0" xtl="287.84" ytl="1213.90" xbr="366.90" ybr="1256.90" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Adresszusatz" source="manual" occluded="0" xtl="359.89" ytl="1215.32" xbr="508.00" ybr="1262.40" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Land" source="manual" occluded="0" xtl="61.21" ytl="1258.57" xbr="112.20" ybr="1306.30" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Postleitzahl" source="manual" occluded="0" xtl="107.75" ytl="1258.18" xbr="188.70" ybr="1309.20" z_order="0">
+      <attribute name="Postleitzahl" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Ort" source="manual" occluded="0" xtl="178.94" ytl="1262.07" xbr="505.40" ybr="1309.60" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="405.84" ytl="1143.91" xbr="425.51" ybr="1164.57" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="454.43" ytl="1143.68" xbr="474.10" ybr="1164.34" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="407.24" ytl="1174.00" xbr="426.92" ybr="1194.66" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="453.32" ytl="1174.02" xbr="473.00" ybr="1194.68" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_ja" source="manual" occluded="0" xtl="408.40" ytl="590.38" xbr="427.40" ybr="612.20" z_order="0">
+      <attribute name="Antrag_gestellt_ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_nein" source="manual" occluded="0" xtl="455.29" ytl="590.31" xbr="475.10" ybr="612.20" z_order="0">
+      <attribute name="Antrag_gestellt_nein">false</attribute>
+    </box>
+    <box label="Ausbildung_Vollzeit" source="manual" occluded="0" xtl="407.81" ytl="565.80" xbr="426.70" ybr="587.00" z_order="0">
+      <attribute name="Vollzeit">false</attribute>
+    </box>
+    <box label="Ausbildung_Teilzeit" source="manual" occluded="0" xtl="454.96" ytl="565.26" xbr="476.00" ybr="587.70" z_order="0">
+    </box>
+    <box label="Ausbildung_Amt" source="manual" occluded="0" xtl="66.75" ytl="618.75" xbr="283.48" ybr="661.13" rotation="0.30" z_order="0">
+      <attribute name="Amt" />
+    </box>
+    <box label="Ausbildung_Foerderungsnummer" source="manual" occluded="0" xtl="285.77" ytl="618.89" xbr="504.70" ybr="662.00" z_order="0">
+      <attribute name="Foerderungsnummer">1</attribute>
+    </box>
+    <box label="Ausbildung_Staette" source="manual" occluded="0" xtl="54.73" ytl="425.61" xbr="511.54" ybr="471.14" z_order="0">
+      <attribute name="Staette" />
+    </box>
+    <box label="Ausbildung_Klasse" source="manual" occluded="0" xtl="53.27" ytl="477.02" xbr="511.54" ybr="519.61" z_order="0">
+      <attribute name="Klasse" />
+    </box>
+    <box label="Ausbilung_Abschluss" source="manual" occluded="0" xtl="51.80" ytl="519.61" xbr="511.54" ybr="565.15" z_order="0">
+      <attribute name="Abschluss" />
+    </box>
+  </image>
+  <image id="9" name="000000000010.jpeg" width="768" height="1366">
+    <box label="Person" source="manual" occluded="0" xtl="30.05" ytl="669.42" xbr="522.10" ybr="966.12" z_order="0">
+    </box>
+    <box label="Person_Name" source="manual" occluded="0" xtl="64.13" ytl="699.72" xbr="497.38" ybr="743.12" rotation="359.10" z_order="0">
+      <attribute name="Name" />
+    </box>
+    <box label="Person_Vorname" source="manual" occluded="0" xtl="63.98" ytl="742.87" xbr="276.80" ybr="787.40" z_order="0">
+      <attribute name="Vorname" />
+    </box>
+    <box label="Person_Geburtsname" source="manual" occluded="0" xtl="281.46" ytl="741.94" xbr="497.10" ybr="786.20" z_order="0">
+      <attribute name="Geburtsname" />
+    </box>
+    <box label="Person_Geburtsort" source="manual" occluded="0" xtl="61.53" ytl="790.10" xbr="278.70" ybr="832.25" z_order="0">
+      <attribute name="Geburtsort" />
+    </box>
+    <box label="Person_weiblich" source="manual" occluded="0" xtl="285.88" ytl="809.60" xbr="306.44" ybr="832.55" z_order="0">
+      <attribute name="weiblich" />
+    </box>
+    <box label="Person_maennlich" source="manual" occluded="0" xtl="363.51" ytl="810.45" xbr="383.06" ybr="833.40" z_order="0">
+      <attribute name="maennlich" />
+    </box>
+    <box label="Person_divers" source="manual" occluded="0" xtl="432.79" ytl="808.98" xbr="453.19" ybr="831.93" z_order="0">
+    </box>
+    <box label="Person_Geburtsdatum" source="manual" occluded="0" xtl="64.14" ytl="839.55" xbr="189.00" ybr="885.20" z_order="0">
+      <attribute name="Geburtsdatum">1</attribute>
+    </box>
+    <box label="Person_Familienstand" source="manual" occluded="0" xtl="384.23" ytl="840.12" xbr="509.50" ybr="884.00" z_order="0">
+      <attribute name="Familienstand">1</attribute>
+    </box>
+    <box label="Person_Familienstand_seit" source="manual" occluded="0" xtl="186.57" ytl="839.58" xbr="276.90" ybr="885.10" z_order="0">
+      <attribute name="Familienstand_seit">1</attribute>
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_eigene" source="manual" occluded="0" xtl="66.15" ytl="893.27" xbr="278.40" ybr="932.10" z_order="0">
+      <attribute name="eigene" />
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_Ehegatte" source="manual" occluded="0" xtl="288.43" ytl="894.40" xbr="506.00" ybr="933.00" z_order="0">
+      <attribute name="Ehegatte" />
+    </box>
+    <box label="Person_Kinder" source="manual" occluded="0" xtl="407.01" ytl="934.21" xbr="424.14" ybr="954.23" z_order="0">
+      <attribute name="Kinder">false</attribute>
+    </box>
+    <box label="Wohnsitz" source="manual" occluded="0" xtl="35.15" ytl="961.66" xbr="521.54" ybr="1101.55" z_order="0">
+    </box>
+    <box label="Wohnsitz_Strasse" source="manual" occluded="0" xtl="62.04" ytl="1001.96" xbr="291.90" ybr="1048.00" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_Hausnummer" source="manual" occluded="0" xtl="288.41" ytl="1001.49" xbr="367.10" ybr="1045.80" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="361.54" ytl="1000.85" xbr="518.90" ybr="1045.70" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="63.91" ytl="1045.45" xbr="114.30" ybr="1091.40" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Postleitzahl" source="manual" occluded="0" xtl="109.75" ytl="1047.41" xbr="188.40" ybr="1091.60" z_order="0">
+      <attribute name="Postleitzahl">1</attribute>
+    </box>
+    <box label="Wohnsitz_Ort" source="manual" occluded="0" xtl="180.86" ytl="1046.87" xbr="517.20" ybr="1091.70" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung" source="manual" occluded="0" xtl="35.61" ytl="1091.96" xbr="517.99" ybr="1309.42" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Strasse" source="manual" occluded="0" xtl="58.51" ytl="1214.40" xbr="290.20" ybr="1254.85" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Hausnummer" source="manual" occluded="0" xtl="287.84" ytl="1213.90" xbr="366.90" ybr="1256.90" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Adresszusatz" source="manual" occluded="0" xtl="359.89" ytl="1215.32" xbr="508.00" ybr="1262.40" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Land" source="manual" occluded="0" xtl="61.21" ytl="1258.57" xbr="112.20" ybr="1306.30" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Postleitzahl" source="manual" occluded="0" xtl="107.75" ytl="1258.18" xbr="188.70" ybr="1309.20" z_order="0">
+      <attribute name="Postleitzahl" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Ort" source="manual" occluded="0" xtl="178.94" ytl="1262.07" xbr="505.40" ybr="1309.60" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="405.84" ytl="1143.91" xbr="425.51" ybr="1164.57" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="454.43" ytl="1143.68" xbr="474.10" ybr="1164.34" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="407.24" ytl="1174.00" xbr="426.92" ybr="1194.66" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="453.32" ytl="1174.02" xbr="473.00" ybr="1194.68" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_ja" source="manual" occluded="0" xtl="408.40" ytl="590.38" xbr="427.40" ybr="612.20" z_order="0">
+      <attribute name="Antrag_gestellt_ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_nein" source="manual" occluded="0" xtl="455.29" ytl="590.31" xbr="475.10" ybr="612.20" z_order="0">
+      <attribute name="Antrag_gestellt_nein">false</attribute>
+    </box>
+    <box label="Ausbildung_Vollzeit" source="manual" occluded="0" xtl="407.81" ytl="565.80" xbr="426.70" ybr="587.00" z_order="0">
+      <attribute name="Vollzeit">false</attribute>
+    </box>
+    <box label="Ausbildung_Teilzeit" source="manual" occluded="0" xtl="454.96" ytl="565.26" xbr="476.00" ybr="587.70" z_order="0">
+    </box>
+    <box label="Ausbildung_Amt" source="manual" occluded="0" xtl="66.75" ytl="618.75" xbr="283.48" ybr="661.13" rotation="0.30" z_order="0">
+      <attribute name="Amt" />
+    </box>
+    <box label="Ausbildung_Foerderungsnummer" source="manual" occluded="0" xtl="285.77" ytl="618.89" xbr="504.70" ybr="662.00" z_order="0">
+      <attribute name="Foerderungsnummer">1</attribute>
+    </box>
+    <box label="Ausbildung_Staette" source="manual" occluded="0" xtl="54.73" ytl="425.61" xbr="511.54" ybr="471.14" z_order="0">
+      <attribute name="Staette" />
+    </box>
+    <box label="Ausbildung_Klasse" source="manual" occluded="0" xtl="53.27" ytl="477.02" xbr="511.54" ybr="519.61" z_order="0">
+      <attribute name="Klasse" />
+    </box>
+    <box label="Ausbilung_Abschluss" source="manual" occluded="0" xtl="51.80" ytl="519.61" xbr="511.54" ybr="565.15" z_order="0">
+      <attribute name="Abschluss" />
+    </box>
+  </image>
+  <image id="10" name="000000000011.jpeg" width="768" height="1366">
+    <box label="Person" source="manual" occluded="0" xtl="30.05" ytl="669.42" xbr="522.10" ybr="966.12" z_order="0">
+    </box>
+    <box label="Person_Name" source="manual" occluded="0" xtl="64.13" ytl="699.72" xbr="497.38" ybr="743.12" rotation="359.10" z_order="0">
+      <attribute name="Name" />
+    </box>
+    <box label="Person_Vorname" source="manual" occluded="0" xtl="63.98" ytl="742.87" xbr="276.80" ybr="787.40" z_order="0">
+      <attribute name="Vorname" />
+    </box>
+    <box label="Person_Geburtsname" source="manual" occluded="0" xtl="281.46" ytl="741.94" xbr="497.10" ybr="786.20" z_order="0">
+      <attribute name="Geburtsname" />
+    </box>
+    <box label="Person_Geburtsort" source="manual" occluded="0" xtl="61.53" ytl="790.10" xbr="278.70" ybr="832.25" z_order="0">
+      <attribute name="Geburtsort" />
+    </box>
+    <box label="Person_weiblich" source="manual" occluded="0" xtl="285.88" ytl="809.60" xbr="306.44" ybr="832.55" z_order="0">
+      <attribute name="weiblich" />
+    </box>
+    <box label="Person_maennlich" source="manual" occluded="0" xtl="363.51" ytl="810.45" xbr="383.06" ybr="833.40" z_order="0">
+      <attribute name="maennlich" />
+    </box>
+    <box label="Person_divers" source="manual" occluded="0" xtl="432.79" ytl="808.98" xbr="453.19" ybr="831.93" z_order="0">
+    </box>
+    <box label="Person_Geburtsdatum" source="manual" occluded="0" xtl="64.14" ytl="839.55" xbr="189.00" ybr="885.20" z_order="0">
+      <attribute name="Geburtsdatum">1</attribute>
+    </box>
+    <box label="Person_Familienstand" source="manual" occluded="0" xtl="384.23" ytl="840.12" xbr="509.50" ybr="884.00" z_order="0">
+      <attribute name="Familienstand">1</attribute>
+    </box>
+    <box label="Person_Familienstand_seit" source="manual" occluded="0" xtl="186.57" ytl="839.58" xbr="276.90" ybr="885.10" z_order="0">
+      <attribute name="Familienstand_seit">1</attribute>
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_eigene" source="manual" occluded="0" xtl="66.15" ytl="893.27" xbr="278.40" ybr="932.10" z_order="0">
+      <attribute name="eigene" />
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_Ehegatte" source="manual" occluded="0" xtl="288.43" ytl="894.40" xbr="506.00" ybr="933.00" z_order="0">
+      <attribute name="Ehegatte" />
+    </box>
+    <box label="Person_Kinder" source="manual" occluded="0" xtl="407.01" ytl="934.21" xbr="424.14" ybr="954.23" z_order="0">
+      <attribute name="Kinder">false</attribute>
+    </box>
+    <box label="Wohnsitz" source="manual" occluded="0" xtl="35.15" ytl="961.66" xbr="521.54" ybr="1101.55" z_order="0">
+    </box>
+    <box label="Wohnsitz_Strasse" source="manual" occluded="0" xtl="62.04" ytl="1001.96" xbr="291.90" ybr="1048.00" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_Hausnummer" source="manual" occluded="0" xtl="288.41" ytl="1001.49" xbr="367.10" ybr="1045.80" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="361.54" ytl="1000.85" xbr="518.90" ybr="1045.70" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="63.91" ytl="1045.45" xbr="114.30" ybr="1091.40" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Postleitzahl" source="manual" occluded="0" xtl="109.75" ytl="1047.41" xbr="188.40" ybr="1091.60" z_order="0">
+      <attribute name="Postleitzahl">1</attribute>
+    </box>
+    <box label="Wohnsitz_Ort" source="manual" occluded="0" xtl="180.86" ytl="1046.87" xbr="517.20" ybr="1091.70" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung" source="manual" occluded="0" xtl="35.61" ytl="1091.96" xbr="517.99" ybr="1309.42" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Strasse" source="manual" occluded="0" xtl="58.51" ytl="1214.40" xbr="290.20" ybr="1254.85" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Hausnummer" source="manual" occluded="0" xtl="287.84" ytl="1213.90" xbr="366.90" ybr="1256.90" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Adresszusatz" source="manual" occluded="0" xtl="359.89" ytl="1215.32" xbr="508.00" ybr="1262.40" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Land" source="manual" occluded="0" xtl="61.21" ytl="1258.57" xbr="112.20" ybr="1306.30" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Postleitzahl" source="manual" occluded="0" xtl="107.75" ytl="1258.18" xbr="188.70" ybr="1309.20" z_order="0">
+      <attribute name="Postleitzahl" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Ort" source="manual" occluded="0" xtl="178.94" ytl="1262.07" xbr="505.40" ybr="1309.60" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="405.84" ytl="1143.91" xbr="425.51" ybr="1164.57" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="454.43" ytl="1143.68" xbr="474.10" ybr="1164.34" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="407.24" ytl="1174.00" xbr="426.92" ybr="1194.66" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="453.32" ytl="1174.02" xbr="473.00" ybr="1194.68" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_ja" source="manual" occluded="0" xtl="408.40" ytl="590.38" xbr="427.40" ybr="612.20" z_order="0">
+      <attribute name="Antrag_gestellt_ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_nein" source="manual" occluded="0" xtl="455.29" ytl="590.31" xbr="475.10" ybr="612.20" z_order="0">
+      <attribute name="Antrag_gestellt_nein">false</attribute>
+    </box>
+    <box label="Ausbildung_Vollzeit" source="manual" occluded="0" xtl="407.81" ytl="565.80" xbr="426.70" ybr="587.00" z_order="0">
+      <attribute name="Vollzeit">false</attribute>
+    </box>
+    <box label="Ausbildung_Teilzeit" source="manual" occluded="0" xtl="454.96" ytl="565.26" xbr="476.00" ybr="587.70" z_order="0">
+    </box>
+    <box label="Ausbildung_Amt" source="manual" occluded="0" xtl="66.75" ytl="618.75" xbr="283.48" ybr="661.13" rotation="0.30" z_order="0">
+      <attribute name="Amt" />
+    </box>
+    <box label="Ausbildung_Foerderungsnummer" source="manual" occluded="0" xtl="285.77" ytl="618.89" xbr="504.70" ybr="662.00" z_order="0">
+      <attribute name="Foerderungsnummer">1</attribute>
+    </box>
+    <box label="Ausbildung_Staette" source="manual" occluded="0" xtl="54.73" ytl="425.61" xbr="511.54" ybr="471.14" z_order="0">
+      <attribute name="Staette" />
+    </box>
+    <box label="Ausbildung_Klasse" source="manual" occluded="0" xtl="53.27" ytl="477.02" xbr="511.54" ybr="519.61" z_order="0">
+      <attribute name="Klasse" />
+    </box>
+    <box label="Ausbilung_Abschluss" source="manual" occluded="0" xtl="51.80" ytl="519.61" xbr="511.54" ybr="565.15" z_order="0">
+      <attribute name="Abschluss" />
+    </box>
+  </image>
+  <image id="11" name="000000000012.jpeg" width="768" height="1366">
+    <box label="Person" source="manual" occluded="0" xtl="30.05" ytl="669.42" xbr="522.10" ybr="966.12" z_order="0">
+    </box>
+    <box label="Person_Name" source="manual" occluded="0" xtl="64.13" ytl="699.72" xbr="497.38" ybr="743.12" rotation="359.10" z_order="0">
+      <attribute name="Name" />
+    </box>
+    <box label="Person_Vorname" source="manual" occluded="0" xtl="63.98" ytl="742.87" xbr="276.80" ybr="787.40" z_order="0">
+      <attribute name="Vorname" />
+    </box>
+    <box label="Person_Geburtsname" source="manual" occluded="0" xtl="281.46" ytl="741.94" xbr="497.10" ybr="786.20" z_order="0">
+      <attribute name="Geburtsname" />
+    </box>
+    <box label="Person_Geburtsort" source="manual" occluded="0" xtl="61.53" ytl="790.10" xbr="278.70" ybr="832.25" z_order="0">
+      <attribute name="Geburtsort" />
+    </box>
+    <box label="Person_weiblich" source="manual" occluded="0" xtl="285.88" ytl="809.60" xbr="306.44" ybr="832.55" z_order="0">
+      <attribute name="weiblich" />
+    </box>
+    <box label="Person_maennlich" source="manual" occluded="0" xtl="363.51" ytl="810.45" xbr="383.06" ybr="833.40" z_order="0">
+      <attribute name="maennlich" />
+    </box>
+    <box label="Person_divers" source="manual" occluded="0" xtl="432.79" ytl="808.98" xbr="453.19" ybr="831.93" z_order="0">
+    </box>
+    <box label="Person_Geburtsdatum" source="manual" occluded="0" xtl="64.14" ytl="839.55" xbr="189.00" ybr="885.20" z_order="0">
+      <attribute name="Geburtsdatum">1</attribute>
+    </box>
+    <box label="Person_Familienstand" source="manual" occluded="0" xtl="384.23" ytl="840.12" xbr="509.50" ybr="884.00" z_order="0">
+      <attribute name="Familienstand">1</attribute>
+    </box>
+    <box label="Person_Familienstand_seit" source="manual" occluded="0" xtl="186.57" ytl="839.58" xbr="276.90" ybr="885.10" z_order="0">
+      <attribute name="Familienstand_seit">1</attribute>
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_eigene" source="manual" occluded="0" xtl="66.15" ytl="893.27" xbr="278.40" ybr="932.10" z_order="0">
+      <attribute name="eigene" />
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_Ehegatte" source="manual" occluded="0" xtl="288.43" ytl="894.40" xbr="506.00" ybr="933.00" z_order="0">
+      <attribute name="Ehegatte" />
+    </box>
+    <box label="Person_Kinder" source="manual" occluded="0" xtl="407.01" ytl="934.21" xbr="424.14" ybr="954.23" z_order="0">
+      <attribute name="Kinder">false</attribute>
+    </box>
+    <box label="Wohnsitz" source="manual" occluded="0" xtl="35.15" ytl="961.66" xbr="521.54" ybr="1101.55" z_order="0">
+    </box>
+    <box label="Wohnsitz_Strasse" source="manual" occluded="0" xtl="62.04" ytl="1001.96" xbr="291.90" ybr="1048.00" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_Hausnummer" source="manual" occluded="0" xtl="288.41" ytl="1001.49" xbr="367.10" ybr="1045.80" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="361.54" ytl="1000.85" xbr="518.90" ybr="1045.70" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="63.91" ytl="1045.45" xbr="114.30" ybr="1091.40" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Postleitzahl" source="manual" occluded="0" xtl="109.75" ytl="1047.41" xbr="188.40" ybr="1091.60" z_order="0">
+      <attribute name="Postleitzahl">1</attribute>
+    </box>
+    <box label="Wohnsitz_Ort" source="manual" occluded="0" xtl="180.86" ytl="1046.87" xbr="517.20" ybr="1091.70" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung" source="manual" occluded="0" xtl="35.61" ytl="1091.96" xbr="517.99" ybr="1309.42" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Strasse" source="manual" occluded="0" xtl="58.51" ytl="1214.40" xbr="290.20" ybr="1254.85" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Hausnummer" source="manual" occluded="0" xtl="287.84" ytl="1213.90" xbr="366.90" ybr="1256.90" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Adresszusatz" source="manual" occluded="0" xtl="359.89" ytl="1215.32" xbr="508.00" ybr="1262.40" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Land" source="manual" occluded="0" xtl="61.21" ytl="1258.57" xbr="112.20" ybr="1306.30" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Postleitzahl" source="manual" occluded="0" xtl="107.75" ytl="1258.18" xbr="188.70" ybr="1309.20" z_order="0">
+      <attribute name="Postleitzahl" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Ort" source="manual" occluded="0" xtl="178.94" ytl="1262.07" xbr="505.40" ybr="1309.60" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="405.84" ytl="1143.91" xbr="425.51" ybr="1164.57" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="454.43" ytl="1143.68" xbr="474.10" ybr="1164.34" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="407.24" ytl="1174.00" xbr="426.92" ybr="1194.66" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="453.32" ytl="1174.02" xbr="473.00" ybr="1194.68" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_ja" source="manual" occluded="0" xtl="408.40" ytl="590.38" xbr="427.40" ybr="612.20" z_order="0">
+      <attribute name="Antrag_gestellt_ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_nein" source="manual" occluded="0" xtl="455.29" ytl="590.31" xbr="475.10" ybr="612.20" z_order="0">
+      <attribute name="Antrag_gestellt_nein">false</attribute>
+    </box>
+    <box label="Ausbildung_Vollzeit" source="manual" occluded="0" xtl="407.81" ytl="565.80" xbr="426.70" ybr="587.00" z_order="0">
+      <attribute name="Vollzeit">false</attribute>
+    </box>
+    <box label="Ausbildung_Teilzeit" source="manual" occluded="0" xtl="454.96" ytl="565.26" xbr="476.00" ybr="587.70" z_order="0">
+    </box>
+    <box label="Ausbildung_Amt" source="manual" occluded="0" xtl="66.75" ytl="618.75" xbr="283.48" ybr="661.13" rotation="0.30" z_order="0">
+      <attribute name="Amt" />
+    </box>
+    <box label="Ausbildung_Foerderungsnummer" source="manual" occluded="0" xtl="285.77" ytl="618.89" xbr="504.70" ybr="662.00" z_order="0">
+      <attribute name="Foerderungsnummer">1</attribute>
+    </box>
+    <box label="Ausbildung_Staette" source="manual" occluded="0" xtl="54.73" ytl="425.61" xbr="511.54" ybr="471.14" z_order="0">
+      <attribute name="Staette" />
+    </box>
+    <box label="Ausbildung_Klasse" source="manual" occluded="0" xtl="53.27" ytl="477.02" xbr="511.54" ybr="519.61" z_order="0">
+      <attribute name="Klasse" />
+    </box>
+    <box label="Ausbilung_Abschluss" source="manual" occluded="0" xtl="51.80" ytl="519.61" xbr="511.54" ybr="565.15" z_order="0">
+      <attribute name="Abschluss" />
+    </box>
+  </image>
+  <image id="12" name="000000000013.jpeg" width="768" height="1366">
+    <box label="Person" source="manual" occluded="0" xtl="30.05" ytl="669.42" xbr="522.10" ybr="966.12" z_order="0">
+    </box>
+    <box label="Person_Name" source="manual" occluded="0" xtl="64.13" ytl="699.72" xbr="497.38" ybr="743.12" rotation="359.10" z_order="0">
+      <attribute name="Name" />
+    </box>
+    <box label="Person_Vorname" source="manual" occluded="0" xtl="63.98" ytl="742.87" xbr="276.80" ybr="787.40" z_order="0">
+      <attribute name="Vorname" />
+    </box>
+    <box label="Person_Geburtsname" source="manual" occluded="0" xtl="281.46" ytl="741.94" xbr="497.10" ybr="786.20" z_order="0">
+      <attribute name="Geburtsname" />
+    </box>
+    <box label="Person_Geburtsort" source="manual" occluded="0" xtl="61.53" ytl="790.10" xbr="278.70" ybr="832.25" z_order="0">
+      <attribute name="Geburtsort" />
+    </box>
+    <box label="Person_weiblich" source="manual" occluded="0" xtl="285.88" ytl="809.60" xbr="306.44" ybr="832.55" z_order="0">
+      <attribute name="weiblich" />
+    </box>
+    <box label="Person_maennlich" source="manual" occluded="0" xtl="363.51" ytl="810.45" xbr="383.06" ybr="833.40" z_order="0">
+      <attribute name="maennlich" />
+    </box>
+    <box label="Person_divers" source="manual" occluded="0" xtl="432.79" ytl="808.98" xbr="453.19" ybr="831.93" z_order="0">
+    </box>
+    <box label="Person_Geburtsdatum" source="manual" occluded="0" xtl="64.14" ytl="839.55" xbr="189.00" ybr="885.20" z_order="0">
+      <attribute name="Geburtsdatum">1</attribute>
+    </box>
+    <box label="Person_Familienstand" source="manual" occluded="0" xtl="384.23" ytl="840.12" xbr="509.50" ybr="884.00" z_order="0">
+      <attribute name="Familienstand">1</attribute>
+    </box>
+    <box label="Person_Familienstand_seit" source="manual" occluded="0" xtl="186.57" ytl="839.58" xbr="276.90" ybr="885.10" z_order="0">
+      <attribute name="Familienstand_seit">1</attribute>
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_eigene" source="manual" occluded="0" xtl="66.15" ytl="893.27" xbr="278.40" ybr="932.10" z_order="0">
+      <attribute name="eigene" />
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_Ehegatte" source="manual" occluded="0" xtl="288.43" ytl="894.40" xbr="506.00" ybr="933.00" z_order="0">
+      <attribute name="Ehegatte" />
+    </box>
+    <box label="Person_Kinder" source="manual" occluded="0" xtl="407.01" ytl="934.21" xbr="424.14" ybr="954.23" z_order="0">
+      <attribute name="Kinder">false</attribute>
+    </box>
+    <box label="Wohnsitz" source="manual" occluded="0" xtl="35.15" ytl="961.66" xbr="521.54" ybr="1101.55" z_order="0">
+    </box>
+    <box label="Wohnsitz_Strasse" source="manual" occluded="0" xtl="62.04" ytl="1001.96" xbr="291.90" ybr="1048.00" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_Hausnummer" source="manual" occluded="0" xtl="288.41" ytl="1001.49" xbr="367.10" ybr="1045.80" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="361.54" ytl="1000.85" xbr="518.90" ybr="1045.70" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="63.91" ytl="1045.45" xbr="114.30" ybr="1091.40" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Postleitzahl" source="manual" occluded="0" xtl="109.75" ytl="1047.41" xbr="188.40" ybr="1091.60" z_order="0">
+      <attribute name="Postleitzahl">1</attribute>
+    </box>
+    <box label="Wohnsitz_Ort" source="manual" occluded="0" xtl="180.86" ytl="1046.87" xbr="517.20" ybr="1091.70" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung" source="manual" occluded="0" xtl="35.61" ytl="1091.96" xbr="517.99" ybr="1309.42" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Strasse" source="manual" occluded="0" xtl="58.51" ytl="1214.40" xbr="290.20" ybr="1254.85" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Hausnummer" source="manual" occluded="0" xtl="287.84" ytl="1213.90" xbr="366.90" ybr="1256.90" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Adresszusatz" source="manual" occluded="0" xtl="359.89" ytl="1215.32" xbr="508.00" ybr="1262.40" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Land" source="manual" occluded="0" xtl="61.21" ytl="1258.57" xbr="112.20" ybr="1306.30" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Postleitzahl" source="manual" occluded="0" xtl="107.75" ytl="1258.18" xbr="188.70" ybr="1309.20" z_order="0">
+      <attribute name="Postleitzahl" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Ort" source="manual" occluded="0" xtl="178.94" ytl="1262.07" xbr="505.40" ybr="1309.60" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="405.84" ytl="1143.91" xbr="425.51" ybr="1164.57" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="454.43" ytl="1143.68" xbr="474.10" ybr="1164.34" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="407.24" ytl="1174.00" xbr="426.92" ybr="1194.66" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="453.32" ytl="1174.02" xbr="473.00" ybr="1194.68" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_ja" source="manual" occluded="0" xtl="408.40" ytl="590.38" xbr="427.40" ybr="612.20" z_order="0">
+      <attribute name="Antrag_gestellt_ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_nein" source="manual" occluded="0" xtl="455.29" ytl="590.31" xbr="475.10" ybr="612.20" z_order="0">
+      <attribute name="Antrag_gestellt_nein">false</attribute>
+    </box>
+    <box label="Ausbildung_Vollzeit" source="manual" occluded="0" xtl="407.81" ytl="565.80" xbr="426.70" ybr="587.00" z_order="0">
+      <attribute name="Vollzeit">false</attribute>
+    </box>
+    <box label="Ausbildung_Teilzeit" source="manual" occluded="0" xtl="454.96" ytl="565.26" xbr="476.00" ybr="587.70" z_order="0">
+    </box>
+    <box label="Ausbildung_Amt" source="manual" occluded="0" xtl="66.75" ytl="618.75" xbr="283.48" ybr="661.13" rotation="0.30" z_order="0">
+      <attribute name="Amt" />
+    </box>
+    <box label="Ausbildung_Foerderungsnummer" source="manual" occluded="0" xtl="285.77" ytl="618.89" xbr="504.70" ybr="662.00" z_order="0">
+      <attribute name="Foerderungsnummer">1</attribute>
+    </box>
+    <box label="Ausbildung_Staette" source="manual" occluded="0" xtl="54.73" ytl="425.61" xbr="511.54" ybr="471.14" z_order="0">
+      <attribute name="Staette" />
+    </box>
+    <box label="Ausbildung_Klasse" source="manual" occluded="0" xtl="53.27" ytl="477.02" xbr="511.54" ybr="519.61" z_order="0">
+      <attribute name="Klasse" />
+    </box>
+    <box label="Ausbilung_Abschluss" source="manual" occluded="0" xtl="51.80" ytl="519.61" xbr="511.54" ybr="565.15" z_order="0">
+      <attribute name="Abschluss" />
+    </box>
+  </image>
+  <image id="13" name="000000000014.jpeg" width="768" height="1366">
+    <box label="Person" source="manual" occluded="0" xtl="30.05" ytl="669.42" xbr="522.10" ybr="966.12" z_order="0">
+    </box>
+    <box label="Person_Name" source="manual" occluded="0" xtl="64.13" ytl="699.72" xbr="497.38" ybr="743.12" rotation="359.10" z_order="0">
+      <attribute name="Name" />
+    </box>
+    <box label="Person_Vorname" source="manual" occluded="0" xtl="63.98" ytl="742.87" xbr="276.80" ybr="787.40" z_order="0">
+      <attribute name="Vorname" />
+    </box>
+    <box label="Person_Geburtsname" source="manual" occluded="0" xtl="281.46" ytl="741.94" xbr="497.10" ybr="786.20" z_order="0">
+      <attribute name="Geburtsname" />
+    </box>
+    <box label="Person_Geburtsort" source="manual" occluded="0" xtl="61.53" ytl="790.10" xbr="278.70" ybr="832.25" z_order="0">
+      <attribute name="Geburtsort" />
+    </box>
+    <box label="Person_weiblich" source="manual" occluded="0" xtl="285.88" ytl="809.60" xbr="306.44" ybr="832.55" z_order="0">
+      <attribute name="weiblich" />
+    </box>
+    <box label="Person_maennlich" source="manual" occluded="0" xtl="363.51" ytl="810.45" xbr="383.06" ybr="833.40" z_order="0">
+      <attribute name="maennlich" />
+    </box>
+    <box label="Person_divers" source="manual" occluded="0" xtl="432.79" ytl="808.98" xbr="453.19" ybr="831.93" z_order="0">
+    </box>
+    <box label="Person_Geburtsdatum" source="manual" occluded="0" xtl="64.14" ytl="839.55" xbr="189.00" ybr="885.20" z_order="0">
+      <attribute name="Geburtsdatum">1</attribute>
+    </box>
+    <box label="Person_Familienstand" source="manual" occluded="0" xtl="384.23" ytl="840.12" xbr="509.50" ybr="884.00" z_order="0">
+      <attribute name="Familienstand">1</attribute>
+    </box>
+    <box label="Person_Familienstand_seit" source="manual" occluded="0" xtl="186.57" ytl="839.58" xbr="276.90" ybr="885.10" z_order="0">
+      <attribute name="Familienstand_seit">1</attribute>
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_eigene" source="manual" occluded="0" xtl="66.15" ytl="893.27" xbr="278.40" ybr="932.10" z_order="0">
+      <attribute name="eigene" />
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_Ehegatte" source="manual" occluded="0" xtl="288.43" ytl="894.40" xbr="506.00" ybr="933.00" z_order="0">
+      <attribute name="Ehegatte" />
+    </box>
+    <box label="Person_Kinder" source="manual" occluded="0" xtl="407.01" ytl="934.21" xbr="424.14" ybr="954.23" z_order="0">
+      <attribute name="Kinder">false</attribute>
+    </box>
+    <box label="Wohnsitz" source="manual" occluded="0" xtl="35.15" ytl="961.66" xbr="521.54" ybr="1101.55" z_order="0">
+    </box>
+    <box label="Wohnsitz_Strasse" source="manual" occluded="0" xtl="62.04" ytl="1001.96" xbr="291.90" ybr="1048.00" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_Hausnummer" source="manual" occluded="0" xtl="288.41" ytl="1001.49" xbr="367.10" ybr="1045.80" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="361.54" ytl="1000.85" xbr="518.90" ybr="1045.70" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="63.91" ytl="1045.45" xbr="114.30" ybr="1091.40" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Postleitzahl" source="manual" occluded="0" xtl="109.75" ytl="1047.41" xbr="188.40" ybr="1091.60" z_order="0">
+      <attribute name="Postleitzahl">1</attribute>
+    </box>
+    <box label="Wohnsitz_Ort" source="manual" occluded="0" xtl="180.86" ytl="1046.87" xbr="517.20" ybr="1091.70" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung" source="manual" occluded="0" xtl="35.61" ytl="1091.96" xbr="517.99" ybr="1309.42" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Strasse" source="manual" occluded="0" xtl="58.51" ytl="1214.40" xbr="290.20" ybr="1254.85" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Hausnummer" source="manual" occluded="0" xtl="287.84" ytl="1213.90" xbr="366.90" ybr="1256.90" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Adresszusatz" source="manual" occluded="0" xtl="359.89" ytl="1215.32" xbr="508.00" ybr="1262.40" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Land" source="manual" occluded="0" xtl="61.21" ytl="1258.57" xbr="112.20" ybr="1306.30" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Postleitzahl" source="manual" occluded="0" xtl="107.75" ytl="1258.18" xbr="188.70" ybr="1309.20" z_order="0">
+      <attribute name="Postleitzahl" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Ort" source="manual" occluded="0" xtl="178.94" ytl="1262.07" xbr="505.40" ybr="1309.60" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="405.84" ytl="1143.91" xbr="425.51" ybr="1164.57" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="454.43" ytl="1143.68" xbr="474.10" ybr="1164.34" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="407.24" ytl="1174.00" xbr="426.92" ybr="1194.66" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="453.32" ytl="1174.02" xbr="473.00" ybr="1194.68" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_ja" source="manual" occluded="0" xtl="408.40" ytl="590.38" xbr="427.40" ybr="612.20" z_order="0">
+      <attribute name="Antrag_gestellt_ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_nein" source="manual" occluded="0" xtl="455.29" ytl="590.31" xbr="475.10" ybr="612.20" z_order="0">
+      <attribute name="Antrag_gestellt_nein">false</attribute>
+    </box>
+    <box label="Ausbildung_Vollzeit" source="manual" occluded="0" xtl="407.81" ytl="565.80" xbr="426.70" ybr="587.00" z_order="0">
+      <attribute name="Vollzeit">false</attribute>
+    </box>
+    <box label="Ausbildung_Teilzeit" source="manual" occluded="0" xtl="454.96" ytl="565.26" xbr="476.00" ybr="587.70" z_order="0">
+    </box>
+    <box label="Ausbildung_Amt" source="manual" occluded="0" xtl="66.75" ytl="618.75" xbr="283.48" ybr="661.13" rotation="0.30" z_order="0">
+      <attribute name="Amt" />
+    </box>
+    <box label="Ausbildung_Foerderungsnummer" source="manual" occluded="0" xtl="285.77" ytl="618.89" xbr="504.70" ybr="662.00" z_order="0">
+      <attribute name="Foerderungsnummer">1</attribute>
+    </box>
+    <box label="Ausbildung_Staette" source="manual" occluded="0" xtl="54.73" ytl="425.61" xbr="511.54" ybr="471.14" z_order="0">
+      <attribute name="Staette" />
+    </box>
+    <box label="Ausbildung_Klasse" source="manual" occluded="0" xtl="53.27" ytl="477.02" xbr="511.54" ybr="519.61" z_order="0">
+      <attribute name="Klasse" />
+    </box>
+    <box label="Ausbilung_Abschluss" source="manual" occluded="0" xtl="51.80" ytl="519.61" xbr="511.54" ybr="565.15" z_order="0">
+      <attribute name="Abschluss" />
+    </box>
+  </image>
+  <image id="14" name="000000000015.jpeg" width="768" height="1366">
+    <box label="Person" source="manual" occluded="0" xtl="30.05" ytl="669.42" xbr="522.10" ybr="966.12" z_order="0">
+    </box>
+    <box label="Person_Name" source="manual" occluded="0" xtl="64.13" ytl="699.72" xbr="497.38" ybr="743.12" rotation="359.10" z_order="0">
+      <attribute name="Name" />
+    </box>
+    <box label="Person_Vorname" source="manual" occluded="0" xtl="63.98" ytl="742.87" xbr="276.80" ybr="787.40" z_order="0">
+      <attribute name="Vorname" />
+    </box>
+    <box label="Person_Geburtsname" source="manual" occluded="0" xtl="281.46" ytl="741.94" xbr="497.10" ybr="786.20" z_order="0">
+      <attribute name="Geburtsname" />
+    </box>
+    <box label="Person_Geburtsort" source="manual" occluded="0" xtl="61.53" ytl="790.10" xbr="278.70" ybr="832.25" z_order="0">
+      <attribute name="Geburtsort" />
+    </box>
+    <box label="Person_weiblich" source="manual" occluded="0" xtl="285.88" ytl="809.60" xbr="306.44" ybr="832.55" z_order="0">
+      <attribute name="weiblich" />
+    </box>
+    <box label="Person_maennlich" source="manual" occluded="0" xtl="363.51" ytl="810.45" xbr="383.06" ybr="833.40" z_order="0">
+      <attribute name="maennlich" />
+    </box>
+    <box label="Person_divers" source="manual" occluded="0" xtl="432.79" ytl="808.98" xbr="453.19" ybr="831.93" z_order="0">
+    </box>
+    <box label="Person_Geburtsdatum" source="manual" occluded="0" xtl="64.14" ytl="839.55" xbr="189.00" ybr="885.20" z_order="0">
+      <attribute name="Geburtsdatum">1</attribute>
+    </box>
+    <box label="Person_Familienstand" source="manual" occluded="0" xtl="384.23" ytl="840.12" xbr="509.50" ybr="884.00" z_order="0">
+      <attribute name="Familienstand">1</attribute>
+    </box>
+    <box label="Person_Familienstand_seit" source="manual" occluded="0" xtl="186.57" ytl="839.58" xbr="276.90" ybr="885.10" z_order="0">
+      <attribute name="Familienstand_seit">1</attribute>
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_eigene" source="manual" occluded="0" xtl="66.15" ytl="893.27" xbr="278.40" ybr="932.10" z_order="0">
+      <attribute name="eigene" />
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_Ehegatte" source="manual" occluded="0" xtl="288.43" ytl="894.40" xbr="506.00" ybr="933.00" z_order="0">
+      <attribute name="Ehegatte" />
+    </box>
+    <box label="Person_Kinder" source="manual" occluded="0" xtl="407.01" ytl="934.21" xbr="424.14" ybr="954.23" z_order="0">
+      <attribute name="Kinder">false</attribute>
+    </box>
+    <box label="Wohnsitz" source="manual" occluded="0" xtl="35.15" ytl="961.66" xbr="521.54" ybr="1101.55" z_order="0">
+    </box>
+    <box label="Wohnsitz_Strasse" source="manual" occluded="0" xtl="62.04" ytl="1001.96" xbr="291.90" ybr="1048.00" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_Hausnummer" source="manual" occluded="0" xtl="288.41" ytl="1001.49" xbr="367.10" ybr="1045.80" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="361.54" ytl="1000.85" xbr="518.90" ybr="1045.70" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="63.91" ytl="1045.45" xbr="114.30" ybr="1091.40" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Postleitzahl" source="manual" occluded="0" xtl="109.75" ytl="1047.41" xbr="188.40" ybr="1091.60" z_order="0">
+      <attribute name="Postleitzahl">1</attribute>
+    </box>
+    <box label="Wohnsitz_Ort" source="manual" occluded="0" xtl="180.86" ytl="1046.87" xbr="517.20" ybr="1091.70" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung" source="manual" occluded="0" xtl="35.61" ytl="1091.96" xbr="517.99" ybr="1309.42" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Strasse" source="manual" occluded="0" xtl="58.51" ytl="1214.40" xbr="290.20" ybr="1254.85" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Hausnummer" source="manual" occluded="0" xtl="287.84" ytl="1213.90" xbr="366.90" ybr="1256.90" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Adresszusatz" source="manual" occluded="0" xtl="359.89" ytl="1215.32" xbr="508.00" ybr="1262.40" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Land" source="manual" occluded="0" xtl="61.21" ytl="1258.57" xbr="112.20" ybr="1306.30" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Postleitzahl" source="manual" occluded="0" xtl="107.75" ytl="1258.18" xbr="188.70" ybr="1309.20" z_order="0">
+      <attribute name="Postleitzahl" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Ort" source="manual" occluded="0" xtl="178.94" ytl="1262.07" xbr="505.40" ybr="1309.60" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="405.84" ytl="1143.91" xbr="425.51" ybr="1164.57" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="454.43" ytl="1143.68" xbr="474.10" ybr="1164.34" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="407.24" ytl="1174.00" xbr="426.92" ybr="1194.66" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="453.32" ytl="1174.02" xbr="473.00" ybr="1194.68" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_ja" source="manual" occluded="0" xtl="408.40" ytl="590.38" xbr="427.40" ybr="612.20" z_order="0">
+      <attribute name="Antrag_gestellt_ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_nein" source="manual" occluded="0" xtl="455.29" ytl="590.31" xbr="475.10" ybr="612.20" z_order="0">
+      <attribute name="Antrag_gestellt_nein">false</attribute>
+    </box>
+    <box label="Ausbildung_Vollzeit" source="manual" occluded="0" xtl="407.81" ytl="565.80" xbr="426.70" ybr="587.00" z_order="0">
+      <attribute name="Vollzeit">false</attribute>
+    </box>
+    <box label="Ausbildung_Teilzeit" source="manual" occluded="0" xtl="454.96" ytl="565.26" xbr="476.00" ybr="587.70" z_order="0">
+    </box>
+    <box label="Ausbildung_Amt" source="manual" occluded="0" xtl="66.75" ytl="618.75" xbr="283.48" ybr="661.13" rotation="0.30" z_order="0">
+      <attribute name="Amt" />
+    </box>
+    <box label="Ausbildung_Foerderungsnummer" source="manual" occluded="0" xtl="285.77" ytl="618.89" xbr="504.70" ybr="662.00" z_order="0">
+      <attribute name="Foerderungsnummer">1</attribute>
+    </box>
+    <box label="Ausbildung_Staette" source="manual" occluded="0" xtl="54.73" ytl="425.61" xbr="511.54" ybr="471.14" z_order="0">
+      <attribute name="Staette" />
+    </box>
+    <box label="Ausbildung_Klasse" source="manual" occluded="0" xtl="53.27" ytl="477.02" xbr="511.54" ybr="519.61" z_order="0">
+      <attribute name="Klasse" />
+    </box>
+    <box label="Ausbilung_Abschluss" source="manual" occluded="0" xtl="51.80" ytl="519.61" xbr="511.54" ybr="565.15" z_order="0">
+      <attribute name="Abschluss" />
+    </box>
+  </image>
+  <image id="15" name="000000000016.jpeg" width="768" height="1366">
+    <box label="Person" source="manual" occluded="0" xtl="30.05" ytl="669.42" xbr="522.10" ybr="966.12" z_order="0">
+    </box>
+    <box label="Person_Name" source="manual" occluded="0" xtl="64.13" ytl="699.72" xbr="497.38" ybr="743.12" rotation="359.10" z_order="0">
+      <attribute name="Name" />
+    </box>
+    <box label="Person_Vorname" source="manual" occluded="0" xtl="63.98" ytl="742.87" xbr="276.80" ybr="787.40" z_order="0">
+      <attribute name="Vorname" />
+    </box>
+    <box label="Person_Geburtsname" source="manual" occluded="0" xtl="281.46" ytl="741.94" xbr="497.10" ybr="786.20" z_order="0">
+      <attribute name="Geburtsname" />
+    </box>
+    <box label="Person_Geburtsort" source="manual" occluded="0" xtl="61.53" ytl="790.10" xbr="278.70" ybr="832.25" z_order="0">
+      <attribute name="Geburtsort" />
+    </box>
+    <box label="Person_weiblich" source="manual" occluded="0" xtl="285.88" ytl="809.60" xbr="306.44" ybr="832.55" z_order="0">
+      <attribute name="weiblich" />
+    </box>
+    <box label="Person_maennlich" source="manual" occluded="0" xtl="363.51" ytl="810.45" xbr="383.06" ybr="833.40" z_order="0">
+      <attribute name="maennlich" />
+    </box>
+    <box label="Person_divers" source="manual" occluded="0" xtl="432.79" ytl="808.98" xbr="453.19" ybr="831.93" z_order="0">
+    </box>
+    <box label="Person_Geburtsdatum" source="manual" occluded="0" xtl="64.14" ytl="839.55" xbr="189.00" ybr="885.20" z_order="0">
+      <attribute name="Geburtsdatum">1</attribute>
+    </box>
+    <box label="Person_Familienstand" source="manual" occluded="0" xtl="384.23" ytl="840.12" xbr="509.50" ybr="884.00" z_order="0">
+      <attribute name="Familienstand">1</attribute>
+    </box>
+    <box label="Person_Familienstand_seit" source="manual" occluded="0" xtl="186.57" ytl="839.58" xbr="276.90" ybr="885.10" z_order="0">
+      <attribute name="Familienstand_seit">1</attribute>
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_eigene" source="manual" occluded="0" xtl="66.15" ytl="893.27" xbr="278.40" ybr="932.10" z_order="0">
+      <attribute name="eigene" />
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_Ehegatte" source="manual" occluded="0" xtl="288.43" ytl="894.40" xbr="506.00" ybr="933.00" z_order="0">
+      <attribute name="Ehegatte" />
+    </box>
+    <box label="Person_Kinder" source="manual" occluded="0" xtl="407.01" ytl="934.21" xbr="424.14" ybr="954.23" z_order="0">
+      <attribute name="Kinder">false</attribute>
+    </box>
+    <box label="Wohnsitz" source="manual" occluded="0" xtl="35.15" ytl="961.66" xbr="521.54" ybr="1101.55" z_order="0">
+    </box>
+    <box label="Wohnsitz_Strasse" source="manual" occluded="0" xtl="62.04" ytl="1001.96" xbr="291.90" ybr="1048.00" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_Hausnummer" source="manual" occluded="0" xtl="288.41" ytl="1001.49" xbr="367.10" ybr="1045.80" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="361.54" ytl="1000.85" xbr="518.90" ybr="1045.70" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="63.91" ytl="1045.45" xbr="114.30" ybr="1091.40" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Postleitzahl" source="manual" occluded="0" xtl="109.75" ytl="1047.41" xbr="188.40" ybr="1091.60" z_order="0">
+      <attribute name="Postleitzahl">1</attribute>
+    </box>
+    <box label="Wohnsitz_Ort" source="manual" occluded="0" xtl="180.86" ytl="1046.87" xbr="517.20" ybr="1091.70" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung" source="manual" occluded="0" xtl="35.61" ytl="1091.96" xbr="517.99" ybr="1309.42" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Strasse" source="manual" occluded="0" xtl="58.51" ytl="1214.40" xbr="290.20" ybr="1254.85" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Hausnummer" source="manual" occluded="0" xtl="287.84" ytl="1213.90" xbr="366.90" ybr="1256.90" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Adresszusatz" source="manual" occluded="0" xtl="359.89" ytl="1215.32" xbr="508.00" ybr="1262.40" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Land" source="manual" occluded="0" xtl="61.21" ytl="1258.57" xbr="112.20" ybr="1306.30" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Postleitzahl" source="manual" occluded="0" xtl="107.75" ytl="1258.18" xbr="188.70" ybr="1309.20" z_order="0">
+      <attribute name="Postleitzahl" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Ort" source="manual" occluded="0" xtl="178.94" ytl="1262.07" xbr="505.40" ybr="1309.60" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="405.84" ytl="1143.91" xbr="425.51" ybr="1164.57" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="454.43" ytl="1143.68" xbr="474.10" ybr="1164.34" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="407.24" ytl="1174.00" xbr="426.92" ybr="1194.66" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="453.32" ytl="1174.02" xbr="473.00" ybr="1194.68" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_ja" source="manual" occluded="0" xtl="408.40" ytl="590.38" xbr="427.40" ybr="612.20" z_order="0">
+      <attribute name="Antrag_gestellt_ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_nein" source="manual" occluded="0" xtl="455.29" ytl="590.31" xbr="475.10" ybr="612.20" z_order="0">
+      <attribute name="Antrag_gestellt_nein">false</attribute>
+    </box>
+    <box label="Ausbildung_Vollzeit" source="manual" occluded="0" xtl="407.81" ytl="565.80" xbr="426.70" ybr="587.00" z_order="0">
+      <attribute name="Vollzeit">false</attribute>
+    </box>
+    <box label="Ausbildung_Teilzeit" source="manual" occluded="0" xtl="454.96" ytl="565.26" xbr="476.00" ybr="587.70" z_order="0">
+    </box>
+    <box label="Ausbildung_Amt" source="manual" occluded="0" xtl="66.75" ytl="618.75" xbr="283.48" ybr="661.13" rotation="0.30" z_order="0">
+      <attribute name="Amt" />
+    </box>
+    <box label="Ausbildung_Foerderungsnummer" source="manual" occluded="0" xtl="285.77" ytl="618.89" xbr="504.70" ybr="662.00" z_order="0">
+      <attribute name="Foerderungsnummer">1</attribute>
+    </box>
+    <box label="Ausbildung_Staette" source="manual" occluded="0" xtl="54.73" ytl="425.61" xbr="511.54" ybr="471.14" z_order="0">
+      <attribute name="Staette" />
+    </box>
+    <box label="Ausbildung_Klasse" source="manual" occluded="0" xtl="53.27" ytl="477.02" xbr="511.54" ybr="519.61" z_order="0">
+      <attribute name="Klasse" />
+    </box>
+    <box label="Ausbilung_Abschluss" source="manual" occluded="0" xtl="51.80" ytl="519.61" xbr="511.54" ybr="565.15" z_order="0">
+      <attribute name="Abschluss" />
+    </box>
+  </image>
+  <image id="16" name="000000000017.jpeg" width="768" height="1366">
+    <box label="Person" source="manual" occluded="0" xtl="30.05" ytl="669.42" xbr="522.10" ybr="966.12" z_order="0">
+    </box>
+    <box label="Person_Name" source="manual" occluded="0" xtl="64.13" ytl="699.72" xbr="497.38" ybr="743.12" rotation="359.10" z_order="0">
+      <attribute name="Name" />
+    </box>
+    <box label="Person_Vorname" source="manual" occluded="0" xtl="63.98" ytl="742.87" xbr="276.80" ybr="787.40" z_order="0">
+      <attribute name="Vorname" />
+    </box>
+    <box label="Person_Geburtsname" source="manual" occluded="0" xtl="281.46" ytl="741.94" xbr="497.10" ybr="786.20" z_order="0">
+      <attribute name="Geburtsname" />
+    </box>
+    <box label="Person_Geburtsort" source="manual" occluded="0" xtl="61.53" ytl="790.10" xbr="278.70" ybr="832.25" z_order="0">
+      <attribute name="Geburtsort" />
+    </box>
+    <box label="Person_weiblich" source="manual" occluded="0" xtl="285.88" ytl="809.60" xbr="306.44" ybr="832.55" z_order="0">
+      <attribute name="weiblich" />
+    </box>
+    <box label="Person_maennlich" source="manual" occluded="0" xtl="363.51" ytl="810.45" xbr="383.06" ybr="833.40" z_order="0">
+      <attribute name="maennlich" />
+    </box>
+    <box label="Person_divers" source="manual" occluded="0" xtl="432.79" ytl="808.98" xbr="453.19" ybr="831.93" z_order="0">
+    </box>
+    <box label="Person_Geburtsdatum" source="manual" occluded="0" xtl="64.14" ytl="839.55" xbr="189.00" ybr="885.20" z_order="0">
+      <attribute name="Geburtsdatum">1</attribute>
+    </box>
+    <box label="Person_Familienstand" source="manual" occluded="0" xtl="384.23" ytl="840.12" xbr="509.50" ybr="884.00" z_order="0">
+      <attribute name="Familienstand">1</attribute>
+    </box>
+    <box label="Person_Familienstand_seit" source="manual" occluded="0" xtl="186.57" ytl="839.58" xbr="276.90" ybr="885.10" z_order="0">
+      <attribute name="Familienstand_seit">1</attribute>
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_eigene" source="manual" occluded="0" xtl="66.15" ytl="893.27" xbr="278.40" ybr="932.10" z_order="0">
+      <attribute name="eigene" />
+    </box>
+    <box label="Person_Stattsangeh&#246;rigkeit_Ehegatte" source="manual" occluded="0" xtl="288.43" ytl="894.40" xbr="506.00" ybr="933.00" z_order="0">
+      <attribute name="Ehegatte" />
+    </box>
+    <box label="Person_Kinder" source="manual" occluded="0" xtl="407.01" ytl="934.21" xbr="424.14" ybr="954.23" z_order="0">
+      <attribute name="Kinder">false</attribute>
+    </box>
+    <box label="Wohnsitz" source="manual" occluded="0" xtl="35.15" ytl="961.66" xbr="521.54" ybr="1101.55" z_order="0">
+    </box>
+    <box label="Wohnsitz_Strasse" source="manual" occluded="0" xtl="62.04" ytl="1001.96" xbr="291.90" ybr="1048.00" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_Hausnummer" source="manual" occluded="0" xtl="288.41" ytl="1001.49" xbr="367.10" ybr="1045.80" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="361.54" ytl="1000.85" xbr="518.90" ybr="1045.70" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Adresszusatz" source="manual" occluded="0" xtl="63.91" ytl="1045.45" xbr="114.30" ybr="1091.40" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_Postleitzahl" source="manual" occluded="0" xtl="109.75" ytl="1047.41" xbr="188.40" ybr="1091.60" z_order="0">
+      <attribute name="Postleitzahl">1</attribute>
+    </box>
+    <box label="Wohnsitz_Ort" source="manual" occluded="0" xtl="180.86" ytl="1046.87" xbr="517.20" ybr="1091.70" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung" source="manual" occluded="0" xtl="35.61" ytl="1091.96" xbr="517.99" ybr="1309.42" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Strasse" source="manual" occluded="0" xtl="58.51" ytl="1214.40" xbr="290.20" ybr="1254.85" z_order="0">
+      <attribute name="Strasse" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Hausnummer" source="manual" occluded="0" xtl="287.84" ytl="1213.90" xbr="366.90" ybr="1256.90" z_order="0">
+      <attribute name="Hausnummer" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Adresszusatz" source="manual" occluded="0" xtl="359.89" ytl="1215.32" xbr="508.00" ybr="1262.40" z_order="0">
+      <attribute name="Adresszusatz" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Land" source="manual" occluded="0" xtl="61.21" ytl="1258.57" xbr="112.20" ybr="1306.30" z_order="0">
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Postleitzahl" source="manual" occluded="0" xtl="107.75" ytl="1258.18" xbr="188.70" ybr="1309.20" z_order="0">
+      <attribute name="Postleitzahl" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_Ort" source="manual" occluded="0" xtl="178.94" ytl="1262.07" xbr="505.40" ybr="1309.60" z_order="0">
+      <attribute name="Ort" />
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="405.84" ytl="1143.91" xbr="425.51" ybr="1164.57" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="454.43" ytl="1143.68" xbr="474.10" ybr="1164.34" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="407.24" ytl="1174.00" xbr="426.92" ybr="1194.66" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Wohnsitz_waehrend_Ausbildung_elternwohnung_ja" source="manual" occluded="0" xtl="453.32" ytl="1174.02" xbr="473.00" ybr="1194.68" z_order="0">
+      <attribute name="ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_ja" source="manual" occluded="0" xtl="408.40" ytl="590.38" xbr="427.40" ybr="612.20" z_order="0">
+      <attribute name="Antrag_gestellt_ja">false</attribute>
+    </box>
+    <box label="Ausbildung_Antrag_gestellt_nein" source="manual" occluded="0" xtl="455.29" ytl="590.31" xbr="475.10" ybr="612.20" z_order="0">
+      <attribute name="Antrag_gestellt_nein">false</attribute>
+    </box>
+    <box label="Ausbildung_Vollzeit" source="manual" occluded="0" xtl="407.81" ytl="565.80" xbr="426.70" ybr="587.00" z_order="0">
+      <attribute name="Vollzeit">false</attribute>
+    </box>
+    <box label="Ausbildung_Teilzeit" source="manual" occluded="0" xtl="454.96" ytl="565.26" xbr="476.00" ybr="587.70" z_order="0">
+    </box>
+    <box label="Ausbildung_Amt" source="manual" occluded="0" xtl="66.75" ytl="618.75" xbr="283.48" ybr="661.13" rotation="0.30" z_order="0">
+      <attribute name="Amt" />
+    </box>
+    <box label="Ausbildung_Foerderungsnummer" source="manual" occluded="0" xtl="285.77" ytl="618.89" xbr="504.70" ybr="662.00" z_order="0">
+      <attribute name="Foerderungsnummer">1</attribute>
+    </box>
+    <box label="Ausbildung_Staette" source="manual" occluded="0" xtl="54.73" ytl="425.61" xbr="511.54" ybr="471.14" z_order="0">
+      <attribute name="Staette" />
+    </box>
+    <box label="Ausbildung_Klasse" source="manual" occluded="0" xtl="53.27" ytl="477.02" xbr="511.54" ybr="519.61" z_order="0">
+      <attribute name="Klasse" />
+    </box>
+    <box label="Ausbilung_Abschluss" source="manual" occluded="0" xtl="51.80" ytl="519.61" xbr="511.54" ybr="565.15" z_order="0">
+      <attribute name="Abschluss" />
+    </box>
+  </image>
+</annotations>

@@ -1,0 +1,48 @@
+
+path: /Users/alh/PycharmProjects/BBArchComparison/workspace/yolo_dataset
+train: workspace/yolo_dataset/images
+val: workspace/yolo_dataset/images
+
+names:
+  0: Ausbildung_Klasse
+  1: Ausbildung_Antrag_gestellt_ja
+  2: Ausbildung_Antrag_gestellt_nein
+  3: Ausbildung_Amt
+  4: Ausbildung_Foerderungsnummer
+  5: Ausbilung_Abschluss
+  6: Ausbildung_Vollzeit
+  7: Ausbildung
+  8: Ausbildung_Teilzeit
+  9: Ausbildung_Staette
+  10: Person
+  11: Person_Geburtsort
+  12: Person_maennlich
+  13: Person_Geburtsdatum
+  14: Person_weiblich
+  15: Person_divers
+  16: Person_Name
+  17: Person_Familienstand
+  18: Person_Vorname
+  19: Person_Geburtsname
+  20: Person_Familienstand_seit
+  21: Person_Stattsangehörigkeit_eigene
+  22: Person_Stattsangehörigkeit_Ehegatte
+  23: Person_Kinder
+  24: Wohnsitz_Strasse
+  25: Wohnsitz_Land
+  26: Wohnsitz_Postleitzahl
+  27: Wohnsitz
+  28: Wohnsitz_Hausnummer
+  29: Wohnsitz_Adresszusatz
+  30: Wohnsitz_Ort
+  31: Wohnsitz_waehrend_Ausbildung
+  32: Wohnsitz_waehrend_Ausbildung_Strasse
+  33: Wohnsitz_waehrend_Ausbildung_Hausnummer
+  34: Wohnsitz_waehrend_Ausbildung_Land
+  35: Wohnsitz_waehrend_Ausbildung_Ort
+  36: Wohnsitz_waehrend_Ausbildung_elternwohnung_nein
+  37: Wohnsitz_waehrend_Ausbildung_Adresszusatz
+  38: Wohnsitz_waehrend_Ausbildung_Postleitzahl
+  39: Wohnsitz_waehrend_Ausbildung_elternmiete
+  40: Wohnsitz_waehrend_Ausbildung_elternwohnung_ja
+  41: Wohnsitz_waehrend_Ausbildung_elternmiete_nein

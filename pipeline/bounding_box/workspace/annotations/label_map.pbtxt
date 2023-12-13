@@ -1,0 +1,168 @@
+item { 
+	name:'Ausbildung'
+	id:1
+}
+item { 
+	name:'Ausbildung_Staette'
+	id:2
+}
+item { 
+	name:'Ausbildung_Klasse'
+	id:3
+}
+item { 
+	name:'Ausbilung_Abschluss'
+	id:4
+}
+item { 
+	name:'Ausbildung_Vollzeit'
+	id:5
+}
+item { 
+	name:'Ausbildung_Teilzeit'
+	id:6
+}
+item { 
+	name:'Ausbildung_Antrag_gestellt_ja'
+	id:7
+}
+item { 
+	name:'Ausbildung_Antrag_gestellt_nein'
+	id:8
+}
+item { 
+	name:'Ausbildung_Amt'
+	id:9
+}
+item { 
+	name:'Ausbildung_Foerderungsnummer'
+	id:10
+}
+item { 
+	name:'Person'
+	id:11
+}
+item { 
+	name:'Person_Name'
+	id:12
+}
+item { 
+	name:'Person_Vorname'
+	id:13
+}
+item { 
+	name:'Person_Geburtsname'
+	id:14
+}
+item { 
+	name:'Person_Geburtsort'
+	id:15
+}
+item { 
+	name:'Person_weiblich'
+	id:16
+}
+item { 
+	name:'Person_maennlich'
+	id:17
+}
+item { 
+	name:'Person_divers'
+	id:18
+}
+item { 
+	name:'Person_Geburtsdatum'
+	id:19
+}
+item { 
+	name:'Person_Familienstand'
+	id:20
+}
+item { 
+	name:'Person_Familienstand_seit'
+	id:21
+}
+item { 
+	name:'Person_Stattsangehörigkeit_eigene'
+	id:22
+}
+item { 
+	name:'Person_Stattsangehörigkeit_Ehegatte'
+	id:23
+}
+item { 
+	name:'Person_Kinder'
+	id:24
+}
+item { 
+	name:'Wohnsitz'
+	id:25
+}
+item { 
+	name:'Wohnsitz_Strasse'
+	id:26
+}
+item { 
+	name:'Wohnsitz_Hausnummer'
+	id:27
+}
+item { 
+	name:'Wohnsitz_Adresszusatz'
+	id:28
+}
+item { 
+	name:'Wohnsitz_Land'
+	id:29
+}
+item { 
+	name:'Wohnsitz_Postleitzahl'
+	id:30
+}
+item { 
+	name:'Wohnsitz_Ort'
+	id:31
+}
+item { 
+	name:'Wohnsitz_waehrend_Ausbildung'
+	id:32
+}
+item { 
+	name:'Wohnsitz_waehrend_Ausbildung_Strasse'
+	id:33
+}
+item { 
+	name:'Wohnsitz_waehrend_Ausbildung_Hausnummer'
+	id:34
+}
+item { 
+	name:'Wohnsitz_waehrend_Ausbildung_Adresszusatz'
+	id:35
+}
+item { 
+	name:'Wohnsitz_waehrend_Ausbildung_Land'
+	id:36
+}
+item { 
+	name:'Wohnsitz_waehrend_Ausbildung_Postleitzahl'
+	id:37
+}
+item { 
+	name:'Wohnsitz_waehrend_Ausbildung_Ort'
+	id:38
+}
+item { 
+	name:'Wohnsitz_waehrend_Ausbildung_elternwohnung_ja'
+	id:39
+}
+item { 
+	name:'Wohnsitz_waehrend_Ausbildung_elternwohnung_nein'
+	id:40
+}
+item { 
+	name:'Wohnsitz_waehrend_Ausbildung_elternmiete'
+	id:41
+}
+item { 
+	name:'Wohnsitz_waehrend_Ausbildung_elternmiete_nein'
+	id:42
+}
