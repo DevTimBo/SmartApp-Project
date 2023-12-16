@@ -11,8 +11,8 @@ def get_image_size(image):
 
 def resize_image(image_path):
     image =  cv2.imread(image_path)
-    #resized_image = cv2.resize(image, (YOLO_WIDTH, YOLO_HEIGHT))
-    resized_image = np.expand_dims(image, axis=0)  
+    resized_image = cv2.resize(image, (YOLO_WIDTH, YOLO_HEIGHT))
+    resized_image = np.expand_dims(resized_image, axis=0)
     return resized_image 
 
 def resize(input_path, output_path, width, height):

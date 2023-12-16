@@ -41,7 +41,7 @@ def compile_model(model):
     )
 
 def load_weight_model(model_path):
-    base_model = define_model(43)#(len(get_class_mapping(model_path)[0]))
+    base_model = define_model(38)#(len(get_class_mapping(model_path)[0]))
     compile_model(base_model)
     base_model.load_weights(model_path)
     return  base_model
@@ -112,12 +112,14 @@ def show_image(image, boxes,confidence,classes):
     #image_with_boxes = np.copy(image)
     fig, ax = plt.subplots(1)
     ax.imshow(image)
+    #for box, conf, cls in zip(boxes[0], confidence[0], classes[0]):
     for box, conf, cls in zip(boxes[0], confidence[0], classes[0]):
         if conf>0.1:
+            print(box)
             xmin, ymin, xmax, ymax = box
             label = f"Class {cls} ({conf:.2f})"
             rect = patches.Rectangle((xmin, ymin), xmax - xmin, ymax - ymin, linewidth=1, edgecolor='r', facecolor='none', label=label)
             ax.add_patch(rect)
 
-    plt.legend()
+    #plt.legend()
     plt.show()
