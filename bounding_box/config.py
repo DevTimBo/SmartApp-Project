@@ -1,10 +1,10 @@
-WORKSPACE_PATH = 'workspace'
+WORKSPACE_PATH = 'bounding_box/workspace'
 ANNOTATION_PATH = WORKSPACE_PATH+'/annotations'
 IMAGE_PATH = WORKSPACE_PATH+'/images'
 MODEL_PATH = WORKSPACE_PATH+'/models'
 BBOX_PATH = MODEL_PATH+'/bbox'
-MAIN_BBOX_DETECTOR_MODEL = '/main_bbox_detector_model.h5'
-SUB_BBOX_DETECTOR_MODEL = '/sub_bbox_detector_model.h5'
+MAIN_BBOX_DETECTOR_MODEL = MODEL_PATH + '/main_bbox_detector_model.h5'
+SUB_BBOX_DETECTOR_MODEL = MODEL_PATH +'/sub_bbox_detector_model.h5'
 
 YOLO_HEIGHT = 640
 YOLO_WIDTH = 640

@@ -41,7 +41,7 @@ def compile_model(model):
     )
 
 def load_weight_model(model_path):
-    base_model = define_model(41)#(len(get_class_mapping(model_path)[0]))
+    base_model = define_model(43)#(len(get_class_mapping(model_path)[0]))
     compile_model(base_model)
     base_model.load_weights(model_path)
     return  base_model
