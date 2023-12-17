@@ -1,14 +1,14 @@
 {
     "model": {
-        "name": "model9v3",
+        "name": "model9v3_xl",
         "width": 1024, 
-        "height": 64,
+        "height": 128,
         "save": "False"
     },
     "training": {
-        "epochs": 2,
+        "epochs": 1,
         "save_history": "True",
-        "batch_size": 48,
+        "batch_size": 16,
         "tf_seed": 42,
         "learning_rate": 0.001,
         "patience": 20 
