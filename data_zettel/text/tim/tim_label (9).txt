@@ -1,0 +1,42 @@
+Titel: Tim, Harmling + 9
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: FH Berlin
+	- Klasse/Fachrichtung: Informatik
+	- Angestrebter Abschluss: Bachelor
+	- Vollzeitausbildung: nein
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung: 
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name: Mark
+	- Vorname: Max
+	- Geburtsname: 
+	- Geburtsort: Berlin
+	- Geschlecht: männlich
+	- Geburtsdatum: 30.11.1999
+	- Familienstand: ledig
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit: deutsch
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: 
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße: Karl Straße
+	- Hausnummer: 5
+	- Adresszusatz:
+	- Land: GER
+	- Postleitzahl: 51350
+	- Ort: Berlin
+
+Ausbildung:
+	- häuslicher Gemeinschaft: nein
+	- Eigentum/Mitteleigentum: nein
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

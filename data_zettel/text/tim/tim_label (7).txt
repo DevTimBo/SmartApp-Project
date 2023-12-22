@@ -1,0 +1,42 @@
+Titel: Tim, Harmling + 7
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Universität Heidelberg
+	- Klasse/Fachrichtung: Lehramt
+	- Angestrebter Abschluss: Monobachelor
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung: 
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name: Blumen
+	- Vorname: Julia
+	- Geburtsname: Blumen
+	- Geburtsort: Heidelberg
+	- Geschlecht: weiblich
+	- Geburtsdatum: 03.03.2005
+	- Familienstand: ledig
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit: deutsch
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: 
+	- Ich habe Kinder: nein
+
+Wohnsitz:
+	- Straße: Friedrich Straße
+	- Hausnummer: 3
+	- Adresszusatz:
+	- Land: GER
+	- Postleitzahl: 10135
+	- Ort: Heidelberg
+
+Ausbildung:
+	- häuslicher Gemeinschaft: nein
+	- Eigentum/Mitteleigentum: nein
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

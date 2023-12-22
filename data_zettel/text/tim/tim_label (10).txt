@@ -1,0 +1,42 @@
+Titel: Tim, Harmling + 10
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Harvard
+	- Klasse/Fachrichtung: Computer
+	- Angestrebter Abschluss: Bachelor
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung: 
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name: Zuckerberg
+	- Vorname: Mark
+	- Geburtsname: 
+	- Geburtsort: Boston
+	- Geschlecht: männlich
+	- Geburtsdatum: 31.06.1983
+	- Familienstand: ledig
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit: deutsch
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: 
+	- Ich habe Kinder: nein
+
+Wohnsitz:
+	- Straße: Main Street
+	- Hausnummer: 7
+	- Adresszusatz:
+	- Land: USA
+	- Postleitzahl: 31057
+	- Ort: Boston
+
+Ausbildung:
+	- häuslicher Gemeinschaft: nein
+	- Eigentum/Mitteleigentum: nein
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

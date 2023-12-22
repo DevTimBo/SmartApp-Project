@@ -1,0 +1,42 @@
+Titel: Tim, Harmling + 1
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Hohentor Universität
+	- Klasse/Fachrichtung: Informatik
+	- Angestrebter Abschluss: Master
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung:
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name: Max
+	- Vorname: Max
+	- Geburtsname: Max
+	- Geburtsort: Maxstadt
+	- Geschlecht: männlich
+	- Geburtsdatum: 01.01.2000
+	- Familienstand: ledig
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit: DE
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: 
+	- Ich habe Kinder: nein
+
+Wohnsitz:
+	- Straße: Maxstraße
+	- Hausnummer:5
+	- Adresszusatz:
+	- Land: GER
+	- Postleitzahl: 57312
+	- Ort: München
+
+Ausbildung:
+	- häuslicher Gemeinschaft: nein
+	- Eigentum/Mitteleigentum: nein
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

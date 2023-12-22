@@ -1,0 +1,42 @@
+Titel: Vorname, Name + Nummerierung
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort:
+	- Klasse/Fachrichtung:
+	- Angestrebter Abschluss
+	- Vollzeitausbildung: ja, nein
+	- BAföG-Antrag gestellt: ja , nein
+	- Amt für Ausbildungsförderung
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name:
+	- Vorname:
+	- Geburtsname:
+	- Geburtsort:
+	- Geschlecht: weiblich, männlich, divers
+	- Geburtsdatum:
+	- Familienstand:
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit:
+	- Staatsangehörigkeit: Ehegatte/Lebenspartner
+	- Ich habe Kinder: ja , nein
+
+Wohnsitz:
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:
+
+Ausbildung:
+	- häuslicher Gemeinschaft: ja, nein
+	- Eigentum/Mitteleigentum: ja, nein
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

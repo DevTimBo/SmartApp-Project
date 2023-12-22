@@ -1,5 +1,9 @@
 import numpy as np
 import os
+import tensorflow as tf
+
+np.random.seed(42)
+tf.random.set_seed(42)
 
 characters = set()
 max_len = 0

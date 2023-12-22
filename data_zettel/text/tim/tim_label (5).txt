@@ -1,0 +1,42 @@
+Titel: Tim, Harmling + 5
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Universität Leipzig
+	- Klasse/Fachrichtung: Chemie
+	- Angestrebter Abschluss: Master
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung: 
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name: Stege
+	- Vorname: Max
+	- Geburtsname: 
+	- Geburtsort: Leipzig
+	- Geschlecht: divers
+	- Geburtsdatum: 01.01.2001
+	- Familienstand: ledig
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit: polnisch
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: 
+	- Ich habe Kinder: nein
+
+Wohnsitz:
+	- Straße: Leipzig Straße
+	- Hausnummer: 3
+	- Adresszusatz:
+	- Land: GER
+	- Postleitzahl: 29317
+	- Ort: Leipzig
+
+Ausbildung:
+	- häuslicher Gemeinschaft: nein
+	- Eigentum/Mitteleigentum: nein
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

@@ -1,0 +1,42 @@
+Titel: Tim, Harmling + 2
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: TH Hannover
+	- Klasse/Fachrichtung: Deutsch
+	- Angestrebter Abschluss: Master of language
+	- Vollzeitausbildung: nein
+	- BAföG-Antrag gestellt: ja
+	- Amt für Ausbildungsförderung: Bremeramt
+	- Förderungsnummer: 555333678955000
+
+Angaben zur Person:
+	- Name: Denis
+	- Vorname: Müller
+	- Geburtsname: Meyer
+	- Geburtsort: Bremen
+	- Geschlecht: divers
+	- Geburtsdatum: 01.03.2004
+	- Familienstand: verheiratet
+	- Änderungen ggü. Erklärung: 01.05.2018
+	- Staatsangehörigkeit: deutsch
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: polnisch
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße: Karl-Marx-Weg
+	- Hausnummer:12
+	- Adresszusatz:
+	- Land: POL
+	- Postleitzahl: 53210
+	- Ort: Hannover
+
+Ausbildung:
+	- häuslicher Gemeinschaft: nein
+	- Eigentum/Mitteleigentum: nein
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

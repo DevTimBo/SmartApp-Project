@@ -1,0 +1,42 @@
+Titel: Tim, Harmling + 4
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Hochschule Hamburg
+	- Klasse/Fachrichtung: Mathe
+	- Angestrebter Abschluss: Bachelor
+	- Vollzeitausbildung: nein
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung: 
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name: Goethe
+	- Vorname: Johann
+	- Geburtsname: Wolfgang
+	- Geburtsort: Berlin
+	- Geschlecht: männlich
+	- Geburtsdatum: 10.10.1955
+	- Familienstand: ledig
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit: deutsch
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: 
+	- Ich habe Kinder: nein
+
+Wohnsitz:
+	- Straße: Hamburger Weg
+	- Hausnummer: 5
+	- Adresszusatz:
+	- Land: GER
+	- Postleitzahl: 29531
+	- Ort: Hamburg
+
+Ausbildung:
+	- häuslicher Gemeinschaft: 
+	- Eigentum/Mitteleigentum: 
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

@@ -1,0 +1,42 @@
+Titel: Tim, Harmling + 8
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Hochschule Albert
+	- Klasse/Fachrichtung: Soziale Arbeit
+	- Angestrebter Abschluss: Bachelor
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung: 
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name: Smith
+	- Vorname: Luisa
+	- Geburtsname: Smith
+	- Geburtsort: New York
+	- Geschlecht: weiblich
+	- Geburtsdatum: 29.05.2000
+	- Familienstand: ledig
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit: deutsch
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: 
+	- Ich habe Kinder: nein
+
+Wohnsitz:
+	- Straße: Friedensweg
+	- Hausnummer: 5
+	- Adresszusatz:
+	- Land: GER
+	- Postleitzahl: 79085
+	- Ort: Freiburg
+
+Ausbildung:
+	- häuslicher Gemeinschaft: nein
+	- Eigentum/Mitteleigentum: nein
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:
