@@ -1,0 +1,42 @@
+Titel: Tim, Harmling + 3
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Wizard School Hogwarts
+	- Klasse/Fachrichtung: Magic Potions
+	- Angestrebter Abschluss: Wizard Master
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung: 
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name: Potter
+	- Vorname: Harry
+	- Geburtsname: Lars
+	- Geburtsort: Berlin
+	- Geschlecht: weiblich
+	- Geburtsdatum: 12.12.2003
+	- Familienstand: ledig
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit: kroatisch
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: 
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße: Der Weg
+	- Hausnummer:33
+	- Adresszusatz:
+	- Land: NL
+	- Postleitzahl: 25319
+	- Ort: Amsterdam
+
+Ausbildung:
+	- häuslicher Gemeinschaft: 
+	- Eigentum/Mitteleigentum: 
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:
