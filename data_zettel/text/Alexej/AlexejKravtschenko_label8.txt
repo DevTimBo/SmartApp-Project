@@ -1,0 +1,42 @@
+Titel: Alexej Kravtschenko Nr.8 
+
+Förderungsnummer: 358007930120820
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Jade Hochschule Wihland
+	- Klasse/Fachrichtung: Architektur
+	- Angestrebter Abschluss: -
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung: -
+	- Förderungsnummer: -
+
+Angaben zur Person:
+	- Name: Kraft
+	- Vorname: Marcus
+	- Geburtsname: -
+	- Geburtsort: Berlin
+	- Geschlecht: männlich
+	- Geburtsdatum:10051996
+	- Familienstand: leidg
+	- Änderungen ggü. Erklärung: -
+	- Staatsangehörigkeit: Deutsche
+	- Staatsangehörigkeit: -
+	- Ich habe Kinder: -
+
+Wohnsitz:
+	- Straße: -
+	- Hausnummer: -
+	- Adresszusatz: -
+	- Land: -
+	- Postleitzahl: -
+	- Ort: -
+
+Ausbildung:
+	- häuslicher Gemeinschaft: ja
+	- Eigentum/Mitteleigentum: -
+	- Straße: Hakenwehrstraße
+	- Hausnummer: 7
+	- Adresszusatz: -
+	- Land: DE
+	- Postleitzahl: 28779
+	- Ort: Bremen

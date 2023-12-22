@@ -1,0 +1,42 @@
+Titel: Alexej Kravtschenko Nr.6 
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Quadriga Hochschule Berlin
+	- Klasse/Fachrichtung: Elektrotechnik
+	- Angestrebter Abschluss: Bachelor
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: ja 
+	- Amt für Ausbildungsförderung: -
+	- Förderungsnummer: 7778765
+
+Angaben zur Person:
+	- Name: Markus
+	- Vorname: Malte
+	- Geburtsname: Gustaf
+	- Geburtsort: Bemen
+	- Geschlecht: divers
+	- Geburtsdatum: 01651960
+	- Familienstand: 3
+	- Änderungen ggü. Erklärung: -
+	- Staatsangehörigkeit: -
+	- Staatsangehörigkeit: -
+	- Ich habe Kinder: ja 
+
+Wohnsitz:
+	- Straße: Guten
+	- Hausnummer: 120
+	- Adresszusatz: -
+	- Land: DE
+	- Postleitzahl: 28779
+	- Ort: Berlin
+
+Ausbildung:
+	- häuslicher Gemeinschaft: nein
+	- Eigentum/Mitteleigentum: nein
+	- Straße: -
+	- Hausnummer: -
+	- Adresszusatz: -
+	- Land: -
+	- Postleitzahl:-
+	- Ort: -

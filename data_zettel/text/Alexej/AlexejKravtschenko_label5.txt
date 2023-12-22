@@ -1,0 +1,42 @@
+Titel: Alexej Kravtschenko Nr.5 
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Steinbeis Hochschule
+	- Klasse/Fachrichtung: Sport
+	- Angestrebter Abschluss: Master
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung: -
+	- Förderungsnummer: -
+
+Angaben zur Person:
+	- Name: Lev
+	- Vorname: Markus
+	- Geburtsname: Leon
+	- Geburtsort: Bayern
+	- Geschlecht: männlich
+	- Geburtsdatum: 02081997
+	- Familienstand: 1
+	- Änderungen ggü. Erklärung: -
+	- Staatsangehörigkeit: -
+	- Staatsangehörigkeit: -
+	- Ich habe Kinder: -
+
+Wohnsitz:
+	- Straße: Wakanda
+	- Hausnummer: 999
+	- Adresszusatz: -
+	- Land: DE
+	- Postleitzahl: 28970
+	- Ort: Berlin
+
+Ausbildung:
+	- häuslicher Gemeinschaft: nein
+	- Eigentum/Mitteleigentum: nein
+	- Straße: -
+	- Hausnummer: -
+	- Adresszusatz: -
+	- Land: -
+	- Postleitzahl:-
+	- Ort: -

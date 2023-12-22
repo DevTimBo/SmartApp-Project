@@ -1,0 +1,42 @@
+Titel: Alexej Kravtschenko Nr.10 
+
+Förderungsnummer: 400289711146589
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Jade Hochschule Oldenburg
+	- Klasse/Fachrichtung: Steuern, Digitale Wirtschaft
+	- Angestrebter Abschluss: 10.05.2025
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung: -
+	- Förderungsnummer: -
+
+Angaben zur Person:
+	- Name: Fritz
+	- Vorname: Marina
+	- Geburtsname: -
+	- Geburtsort: Oldenburg
+	- Geschlecht: weiblich
+	- Geburtsdatum: 03031999
+	- Familienstand: ledig
+	- Änderungen ggü. Erklärung: -
+	- Staatsangehörigkeit: Deutsche
+	- Staatsangehörigkeit: -
+	- Ich habe Kinder: -
+
+Wohnsitz:
+	- Straße: -
+	- Hausnummer: -
+	- Adresszusatz: -
+	- Land: -
+	- Postleitzahl: -
+	- Ort: -
+
+Ausbildung:
+	- häuslicher Gemeinschaft: ja
+	- Eigentum/Mitteleigentum: -
+	- Straße: Auf der Koppel
+	- Hausnummer: 23
+	- Adresszusatz: -
+	- Land: DE
+	- Postleitzahl: 26121
+	- Ort: Oldenburg

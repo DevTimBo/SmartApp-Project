@@ -1,0 +1,42 @@
+Titel: Alexej Kravtschenko Nr.2 
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Touro College Berlin
+	- Klasse/Fachrichtung: Chemie
+	- Angestrebter Abschluss: Master
+	- Vollzeitausbildung: nein
+	- BAföG-Antrag gestellt: ja 
+	- Amt für Ausbildungsförderung: -
+	- Förderungsnummer: 0000787
+
+Angaben zur Person:
+	- Name: Star
+	- Vorname: Patrick
+	- Geburtsname: Sponge
+	- Geburtsort: Bottom
+	- Geschlecht: -
+	- Geburtsdatum: 01041970
+	- Familienstand: 4
+	- Änderungen ggü. Erklärung: -
+	- Staatsangehörigkeit: Amerikanisch
+	- Staatsangehörigkeit: -
+	- Ich habe Kinder: ja 
+
+Wohnsitz:
+	- Straße: Bikini
+	- Hausnummer: 778
+	- Adresszusatz: -
+	- Land: USA
+	- Postleitzahl: 77777
+	- Ort: Bikini Bottom
+
+Ausbildung:
+	- häuslicher Gemeinschaft: ja
+	- Eigentum/Mitteleigentum: ja
+	- Straße: -
+	- Hausnummer: -
+	- Adresszusatz: -
+	- Land: -
+	- Postleitzahl: -
+	- Ort: -

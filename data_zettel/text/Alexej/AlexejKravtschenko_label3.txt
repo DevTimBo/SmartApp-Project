@@ -1,0 +1,42 @@
+Titel: Alexej Kravtschenko Nr.3
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Freie Universität Berlin
+	- Klasse/Fachrichtung: Informatik
+	- Angestrebter Abschluss: Bachelor 
+	- Vollzeitausbildung: nein
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung: -
+	- Förderungsnummer: -
+
+Angaben zur Person:
+	- Name: Köln 
+	- Vorname: Igor
+	- Geburtsname: Martin
+	- Geburtsort: Köln
+	- Geschlecht: männlich
+	- Geburtsdatum: 03031977
+	- Familienstand: 1
+	- Änderungen ggü. Erklärung: -
+	- Staatsangehörigkeit: Deutsch
+	- Staatsangehörigkeit: -
+	- Ich habe Kinder: -
+
+Wohnsitz:
+	- Straße: Kölner
+	- Hausnummer: 778
+	- Adresszusatz: -
+	- Land: DE
+	- Postleitzahl: 28888
+	- Ort: Kölner
+
+Ausbildung:
+	- häuslicher Gemeinschaft: nein
+	- Eigentum/Mitteleigentum: nein
+	- Straße: -
+	- Hausnummer: -
+	- Adresszusatz: -
+	- Land: -
+	- Postleitzahl: -
+	- Ort: -

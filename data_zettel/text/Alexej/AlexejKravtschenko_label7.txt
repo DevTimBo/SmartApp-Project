@@ -1,0 +1,43 @@
+Titel: Alexej Kravtschenko Nr.7
+
+
+Förderungsnummer: 013408967853210
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Schulzentrum 28219 Bremen
+	- Klasse/Fachrichtung: Hotelfachmann
+	- Angestrebter Abschluss: 3.08.2023
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: ja 
+	- Amt für Ausbildungsförderung: -
+	- Förderungsnummer: 013408967853210
+
+Angaben zur Person:
+	- Name: Weng
+	- Vorname: Emily
+	- Geburtsname: -
+	- Geburtsort: Schwering
+	- Geschlecht: weiblich
+	- Geburtsdatum: 24121999
+	- Familienstand: ledig
+	- Änderungen ggü. Erklärung: -
+	- Staatsangehörigkeit: Deutsch
+	- Staatsangehörigkeit: -
+	- Ich habe Kinder: -
+
+Wohnsitz:
+	- Straße: -
+	- Hausnummer: -
+	- Adresszusatz: -
+	- Land: -
+	- Postleitzahl: -
+	- Ort: -
+
+Ausbildung:
+	- häuslicher Gemeinschaft: ja
+	- Eigentum/Mitteleigentum: -
+	- Straße: Puschkinstraße
+	- Hausnummer: 9
+	- Adresszusatz: -
+	- Land: DE
+	- Postleitzahl: 28790
+	- Ort: Schwanewede

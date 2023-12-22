@@ -1,0 +1,42 @@
+Titel: Alexej Kravtschenko Nr.4 
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Hertie School
+	- Klasse/Fachrichtung: Biologie
+	- Angestrebter Abschluss: Bachelor
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung: -
+	- Förderungsnummer: -
+
+Angaben zur Person:
+	- Name: Asimov
+	- Vorname: Jens
+	- Geburtsname: Sascha
+	- Geburtsort: Moskau
+	- Geschlecht: männlich
+	- Geburtsdatum: 01061999
+	- Familienstand: 1
+	- Änderungen ggü. Erklärung: -
+	- Staatsangehörigkeit: -
+	- Staatsangehörigkeit: -
+	- Ich habe Kinder: ja 
+
+Wohnsitz:
+	- Straße: Platz
+	- Hausnummer: 01
+	- Adresszusatz: -
+	- Land: DE
+	- Postleitzahl: 28998
+	- Ort: Bayern
+
+Ausbildung:
+	- häuslicher Gemeinschaft: nein
+	- Eigentum/Mitteleigentum: nein
+	- Straße: -
+	- Hausnummer: -
+	- Adresszusatz: -
+	- Land: -
+	- Postleitzahl:-
+	- Ort: -

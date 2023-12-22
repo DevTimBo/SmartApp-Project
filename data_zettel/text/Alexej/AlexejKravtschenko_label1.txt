@@ -1,0 +1,42 @@
+Titel: Alexej Kravtschenko Nr. 1
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Fachhochschule Bielefeld
+	- Klasse/Fachrichtung: Informatik
+	- Angestrebter Abschluss: Bachelor
+	- Vollzeitausbildung: nein
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung: -
+	- Förderungsnummer: 13778
+
+Angaben zur Person:
+	- Name: Bob
+	- Vorname: Sponge
+	- Geburtsname: Tj
+	- Geburtsort: Bremen
+	- Geschlecht: divers
+	- Geburtsdatum: 08072000
+	- Familienstand: 1
+	- Änderungen ggü. Erklärung: -
+	- Staatsangehörigkeit: Deutsch
+	- Staatsangehörigkeit: -
+	- Ich habe Kinder: -
+
+Wohnsitz:
+	- Straße: Bikini Bottom
+	- Hausnummer: 88
+	- Adresszusatz: -
+	- Land: DE
+	- Postleitzahl: 28779
+	- Ort: Leuchtenburg
+
+Ausbildung:
+	- häuslicher Gemeinschaft: nein
+	- Eigentum/Mitteleigentum: nein
+	- Straße: -
+	- Hausnummer: -
+	- Adresszusatz: -
+	- Land: -
+	- Postleitzahl: -
+	- Ort: -

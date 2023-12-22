@@ -1,0 +1,42 @@
+Titel: Alexej Kravtschenko Nr.9 
+
+Förderungsnummer: 891346005348012
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Hochschule Bremen
+	- Klasse/Fachrichtung: Elektrotechnik und Informatik
+	- Angestrebter Abschluss: 10.09.2024
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung: -
+	- Förderungsnummer: -
+
+Angaben zur Person:
+	- Name: Krause
+	- Vorname: Kevin
+	- Geburtsname: -
+	- Geburtsort: Bremen
+	- Geschlecht: männlich
+	- Geburtsdatum: 22031998
+	- Familienstand: ledig
+	- Änderungen ggü. Erklärung: -
+	- Staatsangehörigkeit: Deutsche
+	- Staatsangehörigkeit: -
+	- Ich habe Kinder: -
+
+Wohnsitz:
+	- Straße: -
+	- Hausnummer: -
+	- Adresszusatz: -
+	- Land: -
+	- Postleitzahl: -
+	- Ort: -
+
+Ausbildung:
+	- häuslicher Gemeinschaft: ja
+	- Eigentum/Mitteleigentum: -
+	- Straße: - Beckedorfstraße
+	- Hausnummer: 17
+	- Adresszusatz: -
+	- Land: DE
+	- Postleitzahl: 28790
+	- Ort: Beckedorf
