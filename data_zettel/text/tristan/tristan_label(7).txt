@@ -1,0 +1,40 @@
+Titel: Tristan, Lilienthal + 7
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort:Universität Berlin
+	- Klasse/Fachrichtung:Betriebswirtschaftslehre
+	- Angestrebter Abschluss: Bachelor of Arts
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: ja
+	- Amt für Ausbildungsförderung:Amt Sachsen
+	- Förderungsnummer:198760234102365
+
+Angaben zur Person:
+	- Name:Teller
+	- Vorname:Jens
+	- Geburtsname:
+	- Geburtsort:Berlin
+	- Geschlecht:männlich
+	- Geburtsdatum:521917
+	- Familienstand:verheiratet
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit:deutsch
+	- Staatsangehörigkeit: Ehegatte/Lebenspartner:deutsch 
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße:Hohe Staße
+	- Hausnummer:77
+	- Adresszusatz:b
+	- Land:DE
+	- Postleitzahl:15209
+	- Ort:Berlin
+
+Ausbildung:
+	- häuslicher Gemeinschaft:ja
+	- Eigentum/Mitteleigentum:ja
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

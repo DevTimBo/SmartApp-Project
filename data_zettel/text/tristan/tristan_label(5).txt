@@ -1,0 +1,40 @@
+Titel: Tristan, Lilienthal + 5
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort:Universität Hamburg
+	- Klasse/Fachrichtung:Mathematik
+	- Angestrebter Abschluss: Bachelor of Engineering
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt:ja
+	- Amt für Ausbildungsförderung:
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name:Zarrath
+	- Vorname:Elke
+	- Geburtsname:Zack
+	- Geburtsort:Kiel
+	- Geschlecht:divers
+	- Geburtsdatum:11112011
+	- Familienstand:ledig
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit:polnisch
+	- Staatsangehörigkeit: Ehegatte/Lebenspartner: 
+	- Ich habe Kinder: 
+
+Wohnsitz:
+	- Straße:Spitze Staße
+	- Hausnummer:5
+	- Adresszusatz:
+	- Land:DE
+	- Postleitzahl:33650
+	- Ort:Halle
+
+Ausbildung:
+	- häuslicher Gemeinschaft:ja
+	- Eigentum/Mitteleigentum:ja
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

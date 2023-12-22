@@ -1,0 +1,40 @@
+Titel: Tristan, Lilienthal + 1
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort:Hochschule Bremen
+	- Klasse/Fachrichtung:Informatik
+	- Angestrebter Abschluss: Bachelor of Science
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt:nein
+	- Amt für Ausbildungsförderung: kleines Amt
+	- Förderungsnummer:123456789101112
+
+Angaben zur Person:
+	- Name:Jochen
+	- Vorname:Joachim
+	- Geburtsname:
+	- Geburtsort:Bremen
+	- Geschlecht:männlich
+	- Geburtsdatum:14022001
+	- Familienstand:verheiratet
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit:deutsch
+	- Staatsangehörigkeit: Ehegatte/Lebenspartner
+	- Ich habe Kinder: ja 
+
+Wohnsitz:
+	- Straße:Kuhdamm
+	- Hausnummer:12
+	- Adresszusatz:
+	- Land:DE
+	- Postleitzahl:28757
+	- Ort:Bremen
+
+Ausbildung:
+	- häuslicher Gemeinschaft:nein
+	- Eigentum/Mitteleigentum:nein
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

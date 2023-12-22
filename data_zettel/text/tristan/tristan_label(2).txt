@@ -1,0 +1,40 @@
+Titel: Tristan, Lilienthal + 2
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort:Universität Bremen
+	- Klasse/Fachrichtung:Medieninformatik
+	- Angestrebter Abschluss: Bachelor of Arts
+	- Vollzeitausbildung: nein
+	- BAföG-Antrag gestellt:ja
+	- Amt für Ausbildungsförderung:
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name:Beil
+	- Vorname:Helga
+	- Geburtsname:Axt
+	- Geburtsort:Lübeck
+	- Geschlecht:weilich
+	- Geburtsdatum:02021980
+	- Familienstand:ledig
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit:deutsch
+	- Staatsangehörigkeit: Ehegatte/Lebenspartner
+	- Ich habe Kinder: 
+
+Wohnsitz:
+	- Straße:Baumallee
+	- Hausnummer:1
+	- Adresszusatz:
+	- Land:DE
+	- Postleitzahl:12345
+	- Ort:Halle
+
+Ausbildung:
+	- häuslicher Gemeinschaft:nein
+	- Eigentum/Mitteleigentum:nein
+	- Straße:Bremer Str. 
+	- Hausnummer:1
+	- Adresszusatz:
+	- Land:DE
+	- Postleitzahl:28203
+	- Ort:Bremen

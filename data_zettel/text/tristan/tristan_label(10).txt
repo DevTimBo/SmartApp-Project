@@ -1,0 +1,40 @@
+Titel: Tristan, Lilienthal + 10
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort:Universität Lübeck
+	- Klasse/Fachrichtung:Data Science
+	- Angestrebter Abschluss: Bachelor of Science
+	- Vollzeitausbildung: nein
+	- BAföG-Antrag gestellt:ja
+	- Amt für Ausbildungsförderung:Hamurg
+	- Förderungsnummer:123456789012345
+
+Angaben zur Person:
+	- Name:Apfel
+	- Vorname:Svenja
+	- Geburtsname:Birne
+	- Geburtsort:Kiel
+	- Geschlecht:weiblich
+	- Geburtsdatum:05061999
+	- Familienstand:ledig
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit:deutsch
+	- Staatsangehörigkeit: Ehegatte/Lebenspartner: 
+	- Ich habe Kinder: 
+
+Wohnsitz:
+	- Straße:Schnelle Staße
+	- Hausnummer:67
+	- Adresszusatz:a
+	- Land:DE
+	- Postleitzahl:00012
+	- Ort:Verden
+
+Ausbildung:
+	- häuslicher Gemeinschaft:ja
+	- Eigentum/Mitteleigentum:ja
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

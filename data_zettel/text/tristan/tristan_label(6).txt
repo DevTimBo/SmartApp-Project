@@ -1,0 +1,40 @@
+Titel: Tristan, Lilienthal + 6
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort:RTW Aachen
+	- Klasse/Fachrichtung:Maschinenbau
+	- Angestrebter Abschluss: Bachelor of Engineering
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung:
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name:Tisch
+	- Vorname:Jasmin
+	- Geburtsname:Stuhl
+	- Geburtsort:Bermerhaven
+	- Geschlecht:weiblich
+	- Geburtsdatum:12032005
+	- Familienstand:geschieden
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit:deutsch
+	- Staatsangehörigkeit: Ehegatte/Lebenspartner: 
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße:Enge Staße
+	- Hausnummer:54
+	- Adresszusatz:z
+	- Land:DE
+	- Postleitzahl:51234
+	- Ort:Bremen
+
+Ausbildung:
+	- häuslicher Gemeinschaft:ja
+	- Eigentum/Mitteleigentum:ja
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

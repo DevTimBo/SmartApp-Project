@@ -1,0 +1,40 @@
+Titel: Tristan, Lilienthal + 4
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort:Hochschule Hamburg
+	- Klasse/Fachrichtung:Elektrotechnik
+	- Angestrebter Abschluss: Bachelor of Engineering
+	- Vollzeitausbildung: nein
+	- BAföG-Antrag gestellt:nein
+	- Amt für Ausbildungsförderung:
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name:Haus
+	- Vorname:Anne
+	- Geburtsname:
+	- Geburtsort:München
+	- Geschlecht:weiblich
+	- Geburtsdatum:30101999
+	- Familienstand:ledig
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit:deutsch
+	- Staatsangehörigkeit: Ehegatte/Lebenspartner: 
+	- Ich habe Kinder: 
+
+Wohnsitz:
+	- Straße:Mittelstraße
+	- Hausnummer:1
+	- Adresszusatz:b
+	- Land:DE
+	- Postleitzahl:22305
+	- Ort:Verden
+
+Ausbildung:
+	- häuslicher Gemeinschaft:ja
+	- Eigentum/Mitteleigentum:ja
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

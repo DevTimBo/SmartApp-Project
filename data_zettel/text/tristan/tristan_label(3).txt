@@ -1,0 +1,40 @@
+Titel: Tristan, Lilienthal + 3
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort:Hochschule Hannover
+	- Klasse/Fachrichtung:Technische Informatik
+	- Angestrebter Abschluss: Bachelor of Science
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt:ja
+	- Amt für Ausbildungsförderung:Dezernat 1
+	- Förderungsnummer:001123411925300
+
+Angaben zur Person:
+	- Name:Thorsten
+	- Vorname:Thomas
+	- Geburtsname:
+	- Geburtsort:Lübeck
+	- Geschlecht:divers
+	- Geburtsdatum:05121980
+	- Familienstand:geschieden
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit:französisch
+	- Staatsangehörigkeit: Ehegatte/Lebenspartner: italientisch
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße:Lange Str.
+	- Hausnummer:50
+	- Adresszusatz:a
+	- Land:DE
+	- Postleitzahl:12333
+	- Ort:Wels
+
+Ausbildung:
+	- häuslicher Gemeinschaft:nein
+	- Eigentum/Mitteleigentum:nein
+	- Straße:Kurze Str. 
+	- Hausnummer:3560
+	- Adresszusatz:
+	- Land:DE
+	- Postleitzahl:00052
+	- Ort:Bremen

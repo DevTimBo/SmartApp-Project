@@ -1,0 +1,40 @@
+Titel: Tristan, Lilienthal + 8
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort:Hochschule Bremerhaven
+	- Klasse/Fachrichtung:Mechatronik
+	- Angestrebter Abschluss: Master of Science
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt:nein
+	- Amt für Ausbildungsförderung:
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name:Knopf
+	- Vorname:Hannes
+	- Geburtsname:
+	- Geburtsort:Bremen
+	- Geschlecht:männlich
+	- Geburtsdatum:111991
+	- Familienstand:ledig
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit:deutsch
+	- Staatsangehörigkeit: Ehegatte/Lebenspartner: 
+	- Ich habe Kinder: 
+
+Wohnsitz:
+	- Straße:Flache Staße
+	- Hausnummer:1
+	- Adresszusatz:
+	- Land:DE
+	- Postleitzahl:16705
+	- Ort:Bremen
+
+Ausbildung:
+	- häuslicher Gemeinschaft:ja
+	- Eigentum/Mitteleigentum:ja
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

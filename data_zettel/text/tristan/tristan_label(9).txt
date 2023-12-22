@@ -1,0 +1,40 @@
+Titel: Tristan, Lilienthal + 9
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort:Universität Kiel
+	- Klasse/Fachrichtung:Energietechnik
+	- Angestrebter Abschluss: Master of Science
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt:nein
+	- Amt für Ausbildungsförderung:
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name:Stahl
+	- Vorname:Karsten
+	- Geburtsname:Kupfer
+	- Geburtsort:Hamburg
+	- Geschlecht:männlich
+	- Geburtsdatum:10101990
+	- Familienstand:ledig
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit:deutsch
+	- Staatsangehörigkeit: Ehegatte/Lebenspartner: 
+	- Ich habe Kinder: 
+
+Wohnsitz:
+	- Straße:Tiefe Staße
+	- Hausnummer:3001
+	- Adresszusatz:
+	- Land:DE
+	- Postleitzahl:55212
+	- Ort:Hamburg
+
+Ausbildung:
+	- häuslicher Gemeinschaft:ja
+	- Eigentum/Mitteleigentum:ja
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:
