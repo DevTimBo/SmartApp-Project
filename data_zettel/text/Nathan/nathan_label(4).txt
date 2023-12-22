@@ -1,0 +1,42 @@
+Titel: Nathan, 4
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Bibaa Hochschule
+	- Klasse/Fachrichtung: Mathe
+	- Angestrebter Abschluss: Master
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: ja
+	- Amt für Ausbildungsförderung: Zo
+	- Förderungsnummer: 202193424982109
+
+Angaben zur Person:
+	- Name: Luzan
+	- Vorname: Birzan
+	- Geburtsname: Luzan
+	- Geburtsort: Purshan
+	- Geschlecht: divers
+	- Geburtsdatum: 11.01.0192
+	- Familienstand: verheiratet
+	- Änderungen ggü. Erklärung: 01.07.1928
+	- Staatsangehörigkeit: 
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: NR
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße: Lianpina
+	- Hausnummer: 042
+	- Adresszusatz: LP
+	- Land: 
+	- Postleitzahl: 
+	- Ort: Brobon
+
+Ausbildung:
+	- häuslicher Gemeinschaft: ja
+	- Eigentum/Mitteleigentum: ja
+	- Straße: Bremerstraße
+	- Hausnummer: 049
+	- Adresszusatz: Kl
+	- Land: ZM
+	- Postleitzahl: 21983
+	- Ort: Brebau

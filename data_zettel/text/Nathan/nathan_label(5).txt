@@ -1,0 +1,42 @@
+Titel: Nathan, 5
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Spand Bredau
+	- Klasse/Fachrichtung: Informatik
+	- Angestrebter Abschluss: Master
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung: BR
+	- Förderungsnummer: 124908723410234
+
+Angaben zur Person:
+	- Name: Liza
+	- Vorname: Bitz
+	- Geburtsname: Noron
+	- Geburtsort: Lotz
+	- Geschlecht: divers
+	- Geburtsdatum: 11.11.1999
+	- Familienstand: ledig
+	- Änderungen ggü. Erklärung: 00.10.2101
+	- Staatsangehörigkeit: DE
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: 
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße: Busslin Weg
+	- Hausnummer: 221
+	- Adresszusatz: Br
+	- Land: DE
+	- Postleitzahl: 22222
+	- Ort: Stadau
+
+Ausbildung:
+	- häuslicher Gemeinschaft: ja
+	- Eigentum/Mitteleigentum: nein
+	- Straße: Lor Weg
+	- Hausnummer: 241
+	- Adresszusatz: 
+	- Land: DE
+	- Postleitzahl: 21210
+	- Ort: Hagen

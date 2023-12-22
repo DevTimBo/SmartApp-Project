@@ -1,0 +1,42 @@
+Titel: Nathan, 6
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Bremen Hochschule
+	- Klasse/Fachrichtung: Median theory
+	- Angestrebter Abschluss: Master
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung: 
+	- Förderungsnummer: 123456789120321
+
+Angaben zur Person:
+	- Name: Namener
+	- Vorname: Bubaran
+	- Geburtsname: Lizadan
+	- Geburtsort: Bidan
+	- Geschlecht: männlich
+	- Geburtsdatum: 21.11.2101
+	- Familienstand: ledig
+	- Änderungen ggü. Erklärung: 11.21.2000
+	- Staatsangehörigkeit: Kr
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: Br
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße: Lützen Weg
+	- Hausnummer: 221
+	- Adresszusatz: 
+	- Land: 
+	- Postleitzahl: 
+	- Ort: Hamburg
+
+Ausbildung:
+	- häuslicher Gemeinschaft: ja
+	- Eigentum/Mitteleigentum: ja
+	- Straße: Hamburger Weg
+	- Hausnummer: 42
+	- Adresszusatz: Kr
+	- Land: NR
+	- Postleitzahl: 21102
+	- Ort: Hamburg

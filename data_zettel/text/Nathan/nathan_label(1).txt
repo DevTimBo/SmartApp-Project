@@ -1,0 +1,42 @@
+Titel: Nathan, 1
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Worskpace Hochschule
+	- Klasse/Fachrichtung: Arts
+	- Angestrebter Abschluss: Master
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: ja
+	- Amt für Ausbildungsförderung:NR
+	- Förderungsnummer:217778210341982
+
+Angaben zur Person:
+	- Name: Patron
+	- Vorname: Linda
+	- Geburtsname: tronan
+	- Geburtsort: Pindra
+	- Geschlecht: divers
+	- Geburtsdatum: 11.11.2004
+	- Familienstand: verwitwet
+	- Änderungen ggü. Erklärung: 21.01.2001
+	- Staatsangehörigkeit: NR
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: 
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße: Puffer Straße
+	- Hausnummer: 21
+	- Adresszusatz: 
+	- Land: NR
+	- Postleitzahl: 49928
+	- Ort: 
+
+Ausbildung:
+	- häuslicher Gemeinschaft: ja
+	- Eigentum/Mitteleigentum: nein
+	- Straße:Lüpfer Weg
+	- Hausnummer: 42
+	- Adresszusatz:
+	- Land: BE
+	- Postleitzahl: 21998
+	- Ort: Span

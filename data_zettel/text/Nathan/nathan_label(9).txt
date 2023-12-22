@@ -1,0 +1,42 @@
+Titel: Nathan, 9
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Pandau Hochschule
+	- Klasse/Fachrichtung: Wirtschaft
+	- Angestrebter Abschluss: Bacherlor
+	- Vollzeitausbildung: nein
+	- BAföG-Antrag gestellt: ja
+	- Amt für Ausbildungsförderung: 
+	- Förderungsnummer: 123498760124578
+
+Angaben zur Person:
+	- Name: Linpan
+	- Vorname: Linpada
+	- Geburtsname: Runger
+	- Geburtsort: pdardon
+	- Geschlecht: divers
+	- Geburtsdatum: 11.11.1111
+	- Familienstand: ledig
+	- Änderungen ggü. Erklärung: 21.11.1908
+	- Staatsangehörigkeit: BR
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: 
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße: Linderhof
+	- Hausnummer: 21
+	- Adresszusatz: 
+	- Land: NR
+	- Postleitzahl: 14728
+	- Ort: Weideman
+
+Ausbildung:
+	- häuslicher Gemeinschaft: ja
+	- Eigentum/Mitteleigentum: ja
+	- Straße: Straßendan Weg
+	- Hausnummer: 123
+	- Adresszusatz: 2B
+	- Land: BZ
+	- Postleitzahl: 21982
+	- Ort: Dardon

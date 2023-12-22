@@ -1,0 +1,42 @@
+Titel: Nathan, 8
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Flavour Schule
+	- Klasse/Fachrichtung: Farbe Forschung
+	- Angestrebter Abschluss: Bacherlor
+	- Vollzeitausbildung: nein
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung: 
+	- Förderungsnummer: 222101263493100
+
+Angaben zur Person:
+	- Name: Andrea
+	- Vorname: Orinano
+	- Geburtsname: Nonarin
+	- Geburtsort: Birland
+	- Geschlecht: männlich
+	- Geburtsdatum: 21.01.2009
+	- Familienstand: verheiratet
+	- Änderungen ggü. Erklärung: 11.02.2003
+	- Staatsangehörigkeit: NB
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: BN
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße: Hand Straße
+	- Hausnummer: 21028
+	- Adresszusatz: 
+	- Land: DR
+	- Postleitzahl: 27720
+	- Ort: Bayern
+
+Ausbildung:
+	- häuslicher Gemeinschaft: ja
+	- Eigentum/Mitteleigentum: nein
+	- Straße: Bayernerman
+	- Hausnummer: 24
+	- Adresszusatz: Ki
+	- Land: DR
+	- Postleitzahl: 07210
+	- Ort: 

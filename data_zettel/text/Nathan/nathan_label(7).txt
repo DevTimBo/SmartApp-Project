@@ -1,0 +1,42 @@
+Titel: Nathan, 7
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Bayerner Universität
+	- Klasse/Fachrichtung: Physik
+	- Angestrebter Abschluss: Master
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: ja
+	- Amt für Ausbildungsförderung: 
+	- Förderungsnummer: 210101111000111
+
+Angaben zur Person:
+	- Name: Meiners
+	- Vorname: Liparan
+	- Geburtsname: Lupun
+	- Geburtsort: London
+	- Geschlecht: weiblich
+	- Geburtsdatum: 21.11.1092
+	- Familienstand: dauernd getrennt lebend
+	- Änderungen ggü. Erklärung: 11.21.1010
+	- Staatsangehörigkeit: NR
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: Br
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße: Blauer Weg
+	- Hausnummer: 0122
+	- Adresszusatz: Ai
+	- Land: 
+	- Postleitzahl: 
+	- Ort: Spandau
+
+Ausbildung:
+	- häuslicher Gemeinschaft: ja
+	- Eigentum/Mitteleigentum: nein
+	- Straße: Hauluwer Straße
+	- Hausnummer: 210
+	- Adresszusatz: BR
+	- Land: DE
+	- Postleitzahl: 20101
+	- Ort: Hamburg

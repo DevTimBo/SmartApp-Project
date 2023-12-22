@@ -1,0 +1,42 @@
+Titel: Nathan, 10
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Mandau Universität
+	- Klasse/Fachrichtung: Produkte
+	- Angestrebter Abschluss: Master
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: ja
+	- Amt für Ausbildungsförderung: Bo
+	- Förderungsnummer: 
+
+Angaben zur Person:
+	- Name: Adminor
+	- Vorname: Biaron
+	- Geburtsname: Minoros
+	- Geburtsort: Bidazon
+	- Geschlecht: 
+	- Geburtsdatum: 01.11.2008
+	- Familienstand: ledig
+	- Änderungen ggü. Erklärung: 11.28.2112
+	- Staatsangehörigkeit: BL
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: Br
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße: Gröpelingen
+	- Hausnummer: 210
+	- Adresszusatz: 
+	- Land: ZL
+	- Postleitzahl: 21010
+	- Ort: Baron
+
+Ausbildung:
+	- häuslicher Gemeinschaft: 
+	- Eigentum/Mitteleigentum: 
+	- Straße: Gironau Straße
+	- Hausnummer: 21
+	- Adresszusatz: 
+	- Land: NB
+	- Postleitzahl: 21010
+	- Ort: Bremen

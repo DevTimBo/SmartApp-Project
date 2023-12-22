@@ -1,0 +1,42 @@
+Titel: Nathan, 2
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Sandrin Universität
+	- Klasse/Fachrichtung: Chimie
+	- Angestrebter Abschluss: Bachelor
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: ja
+	- Amt für Ausbildungsförderung: BE
+	- Förderungsnummer: 201022467349110
+
+Angaben zur Person:
+	- Name: Zama
+	- Vorname: Zura
+	- Geburtsname: Bana
+	- Geburtsort: Lindor
+	- Geschlecht: weiblich
+	- Geburtsdatum: 01.21.2001
+	- Familienstand: geschieden
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit: Ar
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: 
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße: Weißerweg
+	- Hausnummer: 321
+	- Adresszusatz:
+	- Land: DE
+	- Postleitzahl: 92187
+	- Ort: Berlin
+
+Ausbildung:
+	- häuslicher Gemeinschaft: nein
+	- Eigentum/Mitteleigentum: nein
+	- Straße: Freedom house
+	- Hausnummer: 201
+	- Adresszusatz:
+	- Land: CL
+	- Postleitzahl: 22219
+	- Ort: Washin

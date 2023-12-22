@@ -1,0 +1,42 @@
+Titel: Nathan, 3
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Bilden Bibau
+	- Klasse/Fachrichtung: Biologie
+	- Angestrebter Abschluss: Master
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: ja
+	- Amt für Ausbildungsförderung: BA
+	- Förderungsnummer: 234902399876543
+
+Angaben zur Person:
+	- Name: Lize
+	- Vorname: Betz
+	- Geburtsname: Noran
+	- Geburtsort: Lotze
+	- Geschlecht: männlich
+	- Geburtsdatum: 21.12.2003
+	- Familienstand: verheiratet
+	- Änderungen ggü. Erklärung: 
+	- Staatsangehörigkeit: 
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: 
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße: Antag Weg
+	- Hausnummer: 41
+	- Adresszusatz:
+	- Land: DE
+	- Postleitzahl: 19227
+	- Ort: Münich
+
+Ausbildung:
+	- häuslicher Gemeinschaft: ja
+	- Eigentum/Mitteleigentum: ja
+	- Straße: Babau
+	- Hausnummer: 221
+	- Adresszusatz:
+	- Land: NL
+	- Postleitzahl: 78219
+	- Ort: Nierdan
