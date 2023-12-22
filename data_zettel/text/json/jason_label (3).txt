@@ -1,0 +1,42 @@
+Titel: Jason, Pranata 3
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Hochschule Dresden
+	- Klasse/Fachrichtung: Demonology
+	- Angestrebter Abschluss: Master
+	- Vollzeitausbildung: nein
+	- BAföG-Antrag gestellt:  nein
+	- Amt für Ausbildungsförderung:
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name: Peter
+	- Vorname: Parker
+	- Geburtsname: Spiderman
+	- Geburtsort: Dresden
+	- Geschlecht: divers
+	- Geburtsdatum: 31.05.2002
+	- Familienstand: 1
+	- Änderungen ggü. Erklärung: 
+	- Staatsangehörigkeit: deutsch
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: 
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße: Dämonstr.
+	- Hausnummer: 204
+	- Adresszusatz: 
+	- Land: GER
+	- Postleitzahl: 42066  
+	- Ort: Dresden
+
+Ausbildung:
+	- häuslicher Gemeinschaft: 
+	- Eigentum/Mitteleigentum: 
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

@@ -1,0 +1,42 @@
+Titel: Jason, Pranata 1
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Universität Bremen
+	- Klasse/Fachrichtung: Philosophie
+	- Angestrebter Abschluss: Doktor
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: nein  
+	- Amt für Ausbildungsförderung:
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name: Sigmund
+	- Vorname: Freud
+	- Geburtsname: Bob
+	- Geburtsort: Nottingham
+	- Geschlecht: divers
+	- Geburtsdatum: 07.12.1995
+	- Familienstand: ledig
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit: russisch
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: 
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße: Auberginestr.
+	- Hausnummer: 420
+	- Adresszusatz: Im Keller
+	- Land: GER
+	- Postleitzahl: 28208  
+	- Ort: Bremen
+
+Ausbildung:
+	- häuslicher Gemeinschaft: 
+	- Eigentum/Mitteleigentum: 
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

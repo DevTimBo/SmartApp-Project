@@ -1,0 +1,42 @@
+Titel: Jason, Pranata 6
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Hochschule Bremen 
+	- Klasse/Fachrichtung: Medien Informatik
+	- Angestrebter Abschluss: Bachelor
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: ja 
+	- Amt für Ausbildungsförderung:
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name: Henry
+	- Vorname: Mark
+	- Geburtsname: Robert
+	- Geburtsort: Potsdam
+	- Geschlecht: männlich
+	- Geburtsdatum: 05.09.2001
+	- Familienstand: 1
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit: deutsch
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: 
+	- Ich habe Kinder: nein
+
+Wohnsitz:
+	- Straße: Parkstraße
+	- Hausnummer: 150
+	- Adresszusatz: 
+	- Land: GER
+	- Postleitzahl: 28320  
+	- Ort: Bremen
+
+Ausbildung:
+	- häuslicher Gemeinschaft: 
+	- Eigentum/Mitteleigentum: 
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

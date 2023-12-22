@@ -1,0 +1,42 @@
+Titel: Jason, Pranata 5
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Konoha Academy
+	- Klasse/Fachrichtung: Ninjutsu
+	- Angestrebter Abschluss: Master
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: nein  
+	- Amt für Ausbildungsförderung:
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name: Uzumaki
+	- Vorname: Naruto
+	- Geburtsname: Kyuubi
+	- Geburtsort: Konoha
+	- Geschlecht: männlich
+	- Geburtsdatum: 25.03.1999
+	- Familienstand: 2
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit: japanisch 
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: japanisch 
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße: Ninjastr.
+	- Hausnummer: 2
+	- Adresszusatz: 
+	- Land: GER
+	- Postleitzahl: 89320  
+	- Ort: Konoha
+
+Ausbildung:
+	- häuslicher Gemeinschaft: 
+	- Eigentum/Mitteleigentum: 
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

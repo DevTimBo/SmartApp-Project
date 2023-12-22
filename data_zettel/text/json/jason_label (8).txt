@@ -1,0 +1,42 @@
+Titel: Jason, Pranata 1
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Trampoline Universität
+	- Klasse/Fachrichtung: Springen
+	- Angestrebter Abschluss: Master
+	- Vollzeitausbildung: nein
+	- BAföG-Antrag gestellt: ja
+	- Amt für Ausbildungsförderung:
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name: Mario
+	- Vorname: Super
+	- Geburtsname: Bros
+	- Geburtsort: Japan
+	- Geschlecht: männlich
+	- Geburtsdatum: 01.08.1987
+	- Familienstand: 4
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit: itanlianisch
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: 
+	- Ich habe Kinder: nein
+
+Wohnsitz:
+	- Straße: Pipestr.
+	- Hausnummer: 12
+	- Adresszusatz: 
+	- Land: GER
+	- Postleitzahl: 13452  
+	- Ort: Osnabrück
+
+Ausbildung:
+	- häuslicher Gemeinschaft: ja
+	- Eigentum/Mitteleigentum: 
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

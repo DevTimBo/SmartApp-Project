@@ -1,0 +1,42 @@
+Titel: Jason, Pranata 2
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: London Universität
+	- Klasse/Fachrichtung: Detective
+	- Angestrebter Abschluss: Master
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: ja 
+	- Amt für Ausbildungsförderung:
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name: Sherlock
+	- Vorname: Moriarty
+	- Geburtsname: Holmes
+	- Geburtsort: London
+	- Geschlecht: divers
+	- Geburtsdatum: 11.11.1987
+	- Familienstand: 3
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit: englisch
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: englisch
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße: Longjohnstr.
+	- Hausnummer: 301
+	- Adresszusatz: 
+	- Land: GER
+	- Postleitzahl: 49328 
+	- Ort: London
+
+Ausbildung:
+	- häuslicher Gemeinschaft: 
+	- Eigentum/Mitteleigentum: 
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:
