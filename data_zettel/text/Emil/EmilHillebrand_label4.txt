@@ -1,0 +1,39 @@
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Köln
+	- Klasse/Fachrichtung:
+	- Angestrebter Abschluss: Manager
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name: Ballmer
+	- Vorname: Steve
+	- Geburtsname:
+	- Geburtsort: Detroid
+	- Geschlecht: männlich
+	- Geburtsdatum: 24.03.1956
+	- Familienstand: Verheiratet
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit: Amy
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: Amy
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße: 148th Ave NE
+	- Hausnummer: 14
+	- Adresszusatz:
+	- Land: USA
+	- Postleitzahl: 98052
+	- Ort: Redmond Woods
+
+Ausbildung:
+	- häuslicher Gemeinschaft: nein
+	- Eigentum/Mitteleigentum: nein
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

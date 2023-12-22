@@ -1,0 +1,39 @@
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Potsdam
+	- Klasse/Fachrichtung:
+	- Angestrebter Abschluss: Koch
+	- Vollzeitausbildung: nein
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name: Zuckerberg
+	- Vorname: Mark
+	- Geburtsname:
+	- Geburtsort: New York
+	- Geschlecht: männlich
+	- Geburtsdatum: 14.05.1984
+	- Familienstand: ledig
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit: Amy
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: Amy
+	- Ich habe Kinder: nein
+
+Wohnsitz:
+	- Straße: Hacker Way 
+	- Hausnummer: 1
+	- Adresszusatz:
+	- Land: USA
+	- Postleitzahl: 94025
+	- Ort: Kalifornien
+
+Ausbildung:
+	- häuslicher Gemeinschaft: ja
+	- Eigentum/Mitteleigentum: ja
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

@@ -1,0 +1,39 @@
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Düsseldorf
+	- Klasse/Fachrichtung:
+	- Angestrebter Abschluss: König
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name: Musk
+	- Vorname: Elon
+	- Geburtsname:
+	- Geburtsort: Pretoria
+	- Geschlecht: männlich
+	- Geburtsdatum: 28.06.1971
+	- Familienstand: Verheiratet
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit: Afrika
+	- Staatsangehörigkeit Ehegatte/Lebenspartner:
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße: Ludwig-Prundte
+	- Hausnummer: 27
+	- Adresszusatz:
+	- Land: Ger
+	- Postleitzahl: 12526
+	- Ort: Berlin
+
+Ausbildung:
+	- häuslicher Gemeinschaft: nein
+	- Eigentum/Mitteleigentum: nein
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

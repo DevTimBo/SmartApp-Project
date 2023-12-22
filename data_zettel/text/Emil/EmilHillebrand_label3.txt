@@ -1,0 +1,39 @@
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Stuttgart
+	- Klasse/Fachrichtung:
+	- Angestrebter Abschluss: Kellner
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: ja
+	- Amt für Ausbildungsförderung: Stuttgart
+	- Förderungsnummer: 123456789001001
+
+Angaben zur Person:
+	- Name: Gates
+	- Vorname: Bill
+	- Geburtsname:
+	- Geburtsort: Seatle
+	- Geschlecht: männlich
+	- Geburtsdatum: 28.10.1955
+	- Familienstand: Verheiratet
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit: Amy
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: Amy
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße: 148th Ave NE
+	- Hausnummer: 14
+	- Adresszusatz:
+	- Land: USA
+	- Postleitzahl: 98052
+	- Ort: Redmond Woods
+
+Ausbildung:
+	- häuslicher Gemeinschaft: nein
+	- Eigentum/Mitteleigentum: nein
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

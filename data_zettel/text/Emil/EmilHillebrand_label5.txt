@@ -1,0 +1,39 @@
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Wismar
+	- Klasse/Fachrichtung:
+	- Angestrebter Abschluss: Junker
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name: Page
+	- Vorname: Larry
+	- Geburtsname:
+	- Geburtsort: Michigan
+	- Geschlecht: männlich
+	- Geburtsdatum: 26.03.2973
+	- Familienstand: Ledig
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit: Amy
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: Amy
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße: Amphitheatre Parkway
+	- Hausnummer: 7
+	- Adresszusatz:
+	- Land: USA
+	- Postleitzahl: 24043
+	- Ort: California
+
+Ausbildung:
+	- häuslicher Gemeinschaft: nein
+	- Eigentum/Mitteleigentum: ja
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

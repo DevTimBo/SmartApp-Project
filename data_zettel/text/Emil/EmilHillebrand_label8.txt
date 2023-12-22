@@ -1,0 +1,39 @@
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: München
+	- Klasse/Fachrichtung:
+	- Angestrebter Abschluss: Automatisierer
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: ja
+	- Amt für Ausbildungsförderung: Köln
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name: Arnault
+	- Vorname: Rernard
+	- Geburtsname: Jeff
+	- Geburtsort: Raubix
+	- Geschlecht: männlich
+	- Geburtsdatum: 05.03.1949
+	- Familienstand: Ledig
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit: Franzose
+	- Staatsangehörigkeit Ehegatte/Lebenspartner:
+	- Ich habe Kinder: nein
+
+Wohnsitz:
+	- Straße: Leopold str
+	- Hausnummer: 8
+	- Adresszusatz:
+	- Land: Ger
+	- Postleitzahl: 80802
+	- Ort: München
+
+Ausbildung:
+	- häuslicher Gemeinschaft: nein
+	- Eigentum/Mitteleigentum: ja
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

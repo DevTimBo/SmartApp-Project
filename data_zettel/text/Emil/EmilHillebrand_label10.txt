@@ -1,0 +1,39 @@
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Kassel
+	- Klasse/Fachrichtung:
+	- Angestrebter Abschluss: Funker
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: ja
+	- Amt für Ausbildungsförderung: Kassel
+	- Förderungsnummer: 121314752741397
+
+Angaben zur Person:
+	- Name: Buffet
+	- Vorname: Warren
+	- Geburtsname:
+	- Geburtsort: Ohama
+	- Geschlecht: männlich
+	- Geburtsdatum: 30.08.1930
+	- Familienstand: Ledig
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit: Amy
+	- Staatsangehörigkeit Ehegatte/Lebenspartner:
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße: Senator str
+	- Hausnummer: 7
+	- Adresszusatz:
+	- Land: USA
+	- Postleitzahl: 50735
+	- Ort: Nebraska
+
+Ausbildung:
+	- häuslicher Gemeinschaft: nein
+	- Eigentum/Mitteleigentum: nein
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

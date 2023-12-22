@@ -1,0 +1,39 @@
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Berlin
+	- Klasse/Fachrichtung:
+	- Angestrebter Abschluss: Gas, Wasser,...
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name: Ellison
+	- Vorname: Larry
+	- Geburtsname:
+	- Geburtsort: New York
+	- Geschlecht: männlich
+	- Geburtsdatum: 17.07.1944
+	- Familienstand: Geschieden 4x
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit:
+	- Staatsangehörigkeit Ehegatte/Lebenspartner:
+	- Ich habe Kinder: nein
+
+Wohnsitz:
+	- Straße: Cloud Way
+	- Hausnummer: 2300
+	- Adresszusatz:
+	- Land: USA
+	- Postleitzahl: 28271
+	- Ort: Austin
+
+Ausbildung:
+	- häuslicher Gemeinschaft: nein
+	- Eigentum/Mitteleigentum: nein
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

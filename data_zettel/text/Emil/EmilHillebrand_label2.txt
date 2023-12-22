@@ -1,0 +1,39 @@
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Berlin
+	- Klasse/Fachrichtung:
+	- Angestrebter Abschluss: Model
+	- Vollzeitausbildung: nein
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name: Brin
+	- Vorname: Sergej
+	- Geburtsname:
+	- Geburtsort:
+	- Geschlecht: männlich
+	- Geburtsdatum: 21.08.1973
+	- Familienstand: Geschieden
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit:Ruski
+	- Staatsangehörigkeit Ehegatte/Lebenspartner:
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße: Amphitheatre Parkway
+	- Hausnummer: 2
+	- Adresszusatz: 
+	- Land: USA
+	- Postleitzahl: 94043
+	- Ort: California
+
+Ausbildung:
+	- häuslicher Gemeinschaft: nein
+	- Eigentum/Mitteleigentum: ja
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:

@@ -1,0 +1,39 @@
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Karlsruhe
+	- Klasse/Fachrichtung:
+	- Angestrebter Abschluss: informatiker
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name: Bezos
+	- Vorname: Jeff
+	- Geburtsname: 
+	- Geburtsort: Albuqerque
+	- Geschlecht: männlich
+	- Geburtsdatum: 12.01.1964
+	- Familienstand: Verheiratet
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit: New Mwxiko
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: Amy
+	- Ich habe Kinder: ja
+
+Wohnsitz:
+	- Straße: Parkstraße
+	- Hausnummer: 37
+	- Adresszusatz: 7
+	- Land: DE
+	- Postleitzahl: 80538
+	- Ort: Schwabingen
+
+Ausbildung:
+	- häuslicher Gemeinschaft: nein
+	- Eigentum/Mitteleigentum: nein
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:
