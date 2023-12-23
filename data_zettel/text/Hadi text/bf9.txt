@@ -1,0 +1,27 @@
+Titel: Hadi El-Sabbagh 8
+
+Fördernummer: 567812356439768
+
+Ausbildung:
+
+Ausbildungsstätte und Ausbildungsort: TU Berlin
+Klasse/Fachrichtung: Informatik
+Angestrebter Abschluss: Master of Science
+Vollzeitausbildung: ja
+BAföG-Antrag gestellt: ja
+Amt für Ausbildungsförderung: Amt
+Förderungsnummer: 654321
+Angaben zur Person:
+
+Name: Schwarz
+Vorname: Oliver
+Geburtsname: Neumann
+Geburtsort: Digitalien
+Geschlecht: männlich
+Geburtsdatum: 21.06.1993
+Familienstand: ledig
+Änderungen ggü. Erklärung: keine
+Staatsangehörigkeit: Deutsch
+Staatsangehörigkeit Ehegatte/Lebenspartner: -
+Ich habe Kinder: nein
+
