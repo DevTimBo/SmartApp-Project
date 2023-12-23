@@ -25,6 +25,7 @@ downloads/
 eggs/
 .eggs/
 lib/
+!/android_app/tfliteapp/lib/
 lib64/
 parts/
 sdist/
