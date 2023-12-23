@@ -1,0 +1,44 @@
+Titel: Hadi El-Sabbagh 5
+
+Fördernummer: 876543212468910
+
+Ausbildung:
+
+Ausbildungsstätte und Ausbildungsort: Institut Forschungsstadt
+Klasse/Fachrichtung: Umweltwissenschaften
+Angestrebter Abschluss: Doktor 
+Vollzeitausbildung: ja
+BAföG-Antrag gestellt: nein
+Amt für Ausbildungsförderung: Behörde
+Förderungsnummer: 65432
+Angaben zur Person:
+
+Name: Neumann
+Vorname: David
+Geburtsname: Klein
+Geburtsort: Grüntal
+Geschlecht: männlich
+Geburtsdatum: 08.08.1988
+Familienstand: ledig
+Änderungen ggü. Erklärung: keine
+Staatsangehörigkeit: Deutsch
+Staatsangehörigkeit Ehegatte/Lebenspartner: 
+Ich habe Kinder: ja
+Wohnsitz:
+
+Straße: Waldpfad
+Hausnummer: 12
+Adresszusatz: 
+Land: ID
+Postleitzahl: 12321
+Ort: Grüntal
+Ausbildung:
+
+häuslicher Gemeinschaft: ja
+Eigentum/Mitteleigentum: ja
+Straße: Forscherweg
+Hausnummer: 20
+Adresszusatz:
+Land: ID
+Postleitzahl: 32123
+Ort: Forschungsstadt

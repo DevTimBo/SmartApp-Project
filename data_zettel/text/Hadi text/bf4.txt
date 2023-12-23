@@ -1,0 +1,44 @@
+Titel: Hadi El-Sabbagh 4
+
+Fördernummer: 464646587432148
+
+Ausbildung:
+
+Ausbildungsstätte und Ausbildungsort: Universität Farbenstadt
+Klasse/Fachrichtung: Grafikdesign
+Angestrebter Abschluss: Bachelor 
+Vollzeitausbildung: ja
+BAföG-Antrag gestellt: ja
+Amt für Ausbildungsförderung: Farbenstadt büro
+Förderungsnummer: 12345
+Angaben zur Person:
+
+Name: Bauer
+Vorname: Lena
+Geburtsname: Fischer
+Geburtsort: Musterstadt
+Geschlecht: weiblich
+Geburtsdatum: 02.03.1992
+Familienstand: 
+Änderungen ggü. Erklärung: keine
+Staatsangehörigkeit: Deutsch
+Staatsangehörigkeit Ehegatte/Lebenspartner: -
+Ich habe Kinder: nein
+Wohnsitz:
+
+Straße: Blumenweg
+Hausnummer: 5
+Adresszusatz: 
+Land: HE
+Postleitzahl: 45678
+Ort: Musterstadt
+Ausbildung:
+
+häuslicher Gemeinschaft: nein
+Eigentum/Mitteleigentum: nein
+Straße: Kreativallee
+Hausnummer: 10
+Adresszusatz: Studio 2
+Land: HE
+Postleitzahl: 98765
+Ort: Farbenstadt

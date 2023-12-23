@@ -1,0 +1,46 @@
+Titel: Hadi El-Sabbagh 1
+
+Fördernummer: 123456789876794
+
+Ausbildung:
+
+Ausbildungsstätte und Ausbildungsort: Technische Universität 
+Klasse/Fachrichtung: Maschinenbau
+Angestrebter Abschluss: Bachelor 
+Vollzeitausbildung: Ja
+BAföG-Antrag gestellt: Nein
+Amt für Ausbildungsförderung
+Förderungsnummer: 12345678910
+
+Angaben zur Person:
+
+Name: Mülle
+Vorname: Max
+Geburtsname: 
+Geburtsort: Fakeort
+Geschlecht: Männlich
+Geburtsdatum: 01.01.1995
+Familienstand: Ledig
+Änderungen ggü. Erklärung: Keine
+Staatsangehörigkeit: Deutsch
+Staatsangehörigkeit Ehegatte/Lebenspartner: Deutsch
+Ich habe Kinder: Ja
+
+Wohnsitz:
+
+Straße: Hauptstraße
+Hausnummer: 42
+Adresszusatz: 
+Land: Deutschland
+Postleitzahl: 
+Ort: Musterstadt
+Ausbildung:
+
+Häuslicher Gemeinschaft:
+Eigentum/Mitteleigentum: 
+Straße: 
+Hausnummer: 
+Adresszusatz: 
+Land: 
+Postleitzahl: 
+Ort: 
