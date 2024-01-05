@@ -1,0 +1,21 @@
+{
+    "model": {
+        "name": "model9v3_xl",
+        "width": 1024, 
+        "height": 128,
+        "save": "False"
+    },
+    "training": {
+        "epochs": 20,
+        "save_history": "True",
+        "batch_size": 16,
+        "tf_seed": 42,
+        "learning_rate": 0.001,
+        "patience": 20 
+    },
+    "directory": {
+        "model_dir": "models",
+        "test_dir": "test_results",
+        "data_base_path": "data"
+    }
+}
