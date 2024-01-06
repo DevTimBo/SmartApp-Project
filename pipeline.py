@@ -47,7 +47,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--img_file', help='Image used for inference.', type=Path, default='./handwriting/data/test.png')
     parser.add_argument('--get_config', help='Get the current configuration', action='store_true')    
     
-    #parser.add_argument('--set_config', help='Set a new configuration file path', type=str, default=None)
+    #parser.add_argument('--set_config', help='Set a new configuration file path', type=Path, default=None)
     #parser.add_argument('--early_stopping', help='Early stopping epochs.', type=int, default=25)
     #parser.add_argument('--batch_size', help='Batch size.', type=int, default=100)
     #parser.add_argument('--dump', help='Dump output of NN to CSV file(s).', action='store_true')
