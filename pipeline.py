@@ -100,8 +100,7 @@ def decode_single_prediction(pred):
     result = tf.strings.reduce_join(num_to_char(result)).numpy().decode("utf-8")
     return result
 
-
-def infer_single_image(model, image):
+def infer(model, image):
 
     img_size=(IMAGE_WIDTH, IMAGE_HEIGHT)
     image = tf.io.read_file(image)
@@ -134,15 +133,18 @@ def main():
     print("Choosen decoder: {type}".format(type=args.decoder))
     
     if args.get_config:
-        config_file_path = './utils/configs.json'  # You can adjust the default path
+        config_file_path = './utils/configs.json'
         config = load_json_config(config_file_path)
         print("Current configuration:")
         print(json.dumps(config, indent=4))
     
     if args.mode == 'infer':
-        print("Infer")
         loaded_model = load_model_and_weights()
-        infer_single_image(image=test_image, model=loaded_model)
+        if args.img_file:
+            print("Inference with custom Imgage.")
+            infer(image=args.img_file, model=loaded_model)
+        else:
+            infer(image=test_image, model=loaded_model)
 
     
 if __name__ == '__main__':
