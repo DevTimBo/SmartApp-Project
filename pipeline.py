@@ -1,22 +1,18 @@
-import argparse
-from path import Path
-import cv2
 # Unsere Klassen
+import handwriting.preprocess
 import utils.configs as Config
-#Imports
+# Imports
 import tensorflow as tf
 from tensorflow import keras
 from keras.models import load_model
-import matplotlib.pyplot as plt
-import numpy as np
-import json 
-import pathlib
-import random
-import time
-import os
-import pickle
-import handwriting.preprocess
 from keras.layers import StringLookup
+from path import Path
+import numpy as np
+import argparse
+import pathlib
+import pickle
+import json 
+import os
 
 
 config_path = "utils/configs.json"
@@ -104,49 +100,20 @@ def decode_single_prediction(pred):
     result = tf.strings.reduce_join(num_to_char(result)).numpy().decode("utf-8")
     return result
 
-def plot_evaluation(image):
-    _, ax = plt.subplots(1, 1, figsize=(8, 8))
-
-    img = image
-    img = tf.image.flip_left_right(img)
-    img = tf.transpose(img, perm=[1, 0, 2])
-    img = (img * 255.0).numpy().clip(0, 255).astype(np.uint8)
-    img = img[:, :, 0]
-
-    preds = prediction_model.predict(tf.expand_dims(image, axis=0))
-    pred_texts = handwriting.decode_batch_predictions(preds)
-    
-    # Display the prediction at the specified index (default is the first prediction)
-    selected_pred_text = pred_texts[0]
-    selected_pred_text = selected_pred_text.replace("|"," ")
-    title = f"Prediction: {selected_pred_text}"
-    ax.imshow(img, cmap="gray")
-    ax.set_title(title)
-    ax.axis("off")
-
-    plt.show()
 
 def infer_single_image(model, image):
- 
-    img_size=(handwriting.preprocess.handwriting_img_w, handwriting.preprocess.handwriting_img_h)
+
+    img_size=(IMAGE_WIDTH, IMAGE_HEIGHT)
     image = tf.io.read_file(image)
     image = tf.image.decode_png(image, 1)
     image = handwriting.preprocess.distortion_free_resize(image, img_size)
     image = tf.cast(image, tf.float32) / 255.0
-    
-    img = image
-    img = tf.image.flip_left_right(img)
-    img = tf.transpose(img, perm=[1, 0, 2])
-    img = (img * 255.0).numpy().clip(0, 255).astype(np.uint8)
-    img = img[:, :, 0]
 
     prediction_model = keras.models.Model(model.get_layer(name="image").input, model.get_layer(name="dense2").output)
     preds = prediction_model.predict(tf.expand_dims(image, axis=0))
-    pred_texts = handwriting.decode_batch_predictions(preds)
-    
-    # Display the prediction at the specified index (default is the first prediction)
-    selected_pred_text = pred_texts[0]
-    selected_pred_text = selected_pred_text.replace("|"," ")
+    pred_texts = decode_single_prediction(preds)
+
+    selected_pred_text = pred_texts.replace("|"," ")
     print(f"Prediction: {selected_pred_text}")
 
 
