@@ -1,6 +1,7 @@
 import numpy as np
 import os
 import tensorflow as tf
+import pickle
 
 np.random.seed(42)
 tf.random.set_seed(42)
@@ -9,8 +10,17 @@ characters = set()
 max_len = 0
 base_path = "data"  # gets overwritten by config
 base_image_path = os.path.join(base_path, "lines")
+base_pickle_path = os.path.join(base_path, "meta.pkl")
 
 
+def save_characters_and_max_len_to_pickle(characters, max_len, file_path):
+    data = {
+        "characters": characters,
+        "max_len": max_len
+    }
+    with open(file_path, 'wb') as file:
+        pickle.dump(data, file)
+        
 def read_data():
     lines_list = []
     # Read the file with UTF-8 encoding
@@ -73,6 +83,7 @@ def get_vocabulary_length_and_clean_labels(train_labels):
 
     print("Maximum length: ", max_len)
     print("Vocab size: ", len(characters))
+    save_characters_and_max_len_to_pickle(characters, max_len, base_pickle_path)
     return train_labels_cleaned
 
 
