@@ -1,4 +1,10 @@
 {
+    "pipeline": {
+        "training": "False",
+        "plotting": "False",
+        "bb_model": 1,
+        "handwriting_model": 1
+    },
     "model": {
         "name": "model9v3_xl",
         "width": 1024, 

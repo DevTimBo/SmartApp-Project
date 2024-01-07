@@ -10,6 +10,8 @@ class Config:
         with open(self.config_path, "r") as config_file:
             self.config = json.load(config_file)
 
+    def get_pipeline_parameter(self):
+        return self.config["inf_pipeline_old"]
     def get_model_parameter(self):
         return self.config["model"]
 
