@@ -11,7 +11,7 @@ class Config:
             self.config = json.load(config_file)
 
     def get_pipeline_parameter(self):
-        return self.config["inf_pipeline_old"]
+        return self.config["pipeline"]
     def get_model_parameter(self):
         return self.config["model"]
 
