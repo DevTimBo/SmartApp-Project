@@ -1,0 +1,42 @@
+Titel: Kelly, Koudjo + 3
+
+
+Ausbildung:
+	- Ausbildungsstätte und Ausbildungsort: Weinberger Hochschule
+	- Klasse/Fachrichtung: Informatik
+	- Angestrebter Abschluss: Bachelor
+	- Vollzeitausbildung: ja
+	- BAföG-Antrag gestellt: nein
+	- Amt für Ausbildungsförderung:
+	- Förderungsnummer:
+
+Angaben zur Person:
+	- Name: Touzo
+	- Vorname: Maria
+	- Geburtsname:
+	- Geburtsort: Polen
+	- Geschlecht: weiblich
+	- Geburtsdatum: 03.03.1998
+	- Familienstand: 2
+	- Änderungen ggü. Erklärung:
+	- Staatsangehörigkeit: Polin
+	- Staatsangehörigkeit Ehegatte/Lebenspartner: Deutscher
+	- Ich habe Kinder: nein
+
+Wohnsitz:
+	- Straße: Weinbergerstraße
+	- Hausnummer: 100
+	- Adresszusatz:
+	- Land: DE
+	- Postleitzahl: 23208
+	- Ort:
+
+Ausbildung:
+	- häuslicher Gemeinschaft: nein
+	- Eigentum/Mitteleigentum: nein
+	- Straße:
+	- Hausnummer:
+	- Adresszusatz:
+	- Land:
+	- Postleitzahl:
+	- Ort:
