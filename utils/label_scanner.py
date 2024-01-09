@@ -16,6 +16,8 @@ def parse_information_from_file(file_path):
         elif i == 2:
             full_dict['Person'] = section_scanner(section)
         elif i == 3:
+            full_dict['Wohnsitz'] = section_scanner(section)
+        elif i == 4:
             full_dict['Wohnsitz_w_Ausbildung'] = section_scanner(section)
     return full_dict
 
@@ -84,4 +86,8 @@ sub_class_ids = [
 if __name__ == '__main__':
     file_path = 'example.txt'
     result = parse_information_from_file(file_path)
-    print(result['Person']["Name"])
+    print(result["Title"])
+    print(result['Ausbildung']["Klasse/Fachrichtung"])
+    print(result['Person']["Geschlecht"])
+    print(result['Wohnsitz']["Postleitzahl"])
+    print(result['Wohnsitz_w_Ausbildung']["Postleitzahl"])
