@@ -6,6 +6,8 @@ __pycache__/
 *.idea
 # Dataset
 handwriting/data/lines
+# Dataset for Transferlearning
+data_zettel/cropped_images
 # Plots
 handwriting/test_results
 # Models
@@ -163,3 +165,4 @@ cython_debug/
 #.idea/
 .idea
 handwriting/mainTest.ipynb
+
