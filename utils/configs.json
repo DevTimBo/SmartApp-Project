@@ -1,20 +1,21 @@
 {
     "pipeline": {
         "training": "False",
+        "transfer": "True",
         "plotting": "False",
         "bb_model": 1,
         "handwriting_model": 1
     },
     "model": {
-        "name": "model9v3_xl",
+        "name": "transferlearningTestingModel",
         "width": 1024, 
         "height": 128,
-        "save": "False"
+        "save": "false"
     },
     "training": {
-        "epochs": 20,
-        "save_history": "True",
-        "batch_size": 16,
+        "epochs": 200,
+        "save_history": "False",
+        "batch_size": 64,
         "tf_seed": 42,
         "learning_rate": 0.001,
         "patience": 20 
