@@ -10,10 +10,10 @@
         "name": "transferlearningTestingModel",
         "width": 1024, 
         "height": 128,
-        "save": "false"
+        "save": "False"
     },
     "training": {
-        "epochs": 200,
+        "epochs": 50,
         "save_history": "False",
         "batch_size": 64,
         "tf_seed": 42,

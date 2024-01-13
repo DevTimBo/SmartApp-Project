@@ -1,5 +1,6 @@
 # Unsere Klassen
 import handwriting.preprocess
+import handwriting.load_transfer_data as load_transfer_data
 import utils.configs as Config
 # Imports
 import tensorflow as tf
@@ -44,7 +45,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--mode', help='Choose which mode you\'d like to run', choices=['train', 'validate', 'infer'], default='infer')
     parser.add_argument('--decoder', choices=['bestpath', 'beamsearch', 'wordbeamsearch', 'none'], default='none')
     parser.add_argument('--data_dir', help='Directory containing IAM dataset.', type=Path, required=False)
-    parser.add_argument('--img_file', help='Image used for inference.', type=Path, default='./handwriting/data/test.png')
+    parser.add_argument('--img_file', help='Image used for inference.', type=Path, default='./handwriting/data/a01-000u-00.png')
     parser.add_argument('--get_config', help='Get the current configuration', action='store_true')    
     
     #parser.add_argument('--set_config', help='Set a new configuration file path', type=Path, default=None)
@@ -73,8 +74,8 @@ def load_model_and_weights():
     MODEL_WEIGHT_PATH = MODEL_NAME + weights_keras_string
     model_path = os.path.join(MODEL_DIR_NAME, MODEL_MODEL_PATH)
     model_weight_path = os.path.join(model_path, MODEL_WEIGHT_PATH)
-    model_weight_path = "./handwriting/models/model9v3_xl/model9v3_xl_weights.keras"
-    model_path = "./handwriting/models/model9v3_xl"
+    model_weight_path = "./models/transferlearningTestingModel/transferlearningTestingModel_weights.keras"
+    model_path = "./models/transferlearningTestingModel"
     print(model_path)
 
     if os.path.exists(model_path):
@@ -88,7 +89,10 @@ def load_model_and_weights():
         return None
 
 def decode_single_prediction(pred):
-    char, max_len = load_metadata("./handwriting/data/meta.pkl")
+    #char, max_len = load_metadata("./handwriting/data/meta.pkl")
+    char = load_transfer_data.characters
+    max_len = load_transfer_data.max_len
+    
     # Mapping characters to integers.
     char_to_num = StringLookup(vocabulary=list(char), mask_token=None)
 
@@ -122,7 +126,7 @@ def load_json_config(file_path):
     return config  
 
 def main():
-    test_image = './handwriting/data/test.png'
+    test_image = './handwriting/data/a01-000u-00.png'
     args = parse_args()
     
     decoder_mapping = {'bestpath': 0,
