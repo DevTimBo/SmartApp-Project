@@ -9,9 +9,9 @@ def get_image_size(image):
     width = image.shape[1]
     return width, height
 
-def resize_image(image_path):
+def resize_image(image_path, image_width, image_height):
     image =  cv2.imread(image_path)
-    #resized_image = cv2.resize(image, (YOLO_WIDTH, YOLO_HEIGHT))
+    resized_image = cv2.resize(image, (image_width, image_height))
     resized_image = np.expand_dims(image, axis=0)  
     return resized_image 
 
