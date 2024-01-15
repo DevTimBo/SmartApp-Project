@@ -975,3 +975,24 @@ def load_and_finetune_model(model, img_width, img_height, char, lr_value):
     new_model.compile(optimizer=opt)
 
     return new_model
+
+
+def load_and_finetune_model2(model, img_width, img_height, char, lr_value):
+    # Laden des vorhandenen Modells
+
+    # Freeze layers except for the last dense layer
+    for layer in model.layers:
+        if "dense2" not in layer.name:
+            layer.trainable = False
+
+    model.layers.pop()
+    x = layers.Dense(char + 2, activation="softmax", name="dense2")(model.get_layer("bidirectional_1").output)
+
+    output = CTCLayer(name="ctc_loss")(model.input[1], x)  # Verwende die gleichen Labels wie im Originalmodell
+
+    new_model = keras.models.Model(inputs=model.input, outputs=output, name="finetuned_handwriting_recognizer")
+
+    opt = keras.optimizers.Adam(learning_rate=lr_value)
+    new_model.compile(optimizer=opt)
+
+    return new_model

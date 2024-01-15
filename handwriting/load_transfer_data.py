@@ -21,9 +21,16 @@ def read_data():
         label_file = os.path.join(base_path, f"{image_name}.txt")
 
         if os.path.exists(label_file):
-            with open(label_file, "r", encoding="utf-8") as file:
-                line = file.readline().strip()
-                data_list.append((img_path, line))
+            try:
+                with open(label_file, "r", encoding="utf-8") as file:
+                    print(image_name)
+
+                    line = file.readline().strip()
+
+            except UnicodeDecodeError as e:
+                continue
+            data_list.append((img_path, line))
+
 
     np.random.shuffle(data_list) # Rausgenommen zum testen
     return data_list

@@ -74,8 +74,8 @@ def load_model_and_weights():
     MODEL_WEIGHT_PATH = MODEL_NAME + weights_keras_string
     model_path = os.path.join(MODEL_DIR_NAME, MODEL_MODEL_PATH)
     model_weight_path = os.path.join(model_path, MODEL_WEIGHT_PATH)
-    model_weight_path = "./models/transferlearningTestingModel/transferlearningTestingModel_weights.keras"
-    model_path = "./models/transferlearningTestingModel"
+    model_weight_path = "models/denselayer1/transferlearningTestingModel_weights.keras"
+    model_path = "models/denselayer1"
     print(model_path)
 
     if os.path.exists(model_path):
