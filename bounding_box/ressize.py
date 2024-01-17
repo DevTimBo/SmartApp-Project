@@ -58,6 +58,59 @@ def add_links_bbox(vergroesserungsfaktor, bbox):
     return bbox[0] - (bbox[2] - bbox[0]) * vergroesserungsfaktor
 
 
+def get_position_difference_between_boxes(new_bbox, old_bbox):
+    # new - old
+    xmin = new_bbox[0] - old_bbox[0]
+    ymin = new_bbox[1] - old_bbox[1]
+    xmax = new_bbox[2] - old_bbox[2]
+    ymax = new_bbox[3] - old_bbox[3]
+    return xmin, ymin, xmax, ymax
+
+
+def adjust_position_of_the_boxes(xmindiff, ymindiff, xmaxdiff, ymaxdiff, boxes):
+    adjusted_boxes = []
+    adjusted_box = []
+    for b in boxes:
+        xmin, ymin, xmax, ymax = b
+
+        xmin -= xmindiff
+        ymin -= ymindiff
+        xmax -= xmaxdiff
+        ymax -= ymaxdiff
+
+        adjusted_box = [xmin, ymin, xmax, ymax]
+        adjusted_boxes.append(adjusted_box)
+    return adjusted_boxes
+
+
+def get_center_of_box(box):
+    xmin, ymin, xmax, ymax = box
+    center_x = (xmin + xmax) / 2
+    center_y = (ymin + ymax) / 2
+    return center_x, center_y
+
+
+def calculate_new_position(box, center_x, center_y):
+    xmin, ymin, xmax, ymax = box
+    # Calculate the width and height of the original bounding box
+    width1 = xmax - xmin
+    height1 = ymax - ymin
+
+    # Calculate the new top-left and bottom-right coordinates of the original bounding box
+    xmin1_new = int(center_x - width1 / 2)
+    ymin1_new = int(center_y - height1 / 2)
+    xmax1_new = xmin1_new + width1
+    ymax1_new = ymin1_new + height1
+
+    return xmin1_new, ymin1_new, xmax1_new, ymax1_new
+
+
+def get_difference_center_of_boxes(predict_center_x, predict_center_y, center_x, center_y):
+    p = predict_center_x - center_x
+    c = predict_center_y - center_y
+    return p, c
+
+
 def resize_image(image_path, image_width, image_height):
     image = cv2.imread(image_path)
     resized_image = cv2.resize(image, (YOLO_WIDTH, YOLO_HEIGHT))
