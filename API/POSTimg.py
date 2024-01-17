@@ -1,3 +1,5 @@
+#TODO muss noch angefangen werden
+
 from flask import Flask, json, request, jsonify
 import os
 import urllib.request

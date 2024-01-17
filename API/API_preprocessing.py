@@ -2,6 +2,7 @@ from flask import Flask, json, request, jsonify
 import os
 import urllib.request
 from werkzeug.utils import secure_filename
+from bounding_box import ressize
  
 app = Flask(__name__)
  
