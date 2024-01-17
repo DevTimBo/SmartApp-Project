@@ -5,7 +5,9 @@ MODEL_PATH = WORKSPACE_PATH + '/models'
 BBOX_PATH = MODEL_PATH + '/bbox'
 MAIN_BBOX_DETECTOR_MODEL = MODEL_PATH + '/main_bbox_detector_model.h5'
 SUB_BBOX_DETECTOR_MODEL = MODEL_PATH + '/sub_bbox_detector_model.h5'
-TEMPlATING_ANNOTATION_PATH = WORKSPACE_PATH + "/templating_data/Annotations"
+TEMPlATING_ANNOTATION_PATH = "workspace/templating_data/Annotations"
+
+
 
 # YOLO_HEIGHT = 640
 # YOLO_WIDTH = 640
