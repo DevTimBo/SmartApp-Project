@@ -3,6 +3,7 @@ import xml.etree.ElementTree as ET
 from tqdm.auto import tqdm
 from config import class_ids, main_class_ids, sub_class_ids, TEMPlATING_ANNOTATION_PATH
 
+
 def get_mapping_classes():
     class_mapping = dict(zip(range(len(class_ids)), class_ids))
     main_class_mapping = dict(zip(range(len(main_class_ids)), main_class_ids))
@@ -44,6 +45,7 @@ def is_bbox1_inside_bbox2(bbox1, bbox2):
 
     return x1_in_range and y1_in_range
 
+
 def get_main_box_data(xml_file):
     main_boxes_person = []
     main_boxes_wohnsitz = []
@@ -67,3 +69,46 @@ def get_main_box_data(xml_file):
             pass
 
     return main_boxes_person, main_boxes_wohnsitz, main_boxes_ausbildung, main_boxes_wwa
+
+
+def get_for_main_bbox_sub_bboxes(xml_file, main_boxes_person, main_boxes_ausbildung, main_boxes_wohnsitz,
+                                 main_boxes_wwa, class_mapping):
+    main_sub_boxes_person = []
+    main_sub_boxes_wohnsitz = []
+    main_sub_boxes_ausbildung = []
+    main_sub_boxes_wwa = []
+    main_sub_classes_person = []
+    main_sub_classes_wohnsitz = []
+    main_sub_classes_ausbildung = []
+    main_sub_classes_wwa = []
+
+    tree = ET.parse(xml_file)
+    root = tree.getroot()
+    widthElement = root.find("size/width")
+    heightElement = root.find("size/height")
+    for obj in root.iter("object"):
+        cls = obj.find("name").text
+        bbox = obj.find("bndbox")
+
+        if is_bbox1_inside_bbox2(create_box(bbox), main_boxes_person):
+            main_sub_boxes_person.append(create_box(bbox))
+            main_sub_classes_person.append(cls)
+        elif is_bbox1_inside_bbox2(create_box(bbox), main_boxes_ausbildung):
+            main_sub_boxes_ausbildung.append(create_box(bbox))
+            main_sub_classes_ausbildung.append(cls)
+        elif is_bbox1_inside_bbox2(create_box(bbox), main_boxes_wohnsitz):
+            main_sub_boxes_wohnsitz.append(create_box(bbox))
+            main_sub_classes_wohnsitz.append(cls)
+        elif is_bbox1_inside_bbox2(create_box(bbox), main_boxes_wwa):
+            main_sub_boxes_wwa.append(create_box(bbox))
+            main_sub_classes_wwa.append(cls)
+        else:
+            pass
+
+    person_class_ids = map_class_id(main_sub_classes_person, class_mapping)
+    ausbildung_class_ids = map_class_id(main_sub_classes_ausbildung, class_mapping)
+    wohnsitz_class_ids = map_class_id(main_sub_classes_wohnsitz, class_mapping)
+    wwa_class_ids = map_class_id(main_sub_classes_wwa, class_mapping)
+
+    return main_sub_boxes_person, main_sub_boxes_wohnsitz, main_sub_boxes_ausbildung, main_sub_boxes_wwa, person_class_ids, ausbildung_class_ids, wohnsitz_class_ids, wwa_class_ids, int(
+        widthElement.text), int(heightElement.text)
