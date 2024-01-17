@@ -15,7 +15,13 @@ from ressize import resize_image, get_width_height_shape, scale_bounding_box, ca
 from config import LEARNING_RATE, GLOBAL_CLIPNORM, NUM_CLASSES_ALL, SUB_BBOX_DETECTOR_MODEL, BBOX_PATH, \
     MAIN_BBOX_DETECTOR_MODEL, class_ids, main_class_ids, sub_class_ids
 
+def get_max_confidence_index(confidence):
+    return np.argmax(confidence)
 
+def get_ausbildung_index(classes):
+    for i, cls in zip(range(len(classes)), classes):
+        if cls == 0:
+            return i
 def predict_image(image, model):
     ratios = get_width_height_shape(image)
     resized_image = resize_image(image)
