@@ -2,7 +2,7 @@
 import handwriting.preprocess
 import handwriting.load_transfer_data as load_transfer_data
 import utils.configs as Config
-import pipeline
+import API_pipeline as pipeline
 # Imports
 import tensorflow as tf
 from tensorflow import keras
@@ -16,7 +16,7 @@ import pickle
 import json 
 import os
 
-config_path = "utils/configs.json"
+config_path = r"SmartApp-Project\handwriting\utils\configs.json"
 config = Config.Config(config_path)
 
 # Model Parameter
@@ -42,3 +42,4 @@ PATIENCE = config.get_training_parameter()["patience"] # default: 3
 loaded_model = pipeline.load_model_and_weights()
 image_path = r'SmartApp-Project\handwriting\data\a01-000u-00.png'
 pipeline.infer(image_path, loaded_model)
+
