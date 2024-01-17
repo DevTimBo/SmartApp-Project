@@ -22,6 +22,24 @@ def get_ausbildung_index(classes):
     for i, cls in zip(range(len(classes)), classes):
         if cls == 0:
             return i
+def get_org_ms_boxes_for_pred(best_predicted_class, org_ms_boxes_person, org_ms_boxes_wohnsitz, org_ms_boxes_ausbildung,
+                              org_ms_boxes_wwa):
+    if best_predicted_class == 0:
+        pred_box = org_ms_boxes_ausbildung
+        class_name = "Ausbildung"
+    elif best_predicted_class == 1:
+        pred_box = org_ms_boxes_person
+        class_name = "Person"
+    elif best_predicted_class == 2:
+        pred_box = org_ms_boxes_wohnsitz
+        class_name = "Wohnsitz"
+    elif best_predicted_class == 3:
+        pred_box = org_ms_boxes_wwa
+        class_name = "Wohnsitz_waehrend_Ausbildung"
+    else:
+        pass
+    return pred_box, class_name
+
 def predict_image(image, model):
     ratios = get_width_height_shape(image)
     resized_image = resize_image(image)
