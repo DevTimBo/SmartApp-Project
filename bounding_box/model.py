@@ -356,6 +356,7 @@ def edit_sub_boxes_cut_left_and_top(ausbildung, person, wohnsitz, wwa):
     ausbildung, person, wohnsitz, wwa = edit_sub_boxes_cut_links(ausbildung, person, wohnsitz, wwa)
     return edit_sub_boxes_cut_top(ausbildung, person, wohnsitz, wwa)
 
+
 # old data set
 def edit_sub_boxes_cut_left_or_top(ausbildung, person, wohnsitz, wwa):
     # ausbildung boxes [38, 8, 0, 5, 6, 7, 1, 2, 3, 4]
@@ -429,6 +430,47 @@ def edit_sub_boxes_cut_left_or_top(ausbildung, person, wohnsitz, wwa):
             wwa[0][i][3] = add_bottom_bbox(0.2, box)
 
     return ausbildung, person, wohnsitz, wwa
+
+
+def plot_image(image, ausbildung, person, wohnsitz, wwa, best_predicted):
+    image = cv2.imread(image)
+    image = resize_imaged_without_expand_dim(image, YOLO_WIDTH, YOLO_HEIGHT)
+    fig, ax = plt.subplots(1)
+    ax.imshow(image)
+
+    # plot the bes predicted box
+    pred_xmin, pred_ymin, pred_xmax, pred_ymax = best_predicted[0]
+    rect = patches.Rectangle((pred_xmin, pred_ymin), pred_xmax - pred_xmin, pred_ymax - pred_ymin, linewidth=2,
+                             edgecolor='b',
+                             facecolor='none', label=best_predicted[3])
+    ax.add_patch(rect)
+
+    for b in ausbildung[0]:
+        xmin, ymin, xmax, ymax = b
+        rect = patches.Rectangle((xmin, ymin), xmax - xmin, ymax - ymin, linewidth=1, edgecolor='r',
+                                 facecolor='none')
+        ax.add_patch(rect)
+    for b in person[0]:
+        xmin, ymin, xmax, ymax = b
+        rect = patches.Rectangle((xmin, ymin), xmax - xmin, ymax - ymin, linewidth=1, edgecolor='r',
+                                 facecolor='none')
+        ax.add_patch(rect)
+
+    for b in wohnsitz[0]:
+        xmin, ymin, xmax, ymax = b
+        rect = patches.Rectangle((xmin, ymin), xmax - xmin, ymax - ymin, linewidth=1, edgecolor='r',
+                                 facecolor='none')
+        ax.add_patch(rect)
+
+    for b in wwa[0]:
+        xmin, ymin, xmax, ymax = b
+        rect = patches.Rectangle((xmin, ymin), xmax - xmin, ymax - ymin, linewidth=1, edgecolor='r',
+                                 facecolor='none')
+        ax.add_patch(rect)
+
+    plt.legend()
+    plt.show()
+
 
 def predict_image(image, model):
     ratios = get_width_height_shape(image)
