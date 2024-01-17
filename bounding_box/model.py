@@ -13,15 +13,12 @@ from config import LEARNING_RATE,GLOBAL_CLIPNORM,NUM_CLASSES_ALL,SUB_BBOX_DETECT
 def predict_image(image, model):
     ratios = get_width_height_shape(image)
     resized_image = resize_image(image)
-    print(resized_image.shape[0])
-    print(resized_image.shape[1])
-    predictions = model.predict(resized_image)   
+    predictions = model.predict(resized_image)
     boxes = predictions['boxes']
-    print(boxes)
     boxes = scale_bounding_box(boxes, ratios[0], ratios[1])
     confidence = predictions['confidence']
     classes = predictions['classes']
-    print(boxes)
+
     return boxes, confidence, classes
 
 def define_model(num_classes):
