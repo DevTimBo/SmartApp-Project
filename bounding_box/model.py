@@ -351,6 +351,85 @@ def edit_sub_boxes_cut_top(ausbildung, person, wohnsitz, wwa):
     return ausbildung, person, wohnsitz, wwa
 
 
+# old data set
+def edit_sub_boxes_cut_left_and_top(ausbildung, person, wohnsitz, wwa):
+    ausbildung, person, wohnsitz, wwa = edit_sub_boxes_cut_links(ausbildung, person, wohnsitz, wwa)
+    return edit_sub_boxes_cut_top(ausbildung, person, wohnsitz, wwa)
+
+# old data set
+def edit_sub_boxes_cut_left_or_top(ausbildung, person, wohnsitz, wwa):
+    # ausbildung boxes [38, 8, 0, 5, 6, 7, 1, 2, 3, 4]
+    for i, box, cls in zip(range(len(ausbildung[1])), ausbildung[0], ausbildung[1]):
+        if cls == 8:
+            ausbildung[0][i][0] = cut_links_bbox(0.64, box)
+        elif cls == 0:
+            ausbildung[0][i][0] = cut_links_bbox(0.78, box)
+        elif cls == 5:
+            ausbildung[0][i][0] = cut_links_bbox(0.75, box)
+        elif cls == 3:
+            ausbildung[0][i][0] = cut_links_bbox(0.3, box)
+        # new
+        elif cls == 4:
+            ausbildung[0][i][1] = cut_top_bbox(0.45, box)
+
+    # person boxes [39, 14, 16, 17, 9, 12, 10, 13, 11, 15, 18, 19, 20, 21]
+    for i, box, cls in zip(range(len(person[1])), person[0], person[1]):
+        if cls == 14:
+            person[0][i][0] = cut_links_bbox(0.88, box)
+        elif cls == 16:
+            person[0][i][0] = cut_links_bbox(0.70, box)
+        elif cls == 17:
+            person[0][i][0] = cut_links_bbox(0.70, box)
+        elif cls == 9:
+            person[0][i][0] = cut_links_bbox(0.70, box)
+        elif cls == 19:
+            person[0][i][0] = cut_links_bbox(0.45, box)
+        # new
+        elif cls == 11:
+            person[0][i][1] = cut_top_bbox(0.3, box)
+        elif cls == 15:
+            person[0][i][1] = cut_top_bbox(0.3, box)
+        elif cls == 18:
+            person[0][i][1] = cut_top_bbox(0.3, box)
+        elif cls == 20:
+            person[0][i][1] = cut_top_bbox(0.3, box)
+    # wohnsitz boxes [40, 22, 25, 26, 23, 24, 27]
+    for i, box, cls in zip(range(len(wohnsitz[1])), wohnsitz[0], wohnsitz[1]):
+        if cls == 22:
+            wohnsitz[0][i][0] = cut_links_bbox(0.75, box)
+        elif cls == 26:
+            wohnsitz[0][i][0] = cut_links_bbox(0.68, box)
+        elif cls == 27:
+            wohnsitz[0][i][0] = cut_links_bbox(0.90, box)
+        # new
+        elif cls == 25:
+            wohnsitz[0][i][1] = cut_top_bbox(0.2, box)
+        elif cls == 23:
+            wohnsitz[0][i][1] = cut_top_bbox(0.2, box)
+        elif cls == 24:
+            wohnsitz[0][i][1] = cut_top_bbox(0.2, box)
+
+    # wwa boxes [41, 28, 29, 30, 31, 34, 35]
+    for i, box, cls in zip(range(len(wwa[1])), wwa[0], wwa[1]):
+        if cls == 28:
+            wwa[0][i][0] = cut_links_bbox(0.75, box)
+        elif cls == 33:
+            wwa[0][i][0] = cut_links_bbox(0.68, box)
+        elif cls == 31:
+            wwa[0][i][0] = cut_links_bbox(0.90, box)
+            # new
+        elif cls == 29:
+            wwa[0][i][1] = cut_top_bbox(0.3, box)
+            wwa[0][i][3] = add_bottom_bbox(0.2, box)
+        elif cls == 30:
+            wwa[0][i][1] = cut_top_bbox(0.3, box)
+            wwa[0][i][3] = add_bottom_bbox(0.2, box)
+        elif cls == 34:
+            wwa[0][i][1] = cut_top_bbox(0.3, box)
+            wwa[0][i][3] = add_bottom_bbox(0.2, box)
+
+    return ausbildung, person, wohnsitz, wwa
+
 def predict_image(image, model):
     ratios = get_width_height_shape(image)
     resized_image = resize_image(image)
