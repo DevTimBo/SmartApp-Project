@@ -40,6 +40,37 @@ def get_org_ms_boxes_for_pred(best_predicted_class, org_ms_boxes_person, org_ms_
         pass
     return pred_box, class_name
 
+
+def get_templated_data(boxes, confidence, classes, org_ms_boxes_person, org_ms_boxes_wohnsitz, org_ms_boxes_ausbildung,
+                       org_ms_boxes_wwa, person_class_ids, ausbildung_class_ids, wohnsitz_class_ids, wwa_class_ids):
+
+    # best_confidence_index = get_ausbildung_index(classes[0])
+    # best_predicted_class = classes[0][best_confidence_index]
+    # best_predicted_box = boxes[0][best_confidence_index]
+
+    best_confidence_index = get_max_confidence_index(confidence[0])
+    best_predicted_class = classes[0][best_confidence_index]
+    best_predicted_box = boxes[0][best_confidence_index]
+
+    org_ms_box, class_name = get_org_ms_boxes_for_pred(best_predicted_class, org_ms_boxes_person, org_ms_boxes_wohnsitz,
+                                                       org_ms_boxes_ausbildung, org_ms_boxes_wwa)
+
+    best_predicted = [best_predicted_box, best_predicted_class, best_confidence_index, class_name]
+
+    scale_factor_weight, scale_factor_height = calculate_bbox_scale_factor(org_ms_box, best_predicted_box)
+    scale_factor = [scale_factor_weight, scale_factor_height]
+    template_resized_boxes = scale_bounding_box(org_ms_box, scale_factor_weight, scale_factor_height)
+
+    xmindiff, ymindiff, xmaxdiff, ymaxdiff = get_position_difference_between_boxes(template_resized_boxes[(len(template_resized_boxes)-1)], best_predicted_box)
+    coordinate_difference = [xmindiff, ymindiff, xmaxdiff, ymaxdiff]
+
+    adjust_position_ausbildung, adjust_position_person, adjust_position_wohnsitz, adjust_position_wwa = make_template_for_non_predicted_boxes(
+        scale_factor, coordinate_difference, org_ms_boxes_ausbildung,
+        org_ms_boxes_person, org_ms_boxes_wohnsitz, org_ms_boxes_wwa)
+
+    return [adjust_position_ausbildung, ausbildung_class_ids], [adjust_position_person, person_class_ids], [
+        adjust_position_wohnsitz, wohnsitz_class_ids], [adjust_position_wwa, wwa_class_ids], best_predicted
+
 def predict_image(image, model):
     ratios = get_width_height_shape(image)
     resized_image = resize_image(image)
