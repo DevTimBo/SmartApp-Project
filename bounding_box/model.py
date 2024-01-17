@@ -13,7 +13,7 @@ from ressize import resize_image, get_width_height_shape, scale_bounding_box, ca
     get_difference_center_of_boxes
 
 from config import LEARNING_RATE, GLOBAL_CLIPNORM, NUM_CLASSES_ALL, SUB_BBOX_DETECTOR_MODEL, BBOX_PATH, \
-    MAIN_BBOX_DETECTOR_MODEL, class_ids, main_class_ids, sub_class_ids
+    MAIN_BBOX_DETECTOR_MODEL, class_ids, main_class_ids, sub_class_ids,  YOLO_WIDTH, YOLO_HEIGHT
 
 
 def get_max_confidence_index(confidence):
@@ -474,7 +474,7 @@ def plot_image(image, ausbildung, person, wohnsitz, wwa, best_predicted):
 
 def predict_image(image, model):
     ratios = get_width_height_shape(image)
-    resized_image = resize_image(image)
+    resized_image = resize_image(image, YOLO_WIDTH, YOLO_HEIGHT)
     predictions = model.predict(resized_image)
     boxes = predictions['boxes']
     boxes = scale_bounding_box(boxes, ratios[0], ratios[1])
@@ -502,8 +502,8 @@ def compile_model(model):
     )
 
 
-def load_weight_model(model_path):
-    base_model = define_model(43)  # (len(get_class_mapping(model_path)[0]))
+def load_weight_model(model_path, number_of_classes):
+    base_model = define_model(number_of_classes)
     compile_model(base_model)
     base_model.load_weights(model_path)
     return base_model
