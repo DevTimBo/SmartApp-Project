@@ -15,13 +15,17 @@ from ressize import resize_image, get_width_height_shape, scale_bounding_box, ca
 from config import LEARNING_RATE, GLOBAL_CLIPNORM, NUM_CLASSES_ALL, SUB_BBOX_DETECTOR_MODEL, BBOX_PATH, \
     MAIN_BBOX_DETECTOR_MODEL, class_ids, main_class_ids, sub_class_ids
 
+
 def get_max_confidence_index(confidence):
     return np.argmax(confidence)
+
 
 def get_ausbildung_index(classes):
     for i, cls in zip(range(len(classes)), classes):
         if cls == 0:
             return i
+
+
 def get_org_ms_boxes_for_pred(best_predicted_class, org_ms_boxes_person, org_ms_boxes_wohnsitz, org_ms_boxes_ausbildung,
                               org_ms_boxes_wwa):
     if best_predicted_class == 0:
@@ -43,7 +47,6 @@ def get_org_ms_boxes_for_pred(best_predicted_class, org_ms_boxes_person, org_ms_
 
 def get_templated_data(boxes, confidence, classes, org_ms_boxes_person, org_ms_boxes_wohnsitz, org_ms_boxes_ausbildung,
                        org_ms_boxes_wwa, person_class_ids, ausbildung_class_ids, wohnsitz_class_ids, wwa_class_ids):
-
     # best_confidence_index = get_ausbildung_index(classes[0])
     # best_predicted_class = classes[0][best_confidence_index]
     # best_predicted_box = boxes[0][best_confidence_index]
@@ -61,7 +64,8 @@ def get_templated_data(boxes, confidence, classes, org_ms_boxes_person, org_ms_b
     scale_factor = [scale_factor_weight, scale_factor_height]
     template_resized_boxes = scale_bounding_box(org_ms_box, scale_factor_weight, scale_factor_height)
 
-    xmindiff, ymindiff, xmaxdiff, ymaxdiff = get_position_difference_between_boxes(template_resized_boxes[(len(template_resized_boxes)-1)], best_predicted_box)
+    xmindiff, ymindiff, xmaxdiff, ymaxdiff = get_position_difference_between_boxes(
+        template_resized_boxes[(len(template_resized_boxes) - 1)], best_predicted_box)
     coordinate_difference = [xmindiff, ymindiff, xmaxdiff, ymaxdiff]
 
     adjust_position_ausbildung, adjust_position_person, adjust_position_wohnsitz, adjust_position_wwa = make_template_for_non_predicted_boxes(
@@ -70,6 +74,32 @@ def get_templated_data(boxes, confidence, classes, org_ms_boxes_person, org_ms_b
 
     return [adjust_position_ausbildung, ausbildung_class_ids], [adjust_position_person, person_class_ids], [
         adjust_position_wohnsitz, wohnsitz_class_ids], [adjust_position_wwa, wwa_class_ids], best_predicted
+
+
+def make_template_for_non_predicted_boxes(scale_factor, coordinate_difference, org_ms_boxes_ausbildung,
+                                          org_ms_boxes_person, org_ms_boxes_wohnsitz, org_ms_boxes_wwa):
+    template_resized_ausbildung = scale_bounding_box(org_ms_boxes_ausbildung, scale_factor[0], scale_factor[1])
+    adjust_position_ausbildung = adjust_position_of_the_boxes(coordinate_difference[0], coordinate_difference[1],
+                                                              coordinate_difference[2], coordinate_difference[3],
+                                                              template_resized_ausbildung)
+
+    template_resized_person = scale_bounding_box(org_ms_boxes_person, scale_factor[0], scale_factor[1])
+    adjust_position_person = adjust_position_of_the_boxes(coordinate_difference[0], coordinate_difference[1],
+                                                          coordinate_difference[2], coordinate_difference[3],
+                                                          template_resized_person)
+
+    template_resized_wohnsitz = scale_bounding_box(org_ms_boxes_wohnsitz, scale_factor[0], scale_factor[1])
+    adjust_position_wohnsitz = adjust_position_of_the_boxes(coordinate_difference[0], coordinate_difference[1],
+                                                            coordinate_difference[2], coordinate_difference[3],
+                                                            template_resized_wohnsitz)
+
+    template_resized_wwa = scale_bounding_box(org_ms_boxes_wwa, scale_factor[0], scale_factor[1])
+    adjust_position_wwa = adjust_position_of_the_boxes(coordinate_difference[0], coordinate_difference[1],
+                                                       coordinate_difference[2], coordinate_difference[3],
+                                                       template_resized_wwa)
+
+    return adjust_position_ausbildung, adjust_position_person, adjust_position_wohnsitz, adjust_position_wwa
+
 
 def predict_image(image, model):
     ratios = get_width_height_shape(image)
