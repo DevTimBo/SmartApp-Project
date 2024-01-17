@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import os
 
-from config import YOLO_HEIGHT, YOLO_WIDTH
+from bounding_box.config import YOLO_HEIGHT, YOLO_WIDTH
 
 
 def calculate_bbox_scale_factor(old_bbox, new_bbox):

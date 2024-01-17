@@ -1,4 +1,3 @@
-import ressize
 import keras_cv
 import tensorflow as tf
 import numpy as np
@@ -7,12 +6,12 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 from keras.preprocessing import image as keras_image
 
-from ressize import resize_image, get_width_height_shape, scale_bounding_box, calculate_bbox_scale_factor, scale_box, \
+from bounding_box.ressize import resize_image, get_width_height_shape, scale_bounding_box, calculate_bbox_scale_factor, scale_box, \
     resize_imaged_without_expand_dim, cut_links_bbox, cut_top_bbox, add_bottom_bbox, add_rechts_bbox, add_links_bbox, \
     get_position_difference_between_boxes, adjust_position_of_the_boxes, get_center_of_box, calculate_new_position, \
     get_difference_center_of_boxes
 
-from config import LEARNING_RATE, GLOBAL_CLIPNORM, NUM_CLASSES_ALL, SUB_BBOX_DETECTOR_MODEL, BBOX_PATH, \
+from bounding_box.config import LEARNING_RATE, GLOBAL_CLIPNORM, NUM_CLASSES_ALL, SUB_BBOX_DETECTOR_MODEL, BBOX_PATH, \
     MAIN_BBOX_DETECTOR_MODEL, class_ids, main_class_ids, sub_class_ids,  YOLO_WIDTH, YOLO_HEIGHT
 
 

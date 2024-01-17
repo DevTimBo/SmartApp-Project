@@ -1,5 +1,5 @@
-from model import load_weight_model, predict_image,plot_image, get_templated_data, edit_sub_boxes_cut_links, edit_sub_boxes_cut_top
-from template import build_templating_data
+from bounding_box.model import load_weight_model, predict_image,plot_image, get_templated_data, edit_sub_boxes_cut_links, edit_sub_boxes_cut_top
+from bounding_box.template import build_templating_data
 
 # inter the path of the model
 bbox_model = load_weight_model(r"C:\Users\alh/PycharmProjects/SmartApp-Project/bounding_box/workspace/models/final_main_model/main_bbox_detector_model.h5",4)
