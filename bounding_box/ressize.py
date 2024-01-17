@@ -113,7 +113,7 @@ def get_difference_center_of_boxes(predict_center_x, predict_center_y, center_x,
 
 def resize_image(image_path, image_width, image_height):
     image = cv2.imread(image_path)
-    resized_image = cv2.resize(image, (YOLO_WIDTH, YOLO_HEIGHT))
+    resized_image = cv2.resize(image, (image_width, image_height))
     resized_image = np.expand_dims(resized_image, axis=0)
     return resized_image
 
