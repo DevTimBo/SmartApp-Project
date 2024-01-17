@@ -7,8 +7,8 @@ tf.random.set_seed(42)
 
 characters = set()
 max_len = 0
-#base_path = "../data_zettel/cropped_images/"  # gets overwritten by config
-base_path = r'SmartApp-Project\data_zettel\cropped_images'
+base_path = "../data_zettel/cropped_images/"  # gets overwritten by config
+#base_path = r'SmartApp-Project\data_zettel\cropped_images'
 
 
 def read_data():

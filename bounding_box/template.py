@@ -113,6 +113,7 @@ def get_for_main_bbox_sub_bboxes(xml_file, main_boxes_person, main_boxes_ausbild
     return main_sub_boxes_person, main_sub_boxes_wohnsitz, main_sub_boxes_ausbildung, main_sub_boxes_wwa, person_class_ids, ausbildung_class_ids, wohnsitz_class_ids, wwa_class_ids, int(
         widthElement.text), int(heightElement.text)
 
+
 def build_templating_data():
     class_mapping, main_class_mapping, sub_class_mapping = get_mapping_classes()
 
