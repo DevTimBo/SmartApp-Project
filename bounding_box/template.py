@@ -43,3 +43,27 @@ def is_bbox1_inside_bbox2(bbox1, bbox2):
     y1_in_range = float(bbox2[1]) <= float(bbox1[1]) <= float(bbox1[3]) <= float(bbox2[3])
 
     return x1_in_range and y1_in_range
+
+def get_main_box_data(xml_file):
+    main_boxes_person = []
+    main_boxes_wohnsitz = []
+    main_boxes_ausbildung = []
+    main_boxes_wwa = []
+
+    tree = ET.parse(xml_file)
+    root = tree.getroot()
+
+    for obj in root.iter("object"):
+        cls = obj.find("name").text
+        if cls == 'Person':
+            main_boxes_person.append(create_box(obj.find("bndbox")))
+        elif cls == 'Wohnsitz':
+            main_boxes_wohnsitz.append(create_box(obj.find("bndbox")))
+        elif cls == 'Ausbildung':
+            main_boxes_ausbildung.append(create_box(obj.find("bndbox")))
+        elif cls == 'Wohnsitz_waehrend_Ausbildung':
+            main_boxes_wwa.append(create_box(obj.find("bndbox")))
+        else:
+            pass
+
+    return main_boxes_person, main_boxes_wohnsitz, main_boxes_ausbildung, main_boxes_wwa
