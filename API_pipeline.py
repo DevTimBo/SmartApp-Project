@@ -74,8 +74,8 @@ def load_model_and_weights():
     MODEL_WEIGHT_PATH = MODEL_NAME + weights_keras_string
     model_path = os.path.join(MODEL_DIR_NAME, MODEL_MODEL_PATH)
     model_weight_path = os.path.join(model_path, MODEL_WEIGHT_PATH)
-    model_weight_path = "models/denselayer1/transferlearningTestingModel_weights.keras"
-    model_path = "models/denselayer1"
+    model_weight_path = r"SmartApp-Project\models\denselayer1\transferlearningTestingModel_weights.keras"
+    model_path = r"SmartApp-Project\models\denselayer1"
     print(model_path)
 
     if os.path.exists(model_path):
@@ -126,7 +126,8 @@ def load_json_config(file_path):
     return config  
 
 def main():
-    test_image = './handwriting/data/a01-000u-00.png'
+    #test_image = './handwriting/data/a01-000u-00.png'
+    test_image = r'SmartApp-Project\handwriting\data\a01-000u-00.png'
     args = parse_args()
     
     decoder_mapping = {'bestpath': 0,
@@ -144,12 +145,13 @@ def main():
     
     if args.mode == 'infer':
         loaded_model = load_model_and_weights()
-        if args.img_file:
+        infer(image=test_image, model=loaded_model)
+        """ if args.img_file:
             print("Inference with custom Imgage.")
             infer(image=args.img_file, model=loaded_model)
         else:
             infer(image=test_image, model=loaded_model)
-
+ """
     
 if __name__ == '__main__':
     main()

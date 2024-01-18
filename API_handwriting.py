@@ -41,5 +41,5 @@ PATIENCE = config.get_training_parameter()["patience"] # default: 3
 #pipeline.main()
 loaded_model = pipeline.load_model_and_weights()
 image_path = r'SmartApp-Project\handwriting\data\a01-000u-00.png'
-pipeline.infer(image_path, loaded_model)
+pipeline.infer(loaded_model, image_path)
 
