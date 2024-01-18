@@ -53,7 +53,6 @@ def get_templated_data(boxes, confidence, classes, org_ms_boxes_person, org_ms_b
     best_confidence_index = get_max_confidence_index(confidence[0])
     best_predicted_class = classes[0][best_confidence_index]
     best_predicted_box = boxes[0][best_confidence_index]
-
     org_ms_box, class_name = get_org_ms_boxes_for_pred(best_predicted_class, org_ms_boxes_person, org_ms_boxes_wohnsitz,
                                                        org_ms_boxes_ausbildung, org_ms_boxes_wwa)
 
