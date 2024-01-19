@@ -11,6 +11,7 @@ UPLOAD_FOLDER = 'API\images\input_Images'
 DOWNLOAD_FOLDER = 'API\images\output_Images'
 loaded_model = pipeline.load_model_and_weights()
 #test_image = r'handwriting\data\a01-000u-00.png'
+prediction = None
 
 # Maximal zulässige Dateigröße
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
@@ -22,6 +23,7 @@ def main():
 # files[] ist der Schlüssel 
 @app.route('/upload', methods=['POST'])
 def upload_file():
+    global prediction
     # check if the post request has the file part
     if 'files[]' not in request.files:
         resp = jsonify({'message' : 'No file part in the request'})
@@ -41,7 +43,7 @@ def upload_file():
             #image_rotate(filename)
             #file_path = os.join.path(UPLOAD_FOLDER, filename)
             file_path = r'API\images\input_Images\123.png'
-            prediction = pipeline.infer(loaded_model, file_path)
+            prediction = pipeline.infer_with_return(loaded_model, file_path)
             print(prediction)
             success = True
         else:
@@ -62,11 +64,10 @@ def upload_file():
         return resp
     
 # Man kann sich das Bild aus dem Ordner selber aussuchen 
-@app.route("/get-prediction/<pid>")
-def get_user(pid):
+@app.route("/get-prediction/<filename>")
+def get_user(filename):
     user_data = {
-        "pid": pid,
-        "name": "John",
+        "filename": filename,
         "prediction": prediction
     }
 

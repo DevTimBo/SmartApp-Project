@@ -119,6 +119,23 @@ def infer(model, image):
     selected_pred_text = pred_texts.replace("|"," ")
     print(f"Prediction: {selected_pred_text}")
 
+# Ich brauche ein Return, Hadi. Könnte man auch in der oberen Methode im if-Statement machen 
+def infer_with_return(model, image):
+
+    img_size=(IMAGE_WIDTH, IMAGE_HEIGHT)
+    image = tf.io.read_file(image)
+    image = tf.image.decode_png(image, 1)
+    image = handwriting.preprocess.distortion_free_resize(image, img_size)
+    image = tf.cast(image, tf.float32) / 255.0
+
+    prediction_model = keras.models.Model(model.get_layer(name="image").input, model.get_layer(name="dense2").output)
+    preds = prediction_model.predict(tf.expand_dims(image, axis=0))
+    pred_texts = decode_single_prediction(preds)
+
+    selected_pred_text = pred_texts.replace("|"," ")
+    print(f"Prediction: {selected_pred_text}")
+    return selected_pred_text
+
 
 def load_json_config(file_path):
     with open(file_path, 'r') as file:
