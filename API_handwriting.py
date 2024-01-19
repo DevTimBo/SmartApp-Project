@@ -71,21 +71,7 @@ def get_user(filename):
         "prediction": prediction
     }
 
-    extra = request.args.get("extra")
-    
-    if extra:
-        user_data["extra"] = extra
-
     return jsonify(user_data), 200
-
-""" def image_rotate(filename): 
-    myImage = Image.open(f"API\images\input_Images\{filename}")
-    rotated_image = myImage.rotate(90, expand=True)
-    #rotated_image.show()
-    rotated_image.save(os.path.join(DOWNLOAD_FOLDER, filename))  """
-
  
 if __name__ == '__main__':
     app.run(debug=True)
-
-#pipeline.infer(loaded_model, test_image)
