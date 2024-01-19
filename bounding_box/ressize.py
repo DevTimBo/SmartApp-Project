@@ -54,6 +54,10 @@ def add_rechts_bbox(vergroesserungsfaktor, bbox):
     return bbox[2] + (bbox[2] - bbox[0]) * vergroesserungsfaktor
 
 
+def cut_rechts_bbox(vergroesserungsfaktor, bbox):
+    return bbox[2] - (bbox[2] - bbox[0]) * vergroesserungsfaktor
+
+
 def add_links_bbox(vergroesserungsfaktor, bbox):
     return bbox[0] - (bbox[2] - bbox[0]) * vergroesserungsfaktor
 

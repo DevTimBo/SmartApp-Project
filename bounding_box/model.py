@@ -6,13 +6,14 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 from keras.preprocessing import image as keras_image
 
-from bounding_box.ressize import resize_image, get_width_height_shape, scale_bounding_box, calculate_bbox_scale_factor, scale_box, \
+from bounding_box.ressize import resize_image, get_width_height_shape, scale_bounding_box, calculate_bbox_scale_factor, \
+    scale_box, \
     resize_imaged_without_expand_dim, cut_links_bbox, cut_top_bbox, add_bottom_bbox, add_rechts_bbox, add_links_bbox, \
     get_position_difference_between_boxes, adjust_position_of_the_boxes, get_center_of_box, calculate_new_position, \
-    get_difference_center_of_boxes
+    get_difference_center_of_boxes, cut_rechts_bbox
 
 from bounding_box.config import LEARNING_RATE, GLOBAL_CLIPNORM, NUM_CLASSES_ALL, SUB_BBOX_DETECTOR_MODEL, BBOX_PATH, \
-    MAIN_BBOX_DETECTOR_MODEL, class_ids, main_class_ids, sub_class_ids,  YOLO_WIDTH, YOLO_HEIGHT
+    MAIN_BBOX_DETECTOR_MODEL, class_ids, main_class_ids, sub_class_ids, YOLO_WIDTH, YOLO_HEIGHT
 
 
 def get_max_confidence_index(confidence):
@@ -104,14 +105,21 @@ def edit_sub_boxes_cut_links(ausbildung, person, wohnsitz, wwa):
     for i, box, cls in zip(range(len(ausbildung[1])), ausbildung[0], ausbildung[1]):
         if cls == 8:  # Ausbildung_Staette
             ausbildung[0][i][0] = cut_links_bbox(0.67, box)
+
         elif cls == 0:  # Ausbildung_Klasse
             ausbildung[0][i][0] = cut_links_bbox(0.84, box)
+
         elif cls == 5:  # "Ausbilung_Abschluss"
             ausbildung[0][i][0] = cut_links_bbox(0.8, box)
-        elif cls == 6:  # "Ausbildung_Vollzeit","
-            ausbildung[0][i][0] = cut_links_bbox(0.4, box)
+
+        elif cls == 6:  # "Ausbildung_Vollzeit","]
+            ausbildung6 = [ausbildung[0][i], ausbildung[1][i]]
+            # ausbildung[0][i][0] = cut_links_bbox(0.4, box)
+
         elif cls == 1:  # "Ausbildung_Antrag_gestellt_ja",
-            ausbildung[0][i][0] = cut_links_bbox(0.4, box)
+            ausbildung1 = [ausbildung[0][i], ausbildung[1][i]]
+            # ausbildung[0][i][0] = cut_links_bbox(0.4, box)
+
         elif cls == 3:  # "Ausbildung_Amt"
             ausbildung[0][i][0] = cut_links_bbox(0.3, box)
 
@@ -119,88 +127,101 @@ def edit_sub_boxes_cut_links(ausbildung, person, wohnsitz, wwa):
             ausbildung[0][i][1] = cut_top_bbox(0.45, box)
             ausbildung[0][i][3] = add_bottom_bbox(0.3, box)
 
+    # remove checkboxes
+    ausbildung[0].remove(ausbildung6[0])
+    ausbildung[1].remove(ausbildung6[1])
+    ausbildung[0].remove(ausbildung1[0])
+    ausbildung[1].remove(ausbildung1[1])
+
     # person boxes [15, 21, 20, 19, 18, 11, 9, 17, 16, 14, 39]
     for i, box, cls in zip(range(len(person[1])), person[0], person[1]):
         if cls == 14:  # "Person_Name",
-            person[0][i][0] = cut_links_bbox(0.75, box)
-            person[0][i][2] = add_rechts_bbox(2.5, box)
+            person[0][i][0] = cut_links_bbox(0.8, box)
+            person[0][i][2] = add_rechts_bbox(2, box)
 
         elif cls == 16:  # "Person_Vorname",
-            person[0][i][0] = cut_links_bbox(0.7, box)
-            person[0][i][2] = add_rechts_bbox(0.6, box)
+            person[0][i][0] = cut_links_bbox(0.8, box)
+            person[0][i][2] = add_rechts_bbox(0.5, box)
 
         elif cls == 17:  # "Person_Geburtsname",
             person[0][i][0] = cut_links_bbox(0.7, box)
-            person[0][i][2] = add_rechts_bbox(0.7, box)
-
-        elif cls == 9:  # "Person_Geburtsort",
-            person[0][i][0] = cut_links_bbox(0.70, box)
             person[0][i][2] = add_rechts_bbox(0.5, box)
 
+        elif cls == 9:  # "Person_Geburtsort",
+            person[0][i][0] = cut_links_bbox(0.8, box)
+            person[0][i][2] = add_rechts_bbox(0.2, box)
+
         elif cls == 11:  # "Person_Geburtsdatum"
-            person[0][i][1] = cut_top_bbox(0.3, box)
+            person[0][i][1] = cut_top_bbox(0.33, box)
             person[0][i][3] = add_bottom_bbox(0.3, box)
 
         elif cls == 15:  # "Person_Familienstand"
-            person[0][i][1] = cut_top_bbox(0.3, box)
+            person[0][i][1] = cut_top_bbox(0.33, box)
             person[0][i][3] = add_bottom_bbox(0.3, box)
 
         elif cls == 18:  # "Person_Familienstand_seit",
             person[0][i][0] = cut_links_bbox(0.65, box)
-            person[0][i][1] = cut_top_bbox(0.2, box)
-
+            person[0][i][1] = cut_top_bbox(0.4, box)
+            person[0][i][3] = add_bottom_bbox(0.2, box)
         elif cls == 19:  # "Person_Stattsangehörigkeit_eigene",
             person[0][i][0] = cut_links_bbox(0.4, box)
 
         elif cls == 20:  # "Person_Stattsangehörigkeit_Ehegatte",
-            person[0][i][3] = add_bottom_bbox(0.2, box)
-            person[0][i][1] = cut_top_bbox(0.3, box)
+            person[0][i][3] = add_bottom_bbox(0.5, box)
+            person[0][i][1] = cut_top_bbox(0.45, box)
 
         elif cls == 21:  # "Person_Kinder",
-            person[0][i][0] = cut_links_bbox(0.2, box)
+            person21 = [person[0][i], person[1][i]]
+            # person[0][i][0] = cut_links_bbox(0.2, box)
+
+    # remove checkboxes
+    person[0].remove(person21[0])
+    person[1].remove(person21[1])
 
     # wohnsitz boxes [26, 23, 27, 24, 25, 22, 40]
 
     for i, box, cls in zip(range(len(wohnsitz[1])), wohnsitz[0], wohnsitz[1]):
         if cls == 22:  # "Wohnsitz_Strasse",
-            wohnsitz[0][i][0] = cut_links_bbox(0.8, box)
-            wohnsitz[0][i][2] = add_rechts_bbox(0.5, box)
+            wohnsitz[0][i][0] = cut_links_bbox(0.9, box)
+            # wohnsitz[0][i][2] = add_rechts_bbox(0.2, box)
 
         elif cls == 25:  # "Wohnsitz_Hausnummer",
-            wohnsitz[0][i][1] = cut_top_bbox(0.3, box)
+            wohnsitz[0][i][1] = cut_top_bbox(0.4, box)
+            wohnsitz[0][i][3] = add_bottom_bbox(0.5, box)
 
         elif cls == 26:  # "Wohnsitz_Adresszusatz",
             wohnsitz[0][i][0] = cut_links_bbox(0.68, box)
 
         elif cls == 23:  # "Wohnsitz_Land",
-            wohnsitz[0][i][1] = cut_top_bbox(0.3, box)
+            wohnsitz[0][i][1] = cut_top_bbox(0.4, box)
 
         elif cls == 24:  # "Wohnsitz_Postleitzahl",
-            wohnsitz[0][i][1] = cut_top_bbox(0.3, box)
-
+            wohnsitz[0][i][1] = cut_top_bbox(0.4, box)
+            wohnsitz[0][i][3] = add_bottom_bbox(0.4, box)
         elif cls == 27:  # "Wohnsitz_Ort",
             wohnsitz[0][i][0] = cut_links_bbox(0.85, box)
-            wohnsitz[0][i][2] = add_rechts_bbox(2, box)
+            wohnsitz[0][i][2] = add_rechts_bbox(1, box)
 
     # wwa boxes [33, 30, 31, 34, 29, 28, 41]
     for i, box, cls in zip(range(len(wwa[1])), wwa[0], wwa[1]):
         if cls == 28:  # "Wohnsitz_waehrend_Ausbildung_Strasse",
             wwa[0][i][0] = cut_links_bbox(0.8, box)
+            wwa[0][i][2] = cut_rechts_bbox(0.1, box)
 
         elif cls == 29:  # "Wohnsitz_waehrend_Ausbildung_Hausnummer",
             wwa[0][i][3] = add_bottom_bbox(0.3, box)
-            wwa[0][i][1] = cut_top_bbox(0.3, box)
+            wwa[0][i][1] = cut_top_bbox(0.33, box)
 
         elif cls == 33:  # "Wohnsitz_waehrend_Ausbildung_Adresszusatz",
             wwa[0][i][0] = cut_links_bbox(0.68, box)
 
         elif cls == 30:  # "Wohnsitz_waehrend_Ausbildung_Land",
             wwa[0][i][3] = add_bottom_bbox(0.3, box)
-            wwa[0][i][1] = cut_top_bbox(0.3, box)
+            wwa[0][i][1] = cut_top_bbox(0.33, box)
 
         elif cls == 34:  # "Wohnsitz_waehrend_Ausbildung_Postleitzahl",
             wwa[0][i][3] = add_bottom_bbox(0.3, box)
-            wwa[0][i][1] = cut_top_bbox(0.3, box)
+            wwa[0][i][1] = cut_top_bbox(0.33, box)
 
         elif cls == 31:  # "Wohnsitz_waehrend_Ausbildung_ort",
             wwa[0][i][0] = cut_links_bbox(0.90, box)
@@ -223,11 +244,13 @@ def edit_sub_boxes_cut_top(ausbildung, person, wohnsitz, wwa):
             ausbildung[0][i][1] = cut_top_bbox(0.3, box)
             ausbildung[0][i][3] = add_bottom_bbox(0.3, box)
 
-        elif cls == 6:  # "Ausbildung_Vollzeit","
-            ausbildung[0][i][0] = cut_links_bbox(0.35, box)
+        elif cls == 6:  # "Ausbildung_Vollzeit","]
+            ausbildung6 = [ausbildung[0][i], ausbildung[1][i]]
+            # ausbildung[0][i][0] = cut_links_bbox(0.4, box)
 
         elif cls == 1:  # "Ausbildung_Antrag_gestellt_ja",
-            ausbildung[0][i][0] = cut_links_bbox(0.35, box)
+            ausbildung1 = [ausbildung[0][i], ausbildung[1][i]]
+            # ausbildung[0][i][0] = cut_links_bbox(0.4, box)
 
         elif cls == 3:  # "Ausbildung_Amt"
             ausbildung[0][i][1] = cut_top_bbox(0.3, box)
@@ -236,6 +259,12 @@ def edit_sub_boxes_cut_top(ausbildung, person, wohnsitz, wwa):
         elif cls == 4:  # "Ausbildung_Foerderungsnummer",
             ausbildung[0][i][1] = cut_top_bbox(0.3, box)
             ausbildung[0][i][3] = add_bottom_bbox(0.3, box)
+
+    # remove checkboxes
+    ausbildung[0].remove(ausbildung6[0])
+    ausbildung[1].remove(ausbildung6[1])
+    ausbildung[0].remove(ausbildung1[0])
+    ausbildung[1].remove(ausbildung1[1])
 
     # person boxes [15, 21, 20, 19, 18, 11, 9, 17, 16, 14, 39]
     for i, box, cls in zip(range(len(person[1])), person[0], person[1]):
@@ -246,7 +275,7 @@ def edit_sub_boxes_cut_top(ausbildung, person, wohnsitz, wwa):
             person[0][i][1] = cut_top_bbox(0.3, box)
 
         elif cls == 16:  # "Person_Vorname",
-            person[0][i][2] = add_rechts_bbox(0.45, box)
+            person[0][i][2] = add_rechts_bbox(0.3, box)
             person[0][i][0] = add_links_bbox(0.04, box)
             person[0][i][3] = add_bottom_bbox(0.3, box)
             person[0][i][1] = cut_top_bbox(0.3, box)
@@ -258,7 +287,7 @@ def edit_sub_boxes_cut_top(ausbildung, person, wohnsitz, wwa):
             person[0][i][1] = cut_top_bbox(0.3, box)
 
         elif cls == 9:  # "Person_Geburtsort",
-            person[0][i][2] = add_rechts_bbox(0.45, box)
+            person[0][i][2] = add_rechts_bbox(0.3, box)
             person[0][i][0] = add_links_bbox(0.04, box)
             person[0][i][3] = add_bottom_bbox(0.3, box)
             person[0][i][1] = cut_top_bbox(0.3, box)
@@ -285,13 +314,18 @@ def edit_sub_boxes_cut_top(ausbildung, person, wohnsitz, wwa):
             person[0][i][1] = cut_top_bbox(0.3, box)
 
         elif cls == 21:  # "Person_Kinder",
-            person[0][i][0] = cut_links_bbox(0.2, box)
+            person21 = [person[0][i], person[1][i]]
+            # person[0][i][0] = cut_links_bbox(0.2, box)
+
+    # remove checkboxes
+    person[0].remove(person21[0])
+    person[1].remove(person21[1])
 
     # wohnsitz boxes [26, 23, 27, 24, 25, 22, 40]
 
     for i, box, cls in zip(range(len(wohnsitz[1])), wohnsitz[0], wohnsitz[1]):
         if cls == 22:  # "Wohnsitz_Strasse",
-            wohnsitz[0][i][2] = add_rechts_bbox(0.4, box)
+            # wohnsitz[0][i][2] = add_rechts_bbox(0.1, box)
             wohnsitz[0][i][0] = add_links_bbox(0.04, box)
             wohnsitz[0][i][1] = cut_top_bbox(0.3, box)
 
@@ -299,7 +333,7 @@ def edit_sub_boxes_cut_top(ausbildung, person, wohnsitz, wwa):
             wohnsitz[0][i][1] = cut_top_bbox(0.3, box)
 
         elif cls == 26:  # "Wohnsitz_Adresszusatz",
-            wohnsitz[0][i][2] = add_rechts_bbox(0.08, box)
+            # wohnsitz[0][i][2] = add_rechts_bbox(0.08, box)
             wohnsitz[0][i][0] = add_links_bbox(0.02, box)
             wohnsitz[0][i][1] = cut_top_bbox(0.3, box)
 
@@ -317,7 +351,7 @@ def edit_sub_boxes_cut_top(ausbildung, person, wohnsitz, wwa):
     # wwa boxes [33, 30, 31, 34, 29, 28, 41]
     for i, box, cls in zip(range(len(wwa[1])), wwa[0], wwa[1]):
         if cls == 28:  # "Wohnsitz_waehrend_Ausbildung_Strasse",
-            wwa[0][i][2] = add_rechts_bbox(0.45, box)
+            # wwa[0][i][2] = add_rechts_bbox(0.2, box)
             wwa[0][i][0] = add_links_bbox(0.04, box)
             wwa[0][i][3] = add_bottom_bbox(0.3, box)
             wwa[0][i][1] = cut_top_bbox(0.3, box)
@@ -327,7 +361,7 @@ def edit_sub_boxes_cut_top(ausbildung, person, wohnsitz, wwa):
             wwa[0][i][1] = cut_top_bbox(0.3, box)
 
         elif cls == 33:  # "Wohnsitz_waehrend_Ausbildung_Adresszusatz",
-            wwa[0][i][2] = add_rechts_bbox(0.08, box)
+            # wwa[0][i][2] = add_rechts_bbox(0.08, box)
             wwa[0][i][0] = add_links_bbox(0.02, box)
             wwa[0][i][3] = add_bottom_bbox(0.3, box)
             wwa[0][i][1] = cut_top_bbox(0.3, box)
@@ -341,7 +375,7 @@ def edit_sub_boxes_cut_top(ausbildung, person, wohnsitz, wwa):
             wwa[0][i][1] = cut_top_bbox(0.3, box)
 
         elif cls == 31:  # "Wohnsitz_waehrend_Ausbildung_ort",
-            wwa[0][i][2] = add_rechts_bbox(0.45, box)
+            # wwa[0][i][2] = add_rechts_bbox(0.1, box)
             wwa[0][i][0] = add_links_bbox(0.04, box)
             wwa[0][i][3] = add_bottom_bbox(0.3, box)
             wwa[0][i][1] = cut_top_bbox(0.3, box)
@@ -562,14 +596,6 @@ def get_image_as_array(image_path):
     image = cv2.imread(image_path)
     image = np.expand_dims(image, axis=0)
     return image
-
-
-def non_maximum_supression(boxes, confidence, classes):
-    selected_indices = tf.image.non_max_suppression(
-        boxes, confidence, max_output_size, iou_threshold)
-    selected_boxes = tf.gather(boxes, selected_indices)
-
-    return selected_boxes
 
 
 def show_image(image, boxes, confidence, classes):
