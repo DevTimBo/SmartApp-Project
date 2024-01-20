@@ -7,7 +7,7 @@ MAIN_BBOX_DETECTOR_MODEL = MODEL_PATH + '/main_bbox_detector_model.h5'
 SUB_BBOX_DETECTOR_MODEL = MODEL_PATH + '/sub_bbox_detector_model.h5'
 
 #TEMPlATING_ANNOTATION_PATH = "workspace/templating_data/Annotations"
-TEMPlATING_ANNOTATION_PATH = "../bounding_box/workspace/templating_data/Annotations"
+TEMPlATING_ANNOTATION_PATH = "bounding_box/workspace/templating_data/Annotations"
 
 
 # YOLO_HEIGHT = 640

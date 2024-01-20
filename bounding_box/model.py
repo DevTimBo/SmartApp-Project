@@ -111,27 +111,38 @@ def edit_sub_boxes_cut_links(ausbildung, person, wohnsitz, wwa):
 
         elif cls == 5:  # "Ausbilung_Abschluss"
             ausbildung[0][i][0] = cut_links_bbox(0.8, box)
+            # ausbildung6 = [ausbildung[0][i], ausbildung[1][i]]
+            # # remove checkboxes
+            # ausbildung[0].remove(ausbildung6[0])
+            # ausbildung[1].remove(ausbildung6[1])
 
         elif cls == 6:  # "Ausbildung_Vollzeit","]
             ausbildung6 = [ausbildung[0][i], ausbildung[1][i]]
+            # remove checkboxes
+            ausbildung[0].remove(ausbildung6[0])
+            ausbildung[1].remove(ausbildung6[1])
             # ausbildung[0][i][0] = cut_links_bbox(0.4, box)
 
         elif cls == 1:  # "Ausbildung_Antrag_gestellt_ja",
             ausbildung1 = [ausbildung[0][i], ausbildung[1][i]]
+            #remove checkboxes
+            ausbildung[0].remove(ausbildung1[0])
+            ausbildung[1].remove(ausbildung1[1])
             # ausbildung[0][i][0] = cut_links_bbox(0.4, box)
 
         elif cls == 3:  # "Ausbildung_Amt"
-            ausbildung[0][i][0] = cut_links_bbox(0.3, box)
+            #ausbildung[0][i][0] = cut_links_bbox(0.3, box)
+            ausbildung6 = [ausbildung[0][i], ausbildung[1][i]]
+            # remove checkboxes
+            ausbildung[0].remove(ausbildung6[0])
+            ausbildung[1].remove(ausbildung6[1])
 
         elif cls == 4:  # "Ausbildung_Foerderungsnummer",
             ausbildung[0][i][1] = cut_top_bbox(0.45, box)
             ausbildung[0][i][3] = add_bottom_bbox(0.3, box)
 
-    # remove checkboxes
-    ausbildung[0].remove(ausbildung6[0])
-    ausbildung[1].remove(ausbildung6[1])
-    ausbildung[0].remove(ausbildung1[0])
-    ausbildung[1].remove(ausbildung1[1])
+
+
 
     # person boxes [15, 21, 20, 19, 18, 11, 9, 17, 16, 14, 39]
     for i, box, cls in zip(range(len(person[1])), person[0], person[1]):
@@ -172,11 +183,12 @@ def edit_sub_boxes_cut_links(ausbildung, person, wohnsitz, wwa):
 
         elif cls == 21:  # "Person_Kinder",
             person21 = [person[0][i], person[1][i]]
+            # remove checkboxes
+            person[0].remove(person21[0])
+            person[1].remove(person21[1])
             # person[0][i][0] = cut_links_bbox(0.2, box)
 
-    # remove checkboxes
-    person[0].remove(person21[0])
-    person[1].remove(person21[1])
+
 
     # wohnsitz boxes [26, 23, 27, 24, 25, 22, 40]
 
@@ -246,10 +258,16 @@ def edit_sub_boxes_cut_top(ausbildung, person, wohnsitz, wwa):
 
         elif cls == 6:  # "Ausbildung_Vollzeit","]
             ausbildung6 = [ausbildung[0][i], ausbildung[1][i]]
+            # remove checkboxes
+            ausbildung[0].remove(ausbildung6[0])
+            ausbildung[1].remove(ausbildung6[1])
             # ausbildung[0][i][0] = cut_links_bbox(0.4, box)
 
         elif cls == 1:  # "Ausbildung_Antrag_gestellt_ja",
             ausbildung1 = [ausbildung[0][i], ausbildung[1][i]]
+            # remove checkboxes
+            ausbildung[0].remove(ausbildung1[0])
+            ausbildung[1].remove(ausbildung1[1])
             # ausbildung[0][i][0] = cut_links_bbox(0.4, box)
 
         elif cls == 3:  # "Ausbildung_Amt"
@@ -260,11 +278,8 @@ def edit_sub_boxes_cut_top(ausbildung, person, wohnsitz, wwa):
             ausbildung[0][i][1] = cut_top_bbox(0.3, box)
             ausbildung[0][i][3] = add_bottom_bbox(0.3, box)
 
-    # remove checkboxes
-    ausbildung[0].remove(ausbildung6[0])
-    ausbildung[1].remove(ausbildung6[1])
-    ausbildung[0].remove(ausbildung1[0])
-    ausbildung[1].remove(ausbildung1[1])
+
+
 
     # person boxes [15, 21, 20, 19, 18, 11, 9, 17, 16, 14, 39]
     for i, box, cls in zip(range(len(person[1])), person[0], person[1]):
@@ -315,11 +330,14 @@ def edit_sub_boxes_cut_top(ausbildung, person, wohnsitz, wwa):
 
         elif cls == 21:  # "Person_Kinder",
             person21 = [person[0][i], person[1][i]]
+            # remove checkboxes
+            person[0].remove(person21[0])
+            person[1].remove(person21[1])
             # person[0][i][0] = cut_links_bbox(0.2, box)
 
     # remove checkboxes
-    person[0].remove(person21[0])
-    person[1].remove(person21[1])
+
+
 
     # wohnsitz boxes [26, 23, 27, 24, 25, 22, 40]
 
@@ -469,7 +487,7 @@ def plot_image(image, ausbildung, person, wohnsitz, wwa, best_predicted):
     image = resize_imaged_without_expand_dim(image, YOLO_WIDTH, YOLO_HEIGHT)
     fig, ax = plt.subplots(1)
     ax.imshow(image)
-
+    #
     # plot the bes predicted box
     pred_xmin, pred_ymin, pred_xmax, pred_ymax = best_predicted[0]
     rect = patches.Rectangle((pred_xmin, pred_ymin), pred_xmax - pred_xmin, pred_ymax - pred_ymin, linewidth=2,
