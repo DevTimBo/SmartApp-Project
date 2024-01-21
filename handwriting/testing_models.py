@@ -951,7 +951,7 @@ def build_modelTest(img_width, img_height, char):
     
     return model
 
-def load_and_finetune_model(model, img_width, img_height, char, lr_value):
+def load_and_finetune_model_gru_and_dense(model, img_width, img_height, char, lr_value):
     # Laden des vorhandenen Modells
     
     for layer in model.layers:
@@ -977,7 +977,7 @@ def load_and_finetune_model(model, img_width, img_height, char, lr_value):
     return new_model
 
 
-def load_and_finetune_model2(model, img_width, img_height, char, lr_value):
+def load_and_finetune_model_dense(model, img_width, img_height, char, lr_value):
     # Laden des vorhandenen Modells
 
     # Freeze layers except for the last dense layer
@@ -991,6 +991,15 @@ def load_and_finetune_model2(model, img_width, img_height, char, lr_value):
     output = CTCLayer(name="ctc_loss")(model.input[1], x)  # Verwende die gleichen Labels wie im Originalmodell
 
     new_model = keras.models.Model(inputs=model.input, outputs=output, name="finetuned_handwriting_recognizer")
+
+    opt = keras.optimizers.Adam(learning_rate=lr_value)
+    new_model.compile(optimizer=opt)
+
+    return new_model
+
+def load_and_finetune_model_full(model, img_width, img_height, char, lr_value):
+
+    new_model = model
 
     opt = keras.optimizers.Adam(learning_rate=lr_value)
     new_model.compile(optimizer=opt)
