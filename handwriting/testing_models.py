@@ -998,7 +998,8 @@ def load_and_finetune_model_dense(model, img_width, img_height, char, lr_value):
     return new_model
 
 def load_and_finetune_model_full(model, img_width, img_height, char, lr_value):
-
+    for layer in model.layers:
+        layer.trainable = True
     new_model = model
 
     opt = keras.optimizers.Adam(learning_rate=lr_value)
