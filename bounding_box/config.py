@@ -1,14 +1,23 @@
-WORKSPACE_PATH = 'bounding_box/workspace'
+import os
+cwd = os.getcwd()
+last_part = os.path.basename(cwd)
+
+if last_part == "SmartApp-Project": # path for pipeline
+    TEMPlATING_ANNOTATION_PATH = "bounding_box/workspace/templating_data/Annotations"
+    WORKSPACE_PATH = 'bounding_box/workspace/'
+elif last_part == "handwriting":
+    WORKSPACE_PATH = '../bounding_box/workspace'
+    TEMPlATING_ANNOTATION_PATH = "../bounding_box/workspace/templating_data/Annotations"
+else:
+    WORKSPACE_PATH = 'workspace'
+    TEMPlATING_ANNOTATION_PATH = "workspace/templating_data/Annotations"
+
 ANNOTATION_PATH = WORKSPACE_PATH + '/annotations'
 IMAGE_PATH = WORKSPACE_PATH + '/images'
 MODEL_PATH = WORKSPACE_PATH + '/models'
 BBOX_PATH = MODEL_PATH + '/bbox'
 MAIN_BBOX_DETECTOR_MODEL = MODEL_PATH + '/main_bbox_detector_model.h5'
 SUB_BBOX_DETECTOR_MODEL = MODEL_PATH + '/sub_bbox_detector_model.h5'
-
-#TEMPlATING_ANNOTATION_PATH = "workspace/templating_data/Annotations"
-TEMPlATING_ANNOTATION_PATH = "../bounding_box/workspace/templating_data/Annotations"
-
 
 # YOLO_HEIGHT = 640
 # YOLO_WIDTH = 640

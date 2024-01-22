@@ -7,9 +7,15 @@ tf.random.set_seed(42)
 
 characters = set()
 max_len = 0
-base_path = "data_zettel/cropped_images/"  # gets overwritten by config
-#base_path = r'SmartApp-Project\data_zettel\cropped_images'
 
+import os
+cwd = os.getcwd()
+last_part = os.path.basename(cwd)
+
+if last_part == "SmartApp-Project":
+    base_path = "data_zettel/cropped_images/"  # path for pipeline.py
+else:
+    base_path = "../data_zettel/cropped_images/"  # path for handwriting
 
 def read_data():
     data_list = []
@@ -33,7 +39,7 @@ def read_data():
             data_list.append((img_path, line))
 
 
-    np.random.shuffle(data_list) # Rausgenommen zum testen
+    #np.random.shuffle(data_list) # Rausgenommen zum testen
     return data_list
 
 def split_data(lines_list):
