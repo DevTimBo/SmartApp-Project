@@ -1,3 +1,5 @@
+# TODO 
+
 import infer_pipeline
 from flask import Flask, json, request, jsonify, send_from_directory
 import os
@@ -39,9 +41,10 @@ def upload_file():
             file.save(os.path.join(UPLOAD_FOLDER, filename))
             #image_rotate(filename)
             #file_path = os.join.path(UPLOAD_FOLDER, filename)
-            file_path = r'API\images\input_Images\123.png'
+            file_path = r'API\images\input_Images\81.jpg'
             #prediction = pipeline.infer_with_return(loaded_model, file_path)
-            print(prediction)
+            #print(prediction)
+            infer_pipeline.myM_prediction(file_path)
             success = True
         else:
             errors[file.filename] = 'File type is not allowed'
@@ -59,3 +62,6 @@ def upload_file():
         resp = jsonify(errors)
         resp.status_code = 500
         return resp
+
+if __name__ == '__main__':
+    app.run(debug=True)

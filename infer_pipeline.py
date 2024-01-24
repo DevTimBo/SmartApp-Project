@@ -227,5 +227,5 @@ def myM_prediction2():
 
 # Plot Predicted Text and Image - Nicht nötig oder ? 
 
-path = r'C:\Users\hadie\Desktop\SmartApp\Mobile\Pipeline\SmartApp-Project\data_zettel\filled_resized\image_0055.jpg'
-myM_prediction(path)
+#path = r'C:\Users\hadie\Desktop\SmartApp\Mobile\Pipeline\SmartApp-Project\data_zettel\filled_resized\image_0055.jpg'
+#myM_prediction(path)
