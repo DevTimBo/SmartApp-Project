@@ -19,7 +19,7 @@ IMAGE_WIDTH = config.get_model_parameter()["width"] # default: 1024
 IMAGE_HEIGHT = config.get_model_parameter()["height"] # default: 128
 from keras.models import load_model
 import os
-""" import handwriting.tokenizer as tokenizer """
+# import handwriting.tokenizer as tokenizer
 import pickle
 from keras.layers import StringLookup
 import bounding_box.config as bounding_box_config
@@ -30,15 +30,28 @@ bbox_model = load_weight_model(r"bounding_box\workspace\models\main_bbox_detecto
 image_path = "data_zettel/filled_resized/image_0006.jpg"
 original_image = cv2.imread(image_path)
 
+# Alle Paramter
+main_boxes = None
+confidence = None
+classes = None
+ausbildung_cut = None
+person_cut = None
+wohnsitz_cut = None
+wwa_cut = None
+best_predicted = None
+sub_boxes, sub_classes = None
+
 # Prediction 
 # mM
 def myM_prediction():
+    global main_boxes, confidence, classes
     main_boxes, confidence, classes = predict_image(image_path, bbox_model)
     # ADDED
-    myM_templating(main_boxes, confidence, classes)
+    myM_templating()
 
 # Templating 
-def myM_templating(main_boxes, confidence, classes):
+def myM_templating():
+    global ausbildung_cut, person_cut, wohnsitz_cut, wwa_cut, best_predicted
     org_ms_boxes_person, org_ms_boxes_wohnsitz, org_ms_boxes_ausbildung, org_ms_boxes_wwa, person_class_ids, ausbildung_class_ids, wohnsitz_class_ids, wwa_class_ids, widthOrgImag, heightOrgImag = build_templating_data()
     ausbildung, person, wohnsitz, wwa, best_predicted = get_templated_data(main_boxes, confidence, classes, org_ms_boxes_person,
                                                                        org_ms_boxes_wohnsitz, org_ms_boxes_ausbildung,
@@ -51,22 +64,40 @@ def myM_templating(main_boxes, confidence, classes):
         ausbildung_cut, person_cut, wohnsitz_cut, wwa_cut = edit_sub_boxes_cut_top(ausbildung, person, wohnsitz, wwa)
     else:
         ausbildung_cut, person_cut, wohnsitz_cut, wwa_cut = edit_sub_boxes_cut_links(ausbildung, person, wohnsitz, wwa)
+    myM_scale_templating_up()
 
 
 # Scale Templating up
 def scale_up(ausbildung, person, wohnsitz, wwa):
     return ausbildung, person, wohnsitz, wwa
 
-ausbildung_cut_scaled, person_cut_scaled, wohnsitz_cut_scaled, wwa_cut_scaled = scale_up(ausbildung_cut, person_cut, wohnsitz_cut, wwa_cut)
-sub_boxes = ausbildung_cut_scaled[0] + person_cut_scaled[0] +  wohnsitz_cut_scaled[0] +  wwa_cut_scaled[0] 
-sub_classes = ausbildung_cut_scaled[1] + person_cut_scaled[1] + wohnsitz_cut_scaled[1] +  wwa_cut_scaled[1]
-
-# Erstellte Methode Nr.1
-def plot_image_method():
+def myM_scale_templating_up():
+    global sub_boxes, sub_classes
+    ausbildung_cut_scaled, person_cut_scaled, wohnsitz_cut_scaled, wwa_cut_scaled = scale_up(ausbildung_cut, person_cut, wohnsitz_cut, wwa_cut)
+    sub_boxes = ausbildung_cut_scaled[0] + person_cut_scaled[0] +  wohnsitz_cut_scaled[0] +  wwa_cut_scaled[0] 
+    sub_classes = ausbildung_cut_scaled[1] + person_cut_scaled[1] + wohnsitz_cut_scaled[1] +  wwa_cut_scaled[1]
     plot_image(image_path, ausbildung_cut_scaled, person_cut_scaled, wohnsitz_cut_scaled, wwa_cut_scaled, best_predicted)
+    myM_roi_crop()
+
 
 # ROI Crop 
-ImageInfo = namedtuple('ImageInfo', ['image', 'sub_class','value'])
+def myM_roi_crop():
+    ImageInfo = namedtuple('ImageInfo', ['image', 'sub_class','value'])
+    images_info_cropped = []
+    for i,box in enumerate(sub_boxes):
+        xmin, ymin, xmax, ymax = box
+        imgCropped = crop(xmin, ymin, xmax, ymax, image_path)
+        image_info = ImageInfo(image=imgCropped,sub_class=sub_classes[i],value="")
+        images_info_cropped.append(image_info)
+        """ PLOT = False
+        if PLOT:
+            plt.axis("off")
+            plt.imshow(imgCropped)
+            plt.show() """
+    
+    myM_preprocess_image(images_info_cropped, ImageInfo)
+
+
 def crop(xmin, ymin, xmax, ymax, image_path):
     image = cv2.imread(image_path)
     image = resize_imaged_without_expand_dim(image, YOLO_WIDTH, YOLO_HEIGHT)
@@ -82,47 +113,43 @@ def crop(xmin, ymin, xmax, ymax, image_path):
     # columnEnd = x + width
     imgCropped = image[ymin:ymax, xmin:xmax]
     return imgCropped
-
-images_info_cropped = []
-for i,box in enumerate(sub_boxes):
-    xmin, ymin, xmax, ymax = box
-    imgCropped = crop(xmin, ymin, xmax, ymax, image_path)
-    image_info = ImageInfo(image=imgCropped,sub_class=sub_classes[i],value="")
-    images_info_cropped.append(image_info)
-    """ PLOT = False
-    if PLOT:
-        plt.axis("off")
-        plt.imshow(imgCropped)
-        plt.show() """
     
 # Preprocess Image 
-img_size=(IMAGE_WIDTH, IMAGE_HEIGHT)
-preprocessed_image_infos = []
-for image_info in images_info_cropped:
-    image = image_info.image 
-    image = np.mean(image, axis=2, keepdims=True)
-    image = preprocess.distortion_free_resize(image, img_size)
-    image = tf.cast(image, tf.float32) / 255.0
+def myM_preprocess_image(images_info_cropped, ImageInfo):
+    img_size=(IMAGE_WIDTH, IMAGE_HEIGHT)
+    preprocessed_image_infos = []
+    for image_info in images_info_cropped:
+        image = image_info.image 
+        image = np.mean(image, axis=2, keepdims=True)
+        image = preprocess.distortion_free_resize(image, img_size)
+        image = tf.cast(image, tf.float32) / 255.0
+        temp_sub_class = image_info.sub_class
+        temp_image_info = ImageInfo(image=image,sub_class=temp_sub_class,value="")
+        preprocessed_image_infos.append(temp_image_info)
     
-    temp_sub_class = image_info.sub_class
-    temp_image_info = ImageInfo(image=image,sub_class=temp_sub_class,value="")
-    preprocessed_image_infos.append(temp_image_info)
+    myM_HRNN()
 
-# Plot Image - Nicht nötig, oder ?
+# Plot Images - Nicht nötig, oder ?
     
 # Handwriting Recognition Neural Network
     # Load from pickle file
-with open('iam_handwriting_model_characters.pkl', 'rb') as file:
-    loaded_max_len, loaded_characters = pickle.load(file)
 
-# Print loaded data
-print("Loaded max_len:", loaded_max_len)
-print("Loaded characters:", loaded_characters)
+def myM_HRNN():
+    with open('iam_handwriting_model_characters.pkl', 'rb') as file:
+        loaded_max_len, loaded_characters = pickle.load(file)
+    
+    # Print loaded data
+    print("Loaded max_len:", loaded_max_len)
+    print("Loaded characters:", loaded_characters)
+    char_to_num = StringLookup(vocabulary=list(loaded_characters), mask_token=None)
+    num_to_char = StringLookup(vocabulary=char_to_num.get_vocabulary(), mask_token=None, invert=True)
+    # Neural Network Handwriting
+    handwriting_model = load_model_and_weights()
+    prediction_model = keras.models.Model(handwriting_model.get_layer(name="image").input, handwriting_model.get_layer(name="dense2").output)
+    myM_MSCTS()
 
-char_to_num = StringLookup(vocabulary=list(loaded_characters), mask_token=None)
-num_to_char = StringLookup(vocabulary=char_to_num.get_vocabulary(), mask_token=None, invert=True)
-
-def decode_batch_predictions(pred):
+## !!!!!!!!!!!!!!!!!!!!!!!!!! Die zwei letzten Paramter maybe Global machen 
+def decode_batch_predictions(pred, loaded_max_len, num_to_char):
     input_len = np.ones(pred.shape[0]) * pred.shape[1]
     results = keras.backend.ctc_decode(pred, input_length=input_len, greedy=True)[0][0][:, :loaded_max_len]
     output_text = []
@@ -147,10 +174,7 @@ def load_model_and_weights():
     else:
         print("No pre-trained model or weights found.")
         return None
-
-# Neural Network Handwriting
-handwriting_model = load_model_and_weights()
-prediction_model = keras.models.Model(handwriting_model.get_layer(name="image").input, handwriting_model.get_layer(name="dense2").output)
+    
 
 # Spell Checker 
 def spell_checker(text):
@@ -162,9 +186,12 @@ def spell_checker(text):
     return corrected_text
 
 # Map Sub_Classes to String
-class_ids = bounding_box_config.class_ids
+def myM_MSCTS():
+    class_ids = bounding_box_config.class_ids
+    myM_prediction()
 
-def map_sub_class_to_string_and_sort(class_number):
+# !!!!!!!!!!!!!!!!!! class_ids vielleicht global machen !!
+def map_sub_class_to_string_and_sort(class_number, class_ids):
     temp_class_string = class_ids[class_number]
     
     not_class_list = ["Ausbildung_Klasse","Ausbildung","Person","Wohnsitz","Wohnsitz_waehrend_Ausbildung"]
@@ -173,20 +200,20 @@ def map_sub_class_to_string_and_sort(class_number):
     return -1
 
 # Prediction
-
-images_with_value = []
-# Prediction
-for i, preprocess_image in enumerate(preprocessed_image_infos):
-    preds = prediction_model.predict(tf.expand_dims(preprocess_image.image, axis=0))
-    pred_texts = decode_batch_predictions(preds)
-    selected_pred_text = pred_texts[0]
-    selected_pred_text = selected_pred_text.replace("|"," ")
-    prediction_text = spell_checker(selected_pred_text)
-    temp_sub_class = preprocess_image.sub_class
-    temp_sub_class_string = map_sub_class_to_string_and_sort(temp_sub_class)
-    if temp_sub_class_string != -1:
-        temp_image_info = ImageInfo(image=preprocess_image.image,sub_class=temp_sub_class_string,value=prediction_text)
-        images_with_value.append(temp_image_info)
+def myM_prediction(preprocessed_image_infos, prediction_model, ImageInfo):
+    images_with_value = []
+    # Prediction
+    for i, preprocess_image in enumerate(preprocessed_image_infos):
+        preds = prediction_model.predict(tf.expand_dims(preprocess_image.image, axis=0))
+        pred_texts = decode_batch_predictions(preds)
+        selected_pred_text = pred_texts[0]
+        selected_pred_text = selected_pred_text.replace("|"," ")
+        prediction_text = spell_checker(selected_pred_text)
+        temp_sub_class = preprocess_image.sub_class
+        temp_sub_class_string = map_sub_class_to_string_and_sort(temp_sub_class)
+        if temp_sub_class_string != -1:
+            temp_image_info = ImageInfo(image=preprocess_image.image,sub_class=temp_sub_class_string,value=prediction_text)
+            images_with_value.append(temp_image_info)
 
 
 # Plot Predicted Text and Image - Nicht nötig oder ? 
