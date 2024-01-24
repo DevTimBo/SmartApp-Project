@@ -39,7 +39,11 @@ person_cut = None
 wohnsitz_cut = None
 wwa_cut = None
 best_predicted = None
-sub_boxes, sub_classes = None
+sub_boxes, sub_classes = None, None
+images_info_cropped, ImageInfo = None, None
+loaded_max_len, num_to_char = None, None
+class_ids = None
+preprocessed_image_infos, prediction_model, ImageInfo = None, None, None
 
 # Prediction 
 # mM
@@ -82,6 +86,7 @@ def myM_scale_templating_up():
 
 # ROI Crop 
 def myM_roi_crop():
+    global images_info_cropped, ImageInfo
     ImageInfo = namedtuple('ImageInfo', ['image', 'sub_class','value'])
     images_info_cropped = []
     for i,box in enumerate(sub_boxes):
@@ -95,7 +100,7 @@ def myM_roi_crop():
             plt.imshow(imgCropped)
             plt.show() """
     
-    myM_preprocess_image(images_info_cropped, ImageInfo)
+    myM_preprocess_image()
 
 
 def crop(xmin, ymin, xmax, ymax, image_path):
@@ -115,7 +120,8 @@ def crop(xmin, ymin, xmax, ymax, image_path):
     return imgCropped
     
 # Preprocess Image 
-def myM_preprocess_image(images_info_cropped, ImageInfo):
+def myM_preprocess_image():
+    global preprocessed_image_infos, ImageInfo
     img_size=(IMAGE_WIDTH, IMAGE_HEIGHT)
     preprocessed_image_infos = []
     for image_info in images_info_cropped:
@@ -135,6 +141,7 @@ def myM_preprocess_image(images_info_cropped, ImageInfo):
     # Load from pickle file
 
 def myM_HRNN():
+    global loaded_max_len, num_to_char, prediction_model
     with open('iam_handwriting_model_characters.pkl', 'rb') as file:
         loaded_max_len, loaded_characters = pickle.load(file)
     
@@ -149,7 +156,7 @@ def myM_HRNN():
     myM_MSCTS()
 
 ## !!!!!!!!!!!!!!!!!!!!!!!!!! Die zwei letzten Paramter maybe Global machen 
-def decode_batch_predictions(pred, loaded_max_len, num_to_char):
+def decode_batch_predictions(pred):
     input_len = np.ones(pred.shape[0]) * pred.shape[1]
     results = keras.backend.ctc_decode(pred, input_length=input_len, greedy=True)[0][0][:, :loaded_max_len]
     output_text = []
@@ -187,11 +194,12 @@ def spell_checker(text):
 
 # Map Sub_Classes to String
 def myM_MSCTS():
+    global class_ids
     class_ids = bounding_box_config.class_ids
-    myM_prediction()
+    myM_prediction2()
 
 # !!!!!!!!!!!!!!!!!! class_ids vielleicht global machen !!
-def map_sub_class_to_string_and_sort(class_number, class_ids):
+def map_sub_class_to_string_and_sort(class_number):
     temp_class_string = class_ids[class_number]
     
     not_class_list = ["Ausbildung_Klasse","Ausbildung","Person","Wohnsitz","Wohnsitz_waehrend_Ausbildung"]
@@ -200,7 +208,7 @@ def map_sub_class_to_string_and_sort(class_number, class_ids):
     return -1
 
 # Prediction
-def myM_prediction(preprocessed_image_infos, prediction_model, ImageInfo):
+def myM_prediction2():
     images_with_value = []
     # Prediction
     for i, preprocess_image in enumerate(preprocessed_image_infos):
@@ -217,4 +225,5 @@ def myM_prediction(preprocessed_image_infos, prediction_model, ImageInfo):
 
 
 # Plot Predicted Text and Image - Nicht nötig oder ? 
-        
+
+myM_prediction()
