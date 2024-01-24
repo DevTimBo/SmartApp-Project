@@ -25,10 +25,11 @@ from keras.layers import StringLookup
 import bounding_box.config as bounding_box_config
 
 # TODO image_path wird von außen mitgegeben 
-# TODO alles als Methode verschachteln, damit es nicht automatisch durchläuft 
+
 bbox_model = load_weight_model(r"bounding_box\workspace\models\main_bbox_detector_model.h5",4)
-image_path = "data_zettel/filled_resized/image_0006.jpg"
-original_image = cv2.imread(image_path)
+
+image_path = None
+original_image = None
 
 # Alle Paramter
 main_boxes = None
@@ -47,8 +48,10 @@ preprocessed_image_infos, prediction_model, ImageInfo = None, None, None
 
 # Prediction 
 # mM
-def myM_prediction():
-    global main_boxes, confidence, classes
+def myM_prediction(path):
+    global image_path, original_image, main_boxes, confidence, classes
+    image_path = path
+    original_image = cv2.imread(image_path)
     main_boxes, confidence, classes = predict_image(image_path, bbox_model)
     # ADDED
     myM_templating()
@@ -155,7 +158,6 @@ def myM_HRNN():
     prediction_model = keras.models.Model(handwriting_model.get_layer(name="image").input, handwriting_model.get_layer(name="dense2").output)
     myM_MSCTS()
 
-## !!!!!!!!!!!!!!!!!!!!!!!!!! Die zwei letzten Paramter maybe Global machen 
 def decode_batch_predictions(pred):
     input_len = np.ones(pred.shape[0]) * pred.shape[1]
     results = keras.backend.ctc_decode(pred, input_length=input_len, greedy=True)[0][0][:, :loaded_max_len]
@@ -198,7 +200,6 @@ def myM_MSCTS():
     class_ids = bounding_box_config.class_ids
     myM_prediction2()
 
-# !!!!!!!!!!!!!!!!!! class_ids vielleicht global machen !!
 def map_sub_class_to_string_and_sort(class_number):
     temp_class_string = class_ids[class_number]
     
@@ -226,4 +227,5 @@ def myM_prediction2():
 
 # Plot Predicted Text and Image - Nicht nötig oder ? 
 
-myM_prediction()
+path = r'C:\Users\hadie\Desktop\SmartApp\Mobile\Pipeline\SmartApp-Project\data_zettel\filled_resized\image_0055.jpg'
+myM_prediction(path)
