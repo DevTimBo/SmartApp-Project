@@ -15,39 +15,44 @@ def fill_pdf_form(input_pdf, output_pdf, text_input):
     c.setFont("Helvetica", 10)
 
     # Mapping of identifiers to coordinates
+    #Names should still be adjusted with input from Hadi
     identifier_coordinates = {
-        "Ausbildungsstätte und Ausbildungsort": (70, 562),
-        "Klasse/Fachrichtung": (70, 533),
-        "Angestrebter Abschluss": (70, 505),
-        "Vollzeitausbildung": (325.5, 487),
-        "BAföG-Antrag gestellt": (325.5, 472),
-        "Amt für Ausbildungsförderung": (70, 442),
-        "Förderungsnummer": (232, 442),
-        "Name": (70, 390),
-        "Vorname": (70, 362),
-        "Geburtsname": (232, 362),
-        "Geburtsort": (70, 335),
-        "Geschlecht": { "männlich": (292, 335), "weiblich": (232, 335), "divers": (346, 335) },
-        "Geburtsdatum": (60, 305),
-        "Familienstand": (155, 305),
-        "Änderungen ggü. Erklärung": (308, 305),
-        "Staatsangehörigkeit": (70, 275),
-        "Staatsangehörigkeit Ehegatte/Lebenspartner": (232, 275),
-        "Ich habe Kinder": (325, 260),
-        "Straße": (70, 207),
-        "Hausnummer": (232, 207),
-        "Adresszusatz": (290, 207),
-        "Land": (57.5, 178),
-        "Postleitzahl": (93, 178),
-        "Ort": (160, 178),
-        "häuslicher Gemeinschaft": (325.5, 132),
-        "Eigentum/Mitteleigentum": (325.5, 113),
-        "Straße2": (70, 77),
-        "Hausnummer2": (232, 77),
-        "Adresszusatz2": (290, 77),
-        "Land2": (57.5, 47),
-        "Postleitzahl2": (93, 47),
-        "Ort2": (160, 47),
+        #Part1
+        "Ausbildung_Ausbildungsstätte und Ausbildungsort": (70, 562),
+        "Ausbildung_Klasse/Fachrichtung": (70, 533),
+        "Ausbildung_Abschluss": (70, 505),
+        "Ausbildung_Vollzeit": (325.5, 487),
+        "Ausbildung_BAföG-Antrag gestellt": (325.5, 472),
+        "Ausbildung_Amt": (70, 442),
+        "Ausbildung_Förderungsnummer": (232, 442),
+        #Part2
+        "Person_Name": (70, 390),
+        "Person_Vorname": (70, 362),
+        "Person_Geburtsname": (232, 362),
+        "Person_Geburtsort": (70, 335),
+        "Person_Geschlecht": { "männlich": (292, 335), "weiblich": (232, 335), "divers": (346, 335) },
+        "Person_Geburtsdatum": (60, 305),
+        "Person_Familienstand": (155, 305),
+        "Person_Änderungen ggü. Erklärung": (308, 305),
+        "Person_Staatsangehörigkeit": (70, 275),
+        "Person_Staatsangehörigkeit_Ehegatte": (232, 275),
+        "Person_Kinder": (325, 260),
+        #Part3
+        "Wohnsitz_Straße": (70, 207),
+        "Wohnsitz_Hausnummer": (232, 207),
+        "Wohnsitz_Adresszusatz": (290, 207),
+        "Wohnsitz_Land": (57.5, 178),
+        "Wohnsitz_Postleitzahl": (93, 178),
+        "Wohnsitz_Ort": (160, 178),
+        #Part4
+        "Wohnsitz_waehrend_Ausbildung_häuslicher Gemeinschaft": (325.5, 132),
+        "Wohnsitz_waehrend_Ausbildung_Eigentum/Mitteleigentum": (325.5, 113),
+        "Wohnsitz_waehrend_Ausbildung_Straße": (70, 77),
+        "Wohnsitz_waehrend_Ausbildung_Hausnummer": (232, 77),
+        "Wohnsitz_waehrend_Ausbildung_Adresszusatz": (290, 77),
+        "Wohnsitz_waehrend_Ausbildung_Land": (57.5, 47),
+        "Wohnsitz_waehrend_Ausbildung_Postleitzahl": (93, 47),
+        "Wohnsitz_waehrend_Ausbildung_Ort": (160, 47),
     }
 
     for identifier, word in text_input.items():
@@ -77,6 +82,7 @@ def fill_pdf_form(input_pdf, output_pdf, text_input):
 input_pdf_form = "android_app/printout/ormblatt_1.pdf"
 output_pdf_form = "android_app/printout/output_form.pdf"
 input_data = {
+    #Part1
     "Ausbildungsstätte und Ausbildungsort": "Helloo",
     "Klasse/Fachrichtung": "World",
     "Angestrebter Abschluss": "Machine",
@@ -84,6 +90,7 @@ input_data = {
     "BAföG-Antrag gestellt": "nein",
     "Amt für Ausbildungsförderung": "Blabla",
     "Förderungsnummer": "1  2  3  4  5  6  7  8  9",
+    #Part2
     "Name": "Name",
     "Vorname": "Vorname",
     "Geburtsname": "Geburtsname",
@@ -95,20 +102,22 @@ input_data = {
     "Staatsangehörigkeit": "Staatsangehörigkeit",
     "Staatsangehörigkeit Ehegatte/Lebenspartner": "Staatsangehörigkeit Ehegatte/Lebenspartner",
     "Ich habe Kinder": "ja",
-    "Straße": "Straße",
-    "Hausnummer": "1  5  6  7  8",
+    #Part3
+    "Wohnsitz_Strasse": "Straße",
+    "Wohnsitz_Hausnummer": "1  5  6  7  8",
     "Adresszusatz": "Adresszusatz",
-    "Land": "G  E  R",
-    "Postleitzahl": "1  2  3  4  5",
-    "Ort": "Ort",
+    "Wohnsitz_Land": "G  E  R",
+    "Wohnsitz_Postleitzahl": "1  2  3  4  5",
+    "Wohnsitz_Ort": "Ort",
+    #Part4
     "häuslicher Gemeinschaft": "ja",
     "Eigentum/Mitteleigentum": "nein",
-    "Straße2": "Straße2",
-    "Hausnummer2": "1  3  4  5  2",
-    "Adresszusatz2": "Adresszusatz2",
-    "Land2": "G  E  R",
-    "Postleitzahl2": "1  2  3  4  5",
-    "Ort2": "Ort2"
+    "Wohnsitz_waehrend_Ausbildung_Strasse": "Straße2",
+    "Wohnsitz_waehrend_Ausbildung_Hausnummer": "1  3  4  5  2",
+    "Wohnsitz_waehrend_Ausbildung_Adresszusatz": "Adresszusatz2",
+    "Wohnsitz_waehrend_Ausbildung_Land": "G  E  R",
+    "Wohnsitz_waehrend_Ausbildung_Postleitzahl": "1  2  3  4  5",
+    "Wohnsitz_waehrend_Ausbildung_Ort": "Ort2"
 }
 
 fill_pdf_form(input_pdf_form, output_pdf_form, input_data)
