@@ -6,11 +6,13 @@ import os
 import urllib.request
 from werkzeug.utils import secure_filename
 from PIL import Image
+from android_app.printout import output
 
 app = Flask(__name__)
  
 UPLOAD_FOLDER = 'API\images\input_Images'
-DOWNLOAD_FOLDER = 'API\images\output_Images'
+input_pdf_form = r'android_app\printout\ormblatt_1.pdf'
+pdf_output_path = r'API\images\PDF_output\output_form.pdf'
 predictions = {}
 
 # Maximal zulässige Dateigröße
@@ -47,6 +49,8 @@ def upload_file():
             for img in images_with_value:
                 pred_texts = img.value
                 predictions[img.sub_class] = pred_texts
+            output.fill_pdf_form(input_pdf_form, pdf_output_path, 
+                                                    predictions)
             success = True
         else:
             errors[file.filename] = 'File type is not allowed'
@@ -68,7 +72,8 @@ def upload_file():
 # Man kann sich das Bild aus dem Ordner selber aussuchen 
 @app.route("/get-predictions")
 def get_predictions():
-    return jsonify(predictions), 200
+    #return jsonify(predictions), 200
+    return send_from_directory(pdf_output_path)
 
 if __name__ == '__main__':
     app.run(debug=True)
