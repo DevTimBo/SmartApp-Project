@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:camera/camera.dart';
+import 'package:daemmungsapp/api.flask.dart';
 import 'package:flutter/material.dart';
 import 'package:tflite_v2/tflite_v2.dart';
 
@@ -79,22 +80,27 @@ class TakePictureScreenState extends State<TakePictureScreen> {
         model: 'assets/faceId.tflite', labels: 'assets/labels.txt');
   }
 
-  _predict(XFile? image) async {
-    final output = await Tflite.runModelOnImage(
-      path: image?.path ?? "",
-      threshold: 0.8,
-      numResults: 1,
-      imageMean: 127.5,
-      imageStd: 127.5,
-    );
+  _predict(File image) async {
+    // final output = await Tflite.runModelOnImage(
+    //   path: image?.path ?? "",
+    //   threshold: 0.8,
+    //   numResults: 1,
+    //   imageMean: 127.5,
+    //   imageStd: 127.5,
+    // );
 
-    setState(() {
-      String ListAsString = output!.join("");
-      _classifications = ListAsString.substring(52, ListAsString.length - 1) +
-          " " +
-          ListAsString.substring(13, 17) +
-          "%";
-    });
+    final isImageSend = await data(image);
+    final prediction = await getData();
+
+    if (isImageSend == "Files successfully uploaded") {
+      setState(() {
+        _classifications = prediction.toString();
+      });
+    } else {
+      setState(() {
+        _classifications = isImageSend.toString();
+      });
+    }
   }
 
   @override
@@ -128,7 +134,8 @@ class TakePictureScreenState extends State<TakePictureScreen> {
             // Attempt to take a picture and get the file `image`
             // where it was saved.
             final image = await _controller.takePicture();
-            _predict(image);
+            final imageAsFile = File(image.path);
+            await _predict(imageAsFile);
             if (!mounted) return;
 
             // If the picture was taken, display it on a new screen.
