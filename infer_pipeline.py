@@ -45,6 +45,8 @@ images_info_cropped, ImageInfo = None, None
 loaded_max_len, num_to_char = None, None
 class_ids = None
 preprocessed_image_infos, prediction_model, ImageInfo = None, None, None
+images_with_value = []
+pred_texts = None
 
 # Prediction 
 # mM
@@ -210,7 +212,7 @@ def map_sub_class_to_string_and_sort(class_number):
 
 # Prediction
 def myM_prediction2():
-    images_with_value = []
+    global images_with_value, pred_texts
     # Prediction
     for i, preprocess_image in enumerate(preprocessed_image_infos):
         preds = prediction_model.predict(tf.expand_dims(preprocess_image.image, axis=0))
@@ -224,8 +226,14 @@ def myM_prediction2():
             temp_image_info = ImageInfo(image=preprocess_image.image,sub_class=temp_sub_class_string,value=prediction_text)
             images_with_value.append(temp_image_info)
 
+def myM_get_images_with_value():
+    return images_with_value
+
+def myM_get_pred_texts():
+    return pred_texts
 
 # Plot Predicted Text and Image - Nicht nötig oder ? 
 
 #path = r'C:\Users\hadie\Desktop\SmartApp\Mobile\Pipeline\SmartApp-Project\data_zettel\filled_resized\image_0055.jpg'
 #myM_prediction(path)
+            

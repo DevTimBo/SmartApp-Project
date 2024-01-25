@@ -1,4 +1,4 @@
-# TODO 
+# TODO den Plot Part kann man cutten
 
 import infer_pipeline
 from flask import Flask, json, request, jsonify, send_from_directory
@@ -11,6 +11,7 @@ app = Flask(__name__)
  
 UPLOAD_FOLDER = 'API\images\input_Images'
 DOWNLOAD_FOLDER = 'API\images\output_Images'
+predictions = {}
 
 # Maximal zulässige Dateigröße
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
@@ -22,7 +23,7 @@ def main():
 # files[] ist der Schlüssel 
 @app.route('/upload', methods=['POST'])
 def upload_file():
-    global prediction
+    global predictions
     # check if the post request has the file part
     if 'files[]' not in request.files:
         resp = jsonify({'message' : 'No file part in the request'})
@@ -39,12 +40,13 @@ def upload_file():
         if file: 
             filename = secure_filename(file.filename)
             file.save(os.path.join(UPLOAD_FOLDER, filename))
-            #image_rotate(filename)
-            #file_path = os.join.path(UPLOAD_FOLDER, filename)
             file_path = r'API\images\input_Images\81.jpg'
-            #prediction = pipeline.infer_with_return(loaded_model, file_path)
-            #print(prediction)
             infer_pipeline.myM_prediction(file_path)
+            images_with_value = infer_pipeline.myM_get_images_with_value()
+            pred_texts = infer_pipeline.myM_get_pred_texts()
+            for img in images_with_value:
+                pred_texts = img.value
+                predictions[img.sub_class] = pred_texts
             success = True
         else:
             errors[file.filename] = 'File type is not allowed'
@@ -62,6 +64,11 @@ def upload_file():
         resp = jsonify(errors)
         resp.status_code = 500
         return resp
+
+# Man kann sich das Bild aus dem Ordner selber aussuchen 
+@app.route("/get-predictions")
+def get_predictions():
+    return jsonify(predictions), 200
 
 if __name__ == '__main__':
     app.run(debug=True)
