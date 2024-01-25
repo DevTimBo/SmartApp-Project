@@ -73,7 +73,9 @@ def upload_file():
 @app.route("/get-predictions")
 def get_predictions():
     #return jsonify(predictions), 200
-    return send_from_directory(pdf_output_path)
+    directory = os.path.dirname(pdf_output_path)
+    filename = os.path.basename(pdf_output_path)
+    return send_from_directory(directory, filename)
 
 if __name__ == '__main__':
     app.run(debug=True)
