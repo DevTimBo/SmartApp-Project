@@ -8,6 +8,7 @@ from bounding_box.model import load_weight_model, predict_image,plot_image, get_
 from bounding_box.template import build_templating_data
 import cv2
 from bounding_box.ressize import resize_imaged_without_expand_dim
+from bounding_box.ressize import scale_up
 from bounding_box.config import YOLO_WIDTH, YOLO_HEIGHT
 from collections import namedtuple
 import matplotlib.pyplot as plt
@@ -51,10 +52,10 @@ pred_texts = None
 # Prediction 
 # mM
 def myM_prediction(path):
-    global image_path, original_image, main_boxes, confidence, classes
+    global image_path, original_image, main_boxes, confidence, classes, ratios
     image_path = path
     original_image = cv2.imread(image_path)
-    main_boxes, confidence, classes = predict_image(image_path, bbox_model)
+    main_boxes, confidence, classes , ratios = predict_image(image_path, bbox_model)
     # ADDED
     myM_templating()
 
@@ -77,7 +78,9 @@ def myM_templating():
 
 
 # Scale Templating up
-def scale_up(ausbildung, person, wohnsitz, wwa):
+def myM_scale_up(ausbildung, person, wohnsitz, wwa):
+    # ratios is a global variable, which we have it from predict_image funktion
+    ausbildung, person, wohnsitz, wwa = scale_up(ausbildung, person, wohnsitz, wwa, ratios)
     return ausbildung, person, wohnsitz, wwa
 
 def myM_scale_templating_up():
