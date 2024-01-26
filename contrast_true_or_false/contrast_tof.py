@@ -3,10 +3,7 @@ import matplotlib.pyplot as plt
 import cv2
 import numpy as np
 
-def preprocess_image(image_path):
-    # Load the image
-    image = Image.open(image_path)
-
+def preprocess_image(image):
     # Convert the image to grayscale
     grayscale_image = image.convert("L")
 
@@ -17,7 +14,7 @@ def preprocess_image(image_path):
     # Invert the image
     inverted_image = ImageOps.invert(binary_image)
 
-    # Dilation to make the text bolder
+    # Dilation to make the text thicc
     kernel = np.ones((3, 3), np.uint8)
     dilated_image = cv2.dilate(np.array(inverted_image), kernel, iterations=1)
     
@@ -73,7 +70,37 @@ def is_checkbox_checked(image_path):
     
     return checkbox_result
 
+# Another possibility but probably not as good
+def is_checkbox_checked2(image):
+    # Preprocess
+    processed_image = preprocess_image(image)
+
+    # Plot the processed image and the cropped regions
+    plt.figure(figsize=(12, 4))
+
+    plt.subplot(1, 3, 1)
+    plt.imshow(processed_image, cmap="gray")
+    plt.title("Processed Image")
+
+    plt.show()
+    
+    checked_count = processed_image.tobytes().count(b'\x00')
+    print(f"Checked Count: {checked_count}")
+    
+    # Determine the result based on threshold of black pixels
+    threshold = 1300
+    if checked_count > threshold:
+        checkbox_result = "Ja"
+    elif threshold > checked_count:
+        checkbox_result = "Nein"
+    else:
+        checkbox_result = "Unknown"
+    
+    return checkbox_result
+
 # Example usage
-image_path = "contrast_true_or_false\cropped7.png"
-result = is_checkbox_checked(image_path)
+image_path = "contrast_true_or_false\croppedja3.png"
+# Load the image
+image = Image.open(image_path)
+result = is_checkbox_checked(image)
 print(f"The checkbox is checked for: {result}")
