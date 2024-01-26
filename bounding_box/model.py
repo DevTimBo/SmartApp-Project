@@ -113,14 +113,11 @@ def edit_sub_boxes_cut_links(ausbildung, person, wohnsitz, wwa):
         elif cls == 5:  # "Ausbilung_Abschluss"
             ausbildung[0][i][0] = cut_links_bbox(0.8, box)
 
-
-
         elif cls == 6:  # "Ausbildung_Vollzeit","]
-            ausbildung[0][i][0] = cut_links_bbox(0.4, box)
+            ausbildung[0][i][0] = cut_links_bbox(0.3, box)
 
         elif cls == 1:  # "Ausbildung_Antrag_gestellt_ja",
-
-            ausbildung[0][i][0] = cut_links_bbox(0.4, box)
+            ausbildung[0][i][0] = cut_links_bbox(0.3, box)
 
         elif cls == 3:  # "Ausbildung_Amt"
             ausbildung[0][i][0] = cut_links_bbox(0.3, box)
@@ -168,13 +165,9 @@ def edit_sub_boxes_cut_links(ausbildung, person, wohnsitz, wwa):
             person[0][i][1] = cut_top_bbox(0.45, box)
 
         elif cls == 21:  # "Person_Kinder",
-
             person[0][i][0] = cut_links_bbox(0.2, box)
 
-
-
     # wohnsitz boxes [26, 23, 27, 24, 25, 22, 40]
-
     for i, box, cls in zip(range(len(wohnsitz[1])), wohnsitz[0], wohnsitz[1]):
         if cls == 22:  # "Wohnsitz_Strasse",
             wohnsitz[0][i][0] = cut_links_bbox(0.9, box)
