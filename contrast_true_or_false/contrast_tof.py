@@ -38,6 +38,36 @@ def is_checkbox_checked(image_path):
     ja_image = processed_image.crop(ja_region)
     nein_image = processed_image.crop(nein_region)
 
+    # Count the black pixels in the cropped regions
+    ja_x_count = ja_image.tobytes().count(b'\x00')
+    nein_x_count = nein_image.tobytes().count(b'\x00')
+    print(f"Ja X Count: {ja_x_count}", f"Nein X Count: {nein_x_count}")
+
+    # Determine the result based on which one has more black pixels
+    if ja_x_count > nein_x_count:
+        checkbox_result = "Nein"
+    elif nein_x_count > ja_x_count:
+        checkbox_result = "Ja"
+    else:
+        checkbox_result = "Unknown"
+    
+    return checkbox_result
+
+def is_checkbox_checked_with_plot(image_path):
+    # Preprocess
+    processed_image = preprocess_image(image_path)
+
+    # Get the width and height of the image
+    width, height = processed_image.size
+
+    # Define the ja and nein regions 
+    ja_region = (0, 0, width // 2, height)
+    nein_region = (width // 2, 0, width, height)
+
+    # Crop the image to get the regions
+    ja_image = processed_image.crop(ja_region)
+    nein_image = processed_image.crop(nein_region)
+
     # Plot the processed image and the cropped regions
     plt.figure(figsize=(12, 4))
 
