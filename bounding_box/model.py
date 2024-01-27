@@ -585,7 +585,6 @@ def get_image_as_array(image_path):
 
 def show_image(image, boxes, confidence, classes):
     image = cv2.imread(image)
-
     # image_with_boxes = np.copy(image)
     fig, ax = plt.subplots(1)
     ax.imshow(image)
