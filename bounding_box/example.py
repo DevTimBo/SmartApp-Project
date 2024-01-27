@@ -6,7 +6,7 @@ from bounding_box.ressize import scale_up
 
 # C:\Users\alh\PycharmProjects\SmartApp-Project_V1\bounding_box\workspace\models\final_main_model\main_bbox_detector_model.h5
 # inter the path of the model
-bbox_model = load_weight_model(r"C:\Users\alh\PycharmProjects\SmartApp-Project_V1\bounding_box\workspace\models\main_bbox_detector_model.h5",4)
+bbox_model = load_weight_model(r"workspace\models\main_bbox_detector_model.h5",4)
 boxes, confidence, classes, ratios = predict_image("workspace/images/test_images/b(1).jpg", bbox_model)
 
 org_ms_boxes_person, org_ms_boxes_wohnsitz, org_ms_boxes_ausbildung, org_ms_boxes_wwa, person_class_ids, ausbildung_class_ids, wohnsitz_class_ids, wwa_class_ids, widthOrgImag, heightOrgImag = build_templating_data()
