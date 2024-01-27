@@ -54,21 +54,14 @@ number_num_to_char = None
 max_len_num = None 
 number_pred_model = None
 
-# Prediction 
-# mM
-def myM_prediction(path):
-    print('Bin drin 1')
-    global image_path, original_image, main_boxes, confidence, classes, ratios
+def pipeline_flow(path):
+    #global image_path, original_image, main_boxes, confidence, classes, ratios
     image_path = path
     main_boxes, confidence, classes, ratios = predict_image(image_path, bbox_model)
-    show_image(image_path, main_boxes, confidence, classes)   
-    # ADDED
-    myM_templating()
+    show_image(image_path, main_boxes, confidence, classes) 
 
-# Templating 
-def myM_templating():
     print('Bin drin 2')
-    global ausbildung_cut, person_cut, wohnsitz_cut, wwa_cut, best_predicted
+    #global ausbildung_cut, person_cut, wohnsitz_cut, wwa_cut, best_predicted
     org_ms_boxes_person, org_ms_boxes_wohnsitz, org_ms_boxes_ausbildung, org_ms_boxes_wwa, person_class_ids, ausbildung_class_ids, wohnsitz_class_ids, wwa_class_ids, widthOrgImag, heightOrgImag = build_templating_data()
     ausbildung, person, wohnsitz, wwa, best_predicted = get_templated_data(main_boxes, confidence, classes, org_ms_boxes_person,
                                                                        org_ms_boxes_wohnsitz, org_ms_boxes_ausbildung,
@@ -81,29 +74,16 @@ def myM_templating():
         ausbildung_cut, person_cut, wohnsitz_cut, wwa_cut = edit_sub_boxes_cut_top(ausbildung, person, wohnsitz, wwa)
     else:
         ausbildung_cut, person_cut, wohnsitz_cut, wwa_cut = edit_sub_boxes_cut_links(ausbildung, person, wohnsitz, wwa)
-    myM_scale_templating_up()
-
-
-# Scale Templating - Die Funktion wird nirgends aufgerufen ?!
-def myM_scale_up(ausbildung, person, wohnsitz, wwa):
-    # ratios is a global variable, which we have it from predict_image funktion
-    ausbildung_cut_scaled, person_cut_scaled, wohnsitz_cut_scaled, wwa_cut_scaled = scale_up( ausbildung_cut, person_cut, wohnsitz_cut, wwa_cut, ratios)
-    return ausbildung, person, wohnsitz, wwa
-
-def myM_scale_templating_up():
+    
     print('Bin drin 3')
-    global sub_boxes, sub_classes
+    #global sub_boxes, sub_classes
     ausbildung_cut_scaled, person_cut_scaled, wohnsitz_cut_scaled, wwa_cut_scaled = scale_up(ausbildung_cut, person_cut, wohnsitz_cut, wwa_cut, ratios)
     sub_boxes = ausbildung_cut_scaled[0] + person_cut_scaled[0] +  wohnsitz_cut_scaled[0] +  wwa_cut_scaled[0] 
     sub_classes = ausbildung_cut_scaled[1] + person_cut_scaled[1] + wohnsitz_cut_scaled[1] +  wwa_cut_scaled[1]
     plot_image(image_path, ausbildung_cut_scaled, person_cut_scaled, wohnsitz_cut_scaled, wwa_cut_scaled, best_predicted)
-    myM_roi_crop()
 
-
-# ROI Crop 
-def myM_roi_crop():
     print('Bin drin 4')
-    global images_info_cropped, ImageInfo
+    #global images_info_cropped, ImageInfo
     ImageInfo = namedtuple('ImageInfo', ['image', 'sub_class','value'])
     images_info_cropped = []
     for i,box in enumerate(sub_boxes):
@@ -116,30 +96,9 @@ def myM_roi_crop():
             plt.axis("off")
             plt.imshow(imgCropped)
             plt.show() """
-    
-    myM_preprocess_image()
-
-
-def crop(xmin, ymin, xmax, ymax, image_path):
-    image = cv2.imread(image_path)
-    image = resize_imaged_without_expand_dim(image, YOLO_WIDTH, YOLO_HEIGHT)
-    xmin = int(round(xmin))
-    ymin = int(round(ymin))
-    xmax = int(round(xmax))
-    ymax = int(round(ymax))
-    # width = int(round(width))
-    # height = int(round(height))
-    # rowBeg = y
-    # rowEnd = y + height
-    # columnBeg = x
-    # columnEnd = x + width
-    imgCropped = image[ymin:ymax, xmin:xmax]
-    return imgCropped
-    
-# Preprocess Image 
-def myM_preprocess_image():
+        
     print('Bin drin 5')
-    global preprocessed_image_infos, ImageInfo
+    #global preprocessed_image_infos, ImageInfo
     img_size=(IMAGE_WIDTH, IMAGE_HEIGHT)
     preprocessed_image_infos = []
     for image_info in images_info_cropped:
@@ -160,16 +119,8 @@ def myM_preprocess_image():
         temp_image_info = ImageInfo(image=image,sub_class=temp_sub_class,value="")
         preprocessed_image_infos.append(temp_image_info)
     
-    myM_HRNN()
-
-# Plot Images - Nicht nötig, oder ?
-    
-# Handwriting Recognition Neural Network
-    # Load from pickle file
-
-def myM_HRNN():
     print('Bin drin 6')
-    global loaded_max_len, num_to_char, prediction_model, loaded_characters, IAM, number_char_to_num, number_num_to_char, max_len_num, number_pred_model
+    #global loaded_max_len, num_to_char, prediction_model, loaded_characters, IAM, number_char_to_num, number_num_to_char, max_len_num, number_pred_model
    # Load from pickle file
     IAM = True
     if IAM:
@@ -199,7 +150,78 @@ def myM_HRNN():
     prediction_model = keras.models.Model(handwriting_model.get_layer(name="image").input, handwriting_model.get_layer(name="dense2").output)
     number_model = load_model_numbers()
     number_pred_model = keras.models.Model(number_model.get_layer(name="image").input, number_model.get_layer(name="dense2").output)
+
+    #global class_ids
+    class_ids = bounding_box_config.class_ids
+
+    #global images_with_value, pred_texts
+    # Prediction
+    for i, preprocess_image in enumerate(preprocessed_image_infos):
+        temp_sub_class = preprocess_image.sub_class
+        temp_sub_class_string = map_sub_class_to_string_and_sort(temp_sub_class)
+        number_sub_classes = ['Wohnsitz_waehrend_Ausbildung_Hausnummer','Wohnsitz_waehrend_Ausbildung_Postleitzahl','Wohnsitz_Hausnummer',
+                          'Wohnsitz_Postleitzahl','Person_Geburtsdatum','Person_Familienstand_seit','Ausbildung_Foerderungsnummer']
+        check_boxes_sub_classes =['Ausbildung_Antrag_gestellt_ja','Ausbildung_Vollzeit','Person_Kinder'] # hier fehlen noch welche sind aber noch nicht im templating
+
+    if temp_sub_class_string != -1:
+        if temp_sub_class_string in number_sub_classes:
+            preds = number_pred_model.predict(tf.expand_dims(preprocess_image.image, axis=0))
+            pred_texts = decode_number_pred(preds)
+            number_prediction = pred_texts[0]
+            temp_image_info = ImageInfo(image=preprocess_image.image,sub_class=temp_sub_class_string,value=number_prediction)
+            images_with_value.append(temp_image_info)
+        elif temp_sub_class_string in check_boxes_sub_classes:
+            import contrast_true_or_false.contrast_tof as check_box_checker
+            from PIL import Image
+            numpy_array = preprocess_image.image.numpy()
+            numpy_array = numpy_array.squeeze()
+            numpy_array = np.clip(numpy_array, 0.0, 1.0)
+            image_array_uint8 = (numpy_array * 255).astype(np.uint8)
+            pil_image = Image.fromarray(image_array_uint8)
+            result = check_box_checker.is_checkbox_checked(pil_image)
+            
+            
+            temp_image_info = ImageInfo(image=preprocess_image.image,sub_class=temp_sub_class_string,value=result)
+            images_with_value.append(temp_image_info)
+        else:
+            preds = prediction_model.predict(tf.expand_dims(preprocess_image.image, axis=0))
+            pred_texts = decode_batch_predictions(preds)
+            selected_pred_text = pred_texts[0]
+            selected_pred_text = selected_pred_text.replace("|"," ")
+            prediction_text = spell_checker(selected_pred_text)
+            temp_image_info = ImageInfo(image=preprocess_image.image,sub_class=temp_sub_class_string,value=prediction_text)
+            images_with_value.append(temp_image_info)
+
     
+
+# Scale Templating - Die Funktion wird nirgends aufgerufen ?!
+def myM_scale_up(ausbildung, person, wohnsitz, wwa):
+    # ratios is a global variable, which we have it from predict_image funktion
+    ausbildung_cut_scaled, person_cut_scaled, wohnsitz_cut_scaled, wwa_cut_scaled = scale_up( ausbildung_cut, person_cut, wohnsitz_cut, wwa_cut, ratios)
+    return ausbildung, person, wohnsitz, wwa
+
+def crop(xmin, ymin, xmax, ymax, image_path):
+    image = cv2.imread(image_path)
+    image = resize_imaged_without_expand_dim(image, YOLO_WIDTH, YOLO_HEIGHT)
+    xmin = int(round(xmin))
+    ymin = int(round(ymin))
+    xmax = int(round(xmax))
+    ymax = int(round(ymax))
+    # width = int(round(width))
+    # height = int(round(height))
+    # rowBeg = y
+    # rowEnd = y + height
+    # columnBeg = x
+    # columnEnd = x + width
+    imgCropped = image[ymin:ymax, xmin:xmax]
+    return imgCropped
+
+
+
+# Plot Images - Nicht nötig, oder ?
+    
+# Handwriting Recognition Neural Network
+    # Load from pickle file
 
     myM_MSCTS()
 
@@ -268,11 +290,6 @@ def spell_checker(text):
     corrected_text = ' '.join([spell.correction(word) if spell.correction(word) is not None else word for word in text.split()])
     return corrected_text
 
-# Map Sub_Classes to String
-def myM_MSCTS():
-    global class_ids
-    class_ids = bounding_box_config.class_ids
-    myM_prediction2()
 
 def map_sub_class_to_string_and_sort(class_number):
     temp_class_string = class_ids[class_number]
@@ -281,46 +298,6 @@ def map_sub_class_to_string_and_sort(class_number):
     if temp_class_string not in not_class_list:
         return temp_class_string
     return -1
-
-# Prediction
-def myM_prediction2():
-    global images_with_value, pred_texts
-    # Prediction
-    for i, preprocess_image in enumerate(preprocessed_image_infos):
-        temp_sub_class = preprocess_image.sub_class
-        temp_sub_class_string = map_sub_class_to_string_and_sort(temp_sub_class)
-        number_sub_classes = ['Wohnsitz_waehrend_Ausbildung_Hausnummer','Wohnsitz_waehrend_Ausbildung_Postleitzahl','Wohnsitz_Hausnummer',
-                          'Wohnsitz_Postleitzahl','Person_Geburtsdatum','Person_Familienstand_seit','Ausbildung_Foerderungsnummer']
-        check_boxes_sub_classes =['Ausbildung_Antrag_gestellt_ja','Ausbildung_Vollzeit','Person_Kinder'] # hier fehlen noch welche sind aber noch nicht im templating
-
-    if temp_sub_class_string != -1:
-        if temp_sub_class_string in number_sub_classes:
-            preds = number_pred_model.predict(tf.expand_dims(preprocess_image.image, axis=0))
-            pred_texts = decode_number_pred(preds)
-            number_prediction = pred_texts[0]
-            temp_image_info = ImageInfo(image=preprocess_image.image,sub_class=temp_sub_class_string,value=number_prediction)
-            images_with_value.append(temp_image_info)
-        elif temp_sub_class_string in check_boxes_sub_classes:
-            import contrast_true_or_false.contrast_tof as check_box_checker
-            from PIL import Image
-            numpy_array = preprocess_image.image.numpy()
-            numpy_array = numpy_array.squeeze()
-            numpy_array = np.clip(numpy_array, 0.0, 1.0)
-            image_array_uint8 = (numpy_array * 255).astype(np.uint8)
-            pil_image = Image.fromarray(image_array_uint8)
-            result = check_box_checker.is_checkbox_checked(pil_image)
-            
-            
-            temp_image_info = ImageInfo(image=preprocess_image.image,sub_class=temp_sub_class_string,value=result)
-            images_with_value.append(temp_image_info)
-        else:
-            preds = prediction_model.predict(tf.expand_dims(preprocess_image.image, axis=0))
-            pred_texts = decode_batch_predictions(preds)
-            selected_pred_text = pred_texts[0]
-            selected_pred_text = selected_pred_text.replace("|"," ")
-            prediction_text = spell_checker(selected_pred_text)
-            temp_image_info = ImageInfo(image=preprocess_image.image,sub_class=temp_sub_class_string,value=prediction_text)
-            images_with_value.append(temp_image_info)
 
 def myM_get_images_with_value():
     return images_with_value
@@ -332,5 +309,5 @@ def myM_get_pred_texts():
 
 # Test 
 path = r'C:\Users\hadie\Desktop\SmartApp\Mobile\Pipeline\SmartApp-Project\data_zettel\filled_resized\image_0055.jpg'
-myM_prediction(path)
+pipeline_flow(path)
             
