@@ -45,6 +45,8 @@ def cut_links_bbox(verkleinerungsfaktor, bbox):
 def cut_top_bbox(verkleinerungsfaktor, bbox):
     return bbox[1] + (bbox[3] - bbox[1]) * verkleinerungsfaktor
 
+def add_top_bbox(vergroesserungsfaktor, bbox):
+    return bbox[1] - (bbox[3] - bbox[1]) * vergroesserungsfaktor
 
 def add_bottom_bbox(vergroesserungsfaktor, bbox):
     return bbox[3] + (bbox[3] - bbox[1]) * vergroesserungsfaktor
