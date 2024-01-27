@@ -18,52 +18,62 @@ def fill_pdf_form(input_pdf, output_pdf, text_input):
     #Names should still be adjusted with input from Hadi
     identifier_coordinates = {
         #Part1
-        "Ausbildung_Ausbildungsstätte und Ausbildungsort": (70, 562),
-        "Ausbildung_Klasse/Fachrichtung": (70, 533),
-        "Ausbildung_Abschluss": (70, 505),
+        "Ausbildung_Staette": (70, 562),
+        "Ausbildung_Klasse": (70, 533),
+        "Ausbilung_Abschluss": (70, 505),
         "Ausbildung_Vollzeit": (325.5, 487),
-        "Ausbildung_BAföG-Antrag gestellt": (325.5, 472),
+        "Ausbildung_Teilzeit": (363, 487),
+        "Ausbildung_Antrag_gestellt_ja": (325.5, 472),
+        "Ausbildung_Antrag_gestellt_nein": (363, 472),
         "Ausbildung_Amt": (70, 442),
-        "Ausbildung_Förderungsnummer": (232, 442),
+        "Ausbildung_Foerderungsnummer": (232, 442),
         #Part2
         "Person_Name": (70, 390),
         "Person_Vorname": (70, 362),
         "Person_Geburtsname": (232, 362),
         "Person_Geburtsort": (70, 335),
-        "Person_Geschlecht": { "männlich": (292, 335), "weiblich": (232, 335), "divers": (346, 335) },
-        "Person_Geburtsdatum": (60, 305),
+        "Person_maennlich": (292, 335), 
+        "Person_weiblich": (232, 335), 
+        "Person_divers": (346, 335),
+        "Person_Geburtsdatum": (59, 305),
         "Person_Familienstand": (155, 305),
-        "Person_Änderungen ggü. Erklärung": (308, 305),
-        "Person_Staatsangehörigkeit": (70, 275),
-        "Person_Staatsangehörigkeit_Ehegatte": (232, 275),
+        "Person_Familienstand_seit": (308, 305),
+        "Person_Stattsangehörigkeit_eigene": (70, 275),
+        "Person_Stattsangehörigkeit_Ehegatte": (232, 275),
         "Person_Kinder": (325, 260),
         #Part3
-        "Wohnsitz_Straße": (70, 207),
+        "Wohnsitz_Strasse": (70, 207),
         "Wohnsitz_Hausnummer": (232, 207),
         "Wohnsitz_Adresszusatz": (290, 207),
         "Wohnsitz_Land": (57.5, 178),
         "Wohnsitz_Postleitzahl": (93, 178),
         "Wohnsitz_Ort": (160, 178),
         #Part4
-        "Wohnsitz_waehrend_Ausbildung_häuslicher Gemeinschaft": (325.5, 132),
-        "Wohnsitz_waehrend_Ausbildung_Eigentum/Mitteleigentum": (325.5, 113),
-        "Wohnsitz_waehrend_Ausbildung_Straße": (70, 77),
+        "Wohnsitz_waehrend_Ausbildung_elternmiete": (325.5, 132),
+        "Wohnsitz_waehrend_Ausbildung_elternmiete_nein": (363, 132),
+        "Wohnsitz_waehrend_Ausbildung_elternwohnung_ja": (325.5, 113),
+        "Wohnsitz_waehrend_Ausbildung_elternwohnung_nein": (363, 113),
+        "Wohnsitz_waehrend_Ausbildung_Strasse": (70, 77),
         "Wohnsitz_waehrend_Ausbildung_Hausnummer": (232, 77),
         "Wohnsitz_waehrend_Ausbildung_Adresszusatz": (290, 77),
         "Wohnsitz_waehrend_Ausbildung_Land": (57.5, 47),
         "Wohnsitz_waehrend_Ausbildung_Postleitzahl": (93, 47),
         "Wohnsitz_waehrend_Ausbildung_Ort": (160, 47),
     }
+    
+    special_spacing_identifiers = ["Ausbildung_Foerderungsnummer", "Person_Geburtsdatum", "Person_Familienstand_seit",
+                                   "Wohnsitz_Hausnummer", "Wohnsitz_Land", "Wohnsitz_Postleitzahl",
+                                   "Wohnsitz_waehrend_Ausbildung_Hausnummer", "Wohnsitz_waehrend_Ausbildung_Land", "Wohnsitz_waehrend_Ausbildung_Postleitzahl"]
 
     for identifier, word in text_input.items():
         if identifier in identifier_coordinates:
-            if isinstance(identifier_coordinates[identifier], tuple):
+            if identifier in special_spacing_identifiers:
+                x, y = identifier_coordinates[identifier]
+                spacing = 12  # Adjust this value based on your requirement
+                for i, char in enumerate(word):
+                    c.drawString(x + i * spacing, y, char)
+            elif isinstance(identifier_coordinates[identifier], tuple):
                 c.drawString(*identifier_coordinates[identifier], f"{word}")
-            elif isinstance(identifier_coordinates[identifier], dict):
-                # Handle gender special case
-                for gender, coords in identifier_coordinates[identifier].items():
-                    if word == gender:
-                        c.drawString(*coords, f"x")
         else:
             print(f"Warning: Identifier {identifier} not found in mapping.")
 
@@ -82,42 +92,44 @@ def fill_pdf_form(input_pdf, output_pdf, text_input):
 input_pdf_form = "android_app/printout/ormblatt_1.pdf"
 output_pdf_form = "android_app/printout/output_form.pdf"
 input_data = {
-    #Part1
-    "Ausbildungsstätte und Ausbildungsort": "Helloo",
-    "Klasse/Fachrichtung": "World",
-    "Angestrebter Abschluss": "Machine",
-    "Vollzeitausbildung": "ja",
-    "BAföG-Antrag gestellt": "nein",
-    "Amt für Ausbildungsförderung": "Blabla",
-    "Förderungsnummer": "1  2  3  4  5  6  7  8  9",
-    #Part2
-    "Name": "Name",
-    "Vorname": "Vorname",
-    "Geburtsname": "Geburtsname",
-    "Geburtsort": "Geburtsort",
-    "Geschlecht": "männlich",
-    "Geburtsdatum": "0  8  0  9  1  5",
-    "Familienstand": "Familienstand",
-    "Änderungen ggü. Erklärung": "1  2  3  4  5  6",
-    "Staatsangehörigkeit": "Staatsangehörigkeit",
-    "Staatsangehörigkeit Ehegatte/Lebenspartner": "Staatsangehörigkeit Ehegatte/Lebenspartner",
-    "Ich habe Kinder": "ja",
-    #Part3
-    "Wohnsitz_Strasse": "Straße",
-    "Wohnsitz_Hausnummer": "1  5  6  7  8",
-    "Adresszusatz": "Adresszusatz",
-    "Wohnsitz_Land": "G  E  R",
-    "Wohnsitz_Postleitzahl": "1  2  3  4  5",
-    "Wohnsitz_Ort": "Ort",
-    #Part4
-    "häuslicher Gemeinschaft": "ja",
-    "Eigentum/Mitteleigentum": "nein",
-    "Wohnsitz_waehrend_Ausbildung_Strasse": "Straße2",
-    "Wohnsitz_waehrend_Ausbildung_Hausnummer": "1  3  4  5  2",
-    "Wohnsitz_waehrend_Ausbildung_Adresszusatz": "Adresszusatz2",
-    "Wohnsitz_waehrend_Ausbildung_Land": "G  E  R",
-    "Wohnsitz_waehrend_Ausbildung_Postleitzahl": "1  2  3  4  5",
-    "Wohnsitz_waehrend_Ausbildung_Ort": "Ort2"
+    "Ausbildung_Klasse": "Wait",
+    "Ausbildung_Antrag_gestellt_ja": "Wait",
+    "Ausbildung_Antrag_gestellt_nein": "Wait",
+    "Ausbildung_Amt": "Wait",
+    "Ausbildung_Foerderungsnummer": "Wait",
+    "Ausbilung_Abschluss": "Wait",
+    "Ausbildung_Vollzeit": "Wait",
+    "Ausbildung_Teilzeit": "Wait",
+    "Ausbildung_Staette": "Wait",
+    "Person_Geburtsort": "Wait",
+    "Person_maennlich": "Wait",
+    "Person_Geburtsdatum": "Wait",
+    "Person_weiblich": "Wait",
+    "Person_divers": "Wait",
+    "Person_Name": "Wait",
+    "Person_Familienstand": "Wait",
+    "Person_Vorname": "Wait",
+    "Person_Geburtsname": "Wait",
+    "Person_Familienstand_seit": "Wait",
+    "Person_Stattsangehörigkeit_eigene": "Wait",
+    "Person_Stattsangehörigkeit_Ehegatte": "Wait",
+    "Person_Kinder": "Wait",
+    "Wohnsitz_Strasse": "Wait",
+    "Wohnsitz_Land": "Wait",
+    "Wohnsitz_Postleitzahl": "Wait",
+    "Wohnsitz_Hausnummer": "Wait",
+    "Wohnsitz_Adresszusatz": "Wait",
+    "Wohnsitz_Ort": "Wait",
+    "Wohnsitz_waehrend_Ausbildung_Strasse": "Wait",
+    "Wohnsitz_waehrend_Ausbildung_Hausnummer": "Wait",
+    "Wohnsitz_waehrend_Ausbildung_Land": "Wait",
+    "Wohnsitz_waehrend_Ausbildung_Ort": "Wait",
+    "Wohnsitz_waehrend_Ausbildung_elternwohnung_nein": "Wait",
+    "Wohnsitz_waehrend_Ausbildung_Adresszusatz": "Wait",
+    "Wohnsitz_waehrend_Ausbildung_Postleitzahl": "Wait",
+    "Wohnsitz_waehrend_Ausbildung_elternmiete": "Wait",
+    "Wohnsitz_waehrend_Ausbildung_elternwohnung_ja": "Wait",
+    "Wohnsitz_waehrend_Ausbildung_elternmiete_nein": "Wait",
 }
 
 fill_pdf_form(input_pdf_form, output_pdf_form, input_data)

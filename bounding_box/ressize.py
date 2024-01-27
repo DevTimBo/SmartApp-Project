@@ -136,10 +136,24 @@ def resize(input_path, output_path, width, height):
 
 def get_width_height_shape(image_path):
     image = cv2.imread(image_path)
-    height_ratio = YOLO_HEIGHT / image.shape[0]
-    width_ratio = YOLO_WIDTH / image.shape[1]
+    if image.shape[0] > YOLO_HEIGHT and image.shape[1] > YOLO_WIDTH:
+        # height_ratio = YOLO_HEIGHT / image.shape[0]
+        # width_ratio = YOLO_WIDTH / image.shape[1]
+        height_ratio = image.shape[0] / YOLO_HEIGHT
+        width_ratio = image.shape[1] / YOLO_WIDTH
+    else:
+        height_ratio = YOLO_HEIGHT / image.shape[0]
+        width_ratio = YOLO_WIDTH / image.shape[1]
     return width_ratio, height_ratio
 
+def scale_bounding_one_box(bbox, width_ratio, height_ratio):
+
+    x_min = np.round(bbox[0] * width_ratio, 2)
+    y_min = np.round(bbox[1] * height_ratio, 2)
+    x_max = np.round(bbox[2] * width_ratio, 2)
+    y_max = np.round(bbox[3] * height_ratio, 2)
+
+    return [x_min, y_min, x_max, y_max]
 
 def scale_bounding_box(bounding_boxes, width_ratio, height_ratio):
     scalde_bounding_boxes = []
@@ -152,6 +166,22 @@ def scale_bounding_box(bounding_boxes, width_ratio, height_ratio):
         scalde_bounding_boxes.append([x_min, y_min, x_max, y_max])
     return scalde_bounding_boxes
 
+def scale_up(ausbildung_cut_links, person_cut_links, wohnsitz_cut_links, wwa_cut_links, ratios):
+
+    for i, box, cls in zip(range(len(ausbildung_cut_links[1])), ausbildung_cut_links[0], ausbildung_cut_links[1]):
+        ausbildung_cut_links[0][i] = scale_bounding_one_box(box,ratios[0], ratios[1])
+
+    for i, box, cls in zip(range(len(person_cut_links[1])), person_cut_links[0], person_cut_links[1]):
+        person_cut_links[0][i] = scale_bounding_one_box(box,ratios[0], ratios[1])
+
+    for i, box, cls in zip(range(len(wohnsitz_cut_links[1])), wohnsitz_cut_links[0], wohnsitz_cut_links[1]):
+        wohnsitz_cut_links[0][i] = scale_bounding_one_box(box,ratios[0], ratios[1])
+
+    for i, box, cls in zip(range(len(wwa_cut_links[1])), wwa_cut_links[0], wwa_cut_links[1]):
+        wwa_cut_links[0][i] = scale_bounding_one_box(box,ratios[0], ratios[1])
+
+
+    return ausbildung_cut_links, person_cut_links, wohnsitz_cut_links, wwa_cut_links
 
 def create_directories(output_path_images, output_path_annotations, new_width, new_height):
     output_path_images = output_path_images + '/' + str(new_height) + 'x' + str(new_width)
