@@ -76,7 +76,7 @@ class_ids = [
     "Ausbildung",
     "Person",
     "Wohnsitz",
-    "Wohnsitz_waehrend_Ausbildung",
+    "Wohnsitz_waehrend_Ausbildung", 
 ]
 sub_class_ids = [
     "Ausbildung_Klasse",

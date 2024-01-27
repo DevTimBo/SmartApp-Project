@@ -12,7 +12,7 @@ def fill_pdf_form(input_pdf, output_pdf, text_input):
 
     packet = io.BytesIO()
     c = canvas.Canvas(packet, pagesize=letter)
-    c.setFont("Helvetica", 10)
+    c.setFont("Helvetica", 10) 
 
     # Mapping of identifiers to coordinates
     #Names should still be adjusted with input from Hadi

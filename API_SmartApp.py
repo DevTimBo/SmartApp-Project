@@ -47,7 +47,7 @@ def upload_file():
             images_with_value = infer_pipeline.myM_get_images_with_value()
             pred_texts = infer_pipeline.myM_get_pred_texts()
             for img in images_with_value:
-                pred_texts = img.value
+                pred_texts = img.value 
                 predictions[img.sub_class] = pred_texts
             output.fill_pdf_form(input_pdf_form, pdf_output_path, 
                                                     predictions)
