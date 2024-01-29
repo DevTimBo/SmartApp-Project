@@ -77,15 +77,22 @@ def preprocess_image(image):
     return dilated_image
 
 def is_checkbox_checked(image):
-    # Preprocess
-    processed_image = preprocess_image(image)
+    keywords = ['a']
+    ja_image, nein_image = detect_and_plot_bounding_boxes(image, keywords)
+    if ja_image != None and nein_image != None:
+        ja_image = preprocess_image(ja_image)
+        nein_image = preprocess_image(nein_image)
+    #Exception handling basically    
+    else:
+        processed_image = preprocess_image(image)
+        width, height = processed_image.size
+        # Define the ja and nein regions 
+        ja_region = (0, 0, width // 2, height)
+        nein_region = (width // 2, 0, width, height)
 
-    # Get the width and height of the image
-    width, height = processed_image.size
-
-    # Define the ja and nein regions 
-    ja_region = (0, 0, width // 2, height)
-    nein_region = (width // 2, 0, width, height)
+        # Crop the image to get the regions
+        ja_image = processed_image.crop(ja_region)
+        nein_image = processed_image.crop(nein_region)
 
     # Crop the image to get the regions
     ja_image = processed_image.crop(ja_region)
