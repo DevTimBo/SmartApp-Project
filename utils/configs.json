@@ -13,9 +13,9 @@
         "save": "False"
     },
     "training": {
-        "epochs": 5,
+        "epochs": 100,
         "save_history": "False",
-        "batch_size": 64,
+        "batch_size": 16,
         "tf_seed": 42,
         "learning_rate": 0.001,
         "patience": 20 

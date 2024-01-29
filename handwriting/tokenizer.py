@@ -1,17 +1,17 @@
 from keras.layers import StringLookup
 import tensorflow as tf
-import handwriting.load_transfer_data as load_transfer_data
-#import load_data
+#import handwriting.load_transfer_data as load_transfer_data
+import load_data
 import handwriting.preprocess as preprocess
 #import preprocess as preprocess
 
 import numpy as np
 
 AUTOTUNE = tf.data.AUTOTUNE
-max_len = load_transfer_data.max_len
-
+#max_len = load_transfer_data.max_len
+max_len = load_data.max_len
 # Mapping characters to integers.
-char_to_num = StringLookup(vocabulary=list(load_transfer_data.characters), mask_token=None)
+char_to_num = StringLookup(vocabulary=list(load_data.characters), mask_token=None)
 
 # Mapping integers back to original characters.
 num_to_char = StringLookup(vocabulary=char_to_num.get_vocabulary(), mask_token=None, invert=True)
@@ -63,8 +63,8 @@ def prepare_augmented_dataset(image_paths, labels, batch_size_new):
     )
 
     data_augmentation = tf.keras.Sequential([
-        tf.keras.layers.RandomContrast(0.5, seed=42),
-        tf.keras.layers.RandomBrightness(0.5, value_range=(0, 1), seed=42)
+        tf.keras.layers.RandomContrast(0.25, seed=42),
+        tf.keras.layers.RandomBrightness(0.25, value_range=(0, 1), seed=42)
     ])
     #Apply Augmentation
     dataset = dataset.map(lambda x, y: (data_augmentation(x, training=True), y), num_parallel_calls=AUTOTUNE)
