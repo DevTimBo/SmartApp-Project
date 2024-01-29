@@ -103,17 +103,13 @@ def pipeline_flow(path):
     preprocessed_image_infos = []
     for image_info in images_info_cropped:
         image = image_info.image 
-        if image is None:
-            print("F1")
+        print("F1")
         image = np.mean(image, axis=2, keepdims=True)
-        if image is None:
-            print("F2", image)
+        print("F2")
         image = preprocess.distortion_free_resize(image, img_size)
-        if image is None:
-            print("F3", image)
+        print("F3")
         image = tf.cast(image, tf.float32) / 255.0
-        if image is None:
-            print("F4")
+        print("F4")
 
         temp_sub_class = image_info.sub_class
         temp_image_info = ImageInfo(image=image,sub_class=temp_sub_class,value="")
@@ -308,6 +304,6 @@ def myM_get_pred_texts():
 # Plot Predicted Text and Image - Nicht nötig oder ? 
 
 # Test 
-path = r'C:\Users\hadie\Desktop\SmartApp\Mobile\Pipeline\SmartApp-Project\data_zettel\filled_resized\image_0055.jpg'
+path = r'data_zettel\images\Nathan\001.jpg'
 pipeline_flow(path)
             
