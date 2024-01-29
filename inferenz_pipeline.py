@@ -19,8 +19,7 @@ from bounding_box.template import build_templating_data
 from bounding_box.ressize import scale_up
 
 bbox_model = load_weight_model(r"bounding_box\workspace\models\main_bbox_detector_model.h5",4)
-image_path = "data_zettel/optimal_page/nathan_optimal.jpg"
-original_image = cv2.imread(image_path)
+#image_path = "data_zettel/optimal_page/nathan_optimal.jpg"
 
 num_to_char = None 
 loaded_max_len = None
@@ -29,19 +28,17 @@ class_ids = None
 IAM = None
 number_num_to_char = None
 
-def pipeline_flow():
+def pipeline_flow(image_path):
     global num_to_char, loaded_max_len, max_len_num, class_ids, IAM, number_num_to_char
-        
-    # ### Prediction
+    original_image = cv2.imread(image_path)
 
+    # ### Prediction
 
     main_boxes, confidence, classes, ratios = predict_image(image_path, bbox_model)
     print(ratios)
     show_image(image_path, main_boxes, confidence, classes)  
 
-
     # ### Templating
-
 
     org_ms_boxes_person, org_ms_boxes_wohnsitz, org_ms_boxes_ausbildung, org_ms_boxes_wwa, person_class_ids, ausbildung_class_ids, wohnsitz_class_ids, wwa_class_ids, widthOrgImag, heightOrgImag = build_templating_data()
 
@@ -362,5 +359,3 @@ def plot_evaluation(images, rows=5, cols=None):
     plt.show()
 
 ######################### Methoden 
-
-pipeline_flow()
