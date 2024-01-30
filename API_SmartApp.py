@@ -1,6 +1,8 @@
 # TODO den Plot Part kann man cutten
 
 from inferenz_pipeline import pipeline_flow
+from inferenz_pipeline import get_images_with_value
+from inferenz_pipeline import get_pred_texts
 from flask import Flask, json, request, jsonify, send_from_directory
 import os
 import urllib.request
@@ -42,15 +44,15 @@ def upload_file():
         if file: 
             filename = secure_filename(file.filename)
             file.save(os.path.join(UPLOAD_FOLDER, filename))
-            file_path = r'API\images\input_Images\81.jpg'
+            file_path = r'API\images\input_Images\page.jpg'
             pipeline_flow(file_path)
-            images_with_value = inferenz_pipeline.myM_get_images_with_value()
-            pred_texts = inferenz_pipeline.myM_get_pred_texts()
+            images_with_value = get_images_with_value()
+            pred_texts = get_pred_texts()
             for img in images_with_value:
                 pred_texts = img.value 
                 predictions[img.sub_class] = pred_texts
             output.fill_pdf_form(input_pdf_form, pdf_output_path, 
-                                                    predictions)
+                                                    predictions) 
             success = True
         else:
             errors[file.filename] = 'File type is not allowed'
