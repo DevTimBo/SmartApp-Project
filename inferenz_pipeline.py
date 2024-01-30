@@ -30,7 +30,7 @@ number_num_to_char = None
 images_with_value = []
 pred_texts = None
  
-def pipeline_flow(image_path):
+def run_pipeline(image_path):
     global num_to_char, loaded_max_len, max_len_num, class_ids, IAM, number_num_to_char, images_with_value, pred_texts
     original_image = cv2.imread(image_path)
 
