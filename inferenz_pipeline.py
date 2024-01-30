@@ -27,9 +27,11 @@ max_len_num = None
 class_ids = None
 IAM = None
 number_num_to_char = None
-
-def pipeline_flow(image_path):
-    global num_to_char, loaded_max_len, max_len_num, class_ids, IAM, number_num_to_char
+images_with_value = []
+pred_texts = None
+ 
+def run_pipeline(image_path):
+    global num_to_char, loaded_max_len, max_len_num, class_ids, IAM, number_num_to_char, images_with_value, pred_texts
     original_image = cv2.imread(image_path)
 
     # ### Prediction
@@ -357,5 +359,13 @@ def plot_evaluation(images, rows=5, cols=None):
 
     plt.tight_layout()  # Adjust subplot parameters for better layout
     plt.show()
+
+# API Method
+def get_images_with_value():
+    return images_with_value
+
+# API Method
+def get_pred_texts():
+    return pred_texts
 
 ######################### Methoden 
