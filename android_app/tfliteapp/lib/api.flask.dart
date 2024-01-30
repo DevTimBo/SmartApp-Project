@@ -47,3 +47,20 @@ Future getData() async {
   return (decodedData['flutterpred'].toString());
   //return response.toString();
 }
+
+Future getPredictionPDF() async {
+  File file = new File("output.pdf");
+
+  var url = 'http://10.0.2.2:5000/get-predictions';
+  var uri = Uri.parse(url);
+
+  try {
+    await http.get(uri, headers: {"Content-Type": "application/json"}).then(
+        (response) async {
+      await file.writeAsBytes(response.bodyBytes);
+    });
+  } catch (Exception) {
+    print(Exception.toString());
+  }
+  return file;
+}
