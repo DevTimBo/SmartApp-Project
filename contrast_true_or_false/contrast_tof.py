@@ -94,10 +94,6 @@ def is_checkbox_checked(image):
         ja_image = processed_image.crop(ja_region)
         nein_image = processed_image.crop(nein_region)
 
-    # Crop the image to get the regions
-    ja_image = processed_image.crop(ja_region)
-    nein_image = processed_image.crop(nein_region)
-
     # Count the black pixels in the cropped regions
     ja_x_count = ja_image.tobytes().count(b'\x00')
     nein_x_count = nein_image.tobytes().count(b'\x00')
