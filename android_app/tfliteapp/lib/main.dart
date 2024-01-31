@@ -3,13 +3,18 @@ import 'dart:io';
 
 import 'package:camera/camera.dart';
 import 'package:daemmungsapp/api.flask.dart';
+import 'package:document_file_save_plus/document_file_save_plus.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:tflite_v2/tflite_v2.dart';
+import 'package:flutter_pdfview/flutter_pdfview.dart';
 
 //mostly from: https://docs.flutter.dev/cookbook/plugins/picture-using-camera
 //Modified
 
 String _classifications = "try again";
+File? _image;
 
 Future<void> main() async {
   // Ensure that plugin services are initialized so that `availableCameras()`
@@ -90,11 +95,12 @@ class TakePictureScreenState extends State<TakePictureScreen> {
     // );
 
     final isImageSend = await data(image);
-    final prediction = await getData();
+    final prediction = await getPredictionPDF();
 
     if (isImageSend == "Files successfully uploaded") {
       setState(() {
-        _classifications = prediction.toString();
+        _classifications = "Bafoeg Prediction:";
+        _image = prediction;
       });
     } else {
       setState(() {
@@ -171,7 +177,40 @@ class DisplayPictureScreen extends StatelessWidget {
       appBar: AppBar(title: Text(_classifications)),
       // The image is stored as a file on the device. Use the `Image.file`
       // constructor with the given path to display the image.
-      body: Image.file(File(imagePath)),
+      //body: Image.file(File(imagePath)),
+      body: PDFView(
+        filePath: _image!.path.toString(),
+      ),
+      floatingActionButton: FloatingActionButton(
+        // Provide an onPressed callback.
+        onPressed: () async {
+          // Take the Picture in a try / catch block. If anything goes wrong,
+          // catch the error.
+          try {
+            final directory = await getExternalStorageDirectory();
+            final file = File("${directory?.path}/example.pdf");
+
+            final pdfBytes = await _image!.save();
+            await _image!.;
+
+            DocumentFileSavePlus().saveMultipleFiles(
+              dataList: [
+                pdfBytes,
+              ],
+              fileNameList: [
+                "example.pdf",
+              ],
+              mimeTypeList: [
+                "example/pdf",
+              ],
+            );
+          } catch (e) {
+            // If an error occurs, log the error to the console.
+            print(e);
+          }
+        },
+        child: const Icon(Icons.camera_alt),
+      ),
     );
   }
 }

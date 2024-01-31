@@ -190,9 +190,64 @@ def is_checkbox_checked_nur_ja(image):
     
     return checkbox_result
 
-# Example usage
+def is_checkbox_checked_template(checkbox_image_path, template_path):
+    # Load images
+    checkbox_image = cv2.imread(checkbox_image_path)
+    template = cv2.imread(template_path)
+    rf_cb = 3
+    rf_t = 1
+    # Resize images
+    checkbox_image = cv2.resize(checkbox_image, None, fx=rf_cb, fy=rf_cb)
+    template = cv2.resize(template, None, fx=rf_t, fy=rf_t)
+
+    # Convert images to grayscale
+    checkbox_gray = cv2.cvtColor(checkbox_image, cv2.COLOR_BGR2GRAY)
+    template_gray = cv2.cvtColor(template, cv2.COLOR_BGR2GRAY)
+
+    # Perform template matching
+    result = cv2.matchTemplate(checkbox_gray, template_gray, cv2.TM_CCOEFF_NORMED)
+
+    # Find the location of the best match
+    min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(result)
+
+    # Get the coordinates of the matched region
+    top_left = max_loc
+    h, w = template_gray.shape
+    bottom_right = (top_left[0] + w, top_left[1] + h)
+
+    # Draw a rectangle around the matched region
+    matched_image = checkbox_image.copy()
+    cv2.rectangle(matched_image, top_left, bottom_right, (0, 255, 0), 2)
+
+    # Plot the images and the matched region
+    plt.subplot(1, 3, 1), plt.imshow(checkbox_image, cmap='gray')
+    plt.title('Checkbox Image'), plt.xticks([]), plt.yticks([])
+
+    plt.subplot(1, 3, 2), plt.imshow(template, cmap='gray')
+    plt.title('Template Image'), plt.xticks([]), plt.yticks([])
+
+    plt.subplot(1, 3, 3), plt.imshow(matched_image, cmap='gray')
+    plt.title('Matching Result'), plt.xticks([]), plt.yticks([])
+
+    plt.show()
+
+    # Check if the matching result is above the threshold
+    checkbox_checked = max_val > 0.7
+
+    # Return the result
+    return checkbox_checked
+
+# Example usage single checkbox
+checkbox_image_path = 'contrast_true_or_false/templatebox3.png'
+template_path = 'contrast_true_or_false/templatebox5.png'
+result = is_checkbox_checked_template(checkbox_image_path, template_path)
+print(f"The checkbox is: {result}")
+
+'''
+# Example usage tof
 image_path = 'contrast_true_or_false\cropped4.png'
 # Load the image
 image = Image.open(image_path)
 result = is_checkbox_checked_with_plot(image)
 print(f"The checkbox is checked for: {result}")
+'''
