@@ -127,7 +127,7 @@ def run_pipeline(image_path):
     plt.imshow(plot_image[:, :, 0],cmap='gray')
 
     # Show the plot
-    plt.show()
+    #plt.show()
 
 
     # ### Handwriting Recognition Neural Network
