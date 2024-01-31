@@ -15,7 +15,6 @@ def fill_pdf_form(input_pdf, output_pdf, text_input):
     c.setFont("Helvetica", 10) 
 
     # Mapping of identifiers to coordinates
-    #Names should still be adjusted with input from Hadi
     identifier_coordinates = {
         #Part1
         "Ausbildung_Staette": (70, 562),
@@ -26,7 +25,7 @@ def fill_pdf_form(input_pdf, output_pdf, text_input):
         "Ausbildung_Antrag_gestellt_ja": (325.5, 472),
         "Ausbildung_Antrag_gestellt_nein": (363, 472),
         "Ausbildung_Amt": (70, 442),
-        "Ausbildung_Foerderungsnummer": (232, 442),
+        "Ausbildung_Foerderungsnummer": (231, 442),
         #Part2
         "Person_Name": (70, 390),
         "Person_Vorname": (70, 362),
@@ -64,7 +63,7 @@ def fill_pdf_form(input_pdf, output_pdf, text_input):
     special_spacing_identifiers = ["Ausbildung_Foerderungsnummer", "Person_Geburtsdatum", "Person_Familienstand_seit",
                                    "Wohnsitz_Hausnummer", "Wohnsitz_Land", "Wohnsitz_Postleitzahl",
                                    "Wohnsitz_waehrend_Ausbildung_Hausnummer", "Wohnsitz_waehrend_Ausbildung_Land", "Wohnsitz_waehrend_Ausbildung_Postleitzahl"]
-
+    
     for identifier, word in text_input.items():
         if identifier in identifier_coordinates:
             if identifier in special_spacing_identifiers:
@@ -88,7 +87,7 @@ def fill_pdf_form(input_pdf, output_pdf, text_input):
     with open(output_pdf, "wb") as f:
         output.write(f)
 
-# Example:
+# Example usage:
 input_pdf_form = "android_app/printout/ormblatt_1.pdf"
 output_pdf_form = "android_app/printout/output_form.pdf"
 input_data = {
