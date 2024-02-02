@@ -6,7 +6,7 @@ import pytesseract
 
 # Path to the Tesseract executable
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-
+plotting = True
 def detect_and_plot_bounding_boxes(image, keywords):
     # Perform OCR
     ocr_results = pytesseract.image_to_boxes(image, lang='eng')
@@ -37,20 +37,20 @@ def detect_and_plot_bounding_boxes(image, keywords):
             # Append the cropped image to the list
             cropped_images.append(cropped_image_ja)
             cropped_images.append(cropped_image_nein)
+    if plotting:
+        # Plot the original image with bounding boxes
+        plt.imshow(image)
+        plt.title("Original Image with Bounding Boxes")
+        plt.show()
 
-    # Plot the original image with bounding boxes
-    plt.imshow(image)
-    plt.title("Original Image with Bounding Boxes")
-    plt.show()
+        # Plot the cropped images
+        for i, cropped_image in enumerate(cropped_images):
+            plt.subplot(1, len(cropped_images), i + 1)
+            plt.imshow(cropped_image)
+            plt.title(f"Cropped Image {i + 1}")
 
-    # Plot the cropped images
-    for i, cropped_image in enumerate(cropped_images):
-        plt.subplot(1, len(cropped_images), i + 1)
-        plt.imshow(cropped_image)
-        plt.title(f"Cropped Image {i + 1}")
+        plt.show()
 
-    plt.show()
-    
     if cropped_images != []:
         return cropped_images[0], cropped_images[1]
     else:
@@ -76,7 +76,10 @@ def preprocess_image(image):
 
     return dilated_image
 
-def is_checkbox_checked(image):
+def is_checkbox_checked(image, PLOTTING):
+    global plotting
+    plotting = PLOTTING
+
     keywords = ['a']
     ja_image, nein_image = detect_and_plot_bounding_boxes(image, keywords)
     if ja_image != None and nein_image != None:
@@ -126,23 +129,23 @@ def is_checkbox_checked_with_plot(image):
         # Crop the image to get the regions
         ja_image = processed_image.crop(ja_region)
         nein_image = processed_image.crop(nein_region)
+    if plotting:
+        # Plot the processed image and the cropped regions
+        plt.figure(figsize=(12, 4))
 
-    # Plot the processed image and the cropped regions
-    plt.figure(figsize=(12, 4))
+        plt.subplot(1, 3, 1)
+        plt.imshow(image, cmap="gray")
+        plt.title("Image")
 
-    plt.subplot(1, 3, 1)
-    plt.imshow(image, cmap="gray")
-    plt.title("Image")
+        plt.subplot(1, 3, 2)
+        plt.imshow(ja_image, cmap="gray")
+        plt.title("Cropped Ja Region")
 
-    plt.subplot(1, 3, 2)
-    plt.imshow(ja_image, cmap="gray")
-    plt.title("Cropped Ja Region")
+        plt.subplot(1, 3, 3)
+        plt.imshow(nein_image, cmap="gray")
+        plt.title("Cropped Nein Region")
 
-    plt.subplot(1, 3, 3)
-    plt.imshow(nein_image, cmap="gray")
-    plt.title("Cropped Nein Region")
-
-    plt.show()
+        plt.show()
 
     # Count the black pixels in the cropped regions
     ja_x_count = ja_image.tobytes().count(b'\x00')
@@ -162,15 +165,15 @@ def is_checkbox_checked_with_plot(image):
 def is_checkbox_checked_nur_ja(image):
     # Preprocess
     processed_image = preprocess_image(image)
+    if plotting:
+        # Plot the processed image and the cropped regions
+        plt.figure(figsize=(12, 4))
 
-    # Plot the processed image and the cropped regions
-    plt.figure(figsize=(12, 4))
+        plt.subplot(1, 3, 1)
+        plt.imshow(processed_image, cmap="gray")
+        plt.title("Processed Image")
 
-    plt.subplot(1, 3, 1)
-    plt.imshow(processed_image, cmap="gray")
-    plt.title("Processed Image")
-
-    plt.show()
+        plt.show()
     
     checked_count = processed_image.tobytes().count(b'\x00')
     print(f"Checked Count: {checked_count}")
@@ -214,18 +217,18 @@ def is_checkbox_checked_template(checkbox_image_path, template_path):
     # Draw a rectangle around the matched region
     matched_image = checkbox_image.copy()
     cv2.rectangle(matched_image, top_left, bottom_right, (0, 255, 0), 2)
+    if plotting:
+        # Plot the images and the matched region
+        plt.subplot(1, 3, 1), plt.imshow(checkbox_image, cmap='gray')
+        plt.title('Checkbox Image'), plt.xticks([]), plt.yticks([])
 
-    # Plot the images and the matched region
-    plt.subplot(1, 3, 1), plt.imshow(checkbox_image, cmap='gray')
-    plt.title('Checkbox Image'), plt.xticks([]), plt.yticks([])
+        plt.subplot(1, 3, 2), plt.imshow(template, cmap='gray')
+        plt.title('Template Image'), plt.xticks([]), plt.yticks([])
 
-    plt.subplot(1, 3, 2), plt.imshow(template, cmap='gray')
-    plt.title('Template Image'), plt.xticks([]), plt.yticks([])
+        plt.subplot(1, 3, 3), plt.imshow(matched_image, cmap='gray')
+        plt.title('Matching Result'), plt.xticks([]), plt.yticks([])
 
-    plt.subplot(1, 3, 3), plt.imshow(matched_image, cmap='gray')
-    plt.title('Matching Result'), plt.xticks([]), plt.yticks([])
-
-    plt.show()
+        plt.show()
 
     # Check if the matching result is above the threshold
     checkbox_checked = max_val > 0.7
@@ -233,11 +236,12 @@ def is_checkbox_checked_template(checkbox_image_path, template_path):
     # Return the result
     return checkbox_checked
 
-# Example usage single checkbox
-checkbox_image_path = 'contrast_true_or_false/templatebox3.png'
-template_path = 'contrast_true_or_false/templatebox5.png'
-result = is_checkbox_checked_template(checkbox_image_path, template_path)
-print(f"The checkbox is: {result}")
+if __name__ == '__main__':
+    # Example usage single checkbox
+    checkbox_image_path = 'contrast_true_or_false/templatebox3.png'
+    template_path = 'contrast_true_or_false/templatebox5.png'
+    result = is_checkbox_checked_template(checkbox_image_path, template_path)
+    print(f"The checkbox is: {result}")
 
 '''
 # Example usage tof

@@ -1,10 +1,10 @@
 {
     "pipeline": {
-        "training": "False",
-        "transfer": "True",
         "plotting": "False",
+        "bb_model_cut_top": "False",
         "bb_model": 1,
-        "handwriting_model": 1
+        "handwriting_model": 1,
+        "number_model": 1
     },
     "model": {
         "name": "transferlearningTestingModel",

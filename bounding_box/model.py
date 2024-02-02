@@ -457,12 +457,12 @@ def plot_image(image, ausbildung, person, wohnsitz, wwa, best_predicted):
     fig, ax = plt.subplots(1)
     ax.imshow(image)
     #
-    # plot the bes predicted box
-    pred_xmin, pred_ymin, pred_xmax, pred_ymax = best_predicted[0]
-    rect = patches.Rectangle((pred_xmin, pred_ymin), pred_xmax - pred_xmin, pred_ymax - pred_ymin, linewidth=2,
-                             edgecolor='b',
-                             facecolor='none', label=best_predicted[3])
-    ax.add_patch(rect)
+    # # plot the bes predicted box
+    # pred_xmin, pred_ymin, pred_xmax, pred_ymax = best_predicted[0]
+    # rect = patches.Rectangle((pred_xmin, pred_ymin), pred_xmax - pred_xmin, pred_ymax - pred_ymin, linewidth=2,
+    #                          edgecolor='b',
+    #                          facecolor='none', label=best_predicted[3])
+    # ax.add_patch(rect)
 
     for b in ausbildung[0]:
         xmin, ymin, xmax, ymax = b
@@ -587,6 +587,7 @@ def get_image_as_array(image_path):
 
 def show_image(image, boxes, confidence, classes):
     image = cv2.imread(image)
+    image = cv2.resize(image, (YOLO_WIDTH, YOLO_HEIGHT))
     # image_with_boxes = np.copy(image)
     fig, ax = plt.subplots(1)
     ax.imshow(image)
