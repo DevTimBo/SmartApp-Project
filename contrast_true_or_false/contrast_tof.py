@@ -8,14 +8,23 @@ import pytesseract
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 plotting = True
 def detect_and_plot_bounding_boxes(image, keywords):
+    # Convert the image to a numpy array
+    image = np.array(image)
+    
+    # Resize images
+    image = cv2.resize(image, (512, 128))
+    
+    # Convert the numpy array back to PIL image
+    pil_image = Image.fromarray(image)
+    
     # Perform OCR
-    ocr_results = pytesseract.image_to_boxes(image, lang='eng')
+    ocr_results = pytesseract.image_to_boxes(pil_image, lang='eng')
 
     # Initialize a list to store the cropped images
     cropped_images = []
 
     # Draw the bounding boxes on the original image
-    draw = ImageDraw.Draw(image)
+    draw = ImageDraw.Draw(pil_image)
 
     # Loop through the OCR results
     for line in ocr_results.splitlines():
@@ -24,7 +33,7 @@ def detect_and_plot_bounding_boxes(image, keywords):
 
         # Check if the recognized text is one of the keywords
         if parts[0] in keywords:
-            # Extract coordinates of the bounding box
+            # Extract coordinates of the bounding box-- we just need x
             x, y, w, h = map(int, (parts[1], parts[2], parts[3], parts[4]))
 
             # Draw the bounding box on the original image
@@ -193,11 +202,10 @@ def is_checkbox_checked_template(checkbox_image_path, template_path):
     # Load images
     checkbox_image = cv2.imread(checkbox_image_path)
     template = cv2.imread(template_path)
-    rf_cb = 3
-    rf_t = 1
+
     # Resize images
-    checkbox_image = cv2.resize(checkbox_image, None, fx=rf_cb, fy=rf_cb)
-    template = cv2.resize(template, None, fx=rf_t, fy=rf_t)
+    checkbox_image = cv2.resize(checkbox_image, (512, 128))
+    template = cv2.resize(template, (100, 100))
 
     # Convert images to grayscale
     checkbox_gray = cv2.cvtColor(checkbox_image, cv2.COLOR_BGR2GRAY)
@@ -219,6 +227,7 @@ def is_checkbox_checked_template(checkbox_image_path, template_path):
     cv2.rectangle(matched_image, top_left, bottom_right, (0, 255, 0), 2)
     if plotting:
         # Plot the images and the matched region
+        plt.figure(figsize=(8, 8))
         plt.subplot(1, 3, 1), plt.imshow(checkbox_image, cmap='gray')
         plt.title('Checkbox Image'), plt.xticks([]), plt.yticks([])
 
@@ -231,23 +240,26 @@ def is_checkbox_checked_template(checkbox_image_path, template_path):
         plt.show()
 
     # Check if the matching result is above the threshold
-    checkbox_checked = max_val > 0.7
+    print(max_val)
+    if max_val > 0.7:
+        checkbox_checked = "Ja"
+    else:
+        checkbox_checked = "Nein"
 
     # Return the result
     return checkbox_checked
 
-if __name__ == '__main__':
-    # Example usage single checkbox
-    checkbox_image_path = 'contrast_true_or_false/templatebox3.png'
-    template_path = 'contrast_true_or_false/templatebox5.png'
-    result = is_checkbox_checked_template(checkbox_image_path, template_path)
-    print(f"The checkbox is: {result}")
-
 '''
+# Example usage single checkbox
+checkbox_image_path = 'contrast_true_or_false/ja_unchecked_middle.png'
+template_path = 'contrast_true_or_false/templatebox1.png'
+result = is_checkbox_checked_template(checkbox_image_path, template_path)
+print(f"The checkbox is: {result}")
+'''
+
 # Example usage tof
-image_path = 'contrast_true_or_false\cropped4.png'
+image_path = 'contrast_true_or_false\cropped2.png'
 # Load the image
 image = Image.open(image_path)
 result = is_checkbox_checked_with_plot(image)
 print(f"The checkbox is checked for: {result}")
-'''
