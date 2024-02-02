@@ -18,7 +18,7 @@ from bounding_box.model import load_weight_model, predict_image,plot_image, get_
 from bounding_box.template import build_templating_data
 from bounding_box.ressize import scale_up
 
-bbox_model = load_weight_model(r"bounding_box/workspace/models/main_bbox_detector_model.h5",4)
+bbox_model = load_weight_model(r"bounding_box\workspace\models\main_bbox_detector_model.h5",4)
 #image_path = "data_zettel/optimal_page/nathan_optimal.jpg"
 
 num_to_char = None 
