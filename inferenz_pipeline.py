@@ -28,10 +28,12 @@ IAM = None
 class_ids = None
 loaded_max_len = None
 max_len_num = None
+images_with_value = None
+pred_texts = None
 
 
 def run_pipeline(image_path):
-    global number_num_to_char, num_to_char, IAM, class_ids, loaded_max_len, max_len_num
+    global number_num_to_char, num_to_char, IAM, class_ids, loaded_max_len, max_len_num, images_with_value, pred_texts
 
     start_time = time.time()
 
@@ -400,5 +402,11 @@ def plot_evaluation(images, rows=5, cols=None):
 
     plt.tight_layout()  # Adjust subplot parameters for better layout
     plt.show()
+
+def get_images_with_value():
+    return images_with_value
+
+def get_pred_texts():
+    return pred_texts
 
 ############################# Methoden ENDE
