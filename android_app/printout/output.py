@@ -12,7 +12,7 @@ def fill_pdf_form(input_pdf, output_pdf, text_input):
 
     packet = io.BytesIO()
     c = canvas.Canvas(packet, pagesize=letter)
-    c.setFont("Helvetica", 10) 
+    c.setFont("Helvetica", 11) 
 
     # Mapping of identifiers to coordinates
     identifier_coordinates = {
@@ -53,9 +53,9 @@ def fill_pdf_form(input_pdf, output_pdf, text_input):
         "Wohnsitz_waehrend_Ausbildung_elternwohnung_ja": (325.5, 113),
         "Wohnsitz_waehrend_Ausbildung_elternwohnung_nein": (363, 113),
         "Wohnsitz_waehrend_Ausbildung_Strasse": (70, 77),
-        "Wohnsitz_waehrend_Ausbildung_Hausnummer": (232, 77),
+        "Wohnsitz_waehrend_Ausbildung_Hausnummer": (231.5, 77),
         "Wohnsitz_waehrend_Ausbildung_Adresszusatz": (290, 77),
-        "Wohnsitz_waehrend_Ausbildung_Land": (57.5, 47),
+        "Wohnsitz_waehrend_Ausbildung_Land": (58, 47),
         "Wohnsitz_waehrend_Ausbildung_Postleitzahl": (93, 47),
         "Wohnsitz_waehrend_Ausbildung_Ort": (160, 47),
     }
@@ -64,13 +64,23 @@ def fill_pdf_form(input_pdf, output_pdf, text_input):
                                    "Wohnsitz_Hausnummer", "Wohnsitz_Land", "Wohnsitz_Postleitzahl",
                                    "Wohnsitz_waehrend_Ausbildung_Hausnummer", "Wohnsitz_waehrend_Ausbildung_Land", "Wohnsitz_waehrend_Ausbildung_Postleitzahl"]
     
+    special_tof_identifiers = ["Ausbildung_Antrag_gestellt_ja", "Ausbildung_Antrag_gestellt_nein", "Ausbildung_Vollzeit", "Ausbildung_Teilzeit",
+                               "Person_Kinder", "Wohnsitz_waehrend_Ausbildung_elternmiete", "Wohnsitz_waehrend_Ausbildung_elternmiete_nein",
+                               "Wohnsitz_waehrend_Ausbildung_elternwohnung_ja", "Wohnsitz_waehrend_Ausbildung_elternwohnung_nein"
+                               ]
+    
     for identifier, word in text_input.items():
         if identifier in identifier_coordinates:
             if identifier in special_spacing_identifiers:
                 x, y = identifier_coordinates[identifier]
-                spacing = 12  # Adjust this value based on your requirement
+                spacing = 11.25  # Adjust this value based on your requirement
                 for i, char in enumerate(word):
                     c.drawString(x + i * spacing, y, char)
+            elif identifier in special_tof_identifiers:
+                if word == "Ja":
+                    c.drawString(*identifier_coordinates[identifier], "X")
+                else:
+                    c.drawString(*identifier_coordinates[identifier], " ")
             elif isinstance(identifier_coordinates[identifier], tuple):
                 c.drawString(*identifier_coordinates[identifier], f"{word}")
         else:
@@ -91,43 +101,43 @@ def fill_pdf_form(input_pdf, output_pdf, text_input):
 input_pdf_form = "android_app/printout/ormblatt_1.pdf"
 output_pdf_form = "android_app/printout/output_form.pdf"
 input_data = {
-    "Ausbildung_Klasse": "Wait",
-    "Ausbildung_Antrag_gestellt_ja": "Wait",
-    "Ausbildung_Antrag_gestellt_nein": "Wait",
-    "Ausbildung_Amt": "Wait",
-    "Ausbildung_Foerderungsnummer": "Wait",
-    "Ausbilung_Abschluss": "Wait",
-    "Ausbildung_Vollzeit": "Wait",
-    "Ausbildung_Teilzeit": "Wait",
-    "Ausbildung_Staette": "Wait",
-    "Person_Geburtsort": "Wait",
-    "Person_maennlich": "Wait",
-    "Person_Geburtsdatum": "Wait",
-    "Person_weiblich": "Wait",
-    "Person_divers": "Wait",
-    "Person_Name": "Wait",
-    "Person_Familienstand": "Wait",
-    "Person_Vorname": "Wait",
-    "Person_Geburtsname": "Wait",
-    "Person_Familienstand_seit": "Wait",
-    "Person_Stattsangehörigkeit_eigene": "Wait",
-    "Person_Stattsangehörigkeit_Ehegatte": "Wait",
-    "Person_Kinder": "Wait",
-    "Wohnsitz_Strasse": "Wait",
-    "Wohnsitz_Land": "Wait",
-    "Wohnsitz_Postleitzahl": "Wait",
-    "Wohnsitz_Hausnummer": "Wait",
-    "Wohnsitz_Adresszusatz": "Wait",
-    "Wohnsitz_Ort": "Wait",
-    "Wohnsitz_waehrend_Ausbildung_Strasse": "Wait",
-    "Wohnsitz_waehrend_Ausbildung_Hausnummer": "Wait",
-    "Wohnsitz_waehrend_Ausbildung_Land": "Wait",
-    "Wohnsitz_waehrend_Ausbildung_Ort": "Wait",
-    "Wohnsitz_waehrend_Ausbildung_elternwohnung_nein": "Wait",
-    "Wohnsitz_waehrend_Ausbildung_Adresszusatz": "Wait",
-    "Wohnsitz_waehrend_Ausbildung_Postleitzahl": "Wait",
-    "Wohnsitz_waehrend_Ausbildung_elternmiete": "Wait",
-    "Wohnsitz_waehrend_Ausbildung_elternwohnung_ja": "Wait",
+    "Ausbildung_Klasse": "Theologie",
+    "Ausbildung_Antrag_gestellt_ja": "",
+    "Ausbildung_Antrag_gestellt_nein": "Ja",
+    "Ausbildung_Amt": "Bremen Mitte",
+    "Ausbildung_Foerderungsnummer": "081234995821",
+    "Ausbilung_Abschluss": "Master",
+    "Ausbildung_Vollzeit": "Ja",
+    "Ausbildung_Teilzeit": "",
+    "Ausbildung_Staette": "Universität Bremen",
+    "Person_Geburtsort": "Bremen",
+    "Person_maennlich": "X",
+    "Person_Geburtsdatum": "09201999",
+    "Person_weiblich": "",
+    "Person_divers": "",
+    "Person_Name": "Thompson",
+    "Person_Familienstand": "ledig",
+    "Person_Vorname": "Josephine",
+    "Person_Geburtsname": "Christina",
+    "Person_Familienstand_seit": "19091999",
+    "Person_Stattsangehörigkeit_eigene": "Deutsch",
+    "Person_Stattsangehörigkeit_Ehegatte": "Russisch",
+    "Person_Kinder": "Ja",
+    "Wohnsitz_Strasse": "Butjadingerstrasse 1",
+    "Wohnsitz_Land": "GER",
+    "Wohnsitz_Postleitzahl": "28195",
+    "Wohnsitz_Hausnummer": "15",
+    "Wohnsitz_Adresszusatz": "im Hinterhof",
+    "Wohnsitz_Ort": "Bremen",
+    "Wohnsitz_waehrend_Ausbildung_Strasse": "Schwachhauser Heerstrasse 1",
+    "Wohnsitz_waehrend_Ausbildung_Hausnummer": "19",
+    "Wohnsitz_waehrend_Ausbildung_Land": "GER",
+    "Wohnsitz_waehrend_Ausbildung_Ort": "Bremen",
+    "Wohnsitz_waehrend_Ausbildung_elternwohnung_nein": "Ja",
+    "Wohnsitz_waehrend_Ausbildung_Adresszusatz": "im vorderen Haus",
+    "Wohnsitz_waehrend_Ausbildung_Postleitzahl": "28209",
+    "Wohnsitz_waehrend_Ausbildung_elternmiete": "Ja",
+    "Wohnsitz_waehrend_Ausbildung_elternwohnung_ja": "",
     "Wohnsitz_waehrend_Ausbildung_elternmiete_nein": "Wait",
 }
 
