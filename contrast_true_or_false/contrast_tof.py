@@ -198,7 +198,7 @@ def is_checkbox_checked_nur_ja(image):
     
     return checkbox_result
 
-def is_checkbox_checked_template(checkbox_image_path, template_path):
+def is_checkbox_checked_template(checkbox_image_path, template_path = 'contrast_true_or_false/templatebox1.png'):
     # Load images
     checkbox_image = cv2.imread(checkbox_image_path)
     template = cv2.imread(template_path)
@@ -255,7 +255,7 @@ checkbox_image_path = 'contrast_true_or_false/ja_unchecked_middle.png'
 template_path = 'contrast_true_or_false/templatebox1.png'
 result = is_checkbox_checked_template(checkbox_image_path, template_path)
 print(f"The checkbox is: {result}")
-'''
+
 
 # Example usage tof
 image_path = 'contrast_true_or_false\cropped2.png'
@@ -263,3 +263,4 @@ image_path = 'contrast_true_or_false\cropped2.png'
 image = Image.open(image_path)
 result = is_checkbox_checked_with_plot(image)
 print(f"The checkbox is checked for: {result}")
+'''
