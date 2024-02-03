@@ -3,7 +3,7 @@
         "plotting": "False",
         "bb_model_cut_top": "False",
         "bb_model": 1,
-        "handwriting_model": 1,
+        "handwriting_model": 2,
         "number_model": 1
     },
     "model": {
@@ -18,7 +18,7 @@
         "batch_size": 16,
         "tf_seed": 42,
         "learning_rate": 0.001,
-        "patience": 20 
+        "patience": 20
     },
     "directory": {
         "model_dir": "models",

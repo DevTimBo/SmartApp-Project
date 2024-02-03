@@ -1,20 +1,32 @@
 from keras.layers import StringLookup
 import tensorflow as tf
-#import handwriting.load_transfer_data as load_transfer_data
-import load_data
+
+
 import handwriting.preprocess as preprocess
-#import preprocess as preprocess
+# import preprocess as preprocess
 
 import numpy as np
 
 AUTOTUNE = tf.data.AUTOTUNE
-#max_len = load_transfer_data.max_len
-max_len = load_data.max_len
+
+# # Load Data Transfer
+import handwriting.load_transfer_data as load_transfer_data
+max_len = load_transfer_data.max_len
 # Mapping characters to integers.
-char_to_num = StringLookup(vocabulary=list(load_data.characters), mask_token=None)
+char_to_num = StringLookup(vocabulary=list(load_transfer_data.characters), mask_token=None)
 
 # Mapping integers back to original characters.
 num_to_char = StringLookup(vocabulary=char_to_num.get_vocabulary(), mask_token=None, invert=True)
+
+
+# # Load Data normal
+# import load_data
+# max_len = load_data.max_len
+# # Mapping characters to integers.
+# char_to_num = StringLookup(vocabulary=list(load_data.characters), mask_token=None)
+#
+# # Mapping integers back to original characters.
+# num_to_char = StringLookup(vocabulary=char_to_num.get_vocabulary(), mask_token=None, invert=True)
 
 img_size = (512, 32)  # default gets overwritten by config
 batch_size = 64  # default gets overwritten by config
@@ -55,8 +67,9 @@ def prepare_data(image_paths, labels):
 
     return x_train, y_train
 
+
 def prepare_augmented_dataset(image_paths, labels, batch_size_new):
-    #Prepare Dataset
+    # Prepare Dataset
     dataset = tf.data.Dataset.from_tensor_slices((image_paths, labels)).map(
         lambda x, y: (process_images_labels(x, y)["image"], process_images_labels(x, y)["label"]),
         num_parallel_calls=AUTOTUNE
@@ -66,11 +79,10 @@ def prepare_augmented_dataset(image_paths, labels, batch_size_new):
         tf.keras.layers.RandomContrast(0.25, seed=42),
         tf.keras.layers.RandomBrightness(0.25, value_range=(0, 1), seed=42)
     ])
-    #Apply Augmentation
+    # Apply Augmentation
     dataset = dataset.map(lambda x, y: (data_augmentation(x, training=True), y), num_parallel_calls=AUTOTUNE)
 
     # Separate image and label
     dataset = dataset.map(lambda x, y: {"image": x, "label": y}, num_parallel_calls=AUTOTUNE)
 
     return dataset.batch(batch_size_new).cache().prefetch(AUTOTUNE)
-
