@@ -1,46 +1,92 @@
+import time
 import keras
 import tensorflow as tf
 import handwriting.preprocess as preprocess
 import cv2
-from bounding_box.ressize import resize_imaged_without_expand_dim
-from bounding_box.config import YOLO_WIDTH, YOLO_HEIGHT
-import matplotlib.pyplot as plt
-from keras.models import load_model
-import os
-import pickle
-import numpy as np
-import utils.configs as cfg
-import bounding_box.config as bounding_box_config
-
+import utils.configs as Config
 from bounding_box.model import load_weight_model,predict_image,get_image_as_array, show_image 
 from bounding_box.config import NUM_CLASSES_ALL,BBOX_PATH,MAIN_BBOX_DETECTOR_MODEL,SUB_BBOX_DETECTOR_MODEL  
 from bounding_box.model import load_weight_model, predict_image,plot_image, get_templated_data, edit_sub_boxes_cut_links, edit_sub_boxes_cut_top
 from bounding_box.template import build_templating_data
 from bounding_box.ressize import scale_up
+from collections import namedtuple
+from keras.models import load_model
+from keras.layers import StringLookup
+from spellchecker import SpellChecker
+import contrast_true_or_false.contrast_tof as check_box_checker
+from PIL import Image
+import os
+import pickle
+import cv2
+import matplotlib.pyplot as plt
+import numpy as np
+import bounding_box.config as bounding_box_config
 
-bbox_model = load_weight_model(r"bounding_box/workspace/models/main_bbox_detector_model.h5",4)
-#image_path = "data_zettel/optimal_page/nathan_optimal.jpg"
-
-num_to_char = None 
+number_num_to_char = None 
+num_to_char = None
+IAM = None
+class_ids = None
 loaded_max_len = None
 max_len_num = None
-class_ids = None
-IAM = None
-number_num_to_char = None
-images_with_value = []
-pred_texts = None
- 
+
+
 def run_pipeline(image_path):
-    global num_to_char, loaded_max_len, max_len_num, class_ids, IAM, number_num_to_char, images_with_value, pred_texts
+    global number_num_to_char, num_to_char, IAM, class_ids, loaded_max_len, max_len_num
+
+    start_time = time.time()
+
+    # ## Imports
+
+    # ## Config
+
+    config_path = "utils/configs.json"
+    config = Config.Config(config_path)
+
+    # Pipeline Parameter
+    PLOTTING = config.get_pipeline_parameter()["plotting"]
+    if PLOTTING == "True":
+        PLOTTING = True
+    else:
+        PLOTTING = False
+        
+        
+    CUT_TOP = config.get_pipeline_parameter()["bb_model_cut_top"]
+    if CUT_TOP == "True":
+        CUT_TOP = True
+    else:
+        CUT_TOP = False
+
+
+    # Image Width und Height
+    IMAGE_WIDTH = config.get_model_parameter()["width"] # default: 1024
+    IMAGE_HEIGHT = config.get_model_parameter()["height"] # default: 128
+
+    # Model Auswahl
+    BB_MODEL_NO = config.get_pipeline_parameter()["bb_model"]
+    HANDWRITING_MODEL_NO = config.get_pipeline_parameter()["handwriting_model"] # 1 = IAM Trained no transfer learning
+    NUMBER_MODEL_NO = config.get_pipeline_parameter()["number_model"]
+
+
+    # ## Bounding Box
+
+    # BB Model & Image
+
+    bbox_model = load_weight_model(r"bounding_box\workspace\models\main_bbox_detector_model.h5",4)
+    #image_path = "data_zettel/optimal_page/nathan_optimal.jpg"
     original_image = cv2.imread(image_path)
+
 
     # ### Prediction
 
+
     main_boxes, confidence, classes, ratios = predict_image(image_path, bbox_model)
-    print(ratios)
-    show_image(image_path, main_boxes, confidence, classes)  
+
+    if PLOTTING:
+        show_image(image_path, main_boxes, confidence, classes)  
+
 
     # ### Templating
+
 
     org_ms_boxes_person, org_ms_boxes_wohnsitz, org_ms_boxes_ausbildung, org_ms_boxes_wwa, person_class_ids, ausbildung_class_ids, wohnsitz_class_ids, wwa_class_ids, widthOrgImag, heightOrgImag = build_templating_data()
 
@@ -49,37 +95,42 @@ def run_pipeline(image_path):
                                                                         org_ms_boxes_wwa, person_class_ids,
                                                                         ausbildung_class_ids, wohnsitz_class_ids,
                                                                         wwa_class_ids)
-    top_cut = False
-    if top_cut:
+
+    if CUT_TOP:
         ausbildung_cut, person_cut, wohnsitz_cut, wwa_cut = edit_sub_boxes_cut_top(ausbildung, person, wohnsitz, wwa)
     else:
         ausbildung_cut, person_cut, wohnsitz_cut, wwa_cut = edit_sub_boxes_cut_links(ausbildung, person, wohnsitz, wwa)
 
 
+
     # ### Scale Templating up
 
+
     ausbildung_cut_scaled, person_cut_scaled, wohnsitz_cut_scaled, wwa_cut_scaled = scale_up( ausbildung_cut, person_cut, wohnsitz_cut, wwa_cut, ratios)
+
 
     sub_boxes = ausbildung_cut_scaled[0] + person_cut_scaled[0] +  wohnsitz_cut_scaled[0] +  wwa_cut_scaled[0] 
     sub_classes = ausbildung_cut_scaled[1] + person_cut_scaled[1] + wohnsitz_cut_scaled[1] +  wwa_cut_scaled[1]
 
 
-    #plot_image(image_path, ausbildung_cut_scaled, person_cut_scaled, wohnsitz_cut_scaled, wwa_cut_scaled, best_predicted)
+    if PLOTTING:
+        plot_image(image_path, ausbildung_cut_scaled, person_cut_scaled, wohnsitz_cut_scaled, wwa_cut_scaled, best_predicted)
 
 
-    # ROI Crop
-    # Crop Metode
+    # ### ROI Crop
 
-    from collections import namedtuple
     ImageInfo = namedtuple('ImageInfo', ['image', 'sub_class','value'])
 
     # Crop ROI
 
-    ##### Import1
-
-    # def crop 
-
-    ########## Import2
+    def crop(xmin, ymin, xmax, ymax, image_path):
+        image = cv2.imread(image_path)
+        xmin = int(round(xmin))
+        ymin = int(round(ymin))
+        xmax = int(round(xmax))
+        ymax = int(round(ymax))
+        imgCropped = image[ymin:ymax, xmin:xmax]
+        return imgCropped
 
     images_info_cropped = []
     for i,box in enumerate(sub_boxes):
@@ -87,23 +138,18 @@ def run_pipeline(image_path):
         imgCropped = crop(xmin, ymin, xmax, ymax, image_path)
         image_info = ImageInfo(image=imgCropped,sub_class=sub_classes[i],value="")
         images_info_cropped.append(image_info)
-        PLOT = False
-        if PLOT:
+        if PLOTTING:
             plt.axis("off")
             plt.imshow(imgCropped)
             plt.show()
+
+
 
     # ## Handwriting Recognition
 
 
     # ### Preprocess Image
-            
-    ##### Import6
 
-    config_path = "utils/configs.json"
-    config = cfg.Config(config_path)
-    IMAGE_WIDTH = config.get_model_parameter()["width"] # default: 1024
-    IMAGE_HEIGHT = config.get_model_parameter()["height"] # default: 128
 
     img_size=(IMAGE_WIDTH, IMAGE_HEIGHT)
     preprocessed_image_infos = []
@@ -121,23 +167,20 @@ def run_pipeline(image_path):
     # ### Plot Images
 
 
-    plot_image = preprocessed_image_infos[9].image
-    plot_image = np.transpose(plot_image, (1, 0, 2))
-    plot_image = np.flipud(plot_image)
-    plt.imshow(plot_image[:, :, 0],cmap='gray')
-
-    # Show the plot
-    #plt.show()
+    if PLOTTING:   
+        plot_image = preprocessed_image_infos[0].image
+        plot_image = np.transpose(plot_image, (1, 0, 2))
+        plot_image = np.flipud(plot_image)
+        plt.imshow(plot_image[:, :, 0],cmap='gray')
+        
+        # Show the plot
+        plt.show()
 
 
     # ### Handwriting Recognition Neural Network
 
-    ######## Import3
-
-    """ import handwriting.tokenizer as tokenizer """
-
     # Load from pickle file
-    IAM = False
+    IAM = HANDWRITING_MODEL_NO == 1
     if IAM:
         with open('iam_handwriting_model_characters.pkl', 'rb') as file:
             loaded_max_len, loaded_characters = pickle.load(file)
@@ -148,24 +191,23 @@ def run_pipeline(image_path):
     with open('number_saved_max_len_char.pkl', 'rb') as file:
         max_len_num, character_num = pickle.load(file)
     # Print loaded data
+    print("Handwriting Model")
     print("Loaded max_len:", loaded_max_len)
     print("Loaded characters:", loaded_characters)
 
+    print("Number Model")
     print("Loaded number max_len:", max_len_num)
     print("Loaded number characters:", character_num)
 
-
-    from keras.layers import StringLookup
     char_to_num = StringLookup(vocabulary=list(loaded_characters), mask_token=None)
     num_to_char = StringLookup(vocabulary=char_to_num.get_vocabulary(), mask_token=None, invert=True)
 
     number_char_to_num = StringLookup(vocabulary=list(character_num), mask_token=None)
     number_num_to_char = StringLookup(vocabulary=number_char_to_num.get_vocabulary(), mask_token=None, invert=True)
 
-    ###### decode_batch_predictions()
-    ###### decode_number_pred()
-    ###### load_model_numbers()
-    ###### load_model_and_weights()
+
+
+
 
     # Neural Network Handwriting
     handwriting_model = load_model_and_weights()
@@ -177,15 +219,18 @@ def run_pipeline(image_path):
 
     # ### Spell Checker
 
-    ###### spell_checker()
         
+
+
     # ### Map Sub_Classes to String
+
     class_ids = bounding_box_config.class_ids
 
-    ###### map_sub_class_to_string_and_sort()
-    
-    images_with_value = []
     # ### Prediction
+
+
+    images_with_value = []
+    # Prediction
     for i, preprocess_image in enumerate(preprocessed_image_infos):
         temp_sub_class = preprocess_image.sub_class
         temp_sub_class_string = map_sub_class_to_string_and_sort(temp_sub_class)
@@ -201,8 +246,6 @@ def run_pipeline(image_path):
                 temp_image_info = ImageInfo(image=preprocess_image.image,sub_class=temp_sub_class_string,value=number_prediction)
                 images_with_value.append(temp_image_info)
             elif temp_sub_class_string in check_boxes_sub_classes:
-                import contrast_true_or_false.contrast_tof as check_box_checker
-                from PIL import Image
                 temp_preprocess_image = preprocess_image.image
                 temp_preprocess_image = np.transpose(temp_preprocess_image, (1, 0, 2))
                 temp_preprocess_image = np.flipud(temp_preprocess_image)
@@ -212,7 +255,7 @@ def run_pipeline(image_path):
                 image_array_uint8 = (numpy_array * 255).astype(np.uint8)
                 pil_image = Image.fromarray(image_array_uint8)
                 if temp_sub_class_string != "Person_Kinder":
-                    result = check_box_checker.is_checkbox_checked(pil_image, False) ###### PLOTTING = FALSE 
+                    result = check_box_checker.is_checkbox_checked(pil_image, PLOTTING)
                 else:
                     img_without_channel = np.squeeze(image_array_uint8)
                     
@@ -229,40 +272,34 @@ def run_pipeline(image_path):
                 prediction_text = spell_checker(selected_pred_text)
                 temp_image_info = ImageInfo(image=preprocess_image.image,sub_class=temp_sub_class_string,value=prediction_text)
                 images_with_value.append(temp_image_info)
+            
 
 
-    # # Plot Predicted Text and Image
-
-    ###### plot_evaluation
-
-    plot_evaluation(images_with_value)
+    # # Plot Predicted Text and Image    
 
 
-# ## Bounding Box
+    if PLOTTING:
+        plot_evaluation(images_with_value)
+    else:
+        for image in images_with_value:
+            print(f"{image.sub_class} - {image.value}")
 
 
-# ### Bounding Box Modell
+    # ### Time
 
 
-# ## Show Image Real Image
+    print(time.time() - start_time)
 
-######################### Methoden 
+
+##################### METHODEN 
 
 def crop(xmin, ymin, xmax, ymax, image_path):
     image = cv2.imread(image_path)
-    #image = resize_imaged_without_expand_dim(image, YOLO_WIDTH, YOLO_HEIGHT)
     xmin = int(round(xmin))
     ymin = int(round(ymin))
     xmax = int(round(xmax))
     ymax = int(round(ymax))
-    # width = int(round(width))
-    # height = int(round(height))
-    # rowBeg = y
-    # rowEnd = y + height
-    # columnBeg = x
-    # columnEnd = x + width
     imgCropped = image[ymin:ymax, xmin:xmax]
-    print(imgCropped.shape)
     return imgCropped
 
 def decode_batch_predictions(pred):
@@ -286,7 +323,7 @@ def decode_number_pred(pred):
     return output_text
 
 def load_model_numbers():
-    model_weight_path = "models/only_numbers/transferlearningTestingModel_weights.keras"
+    model_weight_path = "models/only_numbers/only_numbers_weights.keras"
     model_path = "models/only_numbers/"
     print(model_path)
     if os.path.exists(model_path):
@@ -322,7 +359,6 @@ def load_model_and_weights():
         return None
 
 def spell_checker(text):
-    from spellchecker import SpellChecker
     spell = SpellChecker(language='de')
     words = [word for word in text.split(" ") if word != '']
     #Spellchecker
@@ -365,12 +401,4 @@ def plot_evaluation(images, rows=5, cols=None):
     plt.tight_layout()  # Adjust subplot parameters for better layout
     plt.show()
 
-# API Method
-def get_images_with_value():
-    return images_with_value
-
-# API Method
-def get_pred_texts():
-    return pred_texts
-
-######################### Methoden 
+############################# Methoden ENDE
