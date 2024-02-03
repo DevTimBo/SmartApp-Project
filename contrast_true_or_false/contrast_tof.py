@@ -37,18 +37,18 @@ def detect_and_plot_bounding_boxes(image, keywords):
             x, y, w, h = map(int, (parts[1], parts[2], parts[3], parts[4]))
 
             # Draw the bounding box on the original image
-            #draw.rectangle([x, image.height - (y + h), x + w, image.height - y], outline="red", width=2)
+            #draw.rectangle([x, pil_image.height - (y + h), x + w, pil_image.height - y], outline="red", width=2)
 
             # Crop the image based on the bounding box
-            cropped_image_ja = image.crop((0, 0, x + 20, image.height))
-            cropped_image_nein = image.crop((x + 20, 0, image.width, image.height))
+            cropped_image_ja = pil_image.crop((0, 0, x + 20, pil_image.height))
+            cropped_image_nein = pil_image.crop((x + 20, 0, pil_image.width, pil_image.height))
 
             # Append the cropped image to the list
             cropped_images.append(cropped_image_ja)
             cropped_images.append(cropped_image_nein)
     if plotting:
         # Plot the original image with bounding boxes
-        plt.imshow(image)
+        plt.imshow(pil_image)
         plt.title("Original Image with Bounding Boxes")
         plt.show()
 
