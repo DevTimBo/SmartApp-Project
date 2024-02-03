@@ -198,13 +198,12 @@ def is_checkbox_checked_nur_ja(image):
     
     return checkbox_result
 
-def is_checkbox_checked_template(checkbox_image_path, template_path = 'contrast_true_or_false/templatebox1.png'):
-    # Load images
-    checkbox_image = cv2.imread(checkbox_image_path)
-    template = cv2.imread(template_path)
-
+def is_checkbox_checked_template(checkbox_image):
     # Resize images
     checkbox_image = cv2.resize(checkbox_image, (512, 128))
+    
+    template_path = 'contrast_true_or_false/templatebox1.png'
+    template = cv2.imread(template_path)
     template = cv2.resize(template, (100, 100))
 
     # Convert images to grayscale
@@ -252,8 +251,9 @@ def is_checkbox_checked_template(checkbox_image_path, template_path = 'contrast_
 '''
 # Example usage single checkbox
 checkbox_image_path = 'contrast_true_or_false/ja_unchecked_middle.png'
-template_path = 'contrast_true_or_false/templatebox1.png'
-result = is_checkbox_checked_template(checkbox_image_path, template_path)
+# Load images
+checkbox_image = cv2.imread(checkbox_image_path)
+result = is_checkbox_checked_template(checkbox_image)
 print(f"The checkbox is: {result}")
 
 
