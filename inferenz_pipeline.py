@@ -183,18 +183,15 @@ def run_pipeline(image_path):
     class_ids = bounding_box_config.class_ids
 
     ###### map_sub_class_to_string_and_sort()
-            
-    # ### Prediction
-
-
+    
     images_with_value = []
-    # Prediction
+    # ### Prediction
     for i, preprocess_image in enumerate(preprocessed_image_infos):
         temp_sub_class = preprocess_image.sub_class
         temp_sub_class_string = map_sub_class_to_string_and_sort(temp_sub_class)
         number_sub_classes = ['Wohnsitz_waehrend_Ausbildung_Hausnummer','Wohnsitz_waehrend_Ausbildung_Postleitzahl','Wohnsitz_Hausnummer',
                             'Wohnsitz_Postleitzahl','Person_Geburtsdatum','Person_Familienstand_seit','Ausbildung_Foerderungsnummer']
-        check_boxes_sub_classes =['Ausbildung_Antrag_gestellt_ja','Ausbildung_Vollzeit','Person_Kinder'] # hier fehlen noch welche sind aber noch nicht im templating
+        check_boxes_sub_classes =['Ausbildung_Antrag_gestellt_ja','Ausbildung_Vollzeit','Person_Kinder'] 
         
         if temp_sub_class_string != -1:
             if temp_sub_class_string in number_sub_classes:
@@ -206,14 +203,22 @@ def run_pipeline(image_path):
             elif temp_sub_class_string in check_boxes_sub_classes:
                 import contrast_true_or_false.contrast_tof as check_box_checker
                 from PIL import Image
-                numpy_array = preprocess_image.image.numpy()
+                temp_preprocess_image = preprocess_image.image
+                temp_preprocess_image = np.transpose(temp_preprocess_image, (1, 0, 2))
+                temp_preprocess_image = np.flipud(temp_preprocess_image)
+                numpy_array = np.array(temp_preprocess_image)
                 numpy_array = numpy_array.squeeze()
                 numpy_array = np.clip(numpy_array, 0.0, 1.0)
                 image_array_uint8 = (numpy_array * 255).astype(np.uint8)
                 pil_image = Image.fromarray(image_array_uint8)
-                result = check_box_checker.is_checkbox_checked(pil_image)
-                
-                
+                if temp_sub_class_string != "Person_Kinder":
+                    result = check_box_checker.is_checkbox_checked(pil_image, False) ###### PLOTTING = FALSE 
+                else:
+                    img_without_channel = np.squeeze(image_array_uint8)
+                    
+                    img_3_channels = cv2.merge([img_without_channel,img_without_channel,img_without_channel])
+                    
+                    result = check_box_checker.is_checkbox_checked_template(img_3_channels)
                 temp_image_info = ImageInfo(image=preprocess_image.image,sub_class=temp_sub_class_string,value=result)
                 images_with_value.append(temp_image_info)
             else:
@@ -224,7 +229,7 @@ def run_pipeline(image_path):
                 prediction_text = spell_checker(selected_pred_text)
                 temp_image_info = ImageInfo(image=preprocess_image.image,sub_class=temp_sub_class_string,value=prediction_text)
                 images_with_value.append(temp_image_info)
-            
+
 
     # # Plot Predicted Text and Image
 
