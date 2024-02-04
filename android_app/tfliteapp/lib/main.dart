@@ -14,7 +14,7 @@ import 'package:flutter_pdfview/flutter_pdfview.dart';
 //Modified
 
 String _classifications = "try again";
-File? _image;
+String? _image;
 
 Future<void> main() async {
   // Ensure that plugin services are initialized so that `availableCameras()`
@@ -179,9 +179,9 @@ class DisplayPictureScreen extends StatelessWidget {
       // constructor with the given path to display the image.
       //body: Image.file(File(imagePath)),
       body: PDFView(
-        filePath: _image!.path.toString(),
+        filePath: _image,
       ),
-      floatingActionButton: FloatingActionButton(
+      /* floatingActionButton: FloatingActionButton(
         // Provide an onPressed callback.
         onPressed: () async {
           // Take the Picture in a try / catch block. If anything goes wrong,
@@ -210,7 +210,7 @@ class DisplayPictureScreen extends StatelessWidget {
           }
         },
         child: const Icon(Icons.camera_alt),
-      ),
+      ), */
     );
   }
 }

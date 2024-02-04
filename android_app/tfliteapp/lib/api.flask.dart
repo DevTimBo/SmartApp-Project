@@ -1,8 +1,10 @@
 import 'dart:convert';
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:camera/camera.dart';
 import 'package:http/http.dart' as http;
+import 'package:path_provider/path_provider.dart';
 
 var fileName = "";
 
@@ -49,18 +51,13 @@ Future getData() async {
 }
 
 Future getPredictionPDF() async {
-  File file = new File("output.pdf");
+  var dir = await getApplicationDocumentsDirectory();
+  File file = new File("${dir.path}/output.pdf");
 
   var url = 'http://10.0.2.2:5000/get-predictions';
   var uri = Uri.parse(url);
 
-  try {
-    await http.get(uri, headers: {"Content-Type": "application/json"}).then(
-        (response) async {
-      await file.writeAsBytes(response.bodyBytes);
-    });
-  } catch (Exception) {
-    print(Exception.toString());
-  }
-  return file;
+  var response = await http.get(uri);
+  file.writeAsBytesSync(response.bodyBytes, flush: true);
+  return file.path;
 }
