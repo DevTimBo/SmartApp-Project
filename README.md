@@ -12,7 +12,7 @@ TIP: OpenCV-v2 is at the moment enough to run this project.
 
 ## Run the Pipeline/App
 
-### There are two options to run the Pipeline:
+### There are three options to run the Pipeline:
 
 #### 1. Pipeline:
 
@@ -25,3 +25,6 @@ Noch nicht implementiert ???
 #### 2. App (Android):
 
 If you go into the folder "tfliteapp" you will find an flutter Repository with it's own ReadMe you will find further instructions there. 
+
+#### 3. App (Raspberry Pi):
+In the folder "Raspberry_Pi," you will find additional information along with its own ReadMe file.
