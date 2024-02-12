@@ -5,8 +5,12 @@ import numpy as np
 import pytesseract
 
 # Path to the Tesseract executable
+# Windows:
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-plotting = True
+# Linux:
+#pytesseract.pytesseract.tesseract_cmd = r'/usr/bin/tesseract'
+
+plotting = False
 def detect_and_plot_bounding_boxes(image, keywords):
     # Convert the image to a numpy array
     image = np.array(image)

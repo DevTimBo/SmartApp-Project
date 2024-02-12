@@ -1,16 +1,13 @@
+// author Emil Hillebrand
 import 'dart:async';
 import 'dart:io';
-
 import 'package:camera/camera.dart';
 import 'package:daemmungsapp/api.flask.dart';
-import 'package:document_file_save_plus/document_file_save_plus.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:tflite_v2/tflite_v2.dart';
+// import 'package:tflite_v2/tflite_v2.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
 
-//mostly from: https://docs.flutter.dev/cookbook/plugins/picture-using-camera
+//camera view parts from: https://docs.flutter.dev/cookbook/plugins/picture-using-camera
 //Modified
 
 String _classifications = "try again";
@@ -81,11 +78,13 @@ class TakePictureScreenState extends State<TakePictureScreen> {
   }
 
   _loadModel() async {
-    await Tflite.loadModel(
-        model: 'assets/faceId.tflite', labels: 'assets/labels.txt');
+    // for the tfLite prototype
+    //await Tflite.loadModel(
+    //    model: 'assets/faceId.tflite', labels: 'assets/labels.txt');
   }
 
   _predict(File image) async {
+    // for the tfLite model now used for the API call
     // final output = await Tflite.runModelOnImage(
     //   path: image?.path ?? "",
     //   threshold: 0.8,
@@ -94,14 +93,17 @@ class TakePictureScreenState extends State<TakePictureScreen> {
     //   imageStd: 127.5,
     // );
 
+    //Call the functions for the API call
     final isImageSend = await data(image);
     final prediction = await getPredictionPDF();
 
+    //checking if everything worked smoothly
     if (isImageSend == "Files successfully uploaded") {
       setState(() {
         _classifications = "Bafoeg Prediction:";
         _image = prediction;
       });
+      // sets the error directly to the title of the Shown ImageScreen
     } else {
       setState(() {
         _classifications = isImageSend.toString();
@@ -165,7 +167,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
   }
 }
 
-// A widget that displays the picture taken by the user.
+// A widget that displays the PDF taken by the user.
 class DisplayPictureScreen extends StatelessWidget {
   final String imagePath;
 
@@ -175,42 +177,10 @@ class DisplayPictureScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(_classifications)),
-      // The image is stored as a file on the device. Use the `Image.file`
-      // constructor with the given path to display the image.
-      //body: Image.file(File(imagePath)),
+      // the PDF is stored on the Device. We now use the PDFView to display the PDF
       body: PDFView(
         filePath: _image,
       ),
-      /* floatingActionButton: FloatingActionButton(
-        // Provide an onPressed callback.
-        onPressed: () async {
-          // Take the Picture in a try / catch block. If anything goes wrong,
-          // catch the error.
-          try {
-            final directory = await getExternalStorageDirectory();
-            final file = File("${directory?.path}/example.pdf");
-
-            final pdfBytes = await _image!.save();
-            await _image!.;
-
-            DocumentFileSavePlus().saveMultipleFiles(
-              dataList: [
-                pdfBytes,
-              ],
-              fileNameList: [
-                "example.pdf",
-              ],
-              mimeTypeList: [
-                "example/pdf",
-              ],
-            );
-          } catch (e) {
-            // If an error occurs, log the error to the console.
-            print(e);
-          }
-        },
-        child: const Icon(Icons.camera_alt),
-      ), */
     );
   }
 }
