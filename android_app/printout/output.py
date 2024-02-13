@@ -1,3 +1,6 @@
+# Author: Jason Pranata
+# Final Version: 13 February 2023
+
 import PyPDF2
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
