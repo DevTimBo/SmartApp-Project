@@ -10,8 +10,7 @@ handwriting/data/lines
 data_zettel/cropped_images
 # Plots
 handwriting/test_results
-# Models
-handwriting/models
+test_results
 # Model
 arch
 handwriting/best_model.h5
@@ -165,4 +164,3 @@ cython_debug/
 #.idea/
 .idea
 handwriting/mainTest.ipynb
-
