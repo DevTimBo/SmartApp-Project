@@ -1,3 +1,6 @@
+# Authors: Tim Harmling and Alexej Kravtschenko
+# Simple config for the project which uses the coresponding file "configs.json"
+
 import json
 
 
