@@ -1,3 +1,7 @@
+# Author: Jason Pranata
+# Co-Author: Tim Harmling
+# Final Version: 13 February 2023
+
 from PIL import Image, ImageOps, ImageDraw
 import matplotlib.pyplot as plt
 import cv2
@@ -7,6 +11,7 @@ import pytesseract
 # Path to the Tesseract executable
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 plotting = True
+
 def detect_and_plot_bounding_boxes(image, keywords):
     # Convert the image to a numpy array
     image = np.array(image)
@@ -37,7 +42,7 @@ def detect_and_plot_bounding_boxes(image, keywords):
             x, y, w, h = map(int, (parts[1], parts[2], parts[3], parts[4]))
 
             # Draw the bounding box on the original image
-            #draw.rectangle([x, pil_image.height - (y + h), x + w, pil_image.height - y], outline="red", width=2)
+            draw.rectangle([x, pil_image.height - (y + h), x + w, pil_image.height - y], outline="red", width=2)
 
             # Crop the image based on the bounding box
             cropped_image_ja = pil_image.crop((0, 0, x + 20, pil_image.height))
@@ -76,7 +81,7 @@ def preprocess_image(image):
     # Invert the image
     inverted_image = ImageOps.invert(binary_image)
 
-    # Dilation to make the text thicc
+    # Dilation to make the texts and cross thicker
     kernel = np.ones((3, 3), np.uint8)
     dilated_image = cv2.dilate(np.array(inverted_image), kernel, iterations=1)
     
@@ -85,49 +90,20 @@ def preprocess_image(image):
 
     return dilated_image
 
+# The main function to check if the checkbox is checked, used for the pipeline
 def is_checkbox_checked(image, PLOTTING):
     global plotting
     plotting = PLOTTING
-
-    keywords = ['a']
-    ja_image, nein_image = detect_and_plot_bounding_boxes(image, keywords)
-    if ja_image != None and nein_image != None:
-        ja_image = preprocess_image(ja_image)
-        nein_image = preprocess_image(nein_image)
-    #Exception handling basically    
-    else:
-        processed_image = preprocess_image(image)
-        width, height = processed_image.size
-        # Define the ja and nein regions 
-        ja_region = (0, 0, width // 2, height)
-        nein_region = (width // 2, 0, width, height)
-
-        # Crop the image to get the regions
-        ja_image = processed_image.crop(ja_region)
-        nein_image = processed_image.crop(nein_region)
-
-    # Count the black pixels in the cropped regions
-    ja_x_count = ja_image.tobytes().count(b'\x00')
-    nein_x_count = nein_image.tobytes().count(b'\x00')
-    print(f"Ja X Count: {ja_x_count}", f"Nein X Count: {nein_x_count}")
-
-    # Determine the result based on which one has more black pixels
-    if ja_x_count > nein_x_count:
-        checkbox_result = "Nein"
-    elif nein_x_count > ja_x_count:
-        checkbox_result = "Ja"
-    else:
-        checkbox_result = "Unknown"
     
-    return checkbox_result
-
-def is_checkbox_checked_with_plot(image):    
+    # Define the keywords for ocr to look for
     keywords = ['a']
+    #Run the other functions
     ja_image, nein_image = detect_and_plot_bounding_boxes(image, keywords)
     if ja_image != None and nein_image != None:
         ja_image = preprocess_image(ja_image)
         nein_image = preprocess_image(nein_image)
-    #Exception handling basically    
+        
+    #Exception handling basically if the OCR fails
     else:
         processed_image = preprocess_image(image)
         width, height = processed_image.size
@@ -138,6 +114,7 @@ def is_checkbox_checked_with_plot(image):
         # Crop the image to get the regions
         ja_image = processed_image.crop(ja_region)
         nein_image = processed_image.crop(nein_region)
+
     if plotting:
         # Plot the processed image and the cropped regions
         plt.figure(figsize=(12, 4))
@@ -166,33 +143,6 @@ def is_checkbox_checked_with_plot(image):
         checkbox_result = "Nein"
     elif nein_x_count > ja_x_count:
         checkbox_result = "Ja"
-    else:
-        checkbox_result = "Unknown"
-    
-    return checkbox_result
-
-def is_checkbox_checked_nur_ja(image):
-    # Preprocess
-    processed_image = preprocess_image(image)
-    if plotting:
-        # Plot the processed image and the cropped regions
-        plt.figure(figsize=(12, 4))
-
-        plt.subplot(1, 3, 1)
-        plt.imshow(processed_image, cmap="gray")
-        plt.title("Processed Image")
-
-        plt.show()
-    
-    checked_count = processed_image.tobytes().count(b'\x00')
-    print(f"Checked Count: {checked_count}")
-    
-    # Determine the result based on threshold of black pixels
-    threshold = 1300
-    if checked_count > threshold:
-        checkbox_result = "Ja"
-    elif threshold > checked_count:
-        checkbox_result = "Nein"
     else:
         checkbox_result = "Unknown"
     
@@ -250,8 +200,7 @@ def is_checkbox_checked_template(checkbox_image):
     # Return the result
     return checkbox_checked
 
-'''
-# Example usage single checkbox
+# Example usage for single checkbox
 checkbox_image_path = 'contrast_true_or_false/ja_unchecked_middle.png'
 # Load images
 checkbox_image = cv2.imread(checkbox_image_path)
@@ -259,10 +208,9 @@ result = is_checkbox_checked_template(checkbox_image)
 print(f"The checkbox is: {result}")
 
 
-# Example usage tof
+# Example usage for tof/multiple checkboxes
 image_path = 'contrast_true_or_false\cropped2.png'
 # Load the image
 image = Image.open(image_path)
-result = is_checkbox_checked_with_plot(image)
+result = is_checkbox_checked(image, True)
 print(f"The checkbox is checked for: {result}")
-'''
