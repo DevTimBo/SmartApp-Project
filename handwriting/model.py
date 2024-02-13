@@ -1,3 +1,7 @@
+# Authors: Alexej Kravtschenko
+# CoAuthors: Tim Harmling
+
+
 # Model
 import tensorflow as tf
 from tensorflow import keras
