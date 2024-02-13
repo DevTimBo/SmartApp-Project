@@ -1,3 +1,9 @@
+# Authors: Tim Harmling
+# File contains the tokenize function to convert the labels into a format that the model can understand
+#
+# Can be used for both the IAM dataset and the transfer learning dataset
+# but the right load_data or load_transfer_data file has to be imported
+
 from keras.layers import StringLookup
 import tensorflow as tf
 

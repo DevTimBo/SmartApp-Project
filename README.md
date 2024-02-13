@@ -14,17 +14,28 @@ TIP: OpenCV-v2 is at the moment enough to run this project.
 
 ### There are three options to run the Pipeline:
 
-#### 1. Pipeline:
+#### 1. Inferenz Pipeline Notebook:
 
-You can run the Pipeline by executing "pipeline.py" with your favorite python installation.
-
-Pro-Tip: You can also specify parameters. you get a help how to do this with "pipeline.py --help"
-
-Noch nicht implementiert ???
-
+- You have to pip install the requirements.txt file and then you can run the notebook. 
+- The notebook is called "inferenz_Pipeline.ipynb"
 #### 2. App (Android):
 
 If you go into the folder "tfliteapp" you will find an flutter Repository with it's own ReadMe you will find further instructions there. 
 
 #### 3. App (Raspberry Pi):
 In the folder "Raspberry_Pi," you will find additional information along with its own ReadMe file.
+
+### How to use the Handwriting Training Notebooks
+#### IAM Training Notebook:
+- The IAM Training Notebook is used to train the model on the IAM dataset.
+- handwriting_training.ipynb is the notebook to train the model on the IAM dataset.
+- The IAM Dataset needs to be downloaded from the official website and the path to the dataset needs to be changed in the notebook.
+- https://fki.tic.heia-fr.ch/databases/iam-handwriting-database
+- You will need a account to download the dataset.
+- We only use the lines part of the dataset.
+#### Transfer Training Notebook:
+- The Transfer Training Notebook is used to train the model our Bafoeg dataset containing the 1st page
+- transfer_learning.ipynb is the notebook to train the model on the Bafoeg dataset.
+- the dataset is in data_zettel/filled_resized (images) and data_zettel/Annotations (xml files with the annotations)
+- with this you can create a dataset for the transfer learning notebook with the help of the "dataset_creator.ipynb" notebook
+you can use the datasets provided in cropped images just unzip the specific zip so the images and txt files are in the cropped images folder

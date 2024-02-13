@@ -1,3 +1,7 @@
+# Authors: Tim Harmling
+# File Contains functions to preprocess the image for handwriting models
+
+
 import tensorflow as tf
 
 

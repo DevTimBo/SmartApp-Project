@@ -1,3 +1,9 @@
+# Authors: Tim Harmling and Alexej Kravtschenko
+# Loads in the data from the IAM Dataset Path where
+# the data is stored can be changed in the config file usually its located in /data/
+
+
+
 import numpy as np
 import os
 import tensorflow as tf
