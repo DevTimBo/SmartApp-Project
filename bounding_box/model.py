@@ -1,3 +1,4 @@
+#Autoren Tristan und Alireza
 import keras_cv
 import tensorflow as tf
 import numpy as np
