@@ -1,6 +1,6 @@
 # Autor: Hadi El-Sabbagh 
-# Beschreibung: Erstellung einer Methode aus der inferenz_pipeline.ipynb. Die Methode ist essentiell für die API 
-# und wird auch für den raspberry pi verwendet 
+# Beschreibung: Erstellung einer einzigen Methode aus der inferenz_pipeline.ipynb. Die Methode ist essentiell 
+# für die API und wird auch für den raspberry pi verwendet 
 
 import time
 import keras

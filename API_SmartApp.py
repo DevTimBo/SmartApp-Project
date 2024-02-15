@@ -1,5 +1,7 @@
 # Autor: Hadi El-Sabbagh 
 # Beschreibung: Die API, die als Schnittstelle für die Inferenzpipeline dient
+# Input wird als "page.jpg" gespeichert 
+# Output wird im PDF_output Order gespeichert 
 
 from inferenz_pipeline import run_pipeline
 from inferenz_pipeline import get_images_with_value
