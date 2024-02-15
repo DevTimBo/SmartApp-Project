@@ -1,5 +1,6 @@
 # Author: Jason Pranata
 # Final Version: 13 February 2023
+# Description: Custom image generator for handwritten text recognition model
 
 import numpy as np
 from keras.preprocessing.image import ImageDataGenerator

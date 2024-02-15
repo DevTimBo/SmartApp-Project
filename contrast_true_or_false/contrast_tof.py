@@ -1,6 +1,8 @@
 # Author: Jason Pranata
 # Co-Author: Tim Harmling
 # Final Version: 13 February 2023
+# Description: Takes input images and checks which checkbox is checked, for multiple checkboxes
+# As well as the template matching to see if the checkbox is checked, for single checkboxes
 
 from PIL import Image, ImageOps, ImageDraw
 import matplotlib.pyplot as plt
