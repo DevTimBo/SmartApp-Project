@@ -1,3 +1,6 @@
+# Autor: Hadi El-Sabbagh 
+# Beschreibung: Erstellung einer Methode aus der inferenz_pipeline.ipynb
+
 import time
 import keras
 import tensorflow as tf
@@ -31,7 +34,7 @@ max_len_num = None
 images_with_value = None
 pred_texts = None
 
-
+# Mit dieser Methode kann man die Inferenzpipeline nutzen
 def run_pipeline(image_path):
     global number_num_to_char, num_to_char, IAM, class_ids, loaded_max_len, max_len_num, images_with_value, pred_texts
 

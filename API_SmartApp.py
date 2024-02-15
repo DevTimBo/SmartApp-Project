@@ -1,4 +1,5 @@
-# TODO den Plot Part kann man cutten
+# Autor: Hadi El-Sabbagh 
+# Beschreibung: Die API, die als Schnittstelle für die Inferenzpipeline dient
 
 from inferenz_pipeline import run_pipeline
 from inferenz_pipeline import get_images_with_value

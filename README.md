@@ -25,3 +25,7 @@ Noch nicht implementiert ???
 #### 2. App (Android):
 
 If you go into the folder "tfliteapp" you will find an flutter Repository with it's own ReadMe you will find further instructions there. 
+
+#### 3. API: 
+
+The API_SmartAPP.py serves as an interface for the pipeline. The input can be found in the "API" folder under "images". The input is saved as "page.jpg". To test the API as a single module, it is recommended to use Postman.
