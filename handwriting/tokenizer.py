@@ -11,23 +11,16 @@ import numpy as np
 
 AUTOTUNE = tf.data.AUTOTUNE
 
-# # Load Data Transfer
+# Load Data Transfer
 import handwriting.load_transfer_data as load_transfer_data
-
 max_len = load_transfer_data.max_len
-# Mapping characters to integers.
 char_to_num = StringLookup(vocabulary=list(load_transfer_data.characters), mask_token=None)
-
-# Mapping integers back to original characters.
 num_to_char = StringLookup(vocabulary=char_to_num.get_vocabulary(), mask_token=None, invert=True)
 
 # # Load Data normal
 #import handwriting.load_data as load_data
 #max_len = load_data.max_len
-# # Mapping characters to integers.
-#char_to_num = StringLookup(vocabulary=list(load_data.characters), mask_token=None)
-#
-# # Mapping integers back to original characters.
+#char_to_num = StringLookup(vocabulary=list(load_data.characters), mask_token=None
 #num_to_char = StringLookup(vocabulary=char_to_num.get_vocabulary(), mask_token=None, invert=True)
 
 img_size = (512, 32)  # default gets overwritten by config
