@@ -11,7 +11,7 @@ tf.random.set_seed(42)
 
 characters = set()
 max_len = 0
-base_path = "data"  # gets overwritten by config
+base_path = "./data"  # gets overwritten by config
 base_image_path = os.path.join(base_path, "lines")
 
 

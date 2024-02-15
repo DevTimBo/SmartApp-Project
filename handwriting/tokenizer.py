@@ -6,17 +6,14 @@
 
 from keras.layers import StringLookup
 import tensorflow as tf
-
-
 import handwriting.preprocess as preprocess
-# import preprocess as preprocess
-
 import numpy as np
 
 AUTOTUNE = tf.data.AUTOTUNE
 
 # # Load Data Transfer
 import handwriting.load_transfer_data as load_transfer_data
+
 max_len = load_transfer_data.max_len
 # Mapping characters to integers.
 char_to_num = StringLookup(vocabulary=list(load_transfer_data.characters), mask_token=None)
@@ -24,15 +21,14 @@ char_to_num = StringLookup(vocabulary=list(load_transfer_data.characters), mask_
 # Mapping integers back to original characters.
 num_to_char = StringLookup(vocabulary=char_to_num.get_vocabulary(), mask_token=None, invert=True)
 
-
 # # Load Data normal
-# import load_data
-# max_len = load_data.max_len
+#import handwriting.load_data as load_data
+#max_len = load_data.max_len
 # # Mapping characters to integers.
-# char_to_num = StringLookup(vocabulary=list(load_data.characters), mask_token=None)
+#char_to_num = StringLookup(vocabulary=list(load_data.characters), mask_token=None)
 #
 # # Mapping integers back to original characters.
-# num_to_char = StringLookup(vocabulary=char_to_num.get_vocabulary(), mask_token=None, invert=True)
+#num_to_char = StringLookup(vocabulary=char_to_num.get_vocabulary(), mask_token=None, invert=True)
 
 img_size = (512, 32)  # default gets overwritten by config
 batch_size = 64  # default gets overwritten by config
