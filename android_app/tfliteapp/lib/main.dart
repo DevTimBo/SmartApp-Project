@@ -1,44 +1,37 @@
+// author Emil Hillebrand
 import 'dart:async';
 import 'dart:io';
-
 import 'package:camera/camera.dart';
 import 'package:daemmungsapp/api.flask.dart';
-import 'package:document_file_save_plus/document_file_save_plus.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:tflite_v2/tflite_v2.dart';
+// import 'package:tflite_v2/tflite_v2.dart';
 import 'package:flutter_pdfview/flutter_pdfview.dart';
 
-//mostly from: https://docs.flutter.dev/cookbook/plugins/picture-using-camera
+//inspired by: https://docs.flutter.dev/cookbook/plugins/picture-using-camera
 //Modified
 
 String _classifications = "try again";
-File? _image;
+String? _image;
 
 Future<void> main() async {
-  // Ensure that plugin services are initialized so that `availableCameras()`
-  // can be called before `runApp()`
   WidgetsFlutterBinding.ensureInitialized();
-
-  // Obtain a list of the available cameras on the device.
+  // get available Cameras
   final cameras = await availableCameras();
 
-  // Get a specific camera from the list of available cameras.
+  // Get a first Camera (experience. back Camera)
   final firstCamera = cameras.first;
 
   runApp(
     MaterialApp(
       theme: ThemeData.dark(),
       home: TakePictureScreen(
-        // Pass the appropriate camera to the TakePictureScreen widget.
         camera: firstCamera,
       ),
     ),
   );
 }
 
-// A screen that allows users to take a picture using a given camera.
+// screen to preview and take pictures
 class TakePictureScreen extends StatefulWidget {
   const TakePictureScreen({
     super.key,
@@ -58,34 +51,36 @@ class TakePictureScreenState extends State<TakePictureScreen> {
   @override
   void initState() {
     super.initState();
-    //load tfLiteModel
-    _loadModel().then((_) {});
+    //load tfLiteModel (not used old functions for TFLite functionality)
+    //_loadModel().then((_) {});
     // To display the current output from the Camera,
-    // create a CameraController.
+    // create the CameraController.
     _controller = CameraController(
-      // Get a specific camera from the list of available cameras.
+      // Get the choosen camera
       widget.camera,
-      // Define the resolution to use.
+      // resolution of Camera
       ResolutionPreset.medium,
     );
 
-    // Next, initialize the controller. This returns a Future.
+    // initialize controller
     _initializeControllerFuture = _controller.initialize();
   }
 
   @override
   void dispose() {
-    // Dispose of the controller when the widget is disposed.
     _controller.dispose();
     super.dispose();
   }
 
-  _loadModel() async {
-    await Tflite.loadModel(
-        model: 'assets/faceId.tflite', labels: 'assets/labels.txt');
-  }
+  // old function used for TFLite
+  //_loadModel() async {
+  // for the tfLite prototype
+  //await Tflite.loadModel(
+  //    model: 'assets/faceId.tflite', labels: 'assets/labels.txt');
+  //}
 
   _predict(File image) async {
+    // for the tfLite model now used for the API call
     // final output = await Tflite.runModelOnImage(
     //   path: image?.path ?? "",
     //   threshold: 0.8,
@@ -94,14 +89,17 @@ class TakePictureScreenState extends State<TakePictureScreen> {
     //   imageStd: 127.5,
     // );
 
+    //Call the functions for the API call
     final isImageSend = await data(image);
     final prediction = await getPredictionPDF();
 
+    //checking if everything worked smoothly
     if (isImageSend == "Files successfully uploaded") {
       setState(() {
         _classifications = "Bafoeg Prediction:";
         _image = prediction;
       });
+      // sets the error directly to the title of the Shown ImageScreen
     } else {
       setState(() {
         _classifications = isImageSend.toString();
@@ -113,49 +111,40 @@ class TakePictureScreenState extends State<TakePictureScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Take a picture')),
-      // You must wait until the controller is initialized before displaying the
-      // camera preview. Use a FutureBuilder to display a loading spinner until the
-      // controller has finished initializing.
       body: FutureBuilder<void>(
         future: _initializeControllerFuture,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            // If the Future is complete, display the preview.
+            // show preview
             return CameraPreview(_controller);
           } else {
-            // Otherwise, display a loading indicator.
+            // show loading
             return const Center(child: CircularProgressIndicator());
           }
         },
       ),
+      // button for taking picture
       floatingActionButton: FloatingActionButton(
-        // Provide an onPressed callback.
         onPressed: () async {
-          // Take the Picture in a try / catch block. If anything goes wrong,
-          // catch the error.
+          // taking the picture
           try {
-            // Ensure that the camera is initialized.
             await _initializeControllerFuture;
 
-            // Attempt to take a picture and get the file `image`
-            // where it was saved.
             final image = await _controller.takePicture();
             final imageAsFile = File(image.path);
+            // send and get the prediction from the API
             await _predict(imageAsFile);
             if (!mounted) return;
-
-            // If the picture was taken, display it on a new screen.
+            // Displaying the PDF on new screen
             await Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (context) => DisplayPictureScreen(
-                  // Pass the automatically generated path to
-                  // the DisplayPictureScreen widget.
+                builder: (context) => DisplayPDFScreen(
                   imagePath: image.path,
                 ),
               ),
             );
           } catch (e) {
-            // If an error occurs, log the error to the console.
+            // error gets logged
             print(e);
           }
         },
@@ -165,51 +154,19 @@ class TakePictureScreenState extends State<TakePictureScreen> {
   }
 }
 
-// A widget that displays the picture taken by the user.
-class DisplayPictureScreen extends StatelessWidget {
+// A widget that displays the PDF taken by the user.
+class DisplayPDFScreen extends StatelessWidget {
   final String imagePath;
 
-  const DisplayPictureScreen({super.key, required this.imagePath});
+  const DisplayPDFScreen({super.key, required this.imagePath});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(_classifications)),
-      // The image is stored as a file on the device. Use the `Image.file`
-      // constructor with the given path to display the image.
-      //body: Image.file(File(imagePath)),
+      // the PDF is stored on the Device. We now use the PDFView to display the PDF
       body: PDFView(
-        filePath: _image!.path.toString(),
-      ),
-      floatingActionButton: FloatingActionButton(
-        // Provide an onPressed callback.
-        onPressed: () async {
-          // Take the Picture in a try / catch block. If anything goes wrong,
-          // catch the error.
-          try {
-            final directory = await getExternalStorageDirectory();
-            final file = File("${directory?.path}/example.pdf");
-
-            final pdfBytes = await _image!.save();
-            await _image!.;
-
-            DocumentFileSavePlus().saveMultipleFiles(
-              dataList: [
-                pdfBytes,
-              ],
-              fileNameList: [
-                "example.pdf",
-              ],
-              mimeTypeList: [
-                "example/pdf",
-              ],
-            );
-          } catch (e) {
-            // If an error occurs, log the error to the console.
-            print(e);
-          }
-        },
-        child: const Icon(Icons.camera_alt),
+        filePath: _image,
       ),
     );
   }

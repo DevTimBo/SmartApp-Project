@@ -1,10 +1,17 @@
+# Author: Jason Pranata
+# Final Version: 13 February 2023
+# Description: Fill out a PDF form with the given input data and save it as a new PDF file.
+
 import PyPDF2
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 import io
 
 def fill_pdf_form(input_pdf, output_pdf, text_input):
+    # Read the empty Bafög PDF
     existing_pdf = PyPDF2.PdfReader(open(input_pdf, "rb"))
+    
+    # create the output PDF
     output = PyPDF2.PdfWriter()
 
     # Cause only for the first page
@@ -60,6 +67,7 @@ def fill_pdf_form(input_pdf, output_pdf, text_input):
         "Wohnsitz_waehrend_Ausbildung_Ort": (160, 47),
     }
     
+    # Special Identifiers to differentiate between the subclasses
     special_spacing_identifiers = ["Ausbildung_Foerderungsnummer", "Person_Geburtsdatum", "Person_Familienstand_seit",
                                    "Wohnsitz_Hausnummer", "Wohnsitz_Land", "Wohnsitz_Postleitzahl",
                                    "Wohnsitz_waehrend_Ausbildung_Hausnummer", "Wohnsitz_waehrend_Ausbildung_Land", "Wohnsitz_waehrend_Ausbildung_Postleitzahl"]
@@ -69,6 +77,7 @@ def fill_pdf_form(input_pdf, output_pdf, text_input):
                                "Wohnsitz_waehrend_Ausbildung_elternwohnung_ja", "Wohnsitz_waehrend_Ausbildung_elternwohnung_nein"
                                ]
     
+    # For loop to fill the PDF accordingly
     for identifier, word in text_input.items():
         if identifier in identifier_coordinates:
             if identifier in special_spacing_identifiers:
@@ -90,7 +99,6 @@ def fill_pdf_form(input_pdf, output_pdf, text_input):
 
     new_pdf = PyPDF2.PdfWriter()
     new_pdf.add_page(existing_page)
-
     new_pdf.pages[0].merge_page(PyPDF2.PdfReader(packet).pages[0])
     output.add_page(new_pdf.pages[0])
 

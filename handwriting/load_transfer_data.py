@@ -1,3 +1,11 @@
+"""
+Author: Alexej Kravtschenko
+
+Description: This file contains our method of loading the transfer data (post christmas).
+Dependencies: Depending on the used notebook a different base_path needs to be used.
+Every other element stays independent. 
+"""
+# Used imports
 import numpy as np
 import os
 import tensorflow as tf
@@ -5,10 +13,9 @@ import tensorflow as tf
 np.random.seed(42)
 tf.random.set_seed(42)
 
-characters = set()
-max_len = 0
+characters = set() # Set to contain unique characters
+max_len = 0 # Number of total characters used
 
-import os
 cwd = os.getcwd()
 last_part = os.path.basename(cwd)
 
@@ -18,6 +25,16 @@ else:
     base_path = "../data_zettel/cropped_images/"  # path for handwriting
 
 def read_data():
+    """Reads image and label data from files.
+
+    This function reads image and label data from files stored in a specified directory.
+    It searches for JPEG image files and corresponding text files containing labels.
+    It creates a list of tuples, where each tuple contains the file path to an image
+    and its corresponding label.
+
+    Returns:
+        A list of tuples, where each tuple contains the file path to an image and its label.
+    """
     data_list = []
     image_files = [f for f in os.listdir(base_path) if f.endswith('.jpg')]
 
@@ -33,16 +50,26 @@ def read_data():
                     print(image_name)
 
                     line = file.readline().strip()
-
             except UnicodeDecodeError as e:
+                print(e)
                 continue
             data_list.append((img_path, line))
 
-
-    #np.random.shuffle(data_list) # Rausgenommen zum testen
     return data_list
 
+
 def split_data(lines_list):
+    """Splits the dataset into training, testing, and validation sets.
+
+    This function splits a list of data samples into training, testing, and validation sets.
+    It divides the data into 90% training, 5% validation, and 5% testing by default.
+
+    Args:
+        lines_list (list): A list of tuples containing image paths and labels.
+
+    Returns:
+        A tuple containing the training, testing, and validation sets.
+    """
     split_idx = int(0.9 * len(lines_list))
     train_samples = lines_list[:split_idx]
     test_samples = lines_list[split_idx:]
@@ -55,6 +82,17 @@ def split_data(lines_list):
 
 
 def get_image_paths_and_labels(samples):
+    """Extracts image paths and corresponding labels from a list of samples.
+
+    This function extracts image paths and corresponding labels from a list of samples
+    and creates separate lists for image paths and labels.
+
+    Args:
+        samples (list): A list of tuples containing image paths and labels.
+
+    Returns:
+        Two lists: one containing image paths (X) and the other containing labels (y).
+    """
     x_img_paths = []
     y_labels = []
 
@@ -67,6 +105,17 @@ def get_image_paths_and_labels(samples):
 
 
 def get_vocabulary_length(data):
+    """Gets the length of the vocabulary and maximum sequence length from the dataset.
+
+    This function calculates the length of the vocabulary (number of unique characters)
+    and the maximum sequence length from the dataset.
+
+    Args:
+        data (list): A list of tuples containing image paths and labels.
+
+    Returns:
+        A tuple containing the vocabulary (list of unique characters) and the maximum sequence length.
+    """
     global characters, max_len
 
     for _, label in data:
@@ -87,27 +136,27 @@ all_data = read_data()
 characters, max_len = get_vocabulary_length(all_data)
 train_samples, test_samples, validation_samples = split_data(data)
 
-
+# Some utility functions
 def print_samples():
     print(f"Total train samples: {len(train_samples)}")
     print(f"Total validation samples: {len(validation_samples)}")
     print(f"Total test samples: {len(test_samples)}")
     
 def get_train_data():
+    
     train_path, train_label = get_image_paths_and_labels(train_samples)
-
     
     return train_path, train_label
 
 def get_validation_data():
+    
     val_path, val_label = get_image_paths_and_labels(validation_samples)
-
     
     return val_path, val_label
 
 def get_test_data():
+    
     test_path, test_label = get_image_paths_and_labels(test_samples)
-
     
     return test_path, test_label
     

@@ -1,0 +1,7 @@
+streamlit==1.7.0
+requests==2.26.0
+opencv-python==4.5.3
+Flask==2.0.1
+Pillow==8.2.0
+numpy==1.21.0
+werkzeug==2.0.1

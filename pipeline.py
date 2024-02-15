@@ -1,6 +1,17 @@
-# Unsere Klassen
+"""
+Author: Alexej Kravtschenko
+
+Description: This file should have been the foundation for our terminal/cmd pipeline. 
+But it got benched because of redundant work of others
+Functionality: Execute this file and it runs the inference with default values
+
+Example: 
+    terminal: python pipeline.py or python pipeline.py --img_file .\handwriting\data\a01-000u-00.png
+    Output: "Prediction: A MOVE to stop Mr. Gaitskell from"
+
+"""
 import handwriting.preprocess
-import handwriting.load_transfer_data as load_transfer_data
+#import handwriting.load_transfer_data as load_transfer_data # Uncomment when training a new model
 import utils.configs as Config
 # Imports
 import tensorflow as tf
@@ -23,7 +34,7 @@ config = Config.Config(config_path)
 MODEL_SAVE = bool(config.get_model_parameter()["save"])
 MODEL_NAME = config.get_model_parameter()["name"]
 IMAGE_WIDTH = config.get_model_parameter()["width"] # default: 1024
-IMAGE_HEIGHT = config.get_model_parameter()["height"] # default: 64
+IMAGE_HEIGHT = config.get_model_parameter()["height"] # default: 128
 
 # Directory Parameter
 MODEL_DIR_NAME = pathlib.Path(os.getcwd()).joinpath(config.get_directory_parameter()["model_dir"])
@@ -74,8 +85,8 @@ def load_model_and_weights():
     MODEL_WEIGHT_PATH = MODEL_NAME + weights_keras_string
     model_path = os.path.join(MODEL_DIR_NAME, MODEL_MODEL_PATH)
     model_weight_path = os.path.join(model_path, MODEL_WEIGHT_PATH)
-    model_weight_path = "models/denselayer1/transferlearningTestingModel_weights.keras"
-    model_path = "models/denselayer1"
+    model_weight_path = "models/model9v3_xl/model9v3_xl_weights.keras"
+    model_path = "models/model9v3_xl"
     print(model_path)
 
     if os.path.exists(model_path):
@@ -89,9 +100,9 @@ def load_model_and_weights():
         return None
 
 def decode_single_prediction(pred):
-    #char, max_len = load_metadata("./handwriting/data/meta.pkl")
-    char = load_transfer_data.characters
-    max_len = load_transfer_data.max_len
+    char, max_len = load_metadata("iam_handwriting_model9v3_xl.pkl") # Comment when training a new model
+    # char = load_transfer_data.characters # Uncomment when training a new model
+    # max_len = load_transfer_data.max_len # Uncomment when training a new model
     
     # Mapping characters to integers.
     char_to_num = StringLookup(vocabulary=list(char), mask_token=None)
@@ -119,7 +130,6 @@ def infer(model, image):
     selected_pred_text = pred_texts.replace("|"," ")
     print(f"Prediction: {selected_pred_text}")
 
-# Ich brauche ein Return, Hadi. Könnte man auch in der oberen Methode im if-Statement machen 
 def infer_with_return(model, image):
 
     img_size=(IMAGE_WIDTH, IMAGE_HEIGHT)

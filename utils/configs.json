@@ -13,7 +13,7 @@
         "save": "False"
     },
     "training": {
-        "epochs": 100,
+        "epochs": 5,
         "save_history": "False",
         "batch_size": 16,
         "tf_seed": 42,

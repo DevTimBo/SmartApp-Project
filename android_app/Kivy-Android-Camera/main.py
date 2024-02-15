@@ -51,16 +51,18 @@ class AndroidCamera(Camera):
 
     def tensorflow_lite_object_detection(self):
         self.label_cnn.text = str("Dies ist ein Text")
-        #model_to_predict = TensorFlowModel()
-        #model_to_predict.load(os.path.join(os.getcwd(), 'model.tflite'))
-        #np.random.seed(42)
-        #x = np.array(np.random.random_sample((1, 28, 28)), np.float32)
-        #y = model_to_predict.pred(x)
+        # commented out to not crash the app
+
+        # model_to_predict = TensorFlowModel()
+        # model_to_predict.load(os.path.join(os.getcwd(), 'model.tflite'))
+        # np.random.seed(42)
+        # x = np.array(np.random.random_sample((1, 28, 28)), np.float32)
+        # y = model_to_predict.pred(x)
         # result should be
         # 0.01647118,  1.0278152 , -0.7065112 , -1.0278157 ,  0.12216613,
         # 0.37980393,  0.5839217 , -0.04283606, -0.04240461, -0.58534086
-        #return Label(text=f'{y}')
-        #self.label_cnn.text = str("Works")
+        # return Label(text=f'{y}')
+        # self.label_cnn.text = str("Works")
 
 class MyLayout(BoxLayout):
     pass

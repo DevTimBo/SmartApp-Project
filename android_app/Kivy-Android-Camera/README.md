@@ -1,7 +1,8 @@
 # Kivy-Android-Camera
 
-## now with not working integration of TensorFlow 
-you still need to import an modell.py and a Tflite Model
+## not working integration of TensorFlow  
+# The app can be build with an instaltaion of [Python](https://www.python.org/) and [Biuldozer](https://buildozer.readthedocs.io/en/latest/installation.html)
+With Builddozer you can now create an apk which you can run on your android device
 
 ## tibssys ReadMe 
 Updated to work with kivy 2.2.0+
